@@ -27,22 +27,26 @@ case class CharacterInfo(text: String) extends InfosetItem
 case class CommentInfo(comment: String) extends InfosetItem
 case object EndElementInfo extends InfosetItem
 
+// === QName Extension Method ===
+extension (qn: QName)
+  def formatted: String = qn.prefix.map(p => s"$p:${qn.local}").getOrElse(qn.local)
+
 object Fs2Xfo extends IOApp.Simple {
 
   def liftEvent: XmlEvent => Stream[IO, InfosetItem] = {
     case StartTag(qn, attrs, _) =>
       val attrItems = attrs.map { a =>
         AttributeInfo(
-          qualifiedName = a.name.toString,
+          qualifiedName = a.name.formatted,
           localName = a.name.local,
           prefix = a.name.prefix,
           namespaceUri = None,
-          value = a.value.collect { case XmlString(s, _) => s }.mkString
+          value = a.value.collect { case XmlEvent.XmlString(s, _) => s }.mkString
         )
       }.toList
 
       Stream.emit(ElementInfo(
-        qualifiedName = qn.toString,
+        qualifiedName = qn.formatted,
         localName = qn.local,
         prefix = qn.prefix,
         namespaceUri = None,
@@ -51,7 +55,7 @@ object Fs2Xfo extends IOApp.Simple {
 
     case EndTag(_) => Stream.emit(EndElementInfo)
 
-    case XmlString(text, _) if text.trim.nonEmpty =>
+    case XmlEvent.XmlString(text, _) if text.trim.nonEmpty =>
       Stream.emit(CharacterInfo(text.trim))
 
     case Comment(content) =>

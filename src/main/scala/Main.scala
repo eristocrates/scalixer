@@ -1,5 +1,11 @@
-@main def hello(): Unit =
-  println("Hello world!")
-  println(msg)
+@main def extractXfo(): Unit =
+  val factory = SAXParserFactory.newInstance()
+  factory.setNamespaceAware(true)
 
-def msg = "I was compiled by Scala 3. :)"
+  val parser = factory.newSAXParser()
+  val reader = parser.getXMLReader
+
+  val handler = new InfosetHandler()
+  reader.setProperty("http://xml.org/sax/properties/lexical-handler", handler)
+  reader.setContentHandler(handler)
+  reader.parse(new org.xml.sax.InputSource(new java.io.FileReader("example.xml")))

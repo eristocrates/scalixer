@@ -3,8 +3,8 @@ import fs2.Stream
 import fs2.data.xml._
 import fs2.data.xml.XmlEvent._
 import java.io.InputStream
+import java.nio.file.Paths
 
-// === Infoset Representation ===
 sealed trait InfosetItem
 
 case class ElementInfo(
@@ -27,26 +27,22 @@ case class CharacterInfo(text: String) extends InfosetItem
 case class CommentInfo(comment: String) extends InfosetItem
 case object EndElementInfo extends InfosetItem
 
-// === QName Extension Method ===
-extension (qn: QName)
-  def formatted: String = qn.prefix.map(p => s"$p:${qn.local}").getOrElse(qn.local)
-
 object Fs2Xfo extends IOApp.Simple {
 
   def liftEvent: XmlEvent => Stream[IO, InfosetItem] = {
     case StartTag(qn, attrs, _) =>
       val attrItems = attrs.map { a =>
         AttributeInfo(
-          qualifiedName = a.name.formatted,
+          qualifiedName = a.name.toString,
           localName = a.name.local,
           prefix = a.name.prefix,
           namespaceUri = None,
-          value = a.value.collect { case XmlEvent.XmlString(s, _) => s }.mkString
+          value = a.value.collect { case XmlString(s, _) => s }.mkString
         )
       }.toList
 
       Stream.emit(ElementInfo(
-        qualifiedName = qn.formatted,
+        qualifiedName = s"${qn.prefix.map(_ + ":").getOrElse("")}${qn.local}",
         localName = qn.local,
         prefix = qn.prefix,
         namespaceUri = None,
@@ -55,10 +51,10 @@ object Fs2Xfo extends IOApp.Simple {
 
     case EndTag(_) => Stream.emit(EndElementInfo)
 
-    case XmlEvent.XmlString(text, _) if text.trim.nonEmpty =>
+    case XmlString(text, _) if text.trim.nonEmpty =>
       Stream.emit(CharacterInfo(text.trim))
 
-    case Comment(content) =>
+    case XmlEvent.Comment(content) =>
       Stream.emit(CommentInfo(content))
 
     case _ => Stream.empty
@@ -67,27 +63,28 @@ object Fs2Xfo extends IOApp.Simple {
   def infosetToXml(item: InfosetItem): String = item match {
     case ElementInfo(qn, local, prefix, ns, attrs) =>
       val attrsXml = attrs.map { a =>
-        s"""<attribute-information-item>
-           |  <key>
-           |    <qualified-name>${a.qualifiedName}</qualified-name>
-           |    <local-name>${a.localName}</local-name>
-           |    <prefix>${a.prefix.getOrElse("")}</prefix>
-           |    <namespace-uri>${a.namespaceUri.getOrElse("")}</namespace-uri>
-           |  </key>
-           |  <value>${a.value}</value>
-           |</attribute-information-item>""".stripMargin
+        s"""  <attribute-information-item>
+  <key>
+    <qualified-name>${a.qualifiedName}</qualified-name>
+    <local-name>${a.localName}</local-name>
+    <prefix>${a.prefix.getOrElse("")}</prefix>
+    <namespace-uri>${a.namespaceUri.getOrElse("")}</namespace-uri>
+  </key>
+  <value>${a.value}</value>
+</attribute-information-item>"""
       }.mkString("\n")
 
       s"""<element-information-item>
-         |  <qualified-name>$qn</qualified-name>
-         |  <local-name>$local</local-name>
-         |  <prefix>${prefix.getOrElse("")}</prefix>
-         |  <namespace-uri>${ns.getOrElse("")}</namespace-uri>
-         |  <attributes>
-         |$attrsXml
-         |  </attributes>""".stripMargin
+  <qualified-name>$qn</qualified-name>
+  <local-name>$local</local-name>
+  <prefix>${prefix.getOrElse("")}</prefix>
+  <namespace-uri>${ns.getOrElse("")}</namespace-uri>
+  <attributes>
+$attrsXml
+  </attributes>
+</element-information-item>"""
 
-    case EndElementInfo => "</element-information-item>"
+    case EndElementInfo => "<!-- End of element-information-item -->"
 
     case CharacterInfo(text) =>
       s"<character-information-item>$text</character-information-item>"
@@ -114,7 +111,7 @@ object Fs2Xfo extends IOApp.Simple {
       xmlOutput
         .intersperse("\n")
         .through(fs2.text.utf8.encode)
-        .through(fs2.io.file.Files[IO].writeAll(java.nio.file.Paths.get("xfo_output.xml")))
+        .through(fs2.io.file.Files[IO].writeAll(Paths.get("xfo_output.xml")))
         .compile
         .drain
     }

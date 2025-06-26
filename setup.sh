@@ -19,9 +19,9 @@ sdk install java 21.0.2-tem || sdk install java 17.0.9-tem
 # Set Java version
 sdk use java 21.0.2-tem || sdk use java 17.0.9-tem
 
-# Install SBT
-echo "Installing SBT..."
-sdk install sbt
+# Install coursier
+echo "Installing coursier"
+curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./cs setup
 
 # Confirm versions
 echo "Java version:"

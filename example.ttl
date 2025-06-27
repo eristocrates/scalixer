@@ -3,20 +3,536 @@ PREFIX ex: <http://example.org/ns/>
 PREFIX meta: <http://example.org/meta/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-ex:Root  rdf:type         fs2:Element;
-        fs2:qname         "ex:Root";
-        fs2:local         "Root";
-        fs2:prefix        "ex";
-        fs2:namespaceUri  "http://example.org/ns" .
+<file:///catalog>  rdf:type  fs2:Element;
+        fs2:qname         "catalog";
+        fs2:local         "catalog";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
 
-ex:Child  rdf:type        fs2:Element;
-        fs2:qname         "ex:Child";
-        fs2:local         "Child";
-        fs2:prefix        "ex";
-        fs2:namespaceUri  "http://example.org/ns" .
+<file:///book>  rdf:type  fs2:Element;
+        fs2:qname         "book";
+        fs2:local         "book";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
 
-meta:Nested  rdf:type     fs2:Element;
-        fs2:qname         "meta:Nested";
-        fs2:local         "Nested";
-        fs2:prefix        "meta";
-        fs2:namespaceUri  "http://example.org/meta" .
+<file:///author>  rdf:type  fs2:Element;
+        fs2:qname         "author";
+        fs2:local         "author";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///title>  rdf:type  fs2:Element;
+        fs2:qname         "title";
+        fs2:local         "title";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///genre>  rdf:type  fs2:Element;
+        fs2:qname         "genre";
+        fs2:local         "genre";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///price>  rdf:type  fs2:Element;
+        fs2:qname         "price";
+        fs2:local         "price";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///publish_date>
+        rdf:type          fs2:Element;
+        fs2:qname         "publish_date";
+        fs2:local         "publish_date";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///description>
+        rdf:type          fs2:Element;
+        fs2:qname         "description";
+        fs2:local         "description";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///book>  rdf:type  fs2:Element;
+        fs2:qname         "book";
+        fs2:local         "book";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///author>  rdf:type  fs2:Element;
+        fs2:qname         "author";
+        fs2:local         "author";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///title>  rdf:type  fs2:Element;
+        fs2:qname         "title";
+        fs2:local         "title";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///genre>  rdf:type  fs2:Element;
+        fs2:qname         "genre";
+        fs2:local         "genre";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///price>  rdf:type  fs2:Element;
+        fs2:qname         "price";
+        fs2:local         "price";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///publish_date>
+        rdf:type          fs2:Element;
+        fs2:qname         "publish_date";
+        fs2:local         "publish_date";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///description>
+        rdf:type          fs2:Element;
+        fs2:qname         "description";
+        fs2:local         "description";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///book>  rdf:type  fs2:Element;
+        fs2:qname         "book";
+        fs2:local         "book";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///author>  rdf:type  fs2:Element;
+        fs2:qname         "author";
+        fs2:local         "author";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///title>  rdf:type  fs2:Element;
+        fs2:qname         "title";
+        fs2:local         "title";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///genre>  rdf:type  fs2:Element;
+        fs2:qname         "genre";
+        fs2:local         "genre";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///price>  rdf:type  fs2:Element;
+        fs2:qname         "price";
+        fs2:local         "price";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///publish_date>
+        rdf:type          fs2:Element;
+        fs2:qname         "publish_date";
+        fs2:local         "publish_date";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///description>
+        rdf:type          fs2:Element;
+        fs2:qname         "description";
+        fs2:local         "description";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///book>  rdf:type  fs2:Element;
+        fs2:qname         "book";
+        fs2:local         "book";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///author>  rdf:type  fs2:Element;
+        fs2:qname         "author";
+        fs2:local         "author";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///title>  rdf:type  fs2:Element;
+        fs2:qname         "title";
+        fs2:local         "title";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///genre>  rdf:type  fs2:Element;
+        fs2:qname         "genre";
+        fs2:local         "genre";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///price>  rdf:type  fs2:Element;
+        fs2:qname         "price";
+        fs2:local         "price";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///publish_date>
+        rdf:type          fs2:Element;
+        fs2:qname         "publish_date";
+        fs2:local         "publish_date";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///description>
+        rdf:type          fs2:Element;
+        fs2:qname         "description";
+        fs2:local         "description";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///book>  rdf:type  fs2:Element;
+        fs2:qname         "book";
+        fs2:local         "book";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///author>  rdf:type  fs2:Element;
+        fs2:qname         "author";
+        fs2:local         "author";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///title>  rdf:type  fs2:Element;
+        fs2:qname         "title";
+        fs2:local         "title";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///genre>  rdf:type  fs2:Element;
+        fs2:qname         "genre";
+        fs2:local         "genre";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///price>  rdf:type  fs2:Element;
+        fs2:qname         "price";
+        fs2:local         "price";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///publish_date>
+        rdf:type          fs2:Element;
+        fs2:qname         "publish_date";
+        fs2:local         "publish_date";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///description>
+        rdf:type          fs2:Element;
+        fs2:qname         "description";
+        fs2:local         "description";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///book>  rdf:type  fs2:Element;
+        fs2:qname         "book";
+        fs2:local         "book";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///author>  rdf:type  fs2:Element;
+        fs2:qname         "author";
+        fs2:local         "author";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///title>  rdf:type  fs2:Element;
+        fs2:qname         "title";
+        fs2:local         "title";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///genre>  rdf:type  fs2:Element;
+        fs2:qname         "genre";
+        fs2:local         "genre";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///price>  rdf:type  fs2:Element;
+        fs2:qname         "price";
+        fs2:local         "price";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///publish_date>
+        rdf:type          fs2:Element;
+        fs2:qname         "publish_date";
+        fs2:local         "publish_date";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///description>
+        rdf:type          fs2:Element;
+        fs2:qname         "description";
+        fs2:local         "description";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///book>  rdf:type  fs2:Element;
+        fs2:qname         "book";
+        fs2:local         "book";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///author>  rdf:type  fs2:Element;
+        fs2:qname         "author";
+        fs2:local         "author";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///title>  rdf:type  fs2:Element;
+        fs2:qname         "title";
+        fs2:local         "title";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///genre>  rdf:type  fs2:Element;
+        fs2:qname         "genre";
+        fs2:local         "genre";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///price>  rdf:type  fs2:Element;
+        fs2:qname         "price";
+        fs2:local         "price";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///publish_date>
+        rdf:type          fs2:Element;
+        fs2:qname         "publish_date";
+        fs2:local         "publish_date";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///description>
+        rdf:type          fs2:Element;
+        fs2:qname         "description";
+        fs2:local         "description";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///book>  rdf:type  fs2:Element;
+        fs2:qname         "book";
+        fs2:local         "book";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///author>  rdf:type  fs2:Element;
+        fs2:qname         "author";
+        fs2:local         "author";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///title>  rdf:type  fs2:Element;
+        fs2:qname         "title";
+        fs2:local         "title";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///genre>  rdf:type  fs2:Element;
+        fs2:qname         "genre";
+        fs2:local         "genre";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///price>  rdf:type  fs2:Element;
+        fs2:qname         "price";
+        fs2:local         "price";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///publish_date>
+        rdf:type          fs2:Element;
+        fs2:qname         "publish_date";
+        fs2:local         "publish_date";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///description>
+        rdf:type          fs2:Element;
+        fs2:qname         "description";
+        fs2:local         "description";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///book>  rdf:type  fs2:Element;
+        fs2:qname         "book";
+        fs2:local         "book";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///author>  rdf:type  fs2:Element;
+        fs2:qname         "author";
+        fs2:local         "author";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///title>  rdf:type  fs2:Element;
+        fs2:qname         "title";
+        fs2:local         "title";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///genre>  rdf:type  fs2:Element;
+        fs2:qname         "genre";
+        fs2:local         "genre";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///price>  rdf:type  fs2:Element;
+        fs2:qname         "price";
+        fs2:local         "price";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///publish_date>
+        rdf:type          fs2:Element;
+        fs2:qname         "publish_date";
+        fs2:local         "publish_date";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///description>
+        rdf:type          fs2:Element;
+        fs2:qname         "description";
+        fs2:local         "description";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///book>  rdf:type  fs2:Element;
+        fs2:qname         "book";
+        fs2:local         "book";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///author>  rdf:type  fs2:Element;
+        fs2:qname         "author";
+        fs2:local         "author";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///title>  rdf:type  fs2:Element;
+        fs2:qname         "title";
+        fs2:local         "title";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///genre>  rdf:type  fs2:Element;
+        fs2:qname         "genre";
+        fs2:local         "genre";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///price>  rdf:type  fs2:Element;
+        fs2:qname         "price";
+        fs2:local         "price";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///publish_date>
+        rdf:type          fs2:Element;
+        fs2:qname         "publish_date";
+        fs2:local         "publish_date";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///description>
+        rdf:type          fs2:Element;
+        fs2:qname         "description";
+        fs2:local         "description";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///book>  rdf:type  fs2:Element;
+        fs2:qname         "book";
+        fs2:local         "book";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///author>  rdf:type  fs2:Element;
+        fs2:qname         "author";
+        fs2:local         "author";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///title>  rdf:type  fs2:Element;
+        fs2:qname         "title";
+        fs2:local         "title";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///genre>  rdf:type  fs2:Element;
+        fs2:qname         "genre";
+        fs2:local         "genre";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///price>  rdf:type  fs2:Element;
+        fs2:qname         "price";
+        fs2:local         "price";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///publish_date>
+        rdf:type          fs2:Element;
+        fs2:qname         "publish_date";
+        fs2:local         "publish_date";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///description>
+        rdf:type          fs2:Element;
+        fs2:qname         "description";
+        fs2:local         "description";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///book>  rdf:type  fs2:Element;
+        fs2:qname         "book";
+        fs2:local         "book";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///author>  rdf:type  fs2:Element;
+        fs2:qname         "author";
+        fs2:local         "author";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///title>  rdf:type  fs2:Element;
+        fs2:qname         "title";
+        fs2:local         "title";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///genre>  rdf:type  fs2:Element;
+        fs2:qname         "genre";
+        fs2:local         "genre";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///price>  rdf:type  fs2:Element;
+        fs2:qname         "price";
+        fs2:local         "price";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///publish_date>
+        rdf:type          fs2:Element;
+        fs2:qname         "publish_date";
+        fs2:local         "publish_date";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .
+
+<file:///description>
+        rdf:type          fs2:Element;
+        fs2:qname         "description";
+        fs2:local         "description";
+        fs2:prefix        "";
+        fs2:namespaceUri  "" .

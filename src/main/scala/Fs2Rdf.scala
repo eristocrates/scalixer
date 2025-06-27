@@ -4,50 +4,108 @@ import fs2.data.xml._
 import fs2.data.xml.XmlEvent._
 import java.io.InputStream
 import java.nio.file.Paths
+import scala.util.hashing.MurmurHash3
 
-// === Internal Representation ===
-case class ElementInfo(
-    qualifiedName: String,
-    localName: String,
-    prefix: Option[String],
-    namespaceUri: Option[String]
-)
+object XmlToRdf extends IOApp.Simple {
 
-object Fs2ToRdfXml extends IOApp.Simple {
+  val rdfHeader =
+    """<?xml version="1.0"?>
+      |<rdf:RDF
+      |  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      |  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      |  xmlns:owl="http://www.w3.org/2002/07/owl#"
+      |  xmlns:ex="http://example.org/">
+      |""".stripMargin
 
-  // Convert an ElementInfo into RDF/XML triples
-  def toRdfTripleXml(info: ElementInfo): String =
-    s"""  <rdf:Description rdf:about="${info.namespaceUri.getOrElse("")}/${info.localName}">
-       |    <rdf:type rdf:resource="https://fs2.io/Element"/>
-       |    <fs2:qname>${info.qualifiedName}</fs2:qname>
-       |    <fs2:local>${info.localName}</fs2:local>
-       |    <fs2:prefix>${info.prefix.getOrElse("")}</fs2:prefix>
-       |    <fs2:namespaceUri>${info.namespaceUri.getOrElse("")}</fs2:namespaceUri>
-       |  </rdf:Description>""".stripMargin
+  val rdfFooter = "\n</rdf:RDF>"
 
-  // Extract relevant context and build RDF representation
-  def liftEvent(context: Map[String, String]): XmlEvent => (Stream[IO, String], Map[String, String]) = {
-    case StartTag(qn, attrs, _) =>
-      val newMappings = attrs.collect {
-        case Attr(QName(Some("xmlns"), prefix), value) =>
-          prefix -> value.collect { case XmlString(s, _) => s }.mkString
-        case Attr(QName(None, "xmlns"), value) =>
-          "" -> value.collect { case XmlString(s, _) => s }.mkString
-      }.toMap
+  def normalize(value: String): String =
+    value.replaceAll("[^\\p{IsAlphabetic}\\p{IsDigit}]", "").capitalize
 
-      val updatedCtx = context ++ newMappings
-      val nsUri = qn.prefix.flatMap(updatedCtx.get)
+  def createIndividualIRI(tag: String, value: String): String =
+    s"ex:${normalize(value)}"
 
-      val info = ElementInfo(
-        qualifiedName = qn.prefix.map(p => s"$p:${qn.local}").getOrElse(qn.local),
-        localName = qn.local,
-        prefix = qn.prefix,
-        namespaceUri = nsUri
-      )
+  def createClassIRI(tag: String): String =
+    s"ex:${normalize(tag)}"
 
-      (Stream.emit(toRdfTripleXml(info)), updatedCtx)
+  def createHasProperty(tag: String): String =
+    s"ex:has${tag.capitalize}"
 
-    case _ => (Stream.empty, context)
+  def emitTriple(s: String, p: String, o: String, literal: Boolean = false, lang: Option[String] = None): String = {
+    val obj = if (literal) {
+      val langTag = lang.map(l => s" xml:lang=\"$l\"").getOrElse("")
+      s"\"$o\"$langTag"
+    } else o
+    s"<$s> <$p> $obj ."
+  }
+
+  def liftEvent(
+      lang: Option[String]
+  ): XmlEvent => Stream[IO, String] = {
+    var currentSubject: Option[String] = None
+    var parentStack: List[String] = Nil
+
+    {
+      case StartTag(qn, attrs, _) =>
+        val tag = qn.local
+        val classIRI = createClassIRI(tag)
+
+        val idOpt = attrs.collectFirst {
+          case Attr(QName(_, "id"), value) =>
+            value.collect { case XmlString(s, _) => s }.mkString
+        }
+
+        val subjectIRI = idOpt match {
+          case Some(id) => s"ex:$id"
+          case None     => s"ex:${tag}_${MurmurHash3.stringHash(parentStack.mkString("/"))}"
+        }
+
+        val classDecl = s"<$classIRI> a owl:Class ."
+        val instanceDecl = s"<$subjectIRI> a <$classIRI> ."
+
+        val membership = parentStack.headOption.map { parent =>
+          s"<$parent> <rdfs:member> <$subjectIRI> ."
+        }
+
+        val attrTriples = attrs.map {
+          case Attr(QName(_, "id"), _) => None // Already used
+          case Attr(QName(_, "lang"), _) => None // Will be handled by lang propagation
+          case Attr(name, value) =>
+            val attrVal = value.collect { case XmlString(s, _) => s }.mkString
+            val propIRI = s"ex:has${name.local.capitalize}"
+            Some(s"<$subjectIRI> <$propIRI> \"$attrVal\" .")
+        }.flatten
+
+        currentSubject = Some(subjectIRI)
+        parentStack = subjectIRI :: parentStack
+
+        Stream.emits((membership.toList :+ classDecl :+ instanceDecl) ++ attrTriples)
+
+      case XmlString(text, _) if text.trim.nonEmpty =>
+        currentSubject match {
+          case Some(subj) =>
+            val normalized = normalize(text)
+            val classTag   = parentStack.headOption.map(_.split("/").lastOption.getOrElse("Unknown")).getOrElse("Unknown")
+            val valueIRI   = createIndividualIRI(classTag, text.trim)
+            val classIRI   = createClassIRI(classTag)
+            val hasProp    = createHasProperty(classTag)
+
+            Stream.emits(List(
+              s"<$valueIRI> a <$classIRI> .",
+              emitTriple(subj, "rdfs:member", valueIRI),
+              emitTriple(subj, hasProp, valueIRI),
+              emitTriple(valueIRI, "rdfs:label", text.trim, literal = true, lang)
+            ))
+          case None => Stream.empty
+        }
+
+      case EndTag(_) =>
+        parentStack = parentStack.drop(1)
+        currentSubject = parentStack.headOption
+        Stream.empty
+
+      case _ => Stream.empty
+    }
   }
 
   def run: IO[Unit] = {
@@ -59,23 +117,13 @@ object Fs2ToRdfXml extends IOApp.Simple {
           .through(fs2.text.utf8.decode)
           .through(events[IO, String]())
 
-      val rdfTriples = xmlEvents
-        .evalScan((Stream.empty.covaryAll[IO, String], Map.empty[String, String])) {
-          case ((_, ctx), event) =>
-            val (stream, newCtx) = liftEvent(ctx)(event)
-            IO.pure((stream, newCtx))
-        }
-        .flatMap(_._1)
+      val triplesStream = xmlEvents.flatMap(liftEvent(Some("en")))
 
-      val rdfOutput =
-        Stream.emit("""<?xml version="1.0" encoding="UTF-8"?>
-          <rdf:RDF xmlns:fs2="https://fs2.io/" xmlns:ex="http://example.org/ns/" xmlns:meta="http://example.org/meta/"
-         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">""") ++
-          rdfTriples ++
-          Stream.emit("</rdf:RDF>")
+      val output = Stream.emit(rdfHeader) ++
+        triplesStream.intersperse("\n") ++
+        Stream.emit(rdfFooter)
 
-      rdfOutput
-        .intersperse("\n")
+      output
         .through(fs2.text.utf8.encode)
         .through(fs2.io.file.Files[IO].writeAll(Paths.get("example.rdf")))
         .compile
@@ -83,3 +131,4 @@ object Fs2ToRdfXml extends IOApp.Simple {
     }
   }
 }
+

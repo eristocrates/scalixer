@@ -1,25 +1,1509 @@
-<?xml version="1.0" encoding="UTF-8"?>
-          <rdf:RDF xmlns:fs2="https://fs2.io/" xmlns:ex="http://example.org/ns/" xmlns:meta="http://example.org/meta/"
-         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <rdf:Description rdf:about="http://example.org/ns/Root">
-    <rdf:type rdf:resource="https://fs2.io/Element"/>
-    <fs2:qname>ex:Root</fs2:qname>
-    <fs2:local>Root</fs2:local>
-    <fs2:prefix>ex</fs2:prefix>
-    <fs2:namespaceUri>http://example.org/ns</fs2:namespaceUri>
+<?xml version="1.0"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:ex="http://example.org/">
+<ex:Catalog> a owl:Class .
+<ex:catalog_377927480> a <ex:Catalog> .
+<ex:catalog_377927480> <rdfs:member> <ex:bk101> .
+<ex:Book> a owl:Class .
+<ex:bk101> a <ex:Book> .
+<ex:bk101> <rdfs:member> <ex:author_1263791798> .
+<ex:Author> a owl:Class .
+<ex:author_1263791798> a <ex:Author> .
+<ex:GambardellaMatthew> a <ex:Exauthor1263791798> .
+<ex:author_1263791798> <rdfs:member> ex:GambardellaMatthew .
+<ex:author_1263791798> <ex:hasEx:author_1263791798> ex:GambardellaMatthew .
+<ex:GambardellaMatthew> <rdfs:label> "Gambardella, Matthew" xml:lang="en" .
+<ex:bk101> <rdfs:member> <ex:title_1263791798> .
+<ex:Title> a owl:Class .
+<ex:title_1263791798> a <ex:Title> .
+<ex:XMLDevelopersGuide> a <ex:Extitle1263791798> .
+<ex:title_1263791798> <rdfs:member> ex:XMLDevelopersGuide .
+<ex:title_1263791798> <ex:hasEx:title_1263791798> ex:XMLDevelopersGuide .
+<ex:XMLDevelopersGuide> <rdfs:label> "XML Developer's Guide" xml:lang="en" .
+<ex:bk101> <rdfs:member> <ex:genre_1263791798> .
+<ex:Genre> a owl:Class .
+<ex:genre_1263791798> a <ex:Genre> .
+<ex:Computer> a <ex:Exgenre1263791798> .
+<ex:genre_1263791798> <rdfs:member> ex:Computer .
+<ex:genre_1263791798> <ex:hasEx:genre_1263791798> ex:Computer .
+<ex:Computer> <rdfs:label> "Computer" xml:lang="en" .
+<ex:bk101> <rdfs:member> <ex:price_1263791798> .
+<ex:Price> a owl:Class .
+<ex:price_1263791798> a <ex:Price> .
+<ex:4495> a <ex:Exprice1263791798> .
+<ex:price_1263791798> <rdfs:member> ex:4495 .
+<ex:price_1263791798> <ex:hasEx:price_1263791798> ex:4495 .
+<ex:4495> <rdfs:label> "44.95" xml:lang="en" .
+<ex:bk101> <rdfs:member> <ex:publish_date_1263791798> .
+<ex:Publishdate> a owl:Class .
+<ex:publish_date_1263791798> a <ex:Publishdate> .
+<ex:20001001> a <ex:Expublishdate1263791798> .
+<ex:publish_date_1263791798> <rdfs:member> ex:20001001 .
+<ex:publish_date_1263791798> <ex:hasEx:publish_date_1263791798> ex:20001001 .
+<ex:20001001> <rdfs:label> "2000-10-01" xml:lang="en" .
+<ex:bk101> <rdfs:member> <ex:description_1263791798> .
+<ex:Description> a owl:Class .
+<ex:description_1263791798> a <ex:Description> .
+<ex:AnindepthlookatcreatingapplicationswithXML> a <ex:Exdescription1263791798> .
+<ex:description_1263791798> <rdfs:member> ex:AnindepthlookatcreatingapplicationswithXML .
+<ex:description_1263791798> <ex:hasEx:description_1263791798> ex:AnindepthlookatcreatingapplicationswithXML .
+<ex:AnindepthlookatcreatingapplicationswithXML> <rdfs:label> "An in-depth look at creating applications
+      with XML." xml:lang="en" .
+<ex:catalog_377927480> <rdfs:member> <ex:bk102> .
+<ex:Book> a owl:Class .
+<ex:bk102> a <ex:Book> .
+<ex:bk102> <rdfs:member> <ex:author_-489129026> .
+<ex:Author> a owl:Class .
+<ex:author_-489129026> a <ex:Author> .
+<ex:RallsKim> a <ex:Exauthor489129026> .
+<ex:author_-489129026> <rdfs:member> ex:RallsKim .
+<ex:author_-489129026> <ex:hasEx:author_-489129026> ex:RallsKim .
+<ex:RallsKim> <rdfs:label> "Ralls, Kim" xml:lang="en" .
+<ex:bk102> <rdfs:member> <ex:title_-489129026> .
+<ex:Title> a owl:Class .
+<ex:title_-489129026> a <ex:Title> .
+<ex:MidnightRain> a <ex:Extitle489129026> .
+<ex:title_-489129026> <rdfs:member> ex:MidnightRain .
+<ex:title_-489129026> <ex:hasEx:title_-489129026> ex:MidnightRain .
+<ex:MidnightRain> <rdfs:label> "Midnight Rain" xml:lang="en" .
+<ex:bk102> <rdfs:member> <ex:genre_-489129026> .
+<ex:Genre> a owl:Class .
+<ex:genre_-489129026> a <ex:Genre> .
+<ex:Fantasy> a <ex:Exgenre489129026> .
+<ex:genre_-489129026> <rdfs:member> ex:Fantasy .
+<ex:genre_-489129026> <ex:hasEx:genre_-489129026> ex:Fantasy .
+<ex:Fantasy> <rdfs:label> "Fantasy" xml:lang="en" .
+<ex:bk102> <rdfs:member> <ex:price_-489129026> .
+<ex:Price> a owl:Class .
+<ex:price_-489129026> a <ex:Price> .
+<ex:595> a <ex:Exprice489129026> .
+<ex:price_-489129026> <rdfs:member> ex:595 .
+<ex:price_-489129026> <ex:hasEx:price_-489129026> ex:595 .
+<ex:595> <rdfs:label> "5.95" xml:lang="en" .
+<ex:bk102> <rdfs:member> <ex:publish_date_-489129026> .
+<ex:Publishdate> a owl:Class .
+<ex:publish_date_-489129026> a <ex:Publishdate> .
+<ex:20001216> a <ex:Expublishdate489129026> .
+<ex:publish_date_-489129026> <rdfs:member> ex:20001216 .
+<ex:publish_date_-489129026> <ex:hasEx:publish_date_-489129026> ex:20001216 .
+<ex:20001216> <rdfs:label> "2000-12-16" xml:lang="en" .
+<ex:bk102> <rdfs:member> <ex:description_-489129026> .
+<ex:Description> a owl:Class .
+<ex:description_-489129026> a <ex:Description> .
+<ex:Aformerarchitectbattlescorporatezombiesanevilsorceressandherownchildhoodtobecomequeenoftheworld> a <ex:Exdescription489129026> .
+<ex:description_-489129026> <rdfs:member> ex:Aformerarchitectbattlescorporatezombiesanevilsorceressandherownchildhoodtobecomequeenoftheworld .
+<ex:description_-489129026> <ex:hasEx:description_-489129026> ex:Aformerarchitectbattlescorporatezombiesanevilsorceressandherownchildhoodtobecomequeenoftheworld .
+<ex:Aformerarchitectbattlescorporatezombiesanevilsorceressandherownchildhoodtobecomequeenoftheworld> <rdfs:label> "A former architect battles corporate zombies,
+      an evil sorceress, and her own childhood to become queen
+      of the world." xml:lang="en" .
+<ex:catalog_377927480> <rdfs:member> <ex:bk103> .
+<ex:Book> a owl:Class .
+<ex:bk103> a <ex:Book> .
+<ex:bk103> <rdfs:member> <ex:author_-42659733> .
+<ex:Author> a owl:Class .
+<ex:author_-42659733> a <ex:Author> .
+<ex:CoretsEva> a <ex:Exauthor42659733> .
+<ex:author_-42659733> <rdfs:member> ex:CoretsEva .
+<ex:author_-42659733> <ex:hasEx:author_-42659733> ex:CoretsEva .
+<ex:CoretsEva> <rdfs:label> "Corets, Eva" xml:lang="en" .
+<ex:bk103> <rdfs:member> <ex:title_-42659733> .
+<ex:Title> a owl:Class .
+<ex:title_-42659733> a <ex:Title> .
+<ex:MaeveAscendant> a <ex:Extitle42659733> .
+<ex:title_-42659733> <rdfs:member> ex:MaeveAscendant .
+<ex:title_-42659733> <ex:hasEx:title_-42659733> ex:MaeveAscendant .
+<ex:MaeveAscendant> <rdfs:label> "Maeve Ascendant" xml:lang="en" .
+<ex:bk103> <rdfs:member> <ex:genre_-42659733> .
+<ex:Genre> a owl:Class .
+<ex:genre_-42659733> a <ex:Genre> .
+<ex:Fantasy> a <ex:Exgenre42659733> .
+<ex:genre_-42659733> <rdfs:member> ex:Fantasy .
+<ex:genre_-42659733> <ex:hasEx:genre_-42659733> ex:Fantasy .
+<ex:Fantasy> <rdfs:label> "Fantasy" xml:lang="en" .
+<ex:bk103> <rdfs:member> <ex:price_-42659733> .
+<ex:Price> a owl:Class .
+<ex:price_-42659733> a <ex:Price> .
+<ex:595> a <ex:Exprice42659733> .
+<ex:price_-42659733> <rdfs:member> ex:595 .
+<ex:price_-42659733> <ex:hasEx:price_-42659733> ex:595 .
+<ex:595> <rdfs:label> "5.95" xml:lang="en" .
+<ex:bk103> <rdfs:member> <ex:publish_date_-42659733> .
+<ex:Publishdate> a owl:Class .
+<ex:publish_date_-42659733> a <ex:Publishdate> .
+<ex:20001117> a <ex:Expublishdate42659733> .
+<ex:publish_date_-42659733> <rdfs:member> ex:20001117 .
+<ex:publish_date_-42659733> <ex:hasEx:publish_date_-42659733> ex:20001117 .
+<ex:20001117> <rdfs:label> "2000-11-17" xml:lang="en" .
+<ex:bk103> <rdfs:member> <ex:description_-42659733> .
+<ex:Description> a owl:Class .
+<ex:description_-42659733> a <ex:Description> .
+<ex:AfterthecollapseofananotechnologysocietyinEnglandtheyoungsurvivorslaythefoundationforanewsociety> a <ex:Exdescription42659733> .
+<ex:description_-42659733> <rdfs:member> ex:AfterthecollapseofananotechnologysocietyinEnglandtheyoungsurvivorslaythefoundationforanewsociety .
+<ex:description_-42659733> <ex:hasEx:description_-42659733> ex:AfterthecollapseofananotechnologysocietyinEnglandtheyoungsurvivorslaythefoundationforanewsociety .
+<ex:AfterthecollapseofananotechnologysocietyinEnglandtheyoungsurvivorslaythefoundationforanewsociety> <rdfs:label> "After the collapse of a nanotechnology
+      society in England, the young survivors lay the
+      foundation for a new society." xml:lang="en" .
+<ex:catalog_377927480> <rdfs:member> <ex:bk104> .
+<ex:Book> a owl:Class .
+<ex:bk104> a <ex:Book> .
+<ex:bk104> <rdfs:member> <ex:author_1453675806> .
+<ex:Author> a owl:Class .
+<ex:author_1453675806> a <ex:Author> .
+<ex:CoretsEva> a <ex:Exauthor1453675806> .
+<ex:author_1453675806> <rdfs:member> ex:CoretsEva .
+<ex:author_1453675806> <ex:hasEx:author_1453675806> ex:CoretsEva .
+<ex:CoretsEva> <rdfs:label> "Corets, Eva" xml:lang="en" .
+<ex:bk104> <rdfs:member> <ex:title_1453675806> .
+<ex:Title> a owl:Class .
+<ex:title_1453675806> a <ex:Title> .
+<ex:OberonsLegacy> a <ex:Extitle1453675806> .
+<ex:title_1453675806> <rdfs:member> ex:OberonsLegacy .
+<ex:title_1453675806> <ex:hasEx:title_1453675806> ex:OberonsLegacy .
+<ex:OberonsLegacy> <rdfs:label> "Oberon's Legacy" xml:lang="en" .
+<ex:bk104> <rdfs:member> <ex:genre_1453675806> .
+<ex:Genre> a owl:Class .
+<ex:genre_1453675806> a <ex:Genre> .
+<ex:Fantasy> a <ex:Exgenre1453675806> .
+<ex:genre_1453675806> <rdfs:member> ex:Fantasy .
+<ex:genre_1453675806> <ex:hasEx:genre_1453675806> ex:Fantasy .
+<ex:Fantasy> <rdfs:label> "Fantasy" xml:lang="en" .
+<ex:bk104> <rdfs:member> <ex:price_1453675806> .
+<ex:Price> a owl:Class .
+<ex:price_1453675806> a <ex:Price> .
+<ex:595> a <ex:Exprice1453675806> .
+<ex:price_1453675806> <rdfs:member> ex:595 .
+<ex:price_1453675806> <ex:hasEx:price_1453675806> ex:595 .
+<ex:595> <rdfs:label> "5.95" xml:lang="en" .
+<ex:bk104> <rdfs:member> <ex:publish_date_1453675806> .
+<ex:Publishdate> a owl:Class .
+<ex:publish_date_1453675806> a <ex:Publishdate> .
+<ex:20010310> a <ex:Expublishdate1453675806> .
+<ex:publish_date_1453675806> <rdfs:member> ex:20010310 .
+<ex:publish_date_1453675806> <ex:hasEx:publish_date_1453675806> ex:20010310 .
+<ex:20010310> <rdfs:label> "2001-03-10" xml:lang="en" .
+<ex:bk104> <rdfs:member> <ex:description_1453675806> .
+<ex:Description> a owl:Class .
+<ex:description_1453675806> a <ex:Description> .
+<ex:InpostapocalypseEnglandthemysteriousagentknownonlyasOberonhelpstocreateanewlifefortheinhabitantsofLondonSequeltoMaeveAscendant> a <ex:Exdescription1453675806> .
+<ex:description_1453675806> <rdfs:member> ex:InpostapocalypseEnglandthemysteriousagentknownonlyasOberonhelpstocreateanewlifefortheinhabitantsofLondonSequeltoMaeveAscendant .
+<ex:description_1453675806> <ex:hasEx:description_1453675806> ex:InpostapocalypseEnglandthemysteriousagentknownonlyasOberonhelpstocreateanewlifefortheinhabitantsofLondonSequeltoMaeveAscendant .
+<ex:InpostapocalypseEnglandthemysteriousagentknownonlyasOberonhelpstocreateanewlifefortheinhabitantsofLondonSequeltoMaeveAscendant> <rdfs:label> "In post-apocalypse England, the mysterious
+      agent known only as Oberon helps to create a new life
+      for the inhabitants of London. Sequel to Maeve
+      Ascendant." xml:lang="en" .
+<ex:catalog_377927480> <rdfs:member> <ex:bk105> .
+<ex:Book> a owl:Class .
+<ex:bk105> a <ex:Book> .
+<ex:bk105> <rdfs:member> <ex:author_-1591692029> .
+<ex:Author> a owl:Class .
+<ex:author_-1591692029> a <ex:Author> .
+<ex:CoretsEva> a <ex:Exauthor1591692029> .
+<ex:author_-1591692029> <rdfs:member> ex:CoretsEva .
+<ex:author_-1591692029> <ex:hasEx:author_-1591692029> ex:CoretsEva .
+<ex:CoretsEva> <rdfs:label> "Corets, Eva" xml:lang="en" .
+<ex:bk105> <rdfs:member> <ex:title_-1591692029> .
+<ex:Title> a owl:Class .
+<ex:title_-1591692029> a <ex:Title> .
+<ex:TheSunderedGrail> a <ex:Extitle1591692029> .
+<ex:title_-1591692029> <rdfs:member> ex:TheSunderedGrail .
+<ex:title_-1591692029> <ex:hasEx:title_-1591692029> ex:TheSunderedGrail .
+<ex:TheSunderedGrail> <rdfs:label> "The Sundered Grail" xml:lang="en" .
+<ex:bk105> <rdfs:member> <ex:genre_-1591692029> .
+<ex:Genre> a owl:Class .
+<ex:genre_-1591692029> a <ex:Genre> .
+<ex:Fantasy> a <ex:Exgenre1591692029> .
+<ex:genre_-1591692029> <rdfs:member> ex:Fantasy .
+<ex:genre_-1591692029> <ex:hasEx:genre_-1591692029> ex:Fantasy .
+<ex:Fantasy> <rdfs:label> "Fantasy" xml:lang="en" .
+<ex:bk105> <rdfs:member> <ex:price_-1591692029> .
+<ex:Price> a owl:Class .
+<ex:price_-1591692029> a <ex:Price> .
+<ex:595> a <ex:Exprice1591692029> .
+<ex:price_-1591692029> <rdfs:member> ex:595 .
+<ex:price_-1591692029> <ex:hasEx:price_-1591692029> ex:595 .
+<ex:595> <rdfs:label> "5.95" xml:lang="en" .
+<ex:bk105> <rdfs:member> <ex:publish_date_-1591692029> .
+<ex:Publishdate> a owl:Class .
+<ex:publish_date_-1591692029> a <ex:Publishdate> .
+<ex:20010910> a <ex:Expublishdate1591692029> .
+<ex:publish_date_-1591692029> <rdfs:member> ex:20010910 .
+<ex:publish_date_-1591692029> <ex:hasEx:publish_date_-1591692029> ex:20010910 .
+<ex:20010910> <rdfs:label> "2001-09-10" xml:lang="en" .
+<ex:bk105> <rdfs:member> <ex:description_-1591692029> .
+<ex:Description> a owl:Class .
+<ex:description_-1591692029> a <ex:Description> .
+<ex:ThetwodaughtersofMaevehalfsistersbattleoneanotherforcontrolofEnglandSequeltoOberonsLegacy> a <ex:Exdescription1591692029> .
+<ex:description_-1591692029> <rdfs:member> ex:ThetwodaughtersofMaevehalfsistersbattleoneanotherforcontrolofEnglandSequeltoOberonsLegacy .
+<ex:description_-1591692029> <ex:hasEx:description_-1591692029> ex:ThetwodaughtersofMaevehalfsistersbattleoneanotherforcontrolofEnglandSequeltoOberonsLegacy .
+<ex:ThetwodaughtersofMaevehalfsistersbattleoneanotherforcontrolofEnglandSequeltoOberonsLegacy> <rdfs:label> "The two daughters of Maeve, half-sisters,
+      battle one another for control of England. Sequel to
+      Oberon's Legacy." xml:lang="en" .
+<ex:catalog_377927480> <rdfs:member> <ex:bk106> .
+<ex:Book> a owl:Class .
+<ex:bk106> a <ex:Book> .
+<ex:bk106> <rdfs:member> <ex:author_1484725857> .
+<ex:Author> a owl:Class .
+<ex:author_1484725857> a <ex:Author> .
+<ex:RandallCynthia> a <ex:Exauthor1484725857> .
+<ex:author_1484725857> <rdfs:member> ex:RandallCynthia .
+<ex:author_1484725857> <ex:hasEx:author_1484725857> ex:RandallCynthia .
+<ex:RandallCynthia> <rdfs:label> "Randall, Cynthia" xml:lang="en" .
+<ex:bk106> <rdfs:member> <ex:title_1484725857> .
+<ex:Title> a owl:Class .
+<ex:title_1484725857> a <ex:Title> .
+<ex:LoverBirds> a <ex:Extitle1484725857> .
+<ex:title_1484725857> <rdfs:member> ex:LoverBirds .
+<ex:title_1484725857> <ex:hasEx:title_1484725857> ex:LoverBirds .
+<ex:LoverBirds> <rdfs:label> "Lover Birds" xml:lang="en" .
+<ex:bk106> <rdfs:member> <ex:genre_1484725857> .
+<ex:Genre> a owl:Class .
+<ex:genre_1484725857> a <ex:Genre> .
+<ex:Romance> a <ex:Exgenre1484725857> .
+<ex:genre_1484725857> <rdfs:member> ex:Romance .
+<ex:genre_1484725857> <ex:hasEx:genre_1484725857> ex:Romance .
+<ex:Romance> <rdfs:label> "Romance" xml:lang="en" .
+<ex:bk106> <rdfs:member> <ex:price_1484725857> .
+<ex:Price> a owl:Class .
+<ex:price_1484725857> a <ex:Price> .
+<ex:495> a <ex:Exprice1484725857> .
+<ex:price_1484725857> <rdfs:member> ex:495 .
+<ex:price_1484725857> <ex:hasEx:price_1484725857> ex:495 .
+<ex:495> <rdfs:label> "4.95" xml:lang="en" .
+<ex:bk106> <rdfs:member> <ex:publish_date_1484725857> .
+<ex:Publishdate> a owl:Class .
+<ex:publish_date_1484725857> a <ex:Publishdate> .
+<ex:20000902> a <ex:Expublishdate1484725857> .
+<ex:publish_date_1484725857> <rdfs:member> ex:20000902 .
+<ex:publish_date_1484725857> <ex:hasEx:publish_date_1484725857> ex:20000902 .
+<ex:20000902> <rdfs:label> "2000-09-02" xml:lang="en" .
+<ex:bk106> <rdfs:member> <ex:description_1484725857> .
+<ex:Description> a owl:Class .
+<ex:description_1484725857> a <ex:Description> .
+<ex:WhenCarlameetsPaulatanornithologyconferencetempersflyasfeathersgetruffled> a <ex:Exdescription1484725857> .
+<ex:description_1484725857> <rdfs:member> ex:WhenCarlameetsPaulatanornithologyconferencetempersflyasfeathersgetruffled .
+<ex:description_1484725857> <ex:hasEx:description_1484725857> ex:WhenCarlameetsPaulatanornithologyconferencetempersflyasfeathersgetruffled .
+<ex:WhenCarlameetsPaulatanornithologyconferencetempersflyasfeathersgetruffled> <rdfs:label> "When Carla meets Paul at an ornithology
+      conference, tempers fly as feathers get ruffled." xml:lang="en" .
+<ex:catalog_377927480> <rdfs:member> <ex:bk107> .
+<ex:Book> a owl:Class .
+<ex:bk107> a <ex:Book> .
+<ex:bk107> <rdfs:member> <ex:author_93903675> .
+<ex:Author> a owl:Class .
+<ex:author_93903675> a <ex:Author> .
+<ex:ThurmanPaula> a <ex:Exauthor93903675> .
+<ex:author_93903675> <rdfs:member> ex:ThurmanPaula .
+<ex:author_93903675> <ex:hasEx:author_93903675> ex:ThurmanPaula .
+<ex:ThurmanPaula> <rdfs:label> "Thurman, Paula" xml:lang="en" .
+<ex:bk107> <rdfs:member> <ex:title_93903675> .
+<ex:Title> a owl:Class .
+<ex:title_93903675> a <ex:Title> .
+<ex:SplishSplash> a <ex:Extitle93903675> .
+<ex:title_93903675> <rdfs:member> ex:SplishSplash .
+<ex:title_93903675> <ex:hasEx:title_93903675> ex:SplishSplash .
+<ex:SplishSplash> <rdfs:label> "Splish Splash" xml:lang="en" .
+<ex:bk107> <rdfs:member> <ex:genre_93903675> .
+<ex:Genre> a owl:Class .
+<ex:genre_93903675> a <ex:Genre> .
+<ex:Romance> a <ex:Exgenre93903675> .
+<ex:genre_93903675> <rdfs:member> ex:Romance .
+<ex:genre_93903675> <ex:hasEx:genre_93903675> ex:Romance .
+<ex:Romance> <rdfs:label> "Romance" xml:lang="en" .
+<ex:bk107> <rdfs:member> <ex:price_93903675> .
+<ex:Price> a owl:Class .
+<ex:price_93903675> a <ex:Price> .
+<ex:495> a <ex:Exprice93903675> .
+<ex:price_93903675> <rdfs:member> ex:495 .
+<ex:price_93903675> <ex:hasEx:price_93903675> ex:495 .
+<ex:495> <rdfs:label> "4.95" xml:lang="en" .
+<ex:bk107> <rdfs:member> <ex:publish_date_93903675> .
+<ex:Publishdate> a owl:Class .
+<ex:publish_date_93903675> a <ex:Publishdate> .
+<ex:20001102> a <ex:Expublishdate93903675> .
+<ex:publish_date_93903675> <rdfs:member> ex:20001102 .
+<ex:publish_date_93903675> <ex:hasEx:publish_date_93903675> ex:20001102 .
+<ex:20001102> <rdfs:label> "2000-11-02" xml:lang="en" .
+<ex:bk107> <rdfs:member> <ex:description_93903675> .
+<ex:Description> a owl:Class .
+<ex:description_93903675> a <ex:Description> .
+<ex:Adeepseadiverfindstruelovetwentythousandleaguesbeneaththesea> a <ex:Exdescription93903675> .
+<ex:description_93903675> <rdfs:member> ex:Adeepseadiverfindstruelovetwentythousandleaguesbeneaththesea .
+<ex:description_93903675> <ex:hasEx:description_93903675> ex:Adeepseadiverfindstruelovetwentythousandleaguesbeneaththesea .
+<ex:Adeepseadiverfindstruelovetwentythousandleaguesbeneaththesea> <rdfs:label> "A deep sea diver finds true love twenty
+      thousand leagues beneath the sea." xml:lang="en" .
+<ex:catalog_377927480> <rdfs:member> <ex:bk108> .
+<ex:Book> a owl:Class .
+<ex:bk108> a <ex:Book> .
+<ex:bk108> <rdfs:member> <ex:author_2013914835> .
+<ex:Author> a owl:Class .
+<ex:author_2013914835> a <ex:Author> .
+<ex:KnorrStefan> a <ex:Exauthor2013914835> .
+<ex:author_2013914835> <rdfs:member> ex:KnorrStefan .
+<ex:author_2013914835> <ex:hasEx:author_2013914835> ex:KnorrStefan .
+<ex:KnorrStefan> <rdfs:label> "Knorr, Stefan" xml:lang="en" .
+<ex:bk108> <rdfs:member> <ex:title_2013914835> .
+<ex:Title> a owl:Class .
+<ex:title_2013914835> a <ex:Title> .
+<ex:CreepyCrawlies> a <ex:Extitle2013914835> .
+<ex:title_2013914835> <rdfs:member> ex:CreepyCrawlies .
+<ex:title_2013914835> <ex:hasEx:title_2013914835> ex:CreepyCrawlies .
+<ex:CreepyCrawlies> <rdfs:label> "Creepy Crawlies" xml:lang="en" .
+<ex:bk108> <rdfs:member> <ex:genre_2013914835> .
+<ex:Genre> a owl:Class .
+<ex:genre_2013914835> a <ex:Genre> .
+<ex:Horror> a <ex:Exgenre2013914835> .
+<ex:genre_2013914835> <rdfs:member> ex:Horror .
+<ex:genre_2013914835> <ex:hasEx:genre_2013914835> ex:Horror .
+<ex:Horror> <rdfs:label> "Horror" xml:lang="en" .
+<ex:bk108> <rdfs:member> <ex:price_2013914835> .
+<ex:Price> a owl:Class .
+<ex:price_2013914835> a <ex:Price> .
+<ex:495> a <ex:Exprice2013914835> .
+<ex:price_2013914835> <rdfs:member> ex:495 .
+<ex:price_2013914835> <ex:hasEx:price_2013914835> ex:495 .
+<ex:495> <rdfs:label> "4.95" xml:lang="en" .
+<ex:bk108> <rdfs:member> <ex:publish_date_2013914835> .
+<ex:Publishdate> a owl:Class .
+<ex:publish_date_2013914835> a <ex:Publishdate> .
+<ex:20001206> a <ex:Expublishdate2013914835> .
+<ex:publish_date_2013914835> <rdfs:member> ex:20001206 .
+<ex:publish_date_2013914835> <ex:hasEx:publish_date_2013914835> ex:20001206 .
+<ex:20001206> <rdfs:label> "2000-12-06" xml:lang="en" .
+<ex:bk108> <rdfs:member> <ex:description_2013914835> .
+<ex:Description> a owl:Class .
+<ex:description_2013914835> a <ex:Description> .
+<ex:Ananthologyofhorrorstoriesaboutroachescentipedesscorpionsandotherinsects> a <ex:Exdescription2013914835> .
+<ex:description_2013914835> <rdfs:member> ex:Ananthologyofhorrorstoriesaboutroachescentipedesscorpionsandotherinsects .
+<ex:description_2013914835> <ex:hasEx:description_2013914835> ex:Ananthologyofhorrorstoriesaboutroachescentipedesscorpionsandotherinsects .
+<ex:Ananthologyofhorrorstoriesaboutroachescentipedesscorpionsandotherinsects> <rdfs:label> "An anthology of horror stories about roaches,
+      centipedes, scorpions and other insects." xml:lang="en" .
+<ex:catalog_377927480> <rdfs:member> <ex:bk109> .
+<ex:Book> a owl:Class .
+<ex:bk109> a <ex:Book> .
+<ex:bk109> <rdfs:member> <ex:author_-1486048306> .
+<ex:Author> a owl:Class .
+<ex:author_-1486048306> a <ex:Author> .
+<ex:KressPeter> a <ex:Exauthor1486048306> .
+<ex:author_-1486048306> <rdfs:member> ex:KressPeter .
+<ex:author_-1486048306> <ex:hasEx:author_-1486048306> ex:KressPeter .
+<ex:KressPeter> <rdfs:label> "Kress, Peter" xml:lang="en" .
+<ex:bk109> <rdfs:member> <ex:title_-1486048306> .
+<ex:Title> a owl:Class .
+<ex:title_-1486048306> a <ex:Title> .
+<ex:ParadoxLost> a <ex:Extitle1486048306> .
+<ex:title_-1486048306> <rdfs:member> ex:ParadoxLost .
+<ex:title_-1486048306> <ex:hasEx:title_-1486048306> ex:ParadoxLost .
+<ex:ParadoxLost> <rdfs:label> "Paradox Lost" xml:lang="en" .
+<ex:bk109> <rdfs:member> <ex:genre_-1486048306> .
+<ex:Genre> a owl:Class .
+<ex:genre_-1486048306> a <ex:Genre> .
+<ex:ScienceFiction> a <ex:Exgenre1486048306> .
+<ex:genre_-1486048306> <rdfs:member> ex:ScienceFiction .
+<ex:genre_-1486048306> <ex:hasEx:genre_-1486048306> ex:ScienceFiction .
+<ex:ScienceFiction> <rdfs:label> "Science Fiction" xml:lang="en" .
+<ex:bk109> <rdfs:member> <ex:price_-1486048306> .
+<ex:Price> a owl:Class .
+<ex:price_-1486048306> a <ex:Price> .
+<ex:695> a <ex:Exprice1486048306> .
+<ex:price_-1486048306> <rdfs:member> ex:695 .
+<ex:price_-1486048306> <ex:hasEx:price_-1486048306> ex:695 .
+<ex:695> <rdfs:label> "6.95" xml:lang="en" .
+<ex:bk109> <rdfs:member> <ex:publish_date_-1486048306> .
+<ex:Publishdate> a owl:Class .
+<ex:publish_date_-1486048306> a <ex:Publishdate> .
+<ex:20001102> a <ex:Expublishdate1486048306> .
+<ex:publish_date_-1486048306> <rdfs:member> ex:20001102 .
+<ex:publish_date_-1486048306> <ex:hasEx:publish_date_-1486048306> ex:20001102 .
+<ex:20001102> <rdfs:label> "2000-11-02" xml:lang="en" .
+<ex:bk109> <rdfs:member> <ex:description_-1486048306> .
+<ex:Description> a owl:Class .
+<ex:description_-1486048306> a <ex:Description> .
+<ex:AfteraninadvertanttripthroughaHeisenbergUncertaintyDeviceJamesSalwaydiscoverstheproblemsofbeingquantum> a <ex:Exdescription1486048306> .
+<ex:description_-1486048306> <rdfs:member> ex:AfteraninadvertanttripthroughaHeisenbergUncertaintyDeviceJamesSalwaydiscoverstheproblemsofbeingquantum .
+<ex:description_-1486048306> <ex:hasEx:description_-1486048306> ex:AfteraninadvertanttripthroughaHeisenbergUncertaintyDeviceJamesSalwaydiscoverstheproblemsofbeingquantum .
+<ex:AfteraninadvertanttripthroughaHeisenbergUncertaintyDeviceJamesSalwaydiscoverstheproblemsofbeingquantum> <rdfs:label> "After an inadvertant trip through a Heisenberg
+      Uncertainty Device, James Salway discovers the problems
+      of being quantum." xml:lang="en" .
+<ex:catalog_377927480> <rdfs:member> <ex:bk110> .
+<ex:Book> a owl:Class .
+<ex:bk110> a <ex:Book> .
+<ex:bk110> <rdfs:member> <ex:author_1130853177> .
+<ex:Author> a owl:Class .
+<ex:author_1130853177> a <ex:Author> .
+<ex:OBrienTim> a <ex:Exauthor1130853177> .
+<ex:author_1130853177> <rdfs:member> ex:OBrienTim .
+<ex:author_1130853177> <ex:hasEx:author_1130853177> ex:OBrienTim .
+<ex:OBrienTim> <rdfs:label> "O'Brien, Tim" xml:lang="en" .
+<ex:bk110> <rdfs:member> <ex:title_1130853177> .
+<ex:Title> a owl:Class .
+<ex:title_1130853177> a <ex:Title> .
+<ex:MicrosoftNETTheProgrammingBible> a <ex:Extitle1130853177> .
+<ex:title_1130853177> <rdfs:member> ex:MicrosoftNETTheProgrammingBible .
+<ex:title_1130853177> <ex:hasEx:title_1130853177> ex:MicrosoftNETTheProgrammingBible .
+<ex:MicrosoftNETTheProgrammingBible> <rdfs:label> "Microsoft .NET: The Programming Bible" xml:lang="en" .
+<ex:bk110> <rdfs:member> <ex:genre_1130853177> .
+<ex:Genre> a owl:Class .
+<ex:genre_1130853177> a <ex:Genre> .
+<ex:Computer> a <ex:Exgenre1130853177> .
+<ex:genre_1130853177> <rdfs:member> ex:Computer .
+<ex:genre_1130853177> <ex:hasEx:genre_1130853177> ex:Computer .
+<ex:Computer> <rdfs:label> "Computer" xml:lang="en" .
+<ex:bk110> <rdfs:member> <ex:price_1130853177> .
+<ex:Price> a owl:Class .
+<ex:price_1130853177> a <ex:Price> .
+<ex:3695> a <ex:Exprice1130853177> .
+<ex:price_1130853177> <rdfs:member> ex:3695 .
+<ex:price_1130853177> <ex:hasEx:price_1130853177> ex:3695 .
+<ex:3695> <rdfs:label> "36.95" xml:lang="en" .
+<ex:bk110> <rdfs:member> <ex:publish_date_1130853177> .
+<ex:Publishdate> a owl:Class .
+<ex:publish_date_1130853177> a <ex:Publishdate> .
+<ex:20001209> a <ex:Expublishdate1130853177> .
+<ex:publish_date_1130853177> <rdfs:member> ex:20001209 .
+<ex:publish_date_1130853177> <ex:hasEx:publish_date_1130853177> ex:20001209 .
+<ex:20001209> <rdfs:label> "2000-12-09" xml:lang="en" .
+<ex:bk110> <rdfs:member> <ex:description_1130853177> .
+<ex:Description> a owl:Class .
+<ex:description_1130853177> a <ex:Description> .
+<ex:MicrosoftsNETinitiativeisexploredindetailinthisdeepprogrammersreference> a <ex:Exdescription1130853177> .
+<ex:description_1130853177> <rdfs:member> ex:MicrosoftsNETinitiativeisexploredindetailinthisdeepprogrammersreference .
+<ex:description_1130853177> <ex:hasEx:description_1130853177> ex:MicrosoftsNETinitiativeisexploredindetailinthisdeepprogrammersreference .
+<ex:MicrosoftsNETinitiativeisexploredindetailinthisdeepprogrammersreference> <rdfs:label> "Microsoft's .NET initiative is explored in
+      detail in this deep programmer's reference." xml:lang="en" .
+<ex:catalog_377927480> <rdfs:member> <ex:bk111> .
+<ex:Book> a owl:Class .
+<ex:bk111> a <ex:Book> .
+<ex:bk111> <rdfs:member> <ex:author_-828622397> .
+<ex:Author> a owl:Class .
+<ex:author_-828622397> a <ex:Author> .
+<ex:OBrienTim> a <ex:Exauthor828622397> .
+<ex:author_-828622397> <rdfs:member> ex:OBrienTim .
+<ex:author_-828622397> <ex:hasEx:author_-828622397> ex:OBrienTim .
+<ex:OBrienTim> <rdfs:label> "O'Brien, Tim" xml:lang="en" .
+<ex:bk111> <rdfs:member> <ex:title_-828622397> .
+<ex:Title> a owl:Class .
+<ex:title_-828622397> a <ex:Title> .
+<ex:MSXML3AComprehensiveGuide> a <ex:Extitle828622397> .
+<ex:title_-828622397> <rdfs:member> ex:MSXML3AComprehensiveGuide .
+<ex:title_-828622397> <ex:hasEx:title_-828622397> ex:MSXML3AComprehensiveGuide .
+<ex:MSXML3AComprehensiveGuide> <rdfs:label> "MSXML3: A Comprehensive Guide" xml:lang="en" .
+<ex:bk111> <rdfs:member> <ex:genre_-828622397> .
+<ex:Genre> a owl:Class .
+<ex:genre_-828622397> a <ex:Genre> .
+<ex:Computer> a <ex:Exgenre828622397> .
+<ex:genre_-828622397> <rdfs:member> ex:Computer .
+<ex:genre_-828622397> <ex:hasEx:genre_-828622397> ex:Computer .
+<ex:Computer> <rdfs:label> "Computer" xml:lang="en" .
+<ex:bk111> <rdfs:member> <ex:price_-828622397> .
+<ex:Price> a owl:Class .
+<ex:price_-828622397> a <ex:Price> .
+<ex:3695> a <ex:Exprice828622397> .
+<ex:price_-828622397> <rdfs:member> ex:3695 .
+<ex:price_-828622397> <ex:hasEx:price_-828622397> ex:3695 .
+<ex:3695> <rdfs:label> "36.95" xml:lang="en" .
+<ex:bk111> <rdfs:member> <ex:publish_date_-828622397> .
+<ex:Publishdate> a owl:Class .
+<ex:publish_date_-828622397> a <ex:Publishdate> .
+<ex:20001201> a <ex:Expublishdate828622397> .
+<ex:publish_date_-828622397> <rdfs:member> ex:20001201 .
+<ex:publish_date_-828622397> <ex:hasEx:publish_date_-828622397> ex:20001201 .
+<ex:20001201> <rdfs:label> "2000-12-01" xml:lang="en" .
+<ex:bk111> <rdfs:member> <ex:description_-828622397> .
+<ex:Description> a owl:Class .
+<ex:description_-828622397> a <ex:Description> .
+<ex:TheMicrosoftMSXML3parseriscoveredindetailwithattentiontoXMLDOMinterfacesXSLTprocessingSAXandmore> a <ex:Exdescription828622397> .
+<ex:description_-828622397> <rdfs:member> ex:TheMicrosoftMSXML3parseriscoveredindetailwithattentiontoXMLDOMinterfacesXSLTprocessingSAXandmore .
+<ex:description_-828622397> <ex:hasEx:description_-828622397> ex:TheMicrosoftMSXML3parseriscoveredindetailwithattentiontoXMLDOMinterfacesXSLTprocessingSAXandmore .
+<ex:TheMicrosoftMSXML3parseriscoveredindetailwithattentiontoXMLDOMinterfacesXSLTprocessingSAXandmore> <rdfs:label> "The Microsoft MSXML3 parser is covered in
+      detail, with attention to XML DOM interfaces, XSLT processing,
+      SAX and more." xml:lang="en" .
+<ex:catalog_377927480> <rdfs:member> <ex:bk112> .
+<ex:Book> a owl:Class .
+<ex:bk112> a <ex:Book> .
+<ex:bk112> <rdfs:member> <ex:author_-725650641> .
+<ex:Author> a owl:Class .
+<ex:author_-725650641> a <ex:Author> .
+<ex:GalosMike> a <ex:Exauthor725650641> .
+<ex:author_-725650641> <rdfs:member> ex:GalosMike .
+<ex:author_-725650641> <ex:hasEx:author_-725650641> ex:GalosMike .
+<ex:GalosMike> <rdfs:label> "Galos, Mike" xml:lang="en" .
+<ex:bk112> <rdfs:member> <ex:title_-725650641> .
+<ex:Title> a owl:Class .
+<ex:title_-725650641> a <ex:Title> .
+<ex:VisualStudio7AComprehensiveGuide> a <ex:Extitle725650641> .
+<ex:title_-725650641> <rdfs:member> ex:VisualStudio7AComprehensiveGuide .
+<ex:title_-725650641> <ex:hasEx:title_-725650641> ex:VisualStudio7AComprehensiveGuide .
+<ex:VisualStudio7AComprehensiveGuide> <rdfs:label> "Visual Studio 7: A Comprehensive Guide" xml:lang="en" .
+<ex:bk112> <rdfs:member> <ex:genre_-725650641> .
+<ex:Genre> a owl:Class .
+<ex:genre_-725650641> a <ex:Genre> .
+<ex:Computer> a <ex:Exgenre725650641> .
+<ex:genre_-725650641> <rdfs:member> ex:Computer .
+<ex:genre_-725650641> <ex:hasEx:genre_-725650641> ex:Computer .
+<ex:Computer> <rdfs:label> "Computer" xml:lang="en" .
+<ex:bk112> <rdfs:member> <ex:price_-725650641> .
+<ex:Price> a owl:Class .
+<ex:price_-725650641> a <ex:Price> .
+<ex:4995> a <ex:Exprice725650641> .
+<ex:price_-725650641> <rdfs:member> ex:4995 .
+<ex:price_-725650641> <ex:hasEx:price_-725650641> ex:4995 .
+<ex:4995> <rdfs:label> "49.95" xml:lang="en" .
+<ex:bk112> <rdfs:member> <ex:publish_date_-725650641> .
+<ex:Publishdate> a owl:Class .
+<ex:publish_date_-725650641> a <ex:Publishdate> .
+<ex:20010416> a <ex:Expublishdate725650641> .
+<ex:publish_date_-725650641> <rdfs:member> ex:20010416 .
+<ex:publish_date_-725650641> <ex:hasEx:publish_date_-725650641> ex:20010416 .
+<ex:20010416> <rdfs:label> "2001-04-16" xml:lang="en" .
+<ex:bk112> <rdfs:member> <ex:description_-725650641> .
+<ex:Description> a owl:Class .
+<ex:description_-725650641> a <ex:Description> .
+<ex:MicrosoftVisualStudio7isexploredindepthlookingathowVisualBasicVisualCCandASPareintegratedintoacomprehensivedevelopmentenvironment> a <ex:Exdescription725650641> .
+<ex:description_-725650641> <rdfs:member> ex:MicrosoftVisualStudio7isexploredindepthlookingathowVisualBasicVisualCCandASPareintegratedintoacomprehensivedevelopmentenvironment .
+<ex:description_-725650641> <ex:hasEx:description_-725650641> ex:MicrosoftVisualStudio7isexploredindepthlookingathowVisualBasicVisualCCandASPareintegratedintoacomprehensivedevelopmentenvironment .
+<ex:MicrosoftVisualStudio7isexploredindepthlookingathowVisualBasicVisualCCandASPareintegratedintoacomprehensivedevelopmentenvironment> <rdfs:label> "Microsoft Visual Studio 7 is explored in depth,
+      looking at how Visual Basic, Visual C++, C#, and ASP+ are
+      integrated into a comprehensive development
+      environment." xml:lang="en" .
+</rdf:RDF>label> "Microsoft Visual Studio 7 is explored in depth,
+      looking at how Visual Basic, Visual C++, C#, and ASP+ are
+      integrated into a comprehensive development
+      environment." xml:lang="en" .
+</rdf:RDF>AVAILABILITY</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
   </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/ns/Child">
+  <rdf:Description rdf:about="/PLANT">
     <rdf:type rdf:resource="https://fs2.io/Element"/>
-    <fs2:qname>ex:Child</fs2:qname>
-    <fs2:local>Child</fs2:local>
-    <fs2:prefix>ex</fs2:prefix>
-    <fs2:namespaceUri>http://example.org/ns</fs2:namespaceUri>
+    <fs2:qname>PLANT</fs2:qname>
+    <fs2:local>PLANT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
   </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/meta/Nested">
+  <rdf:Description rdf:about="/COMMON">
     <rdf:type rdf:resource="https://fs2.io/Element"/>
-    <fs2:qname>meta:Nested</fs2:qname>
-    <fs2:local>Nested</fs2:local>
-    <fs2:prefix>meta</fs2:prefix>
-    <fs2:namespaceUri>http://example.org/meta</fs2:namespaceUri>
+    <fs2:qname>COMMON</fs2:qname>
+    <fs2:local>COMMON</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/BOTANICAL">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>BOTANICAL</fs2:qname>
+    <fs2:local>BOTANICAL</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/ZONE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ZONE</fs2:qname>
+    <fs2:local>ZONE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/LIGHT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>LIGHT</fs2:qname>
+    <fs2:local>LIGHT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PRICE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PRICE</fs2:qname>
+    <fs2:local>PRICE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/AVAILABILITY">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>AVAILABILITY</fs2:qname>
+    <fs2:local>AVAILABILITY</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PLANT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PLANT</fs2:qname>
+    <fs2:local>PLANT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/COMMON">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>COMMON</fs2:qname>
+    <fs2:local>COMMON</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/BOTANICAL">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>BOTANICAL</fs2:qname>
+    <fs2:local>BOTANICAL</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/ZONE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ZONE</fs2:qname>
+    <fs2:local>ZONE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/LIGHT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>LIGHT</fs2:qname>
+    <fs2:local>LIGHT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PRICE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PRICE</fs2:qname>
+    <fs2:local>PRICE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/AVAILABILITY">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>AVAILABILITY</fs2:qname>
+    <fs2:local>AVAILABILITY</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PLANT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PLANT</fs2:qname>
+    <fs2:local>PLANT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/COMMON">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>COMMON</fs2:qname>
+    <fs2:local>COMMON</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/BOTANICAL">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>BOTANICAL</fs2:qname>
+    <fs2:local>BOTANICAL</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/ZONE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ZONE</fs2:qname>
+    <fs2:local>ZONE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/LIGHT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>LIGHT</fs2:qname>
+    <fs2:local>LIGHT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PRICE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PRICE</fs2:qname>
+    <fs2:local>PRICE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/AVAILABILITY">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>AVAILABILITY</fs2:qname>
+    <fs2:local>AVAILABILITY</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PLANT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PLANT</fs2:qname>
+    <fs2:local>PLANT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/COMMON">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>COMMON</fs2:qname>
+    <fs2:local>COMMON</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/BOTANICAL">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>BOTANICAL</fs2:qname>
+    <fs2:local>BOTANICAL</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/ZONE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ZONE</fs2:qname>
+    <fs2:local>ZONE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/LIGHT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>LIGHT</fs2:qname>
+    <fs2:local>LIGHT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PRICE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PRICE</fs2:qname>
+    <fs2:local>PRICE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/AVAILABILITY">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>AVAILABILITY</fs2:qname>
+    <fs2:local>AVAILABILITY</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PLANT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PLANT</fs2:qname>
+    <fs2:local>PLANT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/COMMON">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>COMMON</fs2:qname>
+    <fs2:local>COMMON</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/BOTANICAL">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>BOTANICAL</fs2:qname>
+    <fs2:local>BOTANICAL</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/ZONE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ZONE</fs2:qname>
+    <fs2:local>ZONE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/LIGHT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>LIGHT</fs2:qname>
+    <fs2:local>LIGHT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PRICE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PRICE</fs2:qname>
+    <fs2:local>PRICE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/AVAILABILITY">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>AVAILABILITY</fs2:qname>
+    <fs2:local>AVAILABILITY</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PLANT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PLANT</fs2:qname>
+    <fs2:local>PLANT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/COMMON">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>COMMON</fs2:qname>
+    <fs2:local>COMMON</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/BOTANICAL">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>BOTANICAL</fs2:qname>
+    <fs2:local>BOTANICAL</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/ZONE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ZONE</fs2:qname>
+    <fs2:local>ZONE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/LIGHT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>LIGHT</fs2:qname>
+    <fs2:local>LIGHT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PRICE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PRICE</fs2:qname>
+    <fs2:local>PRICE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/AVAILABILITY">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>AVAILABILITY</fs2:qname>
+    <fs2:local>AVAILABILITY</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PLANT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PLANT</fs2:qname>
+    <fs2:local>PLANT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/COMMON">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>COMMON</fs2:qname>
+    <fs2:local>COMMON</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/BOTANICAL">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>BOTANICAL</fs2:qname>
+    <fs2:local>BOTANICAL</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/ZONE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ZONE</fs2:qname>
+    <fs2:local>ZONE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/LIGHT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>LIGHT</fs2:qname>
+    <fs2:local>LIGHT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PRICE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PRICE</fs2:qname>
+    <fs2:local>PRICE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/AVAILABILITY">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>AVAILABILITY</fs2:qname>
+    <fs2:local>AVAILABILITY</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PLANT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PLANT</fs2:qname>
+    <fs2:local>PLANT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/COMMON">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>COMMON</fs2:qname>
+    <fs2:local>COMMON</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/BOTANICAL">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>BOTANICAL</fs2:qname>
+    <fs2:local>BOTANICAL</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/ZONE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ZONE</fs2:qname>
+    <fs2:local>ZONE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/LIGHT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>LIGHT</fs2:qname>
+    <fs2:local>LIGHT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PRICE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PRICE</fs2:qname>
+    <fs2:local>PRICE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/AVAILABILITY">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>AVAILABILITY</fs2:qname>
+    <fs2:local>AVAILABILITY</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PLANT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PLANT</fs2:qname>
+    <fs2:local>PLANT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/COMMON">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>COMMON</fs2:qname>
+    <fs2:local>COMMON</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/BOTANICAL">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>BOTANICAL</fs2:qname>
+    <fs2:local>BOTANICAL</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/ZONE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ZONE</fs2:qname>
+    <fs2:local>ZONE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/LIGHT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>LIGHT</fs2:qname>
+    <fs2:local>LIGHT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PRICE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PRICE</fs2:qname>
+    <fs2:local>PRICE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/AVAILABILITY">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>AVAILABILITY</fs2:qname>
+    <fs2:local>AVAILABILITY</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PLANT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PLANT</fs2:qname>
+    <fs2:local>PLANT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/COMMON">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>COMMON</fs2:qname>
+    <fs2:local>COMMON</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/BOTANICAL">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>BOTANICAL</fs2:qname>
+    <fs2:local>BOTANICAL</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/ZONE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ZONE</fs2:qname>
+    <fs2:local>ZONE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/LIGHT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>LIGHT</fs2:qname>
+    <fs2:local>LIGHT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PRICE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PRICE</fs2:qname>
+    <fs2:local>PRICE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/AVAILABILITY">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>AVAILABILITY</fs2:qname>
+    <fs2:local>AVAILABILITY</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PLANT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PLANT</fs2:qname>
+    <fs2:local>PLANT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/COMMON">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>COMMON</fs2:qname>
+    <fs2:local>COMMON</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/BOTANICAL">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>BOTANICAL</fs2:qname>
+    <fs2:local>BOTANICAL</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/ZONE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ZONE</fs2:qname>
+    <fs2:local>ZONE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/LIGHT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>LIGHT</fs2:qname>
+    <fs2:local>LIGHT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PRICE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PRICE</fs2:qname>
+    <fs2:local>PRICE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/AVAILABILITY">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>AVAILABILITY</fs2:qname>
+    <fs2:local>AVAILABILITY</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PLANT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PLANT</fs2:qname>
+    <fs2:local>PLANT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/COMMON">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>COMMON</fs2:qname>
+    <fs2:local>COMMON</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/BOTANICAL">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>BOTANICAL</fs2:qname>
+    <fs2:local>BOTANICAL</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/ZONE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ZONE</fs2:qname>
+    <fs2:local>ZONE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/LIGHT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>LIGHT</fs2:qname>
+    <fs2:local>LIGHT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PRICE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PRICE</fs2:qname>
+    <fs2:local>PRICE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/AVAILABILITY">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>AVAILABILITY</fs2:qname>
+    <fs2:local>AVAILABILITY</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PLANT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PLANT</fs2:qname>
+    <fs2:local>PLANT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/COMMON">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>COMMON</fs2:qname>
+    <fs2:local>COMMON</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/BOTANICAL">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>BOTANICAL</fs2:qname>
+    <fs2:local>BOTANICAL</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/ZONE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ZONE</fs2:qname>
+    <fs2:local>ZONE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/LIGHT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>LIGHT</fs2:qname>
+    <fs2:local>LIGHT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PRICE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PRICE</fs2:qname>
+    <fs2:local>PRICE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/AVAILABILITY">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>AVAILABILITY</fs2:qname>
+    <fs2:local>AVAILABILITY</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PLANT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PLANT</fs2:qname>
+    <fs2:local>PLANT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/COMMON">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>COMMON</fs2:qname>
+    <fs2:local>COMMON</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/BOTANICAL">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>BOTANICAL</fs2:qname>
+    <fs2:local>BOTANICAL</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/ZONE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ZONE</fs2:qname>
+    <fs2:local>ZONE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/LIGHT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>LIGHT</fs2:qname>
+    <fs2:local>LIGHT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PRICE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PRICE</fs2:qname>
+    <fs2:local>PRICE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/AVAILABILITY">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>AVAILABILITY</fs2:qname>
+    <fs2:local>AVAILABILITY</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PLANT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PLANT</fs2:qname>
+    <fs2:local>PLANT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/COMMON">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>COMMON</fs2:qname>
+    <fs2:local>COMMON</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/BOTANICAL">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>BOTANICAL</fs2:qname>
+    <fs2:local>BOTANICAL</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/ZONE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ZONE</fs2:qname>
+    <fs2:local>ZONE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/LIGHT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>LIGHT</fs2:qname>
+    <fs2:local>LIGHT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PRICE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PRICE</fs2:qname>
+    <fs2:local>PRICE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/AVAILABILITY">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>AVAILABILITY</fs2:qname>
+    <fs2:local>AVAILABILITY</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PLANT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PLANT</fs2:qname>
+    <fs2:local>PLANT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/COMMON">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>COMMON</fs2:qname>
+    <fs2:local>COMMON</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/BOTANICAL">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>BOTANICAL</fs2:qname>
+    <fs2:local>BOTANICAL</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/ZONE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ZONE</fs2:qname>
+    <fs2:local>ZONE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/LIGHT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>LIGHT</fs2:qname>
+    <fs2:local>LIGHT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PRICE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PRICE</fs2:qname>
+    <fs2:local>PRICE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/AVAILABILITY">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>AVAILABILITY</fs2:qname>
+    <fs2:local>AVAILABILITY</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PLANT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PLANT</fs2:qname>
+    <fs2:local>PLANT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/COMMON">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>COMMON</fs2:qname>
+    <fs2:local>COMMON</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/BOTANICAL">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>BOTANICAL</fs2:qname>
+    <fs2:local>BOTANICAL</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/ZONE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ZONE</fs2:qname>
+    <fs2:local>ZONE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/LIGHT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>LIGHT</fs2:qname>
+    <fs2:local>LIGHT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PRICE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PRICE</fs2:qname>
+    <fs2:local>PRICE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/AVAILABILITY">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>AVAILABILITY</fs2:qname>
+    <fs2:local>AVAILABILITY</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PLANT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PLANT</fs2:qname>
+    <fs2:local>PLANT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/COMMON">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>COMMON</fs2:qname>
+    <fs2:local>COMMON</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/BOTANICAL">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>BOTANICAL</fs2:qname>
+    <fs2:local>BOTANICAL</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/ZONE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ZONE</fs2:qname>
+    <fs2:local>ZONE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/LIGHT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>LIGHT</fs2:qname>
+    <fs2:local>LIGHT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PRICE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PRICE</fs2:qname>
+    <fs2:local>PRICE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/AVAILABILITY">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>AVAILABILITY</fs2:qname>
+    <fs2:local>AVAILABILITY</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PLANT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PLANT</fs2:qname>
+    <fs2:local>PLANT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/COMMON">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>COMMON</fs2:qname>
+    <fs2:local>COMMON</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/BOTANICAL">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>BOTANICAL</fs2:qname>
+    <fs2:local>BOTANICAL</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/ZONE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ZONE</fs2:qname>
+    <fs2:local>ZONE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/LIGHT">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>LIGHT</fs2:qname>
+    <fs2:local>LIGHT</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/PRICE">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>PRICE</fs2:qname>
+    <fs2:local>PRICE</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="/AVAILABILITY">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>AVAILABILITY</fs2:qname>
+    <fs2:local>AVAILABILITY</fs2:local>
+    <fs2:prefix></fs2:prefix>
+    <fs2:namespaceUri></fs2:namespaceUri>
   </rdf:Description>
 </rdf:RDF>

@@ -88,26 +88,26 @@ object XmlToRdf extends IOApp.Simple {
 
         Stream.emits(parentBlock.toList :+ subjectBlock)
 
-        case XmlString(text, _) if text.trim.nonEmpty =>
-          stack.headOption match {
-            case Some((subj, tag)) =>
-              val valueIRI = createIndividualIRI(tag, text.trim)
-              val classIRI = createClassIRI(tag)
-              val hasProp  = createHasProperty(tag)
+      case XmlString(text, _) if text.trim.nonEmpty =>
+        stack.headOption match {
+          case Some((subj, tag)) =>
+            val valueIRI = createIndividualIRI(tag, text.trim)
+            val classIRI = createClassIRI(tag)
+            val hasProp  = createHasProperty(tag)
 
-              val parentBlock =
-                s"<rdf:Description rdf:about=\"$subj\">\n  <rdfs:member rdf:resource=\"$valueIRI\"/>\n  <$hasProp rdf:resource=\"$valueIRI\"/>\n</rdf:Description>"
+            val parentBlock =
+              s"<rdf:Description rdf:about=\"$subj\">\n  <rdfs:member rdf:resource=\"$valueIRI\"/>\n  <$hasProp rdf:resource=\"$valueIRI\"/>\n</rdf:Description>"
 
-              val valueBlock =
-                s"<rdf:Description rdf:about=\"$valueIRI\">\n  <rdf:type rdf:resource=\"$classIRI\"/>\n  <rdfs:label xml:lang=\"${lang.getOrElse("en")}\">${escapeXml(text.trim)}</rdfs:label>\n</rdf:Description>"
+            val valueBlock =
+              s"<rdf:Description rdf:about=\"$valueIRI\">\n  <rdf:type rdf:resource=\"$classIRI\"/>\n  <rdfs:label xml:lang=\"${lang.getOrElse("en")}\">${escapeXml(text.trim)}</rdfs:label>\n</rdf:Description>"
 
-              Stream.emit(parentBlock) ++ Stream.emit(valueBlock)
-            case None => Stream.empty
-          }
+            Stream.emit(parentBlock) ++ Stream.emit(valueBlock)
+          case None => Stream.empty
+        }
 
-        case EndTag(_) =>
-          stack = stack.drop(1)
-          Stream.empty
+      case EndTag(_) =>
+        stack = stack.drop(1)
+        Stream.empty
 
       case _ => Stream.empty
     }

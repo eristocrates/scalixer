@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+          <rdf:RDF xmlns:fs2="https://fs2.io/" xmlns:ex="http://example.org/ns/" xmlns:meta="http://example.org/meta/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description rdf:about="http://example.org/ns/Root">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ex:Root</fs2:qname>
+    <fs2:local>Root</fs2:local>
+    <fs2:prefix>ex</fs2:prefix>
+    <fs2:namespaceUri>http://example.org/ns</fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ns/Child">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>ex:Child</fs2:qname>
+    <fs2:local>Child</fs2:local>
+    <fs2:prefix>ex</fs2:prefix>
+    <fs2:namespaceUri>http://example.org/ns</fs2:namespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/meta/Nested">
+    <rdf:type rdf:resource="https://fs2.io/Element"/>
+    <fs2:qname>meta:Nested</fs2:qname>
+    <fs2:local>Nested</fs2:local>
+    <fs2:prefix>meta</fs2:prefix>
+    <fs2:namespaceUri>http://example.org/meta</fs2:namespaceUri>
+  </rdf:Description>
+</rdf:RDF>

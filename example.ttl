@@ -1,0 +1,22 @@
+PREFIX fs2: <https://fs2.io/>
+PREFIX ex: <http://example.org/ns/>
+PREFIX meta: <http://example.org/meta/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+ex:Root  rdf:type         fs2:Element;
+        fs2:qname         "ex:Root";
+        fs2:local         "Root";
+        fs2:prefix        "ex";
+        fs2:namespaceUri  "http://example.org/ns" .
+
+ex:Child  rdf:type        fs2:Element;
+        fs2:qname         "ex:Child";
+        fs2:local         "Child";
+        fs2:prefix        "ex";
+        fs2:namespaceUri  "http://example.org/ns" .
+
+meta:Nested  rdf:type     fs2:Element;
+        fs2:qname         "meta:Nested";
+        fs2:local         "Nested";
+        fs2:prefix        "meta";
+        fs2:namespaceUri  "http://example.org/meta" .

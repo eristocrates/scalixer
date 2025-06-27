@@ -29,11 +29,13 @@ object XmlToRdf extends IOApp.Simple {
       .map(word => word.head.toUpper + word.tail)
       .mkString
 
+  private val exPrefix = "http://example.org/"
+
   private def createIndividualIRI(tag: String, value: String): String =
-    s"ex:${normalizeLiteral(value)}"
+    s"${exPrefix}${normalizeLiteral(value)}"
 
   private def createClassIRI(tag: String): String =
-    s"ex:${pascalCase(tag)}"
+    s"${exPrefix}${pascalCase(tag)}"
 
   private def createHasProperty(tag: String): String =
     s"ex:has${pascalCase(tag)}"
@@ -61,8 +63,8 @@ object XmlToRdf extends IOApp.Simple {
         }
 
         val subjectIRI = idOpt match {
-          case Some(id) => s"ex:$id"
-          case None     => s"ex:${tag}_${MurmurHash3.stringHash(stack.map(_._1).mkString("/"))}"
+          case Some(id) => s"${exPrefix}$id"
+          case None     => s"${exPrefix}${tag}_${MurmurHash3.stringHash(stack.map(_._1).mkString("/"))}"
         }
 
         val parentBlock = stack.headOption.map { case (parentIRI, _) =>

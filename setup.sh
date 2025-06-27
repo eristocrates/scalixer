@@ -1,32 +1,37 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/bin/bash
+set -e
 
-# Confirm Java is available
-if ! command -v java >/dev/null 2>&1; then
-  echo "❌ Java not found at $JAVA_HOME"
-  exit 1
-fi
+echo "🔧 Setting up Scala and SBT..."
 
-# --- SBT SETUP ---
-# Point to SBT launcher JAR and create a wrapper script
-export PATH="/workspace/scalixer/tools/sbt-launch/bin:$PATH"
-SBT_DIR="$PWD/tools/sbt-launch"
-mkdir -p "$SBT_DIR/bin"
+# Set up directories
+TOOLS_DIR="$HOME/.tools"
+mkdir -p "$TOOLS_DIR/bin"
 
-cat > "$SBT_DIR/bin/sbt" <<'EOF'
-#!/usr/bin/env bash
-java -Xms512M -Xmx1G -jar "$(dirname "$0")/sbt-launch.jar" "$@"
-EOF
+# Download and install SBT
+echo "📦 Installing SBT..."
+curl -fsSL https://github.com/sbt/sbt/releases/download/v1.9.9/sbt-1.9.9.tgz -o sbt.tgz
+tar -xzf sbt.tgz
+mv sbt "$TOOLS_DIR/sbt"
+rm sbt.tgz
 
-chmod +x "$SBT_DIR/bin/sbt"
+# Add sbt to PATH
+export PATH="$TOOLS_DIR/sbt/bin:$PATH"
 
-# Add to PATH
-export PATH="$SBT_DIR/bin:$PATH"
+# Optionally verify sbt installation
+sbt sbtVersion
 
-# Confirm SBT works
-if ! command -v sbt >/dev/null 2>&1; then
-  echo "❌ SBT setup failed"
-  exit 1
-fi
+# Download and install Scala CLI (recommended for modern workflows)
+echo "📦 Installing Scala CLI..."
+curl -fsSL https://github.com/VirtusLab/scala-cli/releases/latest/download/scala-cli-x86_64-pc-linux.gz -o scala-cli.gz
+gunzip scala-cli.gz
+chmod +x scala-cli
+mv scala-cli "$TOOLS_DIR/bin/scala-cli"
 
-echo "✅ Environment configured with offline Java and SBT."
+# Add Scala CLI to PATH
+export PATH="$TOOLS_DIR/bin:$PATH"
+
+# Verify Scala CLI
+scala-cli version
+
+echo "✅ Setup complete. PATH updated and tools installed."
+

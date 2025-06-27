@@ -80,7 +80,7 @@ Can be represented using `rdf:nodeID`, but currently out of scope for `XmlToRdf.
 * Validate RDF/XML structure against the spec.
 * When `XmlToRdf.scala` is modified, ensure that:
 
-  * Every rdf/xml statement results in a legal RDF/XML fragment
+  * Every RDF/XML statement results in a legal RDF/XML fragment
   * Serialization decisions match the RDF/XML design patterns from the spec
 * Do not allow shorthand or inferred RDF—**all RDF must be explicit**.
 

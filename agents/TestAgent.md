@@ -2,30 +2,33 @@
 
 ## Purpose
 
-Develop and maintain a test suite that validates that all RDF/XML output conforms to:
+This agent is responsible for generating, maintaining, and evolving test cases that ensure the correctness of the XML-to-RDF transformation. Tests should validate both syntactic conformance (RDF/XML format per spec) and semantic accuracy (ontology-compliant lifting of XML).
 
-- The [RDF/XML syntax specification](src/main/resources/rdf-1.1-XML-Syntax.html)
-- The semantic lifting rules defined in `XmlToRdfAgent.md`
-- The behavior implied by the example input file (`example.xml`)
+## Scope of Testing
 
-## Role
+1. **Structural Validity**
+   - Confirm generated RDF/XML conforms to [W3C RDF/XML Syntax Specification](../resources/rdf-1.1-XML-Syntax.html)
+   - Ensure that RDF/XML serialization is well-formed and parsable by conformant RDF parsers
+   - Validate namespace declarations, use of `rdf:Description`, `rdf:about`, and container elements
 
-When Codex is modifying or refactoring RDF/XML logic, it should:
+2. **Semantic Lifting Rules**
+   - Verify that:
+     - Each element is mapped to an `rdf:type` with a corresponding OWL class
+     - Child elements yield both `rdfs:member` and `hasX` properties
+     - String literals are normalized to safe IRIs (e.g., `Gambardella, Matthew` → `:GambardellaMatthew`)
+     - URIs are reused consistently across the output
 
-- Check for a corresponding test or write one if missing
-- Validate output using an RDF parser if available
-- Compare the parsed graph with expected rdf/xml statements
-- Treat `src/test/scala/XmlToRdfSpec.scala` as the home for compliance tests
+3. **Stream & Transformation Logic**
+   - Tests should assert that FS2 streaming correctly emits all expected RDF/XML statements, without duplication or loss
+   - Edge cases (e.g., missing `@id`, deeply nested elements, empty tags, multivalued properties) must be tested
 
-## Tools
+4. **Round-Trip Compliance (Optional)**
+   - If feasible, test RDF/XML output by re-parsing with an RDF/XML parser and comparing with expected RDF/XML statement sets
 
-- Testing framework: MUnit (via `org.scalameta %% munit % 1.0.0`)
-- RDF/XML validation: if feasible, parse with `banana-rdf` or an XML validator
-- Codex is allowed to simulate rdf/xml statement matching even without a parser, using substring checks if needed
+## Framework
 
-## Example Test Ideas
+Use [MUnit](https://scalameta.org/munit/) as the Scala 3-compatible test framework:
 
-- `example.xml` should produce a `rdf:type :Book` rdf/xml representation for `:bk101`
-- Each nested element in `<book>` should be emitted as both `rdfs:member` and `hasX` properties
-- String literals should be normalized to IRIs (e.g., `Gambardella, Matthew` → `:GambardellaMatthew`)
-- RDF/XML syntax should begin with `<rdf:RDF` and contain namespace declarations
+```scala
+// Include in build.sbt if not already present
+libraryDependencies += "org.scalameta" %% "munit" % "1.0.0" % Test

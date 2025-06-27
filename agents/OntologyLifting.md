@@ -11,7 +11,7 @@ This project parses XML using `fs2-data-xml` and streams RDF/XML using idiomatic
 
 ## Lifting Philosophy
 
-This agent interprets raw XML data as a **semantic document**. Its job is to infer **meaningful RDF rdf/xml statements**, not just direct structural mappings.
+This agent interprets raw XML data as a **semantic document**. Its job is to infer **meaningful RDF RDF/XML statements**, not just direct structural mappings.
 
 It does so by applying transformation rules that convert XML:
 

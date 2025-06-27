@@ -70,9 +70,9 @@ Example:
    * Convert strings like `"Gambardella, Matthew"` to `:GambardellaMatthew`.
    * Strip punctuation, collapse whitespace, and ensure IRI safety.
 
-6. **rdf/xml statement Emission**
+6. **RDF/XML statement Emission**
 
-   * Each rdf/xml statement must be serialized in correct RDF/XML syntax (e.g., use `rdf:Description`, `rdf:about`, `rdf:resource`).
+   * Each RDF/XML statement must be serialized in correct RDF/XML syntax (e.g., use `rdf:Description`, `rdf:about`, `rdf:resource`).
 
 ## Agent Behavior
 
@@ -93,6 +93,6 @@ Example:
 ## Future Goals
 
 * Add support for Turtle and JSON-LD as alternative serialization backends.
-* Refactor rdf/xml statement emission into reusable encoder logic.
+* Refactor RDF/XML statement emission into reusable encoder logic.
 * Introduce schema-based enrichment (e.g., OWL restrictions, rdfs\:subClassOf).
 * Enable streaming validation of output RDF/XML.

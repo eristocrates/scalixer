@@ -3,1177 +3,1218 @@
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:owl="http://www.w3.org/2002/07/owl#"
-  xmlns:ex="http://example.org/">
-  <rdf:Description rdf:about="http://example.org/catalog_377927480">
-    <rdf:type rdf:resource="http://example.org/Catalog" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/catalog_377927480">
-    <rdfs:member rdf:resource="http://example.org/bk101" />
-    <ex:hasBook rdf:resource="http://example.org/bk101" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk101">
-    <rdf:type rdf:resource="http://example.org/Book" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk101">
-    <rdfs:member rdf:resource="http://example.org/author_1112816529" />
-    <ex:hasAuthor rdf:resource="http://example.org/author_1112816529" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_1112816529">
-    <rdf:type rdf:resource="http://example.org/Author" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_1112816529">
-    <rdfs:member rdf:resource="http://example.org/GambardellaMatthew" />
-    <ex:hasAuthor rdf:resource="http://example.org/GambardellaMatthew" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/GambardellaMatthew">
-    <rdf:type rdf:resource="http://example.org/Author" />
-    <rdfs:label xml:lang="en">Gambardella, Matthew</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk101">
-    <rdfs:member rdf:resource="http://example.org/title_1112816529" />
-    <ex:hasTitle rdf:resource="http://example.org/title_1112816529" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_1112816529">
-    <rdf:type rdf:resource="http://example.org/Title" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_1112816529">
-    <rdfs:member rdf:resource="http://example.org/XMLDevelopersGuide" />
-    <ex:hasTitle rdf:resource="http://example.org/XMLDevelopersGuide" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/XMLDevelopersGuide">
-    <rdf:type rdf:resource="http://example.org/Title" />
-    <rdfs:label xml:lang="en">XML Developer&apos;s Guide</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk101">
-    <rdfs:member rdf:resource="http://example.org/genre_1112816529" />
-    <ex:hasGenre rdf:resource="http://example.org/genre_1112816529" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_1112816529">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_1112816529">
-    <rdfs:member rdf:resource="http://example.org/Computer" />
-    <ex:hasGenre rdf:resource="http://example.org/Computer" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/Computer">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-    <rdfs:label xml:lang="en">Computer</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk101">
-    <rdfs:member rdf:resource="http://example.org/price_1112816529" />
-    <ex:hasPrice rdf:resource="http://example.org/price_1112816529" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_1112816529">
-    <rdf:type rdf:resource="http://example.org/Price" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_1112816529">
-    <rdfs:member rdf:resource="http://example.org/4495" />
-    <ex:hasPrice rdf:resource="http://example.org/4495" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/4495">
-    <rdf:type rdf:resource="http://example.org/Price" />
-    <rdfs:label xml:lang="en">44.95</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk101">
-    <rdfs:member rdf:resource="http://example.org/publish_date_1112816529" />
-    <ex:hasPublishDate rdf:resource="http://example.org/publish_date_1112816529" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_1112816529">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_1112816529">
-    <rdfs:member rdf:resource="http://example.org/20001001" />
-    <ex:hasPublishDate rdf:resource="http://example.org/20001001" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/20001001">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-    <rdfs:label xml:lang="en">2000-10-01</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk101">
-    <rdfs:member rdf:resource="http://example.org/description_1112816529" />
-    <ex:hasDescription rdf:resource="http://example.org/description_1112816529" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_1112816529">
-    <rdf:type rdf:resource="http://example.org/Description" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_1112816529">
-    <rdfs:member rdf:resource="http://example.org/AnindepthlookatcreatingapplicationswithXML" />
-    <ex:hasDescription rdf:resource="http://example.org/AnindepthlookatcreatingapplicationswithXML" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/AnindepthlookatcreatingapplicationswithXML">
-    <rdf:type rdf:resource="http://example.org/Description" />
-    <rdfs:label xml:lang="en">An in-depth look at creating applications
+  xmlns:ex="http://example.org/"><rdf:Description rdf:about="http://example.org/Catalog_Tag">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Catalog">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/catalog_1262796714">
+  <rdf:type rdf:resource="http://example.org/Catalog_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Book_Tag">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Book">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/catalog_1262796714">
+  <rdfs:member rdf:resource="http://example.org/book_788423163"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdf:type rdf:resource="http://example.org/Book_Tag"/>
+  <ex:hasId>bk101</ex:hasId>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Author_Tag">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Author">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/author_-1552290743"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/author_-1552290743">
+  <rdf:type rdf:resource="http://example.org/Author_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasAuthor rdf:resource="http://example.org/Gambardella_Matthew"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Gambardella_Matthew">
+  <rdf:type rdf:resource="http://example.org/Author"/>
+  <rdfs:label xml:lang="en">Gambardella, Matthew</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Title_Tag">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Title">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/title_-290583738"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/title_-290583738">
+  <rdf:type rdf:resource="http://example.org/Title_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasTitle rdf:resource="http://example.org/Xml_Developer_S_Guide"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Xml_Developer_S_Guide">
+  <rdf:type rdf:resource="http://example.org/Title"/>
+  <rdfs:label xml:lang="en">XML Developer&apos;s Guide</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Genre_Tag">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Genre">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/genre_-1274687339"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/genre_-1274687339">
+  <rdf:type rdf:resource="http://example.org/Genre_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasGenre rdf:resource="http://example.org/Computer"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Computer">
+  <rdf:type rdf:resource="http://example.org/Genre"/>
+  <rdfs:label xml:lang="en">Computer</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Price_Tag">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Price">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/price_-1866312679"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/price_-1866312679">
+  <rdf:type rdf:resource="http://example.org/Price_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPrice rdf:resource="http://example.org/44_95"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/44_95">
+  <rdf:type rdf:resource="http://example.org/Price"/>
+  <rdfs:label xml:lang="en">44.95</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/PublishDate_Tag">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/PublishDate">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/publish_date_-840420112"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/publish_date_-840420112">
+  <rdf:type rdf:resource="http://example.org/PublishDate_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPublishDate rdf:resource="http://example.org/2000_10_01"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/2000_10_01">
+  <rdf:type rdf:resource="http://example.org/PublishDate"/>
+  <rdfs:label xml:lang="en">2000-10-01</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Description_Tag">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Description">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/description_-1167484815"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/description_-1167484815">
+  <rdf:type rdf:resource="http://example.org/Description_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasDescription rdf:resource="http://example.org/An_In_Depth_Look_At_Creating_Applications_With_Xml"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/An_In_Depth_Look_At_Creating_Applications_With_Xml">
+  <rdf:type rdf:resource="http://example.org/Description"/>
+  <rdfs:label xml:lang="en">An in-depth look at creating applications
       with XML.</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/catalog_377927480">
-    <rdfs:member rdf:resource="http://example.org/bk102" />
-    <ex:hasBook rdf:resource="http://example.org/bk102" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk102">
-    <rdf:type rdf:resource="http://example.org/Book" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk102">
-    <rdfs:member rdf:resource="http://example.org/author_1103999610" />
-    <ex:hasAuthor rdf:resource="http://example.org/author_1103999610" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_1103999610">
-    <rdf:type rdf:resource="http://example.org/Author" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_1103999610">
-    <rdfs:member rdf:resource="http://example.org/RallsKim" />
-    <ex:hasAuthor rdf:resource="http://example.org/RallsKim" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/RallsKim">
-    <rdf:type rdf:resource="http://example.org/Author" />
-    <rdfs:label xml:lang="en">Ralls, Kim</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk102">
-    <rdfs:member rdf:resource="http://example.org/title_1103999610" />
-    <ex:hasTitle rdf:resource="http://example.org/title_1103999610" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_1103999610">
-    <rdf:type rdf:resource="http://example.org/Title" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_1103999610">
-    <rdfs:member rdf:resource="http://example.org/MidnightRain" />
-    <ex:hasTitle rdf:resource="http://example.org/MidnightRain" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/MidnightRain">
-    <rdf:type rdf:resource="http://example.org/Title" />
-    <rdfs:label xml:lang="en">Midnight Rain</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk102">
-    <rdfs:member rdf:resource="http://example.org/genre_1103999610" />
-    <ex:hasGenre rdf:resource="http://example.org/genre_1103999610" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_1103999610">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_1103999610">
-    <rdfs:member rdf:resource="http://example.org/Fantasy" />
-    <ex:hasGenre rdf:resource="http://example.org/Fantasy" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/Fantasy">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-    <rdfs:label xml:lang="en">Fantasy</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk102">
-    <rdfs:member rdf:resource="http://example.org/price_1103999610" />
-    <ex:hasPrice rdf:resource="http://example.org/price_1103999610" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_1103999610">
-    <rdf:type rdf:resource="http://example.org/Price" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_1103999610">
-    <rdfs:member rdf:resource="http://example.org/595" />
-    <ex:hasPrice rdf:resource="http://example.org/595" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/595">
-    <rdf:type rdf:resource="http://example.org/Price" />
-    <rdfs:label xml:lang="en">5.95</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk102">
-    <rdfs:member rdf:resource="http://example.org/publish_date_1103999610" />
-    <ex:hasPublishDate rdf:resource="http://example.org/publish_date_1103999610" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_1103999610">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_1103999610">
-    <rdfs:member rdf:resource="http://example.org/20001216" />
-    <ex:hasPublishDate rdf:resource="http://example.org/20001216" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/20001216">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-    <rdfs:label xml:lang="en">2000-12-16</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk102">
-    <rdfs:member rdf:resource="http://example.org/description_1103999610" />
-    <ex:hasDescription rdf:resource="http://example.org/description_1103999610" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_1103999610">
-    <rdf:type rdf:resource="http://example.org/Description" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_1103999610">
-    <rdfs:member
-      rdf:resource="http://example.org/Aformerarchitectbattlescorporatezombiesanevilsorceressandherownchildhoodtobecomequeenoftheworld" />
-    <ex:hasDescription
-      rdf:resource="http://example.org/Aformerarchitectbattlescorporatezombiesanevilsorceressandherownchildhoodtobecomequeenoftheworld" />
-  </rdf:Description>
-  <rdf:Description
-    rdf:about="http://example.org/Aformerarchitectbattlescorporatezombiesanevilsorceressandherownchildhoodtobecomequeenoftheworld">
-    <rdf:type rdf:resource="http://example.org/Description" />
-    <rdfs:label xml:lang="en">A former architect battles corporate zombies,
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/catalog_1262796714">
+  <rdfs:member rdf:resource="http://example.org/book_788423163"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdf:type rdf:resource="http://example.org/Book_Tag"/>
+  <ex:hasId>bk102</ex:hasId>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/author_-1552290743"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/author_-1552290743">
+  <rdf:type rdf:resource="http://example.org/Author_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasAuthor rdf:resource="http://example.org/Ralls_Kim"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Ralls_Kim">
+  <rdf:type rdf:resource="http://example.org/Author"/>
+  <rdfs:label xml:lang="en">Ralls, Kim</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/title_-290583738"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/title_-290583738">
+  <rdf:type rdf:resource="http://example.org/Title_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasTitle rdf:resource="http://example.org/Midnight_Rain"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Midnight_Rain">
+  <rdf:type rdf:resource="http://example.org/Title"/>
+  <rdfs:label xml:lang="en">Midnight Rain</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/genre_-1274687339"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/genre_-1274687339">
+  <rdf:type rdf:resource="http://example.org/Genre_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasGenre rdf:resource="http://example.org/Fantasy"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Fantasy">
+  <rdf:type rdf:resource="http://example.org/Genre"/>
+  <rdfs:label xml:lang="en">Fantasy</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/price_-1866312679"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/price_-1866312679">
+  <rdf:type rdf:resource="http://example.org/Price_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPrice rdf:resource="http://example.org/5_95"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/5_95">
+  <rdf:type rdf:resource="http://example.org/Price"/>
+  <rdfs:label xml:lang="en">5.95</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/publish_date_-840420112"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/publish_date_-840420112">
+  <rdf:type rdf:resource="http://example.org/PublishDate_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPublishDate rdf:resource="http://example.org/2000_12_16"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/2000_12_16">
+  <rdf:type rdf:resource="http://example.org/PublishDate"/>
+  <rdfs:label xml:lang="en">2000-12-16</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/description_-1167484815"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/description_-1167484815">
+  <rdf:type rdf:resource="http://example.org/Description_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasDescription rdf:resource="http://example.org/A_Former_Architect_Battles_Corporate_Zombies_An_Evil_Sorceress_And_Her_Own_Childhood_To_Become_Queen_Of_The_World"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/A_Former_Architect_Battles_Corporate_Zombies_An_Evil_Sorceress_And_Her_Own_Childhood_To_Become_Queen_Of_The_World">
+  <rdf:type rdf:resource="http://example.org/Description"/>
+  <rdfs:label xml:lang="en">A former architect battles corporate zombies,
       an evil sorceress, and her own childhood to become queen
       of the world.</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/catalog_377927480">
-    <rdfs:member rdf:resource="http://example.org/bk103" />
-    <ex:hasBook rdf:resource="http://example.org/bk103" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk103">
-    <rdf:type rdf:resource="http://example.org/Book" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk103">
-    <rdfs:member rdf:resource="http://example.org/author_1637455964" />
-    <ex:hasAuthor rdf:resource="http://example.org/author_1637455964" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_1637455964">
-    <rdf:type rdf:resource="http://example.org/Author" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_1637455964">
-    <rdfs:member rdf:resource="http://example.org/CoretsEva" />
-    <ex:hasAuthor rdf:resource="http://example.org/CoretsEva" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/CoretsEva">
-    <rdf:type rdf:resource="http://example.org/Author" />
-    <rdfs:label xml:lang="en">Corets, Eva</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk103">
-    <rdfs:member rdf:resource="http://example.org/title_1637455964" />
-    <ex:hasTitle rdf:resource="http://example.org/title_1637455964" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_1637455964">
-    <rdf:type rdf:resource="http://example.org/Title" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_1637455964">
-    <rdfs:member rdf:resource="http://example.org/MaeveAscendant" />
-    <ex:hasTitle rdf:resource="http://example.org/MaeveAscendant" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/MaeveAscendant">
-    <rdf:type rdf:resource="http://example.org/Title" />
-    <rdfs:label xml:lang="en">Maeve Ascendant</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk103">
-    <rdfs:member rdf:resource="http://example.org/genre_1637455964" />
-    <ex:hasGenre rdf:resource="http://example.org/genre_1637455964" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_1637455964">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_1637455964">
-    <rdfs:member rdf:resource="http://example.org/Fantasy" />
-    <ex:hasGenre rdf:resource="http://example.org/Fantasy" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/Fantasy">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-    <rdfs:label xml:lang="en">Fantasy</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk103">
-    <rdfs:member rdf:resource="http://example.org/price_1637455964" />
-    <ex:hasPrice rdf:resource="http://example.org/price_1637455964" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_1637455964">
-    <rdf:type rdf:resource="http://example.org/Price" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_1637455964">
-    <rdfs:member rdf:resource="http://example.org/595" />
-    <ex:hasPrice rdf:resource="http://example.org/595" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/595">
-    <rdf:type rdf:resource="http://example.org/Price" />
-    <rdfs:label xml:lang="en">5.95</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk103">
-    <rdfs:member rdf:resource="http://example.org/publish_date_1637455964" />
-    <ex:hasPublishDate rdf:resource="http://example.org/publish_date_1637455964" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_1637455964">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_1637455964">
-    <rdfs:member rdf:resource="http://example.org/20001117" />
-    <ex:hasPublishDate rdf:resource="http://example.org/20001117" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/20001117">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-    <rdfs:label xml:lang="en">2000-11-17</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk103">
-    <rdfs:member rdf:resource="http://example.org/description_1637455964" />
-    <ex:hasDescription rdf:resource="http://example.org/description_1637455964" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_1637455964">
-    <rdf:type rdf:resource="http://example.org/Description" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_1637455964">
-    <rdfs:member
-      rdf:resource="http://example.org/AfterthecollapseofananotechnologysocietyinEnglandtheyoungsurvivorslaythefoundationforanewsociety" />
-    <ex:hasDescription
-      rdf:resource="http://example.org/AfterthecollapseofananotechnologysocietyinEnglandtheyoungsurvivorslaythefoundationforanewsociety" />
-  </rdf:Description>
-  <rdf:Description
-    rdf:about="http://example.org/AfterthecollapseofananotechnologysocietyinEnglandtheyoungsurvivorslaythefoundationforanewsociety">
-    <rdf:type rdf:resource="http://example.org/Description" />
-    <rdfs:label xml:lang="en">After the collapse of a nanotechnology
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/catalog_1262796714">
+  <rdfs:member rdf:resource="http://example.org/book_788423163"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdf:type rdf:resource="http://example.org/Book_Tag"/>
+  <ex:hasId>bk103</ex:hasId>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/author_-1552290743"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/author_-1552290743">
+  <rdf:type rdf:resource="http://example.org/Author_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasAuthor rdf:resource="http://example.org/Corets_Eva"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Corets_Eva">
+  <rdf:type rdf:resource="http://example.org/Author"/>
+  <rdfs:label xml:lang="en">Corets, Eva</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/title_-290583738"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/title_-290583738">
+  <rdf:type rdf:resource="http://example.org/Title_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasTitle rdf:resource="http://example.org/Maeve_Ascendant"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Maeve_Ascendant">
+  <rdf:type rdf:resource="http://example.org/Title"/>
+  <rdfs:label xml:lang="en">Maeve Ascendant</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/genre_-1274687339"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/genre_-1274687339">
+  <rdf:type rdf:resource="http://example.org/Genre_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasGenre rdf:resource="http://example.org/Fantasy"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/price_-1866312679"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/price_-1866312679">
+  <rdf:type rdf:resource="http://example.org/Price_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPrice rdf:resource="http://example.org/5_95"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/publish_date_-840420112"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/publish_date_-840420112">
+  <rdf:type rdf:resource="http://example.org/PublishDate_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPublishDate rdf:resource="http://example.org/2000_11_17"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/2000_11_17">
+  <rdf:type rdf:resource="http://example.org/PublishDate"/>
+  <rdfs:label xml:lang="en">2000-11-17</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/description_-1167484815"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/description_-1167484815">
+  <rdf:type rdf:resource="http://example.org/Description_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasDescription rdf:resource="http://example.org/After_The_Collapse_Of_A_Nanotechnology_Society_In_England_The_Young_Survivors_Lay_The_Foundation_For_A_New_Society"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/After_The_Collapse_Of_A_Nanotechnology_Society_In_England_The_Young_Survivors_Lay_The_Foundation_For_A_New_Society">
+  <rdf:type rdf:resource="http://example.org/Description"/>
+  <rdfs:label xml:lang="en">After the collapse of a nanotechnology
       society in England, the young survivors lay the
       foundation for a new society.</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/catalog_377927480">
-    <rdfs:member rdf:resource="http://example.org/bk104" />
-    <ex:hasBook rdf:resource="http://example.org/bk104" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk104">
-    <rdf:type rdf:resource="http://example.org/Book" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk104">
-    <rdfs:member rdf:resource="http://example.org/author_-1482489346" />
-    <ex:hasAuthor rdf:resource="http://example.org/author_-1482489346" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_-1482489346">
-    <rdf:type rdf:resource="http://example.org/Author" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_-1482489346">
-    <rdfs:member rdf:resource="http://example.org/CoretsEva" />
-    <ex:hasAuthor rdf:resource="http://example.org/CoretsEva" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/CoretsEva">
-    <rdf:type rdf:resource="http://example.org/Author" />
-    <rdfs:label xml:lang="en">Corets, Eva</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk104">
-    <rdfs:member rdf:resource="http://example.org/title_-1482489346" />
-    <ex:hasTitle rdf:resource="http://example.org/title_-1482489346" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_-1482489346">
-    <rdf:type rdf:resource="http://example.org/Title" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_-1482489346">
-    <rdfs:member rdf:resource="http://example.org/OberonsLegacy" />
-    <ex:hasTitle rdf:resource="http://example.org/OberonsLegacy" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/OberonsLegacy">
-    <rdf:type rdf:resource="http://example.org/Title" />
-    <rdfs:label xml:lang="en">Oberon&apos;s Legacy</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk104">
-    <rdfs:member rdf:resource="http://example.org/genre_-1482489346" />
-    <ex:hasGenre rdf:resource="http://example.org/genre_-1482489346" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_-1482489346">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_-1482489346">
-    <rdfs:member rdf:resource="http://example.org/Fantasy" />
-    <ex:hasGenre rdf:resource="http://example.org/Fantasy" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/Fantasy">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-    <rdfs:label xml:lang="en">Fantasy</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk104">
-    <rdfs:member rdf:resource="http://example.org/price_-1482489346" />
-    <ex:hasPrice rdf:resource="http://example.org/price_-1482489346" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_-1482489346">
-    <rdf:type rdf:resource="http://example.org/Price" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_-1482489346">
-    <rdfs:member rdf:resource="http://example.org/595" />
-    <ex:hasPrice rdf:resource="http://example.org/595" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/595">
-    <rdf:type rdf:resource="http://example.org/Price" />
-    <rdfs:label xml:lang="en">5.95</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk104">
-    <rdfs:member rdf:resource="http://example.org/publish_date_-1482489346" />
-    <ex:hasPublishDate rdf:resource="http://example.org/publish_date_-1482489346" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_-1482489346">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_-1482489346">
-    <rdfs:member rdf:resource="http://example.org/20010310" />
-    <ex:hasPublishDate rdf:resource="http://example.org/20010310" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/20010310">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-    <rdfs:label xml:lang="en">2001-03-10</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk104">
-    <rdfs:member rdf:resource="http://example.org/description_-1482489346" />
-    <ex:hasDescription rdf:resource="http://example.org/description_-1482489346" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_-1482489346">
-    <rdf:type rdf:resource="http://example.org/Description" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_-1482489346">
-    <rdfs:member
-      rdf:resource="http://example.org/InpostapocalypseEnglandthemysteriousagentknownonlyasOberonhelpstocreateanewlifefortheinhabitantsofLondonSequeltoMaeveAscendant" />
-    <ex:hasDescription
-      rdf:resource="http://example.org/InpostapocalypseEnglandthemysteriousagentknownonlyasOberonhelpstocreateanewlifefortheinhabitantsofLondonSequeltoMaeveAscendant" />
-  </rdf:Description>
-  <rdf:Description
-    rdf:about="http://example.org/InpostapocalypseEnglandthemysteriousagentknownonlyasOberonhelpstocreateanewlifefortheinhabitantsofLondonSequeltoMaeveAscendant">
-    <rdf:type rdf:resource="http://example.org/Description" />
-    <rdfs:label xml:lang="en">In post-apocalypse England, the mysterious
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/catalog_1262796714">
+  <rdfs:member rdf:resource="http://example.org/book_788423163"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdf:type rdf:resource="http://example.org/Book_Tag"/>
+  <ex:hasId>bk104</ex:hasId>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/author_-1552290743"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/author_-1552290743">
+  <rdf:type rdf:resource="http://example.org/Author_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasAuthor rdf:resource="http://example.org/Corets_Eva"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/title_-290583738"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/title_-290583738">
+  <rdf:type rdf:resource="http://example.org/Title_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasTitle rdf:resource="http://example.org/Oberon_S_Legacy"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Oberon_S_Legacy">
+  <rdf:type rdf:resource="http://example.org/Title"/>
+  <rdfs:label xml:lang="en">Oberon&apos;s Legacy</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/genre_-1274687339"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/genre_-1274687339">
+  <rdf:type rdf:resource="http://example.org/Genre_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasGenre rdf:resource="http://example.org/Fantasy"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/price_-1866312679"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/price_-1866312679">
+  <rdf:type rdf:resource="http://example.org/Price_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPrice rdf:resource="http://example.org/5_95"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/publish_date_-840420112"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/publish_date_-840420112">
+  <rdf:type rdf:resource="http://example.org/PublishDate_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPublishDate rdf:resource="http://example.org/2001_03_10"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/2001_03_10">
+  <rdf:type rdf:resource="http://example.org/PublishDate"/>
+  <rdfs:label xml:lang="en">2001-03-10</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/description_-1167484815"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/description_-1167484815">
+  <rdf:type rdf:resource="http://example.org/Description_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasDescription rdf:resource="http://example.org/In_Post_Apocalypse_England_The_Mysterious_Agent_Known_Only_As_Oberon_Helps_To_Create_A_New_Life_For_The_Inhabitants_Of_London_Sequel_To_Maeve_Ascendant"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/In_Post_Apocalypse_England_The_Mysterious_Agent_Known_Only_As_Oberon_Helps_To_Create_A_New_Life_For_The_Inhabitants_Of_London_Sequel_To_Maeve_Ascendant">
+  <rdf:type rdf:resource="http://example.org/Description"/>
+  <rdfs:label xml:lang="en">In post-apocalypse England, the mysterious
       agent known only as Oberon helps to create a new life
       for the inhabitants of London. Sequel to Maeve
       Ascendant.</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/catalog_377927480">
-    <rdfs:member rdf:resource="http://example.org/bk105" />
-    <ex:hasBook rdf:resource="http://example.org/bk105" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk105">
-    <rdf:type rdf:resource="http://example.org/Book" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk105">
-    <rdfs:member rdf:resource="http://example.org/author_669327988" />
-    <ex:hasAuthor rdf:resource="http://example.org/author_669327988" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_669327988">
-    <rdf:type rdf:resource="http://example.org/Author" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_669327988">
-    <rdfs:member rdf:resource="http://example.org/CoretsEva" />
-    <ex:hasAuthor rdf:resource="http://example.org/CoretsEva" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/CoretsEva">
-    <rdf:type rdf:resource="http://example.org/Author" />
-    <rdfs:label xml:lang="en">Corets, Eva</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk105">
-    <rdfs:member rdf:resource="http://example.org/title_669327988" />
-    <ex:hasTitle rdf:resource="http://example.org/title_669327988" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_669327988">
-    <rdf:type rdf:resource="http://example.org/Title" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_669327988">
-    <rdfs:member rdf:resource="http://example.org/TheSunderedGrail" />
-    <ex:hasTitle rdf:resource="http://example.org/TheSunderedGrail" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/TheSunderedGrail">
-    <rdf:type rdf:resource="http://example.org/Title" />
-    <rdfs:label xml:lang="en">The Sundered Grail</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk105">
-    <rdfs:member rdf:resource="http://example.org/genre_669327988" />
-    <ex:hasGenre rdf:resource="http://example.org/genre_669327988" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_669327988">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_669327988">
-    <rdfs:member rdf:resource="http://example.org/Fantasy" />
-    <ex:hasGenre rdf:resource="http://example.org/Fantasy" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/Fantasy">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-    <rdfs:label xml:lang="en">Fantasy</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk105">
-    <rdfs:member rdf:resource="http://example.org/price_669327988" />
-    <ex:hasPrice rdf:resource="http://example.org/price_669327988" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_669327988">
-    <rdf:type rdf:resource="http://example.org/Price" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_669327988">
-    <rdfs:member rdf:resource="http://example.org/595" />
-    <ex:hasPrice rdf:resource="http://example.org/595" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/595">
-    <rdf:type rdf:resource="http://example.org/Price" />
-    <rdfs:label xml:lang="en">5.95</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk105">
-    <rdfs:member rdf:resource="http://example.org/publish_date_669327988" />
-    <ex:hasPublishDate rdf:resource="http://example.org/publish_date_669327988" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_669327988">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_669327988">
-    <rdfs:member rdf:resource="http://example.org/20010910" />
-    <ex:hasPublishDate rdf:resource="http://example.org/20010910" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/20010910">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-    <rdfs:label xml:lang="en">2001-09-10</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk105">
-    <rdfs:member rdf:resource="http://example.org/description_669327988" />
-    <ex:hasDescription rdf:resource="http://example.org/description_669327988" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_669327988">
-    <rdf:type rdf:resource="http://example.org/Description" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_669327988">
-    <rdfs:member
-      rdf:resource="http://example.org/ThetwodaughtersofMaevehalfsistersbattleoneanotherforcontrolofEnglandSequeltoOberonsLegacy" />
-    <ex:hasDescription
-      rdf:resource="http://example.org/ThetwodaughtersofMaevehalfsistersbattleoneanotherforcontrolofEnglandSequeltoOberonsLegacy" />
-  </rdf:Description>
-  <rdf:Description
-    rdf:about="http://example.org/ThetwodaughtersofMaevehalfsistersbattleoneanotherforcontrolofEnglandSequeltoOberonsLegacy">
-    <rdf:type rdf:resource="http://example.org/Description" />
-    <rdfs:label xml:lang="en">The two daughters of Maeve, half-sisters,
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/catalog_1262796714">
+  <rdfs:member rdf:resource="http://example.org/book_788423163"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdf:type rdf:resource="http://example.org/Book_Tag"/>
+  <ex:hasId>bk105</ex:hasId>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/author_-1552290743"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/author_-1552290743">
+  <rdf:type rdf:resource="http://example.org/Author_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasAuthor rdf:resource="http://example.org/Corets_Eva"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/title_-290583738"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/title_-290583738">
+  <rdf:type rdf:resource="http://example.org/Title_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasTitle rdf:resource="http://example.org/The_Sundered_Grail"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/The_Sundered_Grail">
+  <rdf:type rdf:resource="http://example.org/Title"/>
+  <rdfs:label xml:lang="en">The Sundered Grail</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/genre_-1274687339"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/genre_-1274687339">
+  <rdf:type rdf:resource="http://example.org/Genre_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasGenre rdf:resource="http://example.org/Fantasy"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/price_-1866312679"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/price_-1866312679">
+  <rdf:type rdf:resource="http://example.org/Price_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPrice rdf:resource="http://example.org/5_95"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/publish_date_-840420112"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/publish_date_-840420112">
+  <rdf:type rdf:resource="http://example.org/PublishDate_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPublishDate rdf:resource="http://example.org/2001_09_10"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/2001_09_10">
+  <rdf:type rdf:resource="http://example.org/PublishDate"/>
+  <rdfs:label xml:lang="en">2001-09-10</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/description_-1167484815"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/description_-1167484815">
+  <rdf:type rdf:resource="http://example.org/Description_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasDescription rdf:resource="http://example.org/The_Two_Daughters_Of_Maeve_Half_Sisters_Battle_One_Another_For_Control_Of_England_Sequel_To_Oberon_S_Legacy"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/The_Two_Daughters_Of_Maeve_Half_Sisters_Battle_One_Another_For_Control_Of_England_Sequel_To_Oberon_S_Legacy">
+  <rdf:type rdf:resource="http://example.org/Description"/>
+  <rdfs:label xml:lang="en">The two daughters of Maeve, half-sisters,
       battle one another for control of England. Sequel to
       Oberon&apos;s Legacy.</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/catalog_377927480">
-    <rdfs:member rdf:resource="http://example.org/bk106" />
-    <ex:hasBook rdf:resource="http://example.org/bk106" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk106">
-    <rdf:type rdf:resource="http://example.org/Book" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk106">
-    <rdfs:member rdf:resource="http://example.org/author_1543805592" />
-    <ex:hasAuthor rdf:resource="http://example.org/author_1543805592" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_1543805592">
-    <rdf:type rdf:resource="http://example.org/Author" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_1543805592">
-    <rdfs:member rdf:resource="http://example.org/RandallCynthia" />
-    <ex:hasAuthor rdf:resource="http://example.org/RandallCynthia" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/RandallCynthia">
-    <rdf:type rdf:resource="http://example.org/Author" />
-    <rdfs:label xml:lang="en">Randall, Cynthia</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk106">
-    <rdfs:member rdf:resource="http://example.org/title_1543805592" />
-    <ex:hasTitle rdf:resource="http://example.org/title_1543805592" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_1543805592">
-    <rdf:type rdf:resource="http://example.org/Title" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_1543805592">
-    <rdfs:member rdf:resource="http://example.org/LoverBirds" />
-    <ex:hasTitle rdf:resource="http://example.org/LoverBirds" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/LoverBirds">
-    <rdf:type rdf:resource="http://example.org/Title" />
-    <rdfs:label xml:lang="en">Lover Birds</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk106">
-    <rdfs:member rdf:resource="http://example.org/genre_1543805592" />
-    <ex:hasGenre rdf:resource="http://example.org/genre_1543805592" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_1543805592">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_1543805592">
-    <rdfs:member rdf:resource="http://example.org/Romance" />
-    <ex:hasGenre rdf:resource="http://example.org/Romance" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/Romance">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-    <rdfs:label xml:lang="en">Romance</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk106">
-    <rdfs:member rdf:resource="http://example.org/price_1543805592" />
-    <ex:hasPrice rdf:resource="http://example.org/price_1543805592" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_1543805592">
-    <rdf:type rdf:resource="http://example.org/Price" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_1543805592">
-    <rdfs:member rdf:resource="http://example.org/495" />
-    <ex:hasPrice rdf:resource="http://example.org/495" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/495">
-    <rdf:type rdf:resource="http://example.org/Price" />
-    <rdfs:label xml:lang="en">4.95</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk106">
-    <rdfs:member rdf:resource="http://example.org/publish_date_1543805592" />
-    <ex:hasPublishDate rdf:resource="http://example.org/publish_date_1543805592" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_1543805592">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_1543805592">
-    <rdfs:member rdf:resource="http://example.org/20000902" />
-    <ex:hasPublishDate rdf:resource="http://example.org/20000902" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/20000902">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-    <rdfs:label xml:lang="en">2000-09-02</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk106">
-    <rdfs:member rdf:resource="http://example.org/description_1543805592" />
-    <ex:hasDescription rdf:resource="http://example.org/description_1543805592" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_1543805592">
-    <rdf:type rdf:resource="http://example.org/Description" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_1543805592">
-    <rdfs:member
-      rdf:resource="http://example.org/WhenCarlameetsPaulatanornithologyconferencetempersflyasfeathersgetruffled" />
-    <ex:hasDescription
-      rdf:resource="http://example.org/WhenCarlameetsPaulatanornithologyconferencetempersflyasfeathersgetruffled" />
-  </rdf:Description>
-  <rdf:Description
-    rdf:about="http://example.org/WhenCarlameetsPaulatanornithologyconferencetempersflyasfeathersgetruffled">
-    <rdf:type rdf:resource="http://example.org/Description" />
-    <rdfs:label xml:lang="en">When Carla meets Paul at an ornithology
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/catalog_1262796714">
+  <rdfs:member rdf:resource="http://example.org/book_788423163"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdf:type rdf:resource="http://example.org/Book_Tag"/>
+  <ex:hasId>bk106</ex:hasId>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/author_-1552290743"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/author_-1552290743">
+  <rdf:type rdf:resource="http://example.org/Author_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasAuthor rdf:resource="http://example.org/Randall_Cynthia"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Randall_Cynthia">
+  <rdf:type rdf:resource="http://example.org/Author"/>
+  <rdfs:label xml:lang="en">Randall, Cynthia</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/title_-290583738"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/title_-290583738">
+  <rdf:type rdf:resource="http://example.org/Title_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasTitle rdf:resource="http://example.org/Lover_Birds"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Lover_Birds">
+  <rdf:type rdf:resource="http://example.org/Title"/>
+  <rdfs:label xml:lang="en">Lover Birds</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/genre_-1274687339"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/genre_-1274687339">
+  <rdf:type rdf:resource="http://example.org/Genre_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasGenre rdf:resource="http://example.org/Romance"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Romance">
+  <rdf:type rdf:resource="http://example.org/Genre"/>
+  <rdfs:label xml:lang="en">Romance</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/price_-1866312679"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/price_-1866312679">
+  <rdf:type rdf:resource="http://example.org/Price_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPrice rdf:resource="http://example.org/4_95"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/4_95">
+  <rdf:type rdf:resource="http://example.org/Price"/>
+  <rdfs:label xml:lang="en">4.95</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/publish_date_-840420112"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/publish_date_-840420112">
+  <rdf:type rdf:resource="http://example.org/PublishDate_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPublishDate rdf:resource="http://example.org/2000_09_02"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/2000_09_02">
+  <rdf:type rdf:resource="http://example.org/PublishDate"/>
+  <rdfs:label xml:lang="en">2000-09-02</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/description_-1167484815"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/description_-1167484815">
+  <rdf:type rdf:resource="http://example.org/Description_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasDescription rdf:resource="http://example.org/When_Carla_Meets_Paul_At_An_Ornithology_Conference_Tempers_Fly_As_Feathers_Get_Ruffled"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/When_Carla_Meets_Paul_At_An_Ornithology_Conference_Tempers_Fly_As_Feathers_Get_Ruffled">
+  <rdf:type rdf:resource="http://example.org/Description"/>
+  <rdfs:label xml:lang="en">When Carla meets Paul at an ornithology
       conference, tempers fly as feathers get ruffled.</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/catalog_377927480">
-    <rdfs:member rdf:resource="http://example.org/bk107" />
-    <ex:hasBook rdf:resource="http://example.org/bk107" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk107">
-    <rdf:type rdf:resource="http://example.org/Book" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk107">
-    <rdfs:member rdf:resource="http://example.org/author_1179217414" />
-    <ex:hasAuthor rdf:resource="http://example.org/author_1179217414" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_1179217414">
-    <rdf:type rdf:resource="http://example.org/Author" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_1179217414">
-    <rdfs:member rdf:resource="http://example.org/ThurmanPaula" />
-    <ex:hasAuthor rdf:resource="http://example.org/ThurmanPaula" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/ThurmanPaula">
-    <rdf:type rdf:resource="http://example.org/Author" />
-    <rdfs:label xml:lang="en">Thurman, Paula</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk107">
-    <rdfs:member rdf:resource="http://example.org/title_1179217414" />
-    <ex:hasTitle rdf:resource="http://example.org/title_1179217414" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_1179217414">
-    <rdf:type rdf:resource="http://example.org/Title" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_1179217414">
-    <rdfs:member rdf:resource="http://example.org/SplishSplash" />
-    <ex:hasTitle rdf:resource="http://example.org/SplishSplash" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/SplishSplash">
-    <rdf:type rdf:resource="http://example.org/Title" />
-    <rdfs:label xml:lang="en">Splish Splash</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk107">
-    <rdfs:member rdf:resource="http://example.org/genre_1179217414" />
-    <ex:hasGenre rdf:resource="http://example.org/genre_1179217414" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_1179217414">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_1179217414">
-    <rdfs:member rdf:resource="http://example.org/Romance" />
-    <ex:hasGenre rdf:resource="http://example.org/Romance" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/Romance">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-    <rdfs:label xml:lang="en">Romance</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk107">
-    <rdfs:member rdf:resource="http://example.org/price_1179217414" />
-    <ex:hasPrice rdf:resource="http://example.org/price_1179217414" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_1179217414">
-    <rdf:type rdf:resource="http://example.org/Price" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_1179217414">
-    <rdfs:member rdf:resource="http://example.org/495" />
-    <ex:hasPrice rdf:resource="http://example.org/495" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/495">
-    <rdf:type rdf:resource="http://example.org/Price" />
-    <rdfs:label xml:lang="en">4.95</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk107">
-    <rdfs:member rdf:resource="http://example.org/publish_date_1179217414" />
-    <ex:hasPublishDate rdf:resource="http://example.org/publish_date_1179217414" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_1179217414">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_1179217414">
-    <rdfs:member rdf:resource="http://example.org/20001102" />
-    <ex:hasPublishDate rdf:resource="http://example.org/20001102" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/20001102">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-    <rdfs:label xml:lang="en">2000-11-02</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk107">
-    <rdfs:member rdf:resource="http://example.org/description_1179217414" />
-    <ex:hasDescription rdf:resource="http://example.org/description_1179217414" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_1179217414">
-    <rdf:type rdf:resource="http://example.org/Description" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_1179217414">
-    <rdfs:member
-      rdf:resource="http://example.org/Adeepseadiverfindstruelovetwentythousandleaguesbeneaththesea" />
-    <ex:hasDescription
-      rdf:resource="http://example.org/Adeepseadiverfindstruelovetwentythousandleaguesbeneaththesea" />
-  </rdf:Description>
-  <rdf:Description
-    rdf:about="http://example.org/Adeepseadiverfindstruelovetwentythousandleaguesbeneaththesea">
-    <rdf:type rdf:resource="http://example.org/Description" />
-    <rdfs:label xml:lang="en">A deep sea diver finds true love twenty
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/catalog_1262796714">
+  <rdfs:member rdf:resource="http://example.org/book_788423163"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdf:type rdf:resource="http://example.org/Book_Tag"/>
+  <ex:hasId>bk107</ex:hasId>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/author_-1552290743"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/author_-1552290743">
+  <rdf:type rdf:resource="http://example.org/Author_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasAuthor rdf:resource="http://example.org/Thurman_Paula"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Thurman_Paula">
+  <rdf:type rdf:resource="http://example.org/Author"/>
+  <rdfs:label xml:lang="en">Thurman, Paula</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/title_-290583738"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/title_-290583738">
+  <rdf:type rdf:resource="http://example.org/Title_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasTitle rdf:resource="http://example.org/Splish_Splash"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Splish_Splash">
+  <rdf:type rdf:resource="http://example.org/Title"/>
+  <rdfs:label xml:lang="en">Splish Splash</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/genre_-1274687339"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/genre_-1274687339">
+  <rdf:type rdf:resource="http://example.org/Genre_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasGenre rdf:resource="http://example.org/Romance"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/price_-1866312679"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/price_-1866312679">
+  <rdf:type rdf:resource="http://example.org/Price_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPrice rdf:resource="http://example.org/4_95"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/publish_date_-840420112"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/publish_date_-840420112">
+  <rdf:type rdf:resource="http://example.org/PublishDate_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPublishDate rdf:resource="http://example.org/2000_11_02"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/2000_11_02">
+  <rdf:type rdf:resource="http://example.org/PublishDate"/>
+  <rdfs:label xml:lang="en">2000-11-02</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/description_-1167484815"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/description_-1167484815">
+  <rdf:type rdf:resource="http://example.org/Description_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasDescription rdf:resource="http://example.org/A_Deep_Sea_Diver_Finds_True_Love_Twenty_Thousand_Leagues_Beneath_The_Sea"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/A_Deep_Sea_Diver_Finds_True_Love_Twenty_Thousand_Leagues_Beneath_The_Sea">
+  <rdf:type rdf:resource="http://example.org/Description"/>
+  <rdfs:label xml:lang="en">A deep sea diver finds true love twenty
       thousand leagues beneath the sea.</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/catalog_377927480">
-    <rdfs:member rdf:resource="http://example.org/bk108" />
-    <ex:hasBook rdf:resource="http://example.org/bk108" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk108">
-    <rdf:type rdf:resource="http://example.org/Book" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk108">
-    <rdfs:member rdf:resource="http://example.org/author_1084597687" />
-    <ex:hasAuthor rdf:resource="http://example.org/author_1084597687" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_1084597687">
-    <rdf:type rdf:resource="http://example.org/Author" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_1084597687">
-    <rdfs:member rdf:resource="http://example.org/KnorrStefan" />
-    <ex:hasAuthor rdf:resource="http://example.org/KnorrStefan" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/KnorrStefan">
-    <rdf:type rdf:resource="http://example.org/Author" />
-    <rdfs:label xml:lang="en">Knorr, Stefan</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk108">
-    <rdfs:member rdf:resource="http://example.org/title_1084597687" />
-    <ex:hasTitle rdf:resource="http://example.org/title_1084597687" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_1084597687">
-    <rdf:type rdf:resource="http://example.org/Title" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_1084597687">
-    <rdfs:member rdf:resource="http://example.org/CreepyCrawlies" />
-    <ex:hasTitle rdf:resource="http://example.org/CreepyCrawlies" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/CreepyCrawlies">
-    <rdf:type rdf:resource="http://example.org/Title" />
-    <rdfs:label xml:lang="en">Creepy Crawlies</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk108">
-    <rdfs:member rdf:resource="http://example.org/genre_1084597687" />
-    <ex:hasGenre rdf:resource="http://example.org/genre_1084597687" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_1084597687">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_1084597687">
-    <rdfs:member rdf:resource="http://example.org/Horror" />
-    <ex:hasGenre rdf:resource="http://example.org/Horror" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/Horror">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-    <rdfs:label xml:lang="en">Horror</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk108">
-    <rdfs:member rdf:resource="http://example.org/price_1084597687" />
-    <ex:hasPrice rdf:resource="http://example.org/price_1084597687" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_1084597687">
-    <rdf:type rdf:resource="http://example.org/Price" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_1084597687">
-    <rdfs:member rdf:resource="http://example.org/495" />
-    <ex:hasPrice rdf:resource="http://example.org/495" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/495">
-    <rdf:type rdf:resource="http://example.org/Price" />
-    <rdfs:label xml:lang="en">4.95</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk108">
-    <rdfs:member rdf:resource="http://example.org/publish_date_1084597687" />
-    <ex:hasPublishDate rdf:resource="http://example.org/publish_date_1084597687" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_1084597687">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_1084597687">
-    <rdfs:member rdf:resource="http://example.org/20001206" />
-    <ex:hasPublishDate rdf:resource="http://example.org/20001206" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/20001206">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-    <rdfs:label xml:lang="en">2000-12-06</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk108">
-    <rdfs:member rdf:resource="http://example.org/description_1084597687" />
-    <ex:hasDescription rdf:resource="http://example.org/description_1084597687" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_1084597687">
-    <rdf:type rdf:resource="http://example.org/Description" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_1084597687">
-    <rdfs:member
-      rdf:resource="http://example.org/Ananthologyofhorrorstoriesaboutroachescentipedesscorpionsandotherinsects" />
-    <ex:hasDescription
-      rdf:resource="http://example.org/Ananthologyofhorrorstoriesaboutroachescentipedesscorpionsandotherinsects" />
-  </rdf:Description>
-  <rdf:Description
-    rdf:about="http://example.org/Ananthologyofhorrorstoriesaboutroachescentipedesscorpionsandotherinsects">
-    <rdf:type rdf:resource="http://example.org/Description" />
-    <rdfs:label xml:lang="en">An anthology of horror stories about roaches,
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/catalog_1262796714">
+  <rdfs:member rdf:resource="http://example.org/book_788423163"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdf:type rdf:resource="http://example.org/Book_Tag"/>
+  <ex:hasId>bk108</ex:hasId>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/author_-1552290743"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/author_-1552290743">
+  <rdf:type rdf:resource="http://example.org/Author_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasAuthor rdf:resource="http://example.org/Knorr_Stefan"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Knorr_Stefan">
+  <rdf:type rdf:resource="http://example.org/Author"/>
+  <rdfs:label xml:lang="en">Knorr, Stefan</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/title_-290583738"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/title_-290583738">
+  <rdf:type rdf:resource="http://example.org/Title_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasTitle rdf:resource="http://example.org/Creepy_Crawlies"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Creepy_Crawlies">
+  <rdf:type rdf:resource="http://example.org/Title"/>
+  <rdfs:label xml:lang="en">Creepy Crawlies</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/genre_-1274687339"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/genre_-1274687339">
+  <rdf:type rdf:resource="http://example.org/Genre_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasGenre rdf:resource="http://example.org/Horror"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Horror">
+  <rdf:type rdf:resource="http://example.org/Genre"/>
+  <rdfs:label xml:lang="en">Horror</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/price_-1866312679"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/price_-1866312679">
+  <rdf:type rdf:resource="http://example.org/Price_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPrice rdf:resource="http://example.org/4_95"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/publish_date_-840420112"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/publish_date_-840420112">
+  <rdf:type rdf:resource="http://example.org/PublishDate_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPublishDate rdf:resource="http://example.org/2000_12_06"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/2000_12_06">
+  <rdf:type rdf:resource="http://example.org/PublishDate"/>
+  <rdfs:label xml:lang="en">2000-12-06</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/description_-1167484815"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/description_-1167484815">
+  <rdf:type rdf:resource="http://example.org/Description_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasDescription rdf:resource="http://example.org/An_Anthology_Of_Horror_Stories_About_Roaches_Centipedes_Scorpions_And_Other_Insects"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/An_Anthology_Of_Horror_Stories_About_Roaches_Centipedes_Scorpions_And_Other_Insects">
+  <rdf:type rdf:resource="http://example.org/Description"/>
+  <rdfs:label xml:lang="en">An anthology of horror stories about roaches,
       centipedes, scorpions and other insects.</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/catalog_377927480">
-    <rdfs:member rdf:resource="http://example.org/bk109" />
-    <ex:hasBook rdf:resource="http://example.org/bk109" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk109">
-    <rdf:type rdf:resource="http://example.org/Book" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk109">
-    <rdfs:member rdf:resource="http://example.org/author_-927145587" />
-    <ex:hasAuthor rdf:resource="http://example.org/author_-927145587" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_-927145587">
-    <rdf:type rdf:resource="http://example.org/Author" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_-927145587">
-    <rdfs:member rdf:resource="http://example.org/KressPeter" />
-    <ex:hasAuthor rdf:resource="http://example.org/KressPeter" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/KressPeter">
-    <rdf:type rdf:resource="http://example.org/Author" />
-    <rdfs:label xml:lang="en">Kress, Peter</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk109">
-    <rdfs:member rdf:resource="http://example.org/title_-927145587" />
-    <ex:hasTitle rdf:resource="http://example.org/title_-927145587" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_-927145587">
-    <rdf:type rdf:resource="http://example.org/Title" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_-927145587">
-    <rdfs:member rdf:resource="http://example.org/ParadoxLost" />
-    <ex:hasTitle rdf:resource="http://example.org/ParadoxLost" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/ParadoxLost">
-    <rdf:type rdf:resource="http://example.org/Title" />
-    <rdfs:label xml:lang="en">Paradox Lost</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk109">
-    <rdfs:member rdf:resource="http://example.org/genre_-927145587" />
-    <ex:hasGenre rdf:resource="http://example.org/genre_-927145587" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_-927145587">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_-927145587">
-    <rdfs:member rdf:resource="http://example.org/ScienceFiction" />
-    <ex:hasGenre rdf:resource="http://example.org/ScienceFiction" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/ScienceFiction">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-    <rdfs:label xml:lang="en">Science Fiction</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk109">
-    <rdfs:member rdf:resource="http://example.org/price_-927145587" />
-    <ex:hasPrice rdf:resource="http://example.org/price_-927145587" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_-927145587">
-    <rdf:type rdf:resource="http://example.org/Price" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_-927145587">
-    <rdfs:member rdf:resource="http://example.org/695" />
-    <ex:hasPrice rdf:resource="http://example.org/695" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/695">
-    <rdf:type rdf:resource="http://example.org/Price" />
-    <rdfs:label xml:lang="en">6.95</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk109">
-    <rdfs:member rdf:resource="http://example.org/publish_date_-927145587" />
-    <ex:hasPublishDate rdf:resource="http://example.org/publish_date_-927145587" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_-927145587">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_-927145587">
-    <rdfs:member rdf:resource="http://example.org/20001102" />
-    <ex:hasPublishDate rdf:resource="http://example.org/20001102" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/20001102">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-    <rdfs:label xml:lang="en">2000-11-02</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk109">
-    <rdfs:member rdf:resource="http://example.org/description_-927145587" />
-    <ex:hasDescription rdf:resource="http://example.org/description_-927145587" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_-927145587">
-    <rdf:type rdf:resource="http://example.org/Description" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_-927145587">
-    <rdfs:member
-      rdf:resource="http://example.org/AfteraninadvertanttripthroughaHeisenbergUncertaintyDeviceJamesSalwaydiscoverstheproblemsofbeingquantum" />
-    <ex:hasDescription
-      rdf:resource="http://example.org/AfteraninadvertanttripthroughaHeisenbergUncertaintyDeviceJamesSalwaydiscoverstheproblemsofbeingquantum" />
-  </rdf:Description>
-  <rdf:Description
-    rdf:about="http://example.org/AfteraninadvertanttripthroughaHeisenbergUncertaintyDeviceJamesSalwaydiscoverstheproblemsofbeingquantum">
-    <rdf:type rdf:resource="http://example.org/Description" />
-    <rdfs:label xml:lang="en">After an inadvertant trip through a Heisenberg
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/catalog_1262796714">
+  <rdfs:member rdf:resource="http://example.org/book_788423163"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdf:type rdf:resource="http://example.org/Book_Tag"/>
+  <ex:hasId>bk109</ex:hasId>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/author_-1552290743"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/author_-1552290743">
+  <rdf:type rdf:resource="http://example.org/Author_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasAuthor rdf:resource="http://example.org/Kress_Peter"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Kress_Peter">
+  <rdf:type rdf:resource="http://example.org/Author"/>
+  <rdfs:label xml:lang="en">Kress, Peter</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/title_-290583738"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/title_-290583738">
+  <rdf:type rdf:resource="http://example.org/Title_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasTitle rdf:resource="http://example.org/Paradox_Lost"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Paradox_Lost">
+  <rdf:type rdf:resource="http://example.org/Title"/>
+  <rdfs:label xml:lang="en">Paradox Lost</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/genre_-1274687339"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/genre_-1274687339">
+  <rdf:type rdf:resource="http://example.org/Genre_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasGenre rdf:resource="http://example.org/Science_Fiction"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Science_Fiction">
+  <rdf:type rdf:resource="http://example.org/Genre"/>
+  <rdfs:label xml:lang="en">Science Fiction</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/price_-1866312679"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/price_-1866312679">
+  <rdf:type rdf:resource="http://example.org/Price_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPrice rdf:resource="http://example.org/6_95"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/6_95">
+  <rdf:type rdf:resource="http://example.org/Price"/>
+  <rdfs:label xml:lang="en">6.95</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/publish_date_-840420112"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/publish_date_-840420112">
+  <rdf:type rdf:resource="http://example.org/PublishDate_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPublishDate rdf:resource="http://example.org/2000_11_02"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/description_-1167484815"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/description_-1167484815">
+  <rdf:type rdf:resource="http://example.org/Description_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasDescription rdf:resource="http://example.org/After_An_Inadvertant_Trip_Through_A_Heisenberg_Uncertainty_Device_James_Salway_Discovers_The_Problems_Of_Being_Quantum"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/After_An_Inadvertant_Trip_Through_A_Heisenberg_Uncertainty_Device_James_Salway_Discovers_The_Problems_Of_Being_Quantum">
+  <rdf:type rdf:resource="http://example.org/Description"/>
+  <rdfs:label xml:lang="en">After an inadvertant trip through a Heisenberg
       Uncertainty Device, James Salway discovers the problems
       of being quantum.</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/catalog_377927480">
-    <rdfs:member rdf:resource="http://example.org/bk110" />
-    <ex:hasBook rdf:resource="http://example.org/bk110" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk110">
-    <rdf:type rdf:resource="http://example.org/Book" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk110">
-    <rdfs:member rdf:resource="http://example.org/author_-747488600" />
-    <ex:hasAuthor rdf:resource="http://example.org/author_-747488600" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_-747488600">
-    <rdf:type rdf:resource="http://example.org/Author" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_-747488600">
-    <rdfs:member rdf:resource="http://example.org/OBrienTim" />
-    <ex:hasAuthor rdf:resource="http://example.org/OBrienTim" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/OBrienTim">
-    <rdf:type rdf:resource="http://example.org/Author" />
-    <rdfs:label xml:lang="en">O&apos;Brien, Tim</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk110">
-    <rdfs:member rdf:resource="http://example.org/title_-747488600" />
-    <ex:hasTitle rdf:resource="http://example.org/title_-747488600" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_-747488600">
-    <rdf:type rdf:resource="http://example.org/Title" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_-747488600">
-    <rdfs:member rdf:resource="http://example.org/MicrosoftNETTheProgrammingBible" />
-    <ex:hasTitle rdf:resource="http://example.org/MicrosoftNETTheProgrammingBible" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/MicrosoftNETTheProgrammingBible">
-    <rdf:type rdf:resource="http://example.org/Title" />
-    <rdfs:label xml:lang="en">Microsoft .NET: The Programming Bible</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk110">
-    <rdfs:member rdf:resource="http://example.org/genre_-747488600" />
-    <ex:hasGenre rdf:resource="http://example.org/genre_-747488600" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_-747488600">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_-747488600">
-    <rdfs:member rdf:resource="http://example.org/Computer" />
-    <ex:hasGenre rdf:resource="http://example.org/Computer" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/Computer">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-    <rdfs:label xml:lang="en">Computer</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk110">
-    <rdfs:member rdf:resource="http://example.org/price_-747488600" />
-    <ex:hasPrice rdf:resource="http://example.org/price_-747488600" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_-747488600">
-    <rdf:type rdf:resource="http://example.org/Price" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_-747488600">
-    <rdfs:member rdf:resource="http://example.org/3695" />
-    <ex:hasPrice rdf:resource="http://example.org/3695" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/3695">
-    <rdf:type rdf:resource="http://example.org/Price" />
-    <rdfs:label xml:lang="en">36.95</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk110">
-    <rdfs:member rdf:resource="http://example.org/publish_date_-747488600" />
-    <ex:hasPublishDate rdf:resource="http://example.org/publish_date_-747488600" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_-747488600">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_-747488600">
-    <rdfs:member rdf:resource="http://example.org/20001209" />
-    <ex:hasPublishDate rdf:resource="http://example.org/20001209" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/20001209">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-    <rdfs:label xml:lang="en">2000-12-09</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk110">
-    <rdfs:member rdf:resource="http://example.org/description_-747488600" />
-    <ex:hasDescription rdf:resource="http://example.org/description_-747488600" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_-747488600">
-    <rdf:type rdf:resource="http://example.org/Description" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_-747488600">
-    <rdfs:member
-      rdf:resource="http://example.org/MicrosoftsNETinitiativeisexploredindetailinthisdeepprogrammersreference" />
-    <ex:hasDescription
-      rdf:resource="http://example.org/MicrosoftsNETinitiativeisexploredindetailinthisdeepprogrammersreference" />
-  </rdf:Description>
-  <rdf:Description
-    rdf:about="http://example.org/MicrosoftsNETinitiativeisexploredindetailinthisdeepprogrammersreference">
-    <rdf:type rdf:resource="http://example.org/Description" />
-    <rdfs:label xml:lang="en">Microsoft&apos;s .NET initiative is explored in
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/catalog_1262796714">
+  <rdfs:member rdf:resource="http://example.org/book_788423163"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdf:type rdf:resource="http://example.org/Book_Tag"/>
+  <ex:hasId>bk110</ex:hasId>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/author_-1552290743"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/author_-1552290743">
+  <rdf:type rdf:resource="http://example.org/Author_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasAuthor rdf:resource="http://example.org/O_Brien_Tim"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/O_Brien_Tim">
+  <rdf:type rdf:resource="http://example.org/Author"/>
+  <rdfs:label xml:lang="en">O&apos;Brien, Tim</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/title_-290583738"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/title_-290583738">
+  <rdf:type rdf:resource="http://example.org/Title_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasTitle rdf:resource="http://example.org/Microsoft_Net_The_Programming_Bible"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Microsoft_Net_The_Programming_Bible">
+  <rdf:type rdf:resource="http://example.org/Title"/>
+  <rdfs:label xml:lang="en">Microsoft .NET: The Programming Bible</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/genre_-1274687339"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/genre_-1274687339">
+  <rdf:type rdf:resource="http://example.org/Genre_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasGenre rdf:resource="http://example.org/Computer"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/price_-1866312679"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/price_-1866312679">
+  <rdf:type rdf:resource="http://example.org/Price_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPrice rdf:resource="http://example.org/36_95"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/36_95">
+  <rdf:type rdf:resource="http://example.org/Price"/>
+  <rdfs:label xml:lang="en">36.95</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/publish_date_-840420112"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/publish_date_-840420112">
+  <rdf:type rdf:resource="http://example.org/PublishDate_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPublishDate rdf:resource="http://example.org/2000_12_09"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/2000_12_09">
+  <rdf:type rdf:resource="http://example.org/PublishDate"/>
+  <rdfs:label xml:lang="en">2000-12-09</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/description_-1167484815"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/description_-1167484815">
+  <rdf:type rdf:resource="http://example.org/Description_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasDescription rdf:resource="http://example.org/Microsoft_S_Net_Initiative_Is_Explored_In_Detail_In_This_Deep_Programmer_S_Reference"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Microsoft_S_Net_Initiative_Is_Explored_In_Detail_In_This_Deep_Programmer_S_Reference">
+  <rdf:type rdf:resource="http://example.org/Description"/>
+  <rdfs:label xml:lang="en">Microsoft&apos;s .NET initiative is explored in
       detail in this deep programmer&apos;s reference.</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/catalog_377927480">
-    <rdfs:member rdf:resource="http://example.org/bk111" />
-    <ex:hasBook rdf:resource="http://example.org/bk111" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk111">
-    <rdf:type rdf:resource="http://example.org/Book" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk111">
-    <rdfs:member rdf:resource="http://example.org/author_-1213443124" />
-    <ex:hasAuthor rdf:resource="http://example.org/author_-1213443124" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_-1213443124">
-    <rdf:type rdf:resource="http://example.org/Author" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_-1213443124">
-    <rdfs:member rdf:resource="http://example.org/OBrienTim" />
-    <ex:hasAuthor rdf:resource="http://example.org/OBrienTim" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/OBrienTim">
-    <rdf:type rdf:resource="http://example.org/Author" />
-    <rdfs:label xml:lang="en">O&apos;Brien, Tim</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk111">
-    <rdfs:member rdf:resource="http://example.org/title_-1213443124" />
-    <ex:hasTitle rdf:resource="http://example.org/title_-1213443124" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_-1213443124">
-    <rdf:type rdf:resource="http://example.org/Title" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_-1213443124">
-    <rdfs:member rdf:resource="http://example.org/MSXML3AComprehensiveGuide" />
-    <ex:hasTitle rdf:resource="http://example.org/MSXML3AComprehensiveGuide" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/MSXML3AComprehensiveGuide">
-    <rdf:type rdf:resource="http://example.org/Title" />
-    <rdfs:label xml:lang="en">MSXML3: A Comprehensive Guide</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk111">
-    <rdfs:member rdf:resource="http://example.org/genre_-1213443124" />
-    <ex:hasGenre rdf:resource="http://example.org/genre_-1213443124" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_-1213443124">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_-1213443124">
-    <rdfs:member rdf:resource="http://example.org/Computer" />
-    <ex:hasGenre rdf:resource="http://example.org/Computer" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/Computer">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-    <rdfs:label xml:lang="en">Computer</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk111">
-    <rdfs:member rdf:resource="http://example.org/price_-1213443124" />
-    <ex:hasPrice rdf:resource="http://example.org/price_-1213443124" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_-1213443124">
-    <rdf:type rdf:resource="http://example.org/Price" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/price_-1213443124">
-    <rdfs:member rdf:resource="http://example.org/3695" />
-    <ex:hasPrice rdf:resource="http://example.org/3695" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/3695">
-    <rdf:type rdf:resource="http://example.org/Price" />
-    <rdfs:label xml:lang="en">36.95</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk111">
-    <rdfs:member rdf:resource="http://example.org/publish_date_-1213443124" />
-    <ex:hasPublishDate rdf:resource="http://example.org/publish_date_-1213443124" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_-1213443124">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/publish_date_-1213443124">
-    <rdfs:member rdf:resource="http://example.org/20001201" />
-    <ex:hasPublishDate rdf:resource="http://example.org/20001201" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/20001201">
-    <rdf:type rdf:resource="http://example.org/PublishDate" />
-    <rdfs:label xml:lang="en">2000-12-01</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk111">
-    <rdfs:member rdf:resource="http://example.org/description_-1213443124" />
-    <ex:hasDescription rdf:resource="http://example.org/description_-1213443124" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_-1213443124">
-    <rdf:type rdf:resource="http://example.org/Description" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/description_-1213443124">
-    <rdfs:member
-      rdf:resource="http://example.org/TheMicrosoftMSXML3parseriscoveredindetailwithattentiontoXMLDOMinterfacesXSLTprocessingSAXandmore" />
-    <ex:hasDescription
-      rdf:resource="http://example.org/TheMicrosoftMSXML3parseriscoveredindetailwithattentiontoXMLDOMinterfacesXSLTprocessingSAXandmore" />
-  </rdf:Description>
-  <rdf:Description
-    rdf:about="http://example.org/TheMicrosoftMSXML3parseriscoveredindetailwithattentiontoXMLDOMinterfacesXSLTprocessingSAXandmore">
-    <rdf:type rdf:resource="http://example.org/Description" />
-    <rdfs:label xml:lang="en">The Microsoft MSXML3 parser is covered in
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/catalog_1262796714">
+  <rdfs:member rdf:resource="http://example.org/book_788423163"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdf:type rdf:resource="http://example.org/Book_Tag"/>
+  <ex:hasId>bk111</ex:hasId>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/author_-1552290743"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/author_-1552290743">
+  <rdf:type rdf:resource="http://example.org/Author_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasAuthor rdf:resource="http://example.org/O_Brien_Tim"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/title_-290583738"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/title_-290583738">
+  <rdf:type rdf:resource="http://example.org/Title_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasTitle rdf:resource="http://example.org/Msxml3_A_Comprehensive_Guide"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Msxml3_A_Comprehensive_Guide">
+  <rdf:type rdf:resource="http://example.org/Title"/>
+  <rdfs:label xml:lang="en">MSXML3: A Comprehensive Guide</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/genre_-1274687339"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/genre_-1274687339">
+  <rdf:type rdf:resource="http://example.org/Genre_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasGenre rdf:resource="http://example.org/Computer"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/price_-1866312679"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/price_-1866312679">
+  <rdf:type rdf:resource="http://example.org/Price_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPrice rdf:resource="http://example.org/36_95"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/publish_date_-840420112"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/publish_date_-840420112">
+  <rdf:type rdf:resource="http://example.org/PublishDate_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPublishDate rdf:resource="http://example.org/2000_12_01"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/2000_12_01">
+  <rdf:type rdf:resource="http://example.org/PublishDate"/>
+  <rdfs:label xml:lang="en">2000-12-01</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/description_-1167484815"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/description_-1167484815">
+  <rdf:type rdf:resource="http://example.org/Description_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasDescription rdf:resource="http://example.org/The_Microsoft_Msxml3_Parser_Is_Covered_In_Detail_With_Attention_To_Xml_Dom_Interfaces_Xslt_Processing_Sax_And_More"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/The_Microsoft_Msxml3_Parser_Is_Covered_In_Detail_With_Attention_To_Xml_Dom_Interfaces_Xslt_Processing_Sax_And_More">
+  <rdf:type rdf:resource="http://example.org/Description"/>
+  <rdfs:label xml:lang="en">The Microsoft MSXML3 parser is covered in
       detail, with attention to XML DOM interfaces, XSLT processing,
       SAX and more.</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/catalog_377927480">
-    <rdfs:member rdf:resource="http://example.org/bk112" />
-    <ex:hasBook rdf:resource="http://example.org/bk112" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk112">
-    <rdf:type rdf:resource="http://example.org/Book" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk112">
-    <rdfs:member rdf:resource="http://example.org/author_-1124468728" />
-    <ex:hasAuthor rdf:resource="http://example.org/author_-1124468728" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_-1124468728">
-    <rdf:type rdf:resource="http://example.org/Author" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/author_-1124468728">
-    <rdfs:member rdf:resource="http://example.org/GalosMike" />
-    <ex:hasAuthor rdf:resource="http://example.org/GalosMike" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/GalosMike">
-    <rdf:type rdf:resource="http://example.org/Author" />
-    <rdfs:label xml:lang="en">Galos, Mike</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk112">
-    <rdfs:member rdf:resource="http://example.org/title_-1124468728" />
-    <ex:hasTitle rdf:resource="http://example.org/title_-1124468728" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_-1124468728">
-    <rdf:type rdf:resource="http://example.org/Title" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/title_-1124468728">
-    <rdfs:member rdf:resource="http://example.org/VisualStudio7AComprehensiveGuide" />
-    <ex:hasTitle rdf:resource="http://example.org/VisualStudio7AComprehensiveGuide" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/VisualStudio7AComprehensiveGuide">
-    <rdf:type rdf:resource="http://example.org/Title" />
-    <rdfs:label xml:lang="en">Visual Studio 7: A Comprehensive Guide</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/bk112">
-    <rdfs:member rdf:resource="http://example.org/genre_-1124468728" />
-    <ex:hasGenre rdf:resource="http://example.org/genre_-1124468728" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_-1124468728">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/genre_-1124468728">
-    <rdfs:member rdf:resource="http://example.org/Computer" />
-    <ex:hasGenre rdf:resource="http://example.org/Computer" />
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/Computer">
-    <rdf:type rdf:resource="http://example.org/Genre" />
-    <rdfs:label xml:lang="en">Computer</rdfs:label>
-  </rdf:Description>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/catalog_1262796714">
+  <rdfs:member rdf:resource="http://example.org/book_788423163"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdf:type rdf:resource="http://example.org/Book_Tag"/>
+  <ex:hasId>bk112</ex:hasId>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/author_-1552290743"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/author_-1552290743">
+  <rdf:type rdf:resource="http://example.org/Author_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasAuthor rdf:resource="http://example.org/Galos_Mike"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Galos_Mike">
+  <rdf:type rdf:resource="http://example.org/Author"/>
+  <rdfs:label xml:lang="en">Galos, Mike</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/title_-290583738"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/title_-290583738">
+  <rdf:type rdf:resource="http://example.org/Title_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasTitle rdf:resource="http://example.org/Visual_Studio_7_A_Comprehensive_Guide"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Visual_Studio_7_A_Comprehensive_Guide">
+  <rdf:type rdf:resource="http://example.org/Title"/>
+  <rdfs:label xml:lang="en">Visual Studio 7: A Comprehensive Guide</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/genre_-1274687339"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/genre_-1274687339">
+  <rdf:type rdf:resource="http://example.org/Genre_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasGenre rdf:resource="http://example.org/Computer"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/price_-1866312679"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/price_-1866312679">
+  <rdf:type rdf:resource="http://example.org/Price_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPrice rdf:resource="http://example.org/49_95"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/49_95">
+  <rdf:type rdf:resource="http://example.org/Price"/>
+  <rdfs:label xml:lang="en">49.95</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/publish_date_-840420112"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/publish_date_-840420112">
+  <rdf:type rdf:resource="http://example.org/PublishDate_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasPublishDate rdf:resource="http://example.org/2001_04_16"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/2001_04_16">
+  <rdf:type rdf:resource="http://example.org/PublishDate"/>
+  <rdfs:label xml:lang="en">2001-04-16</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <rdfs:member rdf:resource="http://example.org/description_-1167484815"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/description_-1167484815">
+  <rdf:type rdf:resource="http://example.org/Description_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/book_788423163">
+  <ex:hasDescription rdf:resource="http://example.org/Microsoft_Visual_Studio_7_Is_Explored_In_Depth_Looking_At_How_Visual_Basic_Visual_C_C_And_Asp_Are_Integrated_Into_A_Comprehensive_Development_Environment"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Microsoft_Visual_Studio_7_Is_Explored_In_Depth_Looking_At_How_Visual_Basic_Visual_C_C_And_Asp_Are_Integrated_Into_A_Comprehensive_Development_Environment">
+  <rdf:type rdf:resource="http://example.org/Description"/>
+  <rdfs:label xml:lang="en">Microsoft Visual Studio 7 is explored in depth,
+      looking at how Visual Basic, Visual C++, C#, and ASP+ are
+      integrated into a comprehensive development
+      environment.</rdfs:label>
+</rdf:Description>
+</rdf:RDF>e.org/Author"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/author_-1213443124">
+  <rdfs:member rdf:resource="http://example.org/OBrienTim"/>
+  <ex:hasAuthor rdf:resource="http://example.org/OBrienTim"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/OBrienTim">
+  <rdf:type rdf:resource="http://example.org/Author"/>
+  <rdfs:label xml:lang="en">O&apos;Brien, Tim</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/bk111">
+  <rdfs:member rdf:resource="http://example.org/title_-1213443124"/>
+  <ex:hasTitle rdf:resource="http://example.org/title_-1213443124"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/title_-1213443124">
+  <rdf:type rdf:resource="http://example.org/Title"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/title_-1213443124">
+  <rdfs:member rdf:resource="http://example.org/MSXML3AComprehensiveGuide"/>
+  <ex:hasTitle rdf:resource="http://example.org/MSXML3AComprehensiveGuide"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/MSXML3AComprehensiveGuide">
+  <rdf:type rdf:resource="http://example.org/Title"/>
+  <rdfs:label xml:lang="en">MSXML3: A Comprehensive Guide</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/bk111">
+  <rdfs:member rdf:resource="http://example.org/genre_-1213443124"/>
+  <ex:hasGenre rdf:resource="http://example.org/genre_-1213443124"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/genre_-1213443124">
+  <rdf:type rdf:resource="http://example.org/Genre"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/genre_-1213443124">
+  <rdfs:member rdf:resource="http://example.org/Computer"/>
+  <ex:hasGenre rdf:resource="http://example.org/Computer"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Computer">
+  <rdf:type rdf:resource="http://example.org/Genre"/>
+  <rdfs:label xml:lang="en">Computer</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/bk111">
+  <rdfs:member rdf:resource="http://example.org/price_-1213443124"/>
+  <ex:hasPrice rdf:resource="http://example.org/price_-1213443124"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/price_-1213443124">
+  <rdf:type rdf:resource="http://example.org/Price"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/price_-1213443124">
+  <rdfs:member rdf:resource="http://example.org/3695"/>
+  <ex:hasPrice rdf:resource="http://example.org/3695"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/3695">
+  <rdf:type rdf:resource="http://example.org/Price"/>
+  <rdfs:label xml:lang="en">36.95</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/bk111">
+  <rdfs:member rdf:resource="http://example.org/publish_date_-1213443124"/>
+  <ex:hasPublishDate rdf:resource="http://example.org/publish_date_-1213443124"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/publish_date_-1213443124">
+  <rdf:type rdf:resource="http://example.org/PublishDate"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/publish_date_-1213443124">
+  <rdfs:member rdf:resource="http://example.org/20001201"/>
+  <ex:hasPublishDate rdf:resource="http://example.org/20001201"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/20001201">
+  <rdf:type rdf:resource="http://example.org/PublishDate"/>
+  <rdfs:label xml:lang="en">2000-12-01</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/bk111">
+  <rdfs:member rdf:resource="http://example.org/description_-1213443124"/>
+  <ex:hasDescription rdf:resource="http://example.org/description_-1213443124"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/description_-1213443124">
+  <rdf:type rdf:resource="http://example.org/Description"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/description_-1213443124">
+  <rdfs:member rdf:resource="http://example.org/TheMicrosoftMSXML3parseriscoveredindetailwithattentiontoXMLDOMinterfacesXSLTprocessingSAXandmore"/>
+  <ex:hasDescription rdf:resource="http://example.org/TheMicrosoftMSXML3parseriscoveredindetailwithattentiontoXMLDOMinterfacesXSLTprocessingSAXandmore"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/TheMicrosoftMSXML3parseriscoveredindetailwithattentiontoXMLDOMinterfacesXSLTprocessingSAXandmore">
+  <rdf:type rdf:resource="http://example.org/Description"/>
+  <rdfs:label xml:lang="en">The Microsoft MSXML3 parser is covered in
+      detail, with attention to XML DOM interfaces, XSLT processing,
+      SAX and more.</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/catalog_377927480">
+  <rdfs:member rdf:resource="http://example.org/bk112"/>
+  <ex:hasBook rdf:resource="http://example.org/bk112"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/bk112">
+  <rdf:type rdf:resource="http://example.org/Book"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/bk112">
+  <rdfs:member rdf:resource="http://example.org/author_-1124468728"/>
+  <ex:hasAuthor rdf:resource="http://example.org/author_-1124468728"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/author_-1124468728">
+  <rdf:type rdf:resource="http://example.org/Author"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/author_-1124468728">
+  <rdfs:member rdf:resource="http://example.org/GalosMike"/>
+  <ex:hasAuthor rdf:resource="http://example.org/GalosMike"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/GalosMike">
+  <rdf:type rdf:resource="http://example.org/Author"/>
+  <rdfs:label xml:lang="en">Galos, Mike</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/bk112">
+  <rdfs:member rdf:resource="http://example.org/title_-1124468728"/>
+  <ex:hasTitle rdf:resource="http://example.org/title_-1124468728"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/title_-1124468728">
+  <rdf:type rdf:resource="http://example.org/Title"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/title_-1124468728">
+  <rdfs:member rdf:resource="http://example.org/VisualStudio7AComprehensiveGuide"/>
+  <ex:hasTitle rdf:resource="http://example.org/VisualStudio7AComprehensiveGuide"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/VisualStudio7AComprehensiveGuide">
+  <rdf:type rdf:resource="http://example.org/Title"/>
+  <rdfs:label xml:lang="en">Visual Studio 7: A Comprehensive Guide</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/bk112">
+  <rdfs:member rdf:resource="http://example.org/genre_-1124468728"/>
+  <ex:hasGenre rdf:resource="http://example.org/genre_-1124468728"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/genre_-1124468728">
+  <rdf:type rdf:resource="http://example.org/Genre"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/genre_-1124468728">
+  <rdfs:member rdf:resource="http://example.org/Computer"/>
+  <ex:hasGenre rdf:resource="http://example.org/Computer"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Computer">
+  <rdf:type rdf:resource="http://example.org/Genre"/>
+  <rdfs:label xml:lang="en">Computer</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/bk112">
+  <rdfs:member rdf:resource="http://example.org/price_-1124468728"/>
+  <ex:hasPrice rdf:resource="http://example.org/price_-1124468728"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/price_-1124468728">
+  <rdf:type rdf:resource="http://example.org/Price"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/price_-1124468728">
+  <rdfs:member rdf:resource="http://example.org/4995"/>
+  <ex:hasPrice rdf:resource="http://example.org/4995"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/4995">
+  <rdf:type rdf:resource="http://example.org/Price"/>
+  <rdfs:label xml:lang="en">49.95</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/bk112">
+  <rdfs:member rdf:resource="http://example.org/publish_date_-1124468728"/>
+  <ex:hasPublishDate rdf:resource="http://example.org/publish_date_-1124468728"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/publish_date_-1124468728">
+  <rdf:type rdf:resource="http://example.org/PublishDate"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/publish_date_-1124468728">
+  <rdfs:member rdf:resource="http://example.org/20010416"/>
+  <ex:hasPublishDate rdf:resource="http://example.org/20010416"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/20010416">
+  <rdf:type rdf:resource="http://example.org/PublishDate"/>
+  <rdfs:label xml:lang="en">2001-04-16</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/bk112">
+  <rdfs:member rdf:resource="http://example.org/description_-1124468728"/>
+  <ex:hasDescription rdf:resource="http://example.org/description_-1124468728"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/description_-1124468728">
+  <rdf:type rdf:resource="http://example.org/Description"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/description_-1124468728">
+  <rdfs:member rdf:resource="http://example.org/MicrosoftVisualStudio7isexploredindepthlookingathowVisualBasicVisualCCandASPareintegratedintoacomprehensivedevelopmentenvironment"/>
+  <ex:hasDescription rdf:resource="http://example.org/MicrosoftVisualStudio7isexploredindepthlookingathowVisualBasicVisualCCandASPareintegratedintoacomprehensivedevelopmentenvironment"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/MicrosoftVisualStudio7isexploredindepthlookingathowVisualBasicVisualCCandASPareintegratedintoacomprehensivedevelopmentenvironment">
+  <rdf:type rdf:resource="http://example.org/Description"/>
+  <rdfs:label xml:lang="en">Microsoft Visual Studio 7 is explored in depth,
+      looking at how Visual Basic, Visual C++, C#, and ASP+ are
+      integrated into a comprehensive development
+      environment.</rdfs:label>
+</rdf:Description>
+</rdf:RDF>ption>
   <rdf:Description rdf:about="http://example.org/bk112">
     <rdfs:member rdf:resource="http://example.org/price_-1124468728" />
     <ex:hasPrice rdf:resource="http://example.org/price_-1124468728" />

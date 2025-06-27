@@ -34,19 +34,33 @@ object XmlToRdf extends IOApp.Simple {
       .map(word => word.head.toUpper + word.tail)
       .mkString
 
+  private def pascalSnakeCase(value: String): String =
+    value
+      .split("[^\\p{IsAlphabetic}\\p{IsDigit}]+")
+      .filter(_.nonEmpty)
+      .map(word => word.head.toUpper + word.tail.toLowerCase)
+      .mkString("_")
+
   private def expandPrefix(name: String): String =
     name.split(":", 2) match
       case Array(prefix, local) if prefixMap.contains(prefix) => prefixMap(prefix) + local
       case _                                                  => name
 
-  private def createIndividualIRI(tag: String, value: String): String =
-    expandPrefix(s"ex:${normalizeLiteral(value)}")
-
-  private def createClassIRI(tag: String): String =
-    expandPrefix(s"ex:${pascalCase(tag)}")
 
   private def createHasProperty(tag: String): String =
     s"ex:has${pascalCase(tag)}"
+
+  private def createSyntacticIRI(tag: String, stack: List[(String, String)]): String =
+    expandPrefix(s"ex:${tag}_${MurmurHash3.stringHash((tag :: stack.map(_._2)).mkString("/"))}")
+
+  private def createSemanticIRI(value: String): String =
+    expandPrefix(s"ex:${pascalSnakeCase(value)}")
+
+  private def syntacticClassIRI(tag: String): String =
+    expandPrefix(s"ex:${pascalCase(tag)}_Tag")
+
+  private def semanticClassIRI(tag: String): String =
+    expandPrefix(s"ex:${pascalCase(tag)}")
 
   private def escapeXml(s: String): String =
     s.replace("&", "&amp;")
@@ -58,31 +72,32 @@ object XmlToRdf extends IOApp.Simple {
   def liftEvent(
       lang: Option[String]
   ): XmlEvent => Stream[IO, String] = {
-    var stack: List[(String, String)] = Nil
+    var stack: List[(String, String)]    = Nil
+    var emittedClasses: Set[String]      = Set.empty
+    var emittedSemantic: Set[String]     = Set.empty
 
     {
       case StartTag(qn, attrs, _) =>
-        val tag      = qn.local
-        val classIRI = createClassIRI(tag)
+        val tag           = qn.local
+        val synClassIRI   = syntacticClassIRI(tag)
+        val semClassIRI   = semanticClassIRI(tag)
 
-        val idOpt = attrs.collectFirst {
-          case Attr(QName(_, "id"), value) =>
-            value.collect { case XmlString(s, _) => s }.mkString
-        }
+        val classBlocks =
+          if (!emittedClasses.contains(tag)) then
+            emittedClasses += tag
+            List(
+              s"<rdf:Description rdf:about=\"$synClassIRI\">\n  <rdf:type rdf:resource=\"${expandPrefix("owl:Class")}\"/>\n</rdf:Description>",
+              s"<rdf:Description rdf:about=\"$semClassIRI\">\n  <rdf:type rdf:resource=\"${expandPrefix("owl:Class")}\"/>\n</rdf:Description>"
+            )
+          else Nil
 
-        val subjectIRI = idOpt match {
-          case Some(id) => expandPrefix(s"ex:$id")
-          case None =>
-            expandPrefix(s"ex:${tag}_${MurmurHash3.stringHash(stack.map(_._1).mkString("/"))}")
-        }
+        val subjectIRI = createSyntacticIRI(tag, stack)
 
         val parentBlock = stack.headOption.map { case (parentIRI, _) =>
-          val hasProp = createHasProperty(tag)
-          s"<rdf:Description rdf:about=\"$parentIRI\">\n  <rdfs:member rdf:resource=\"$subjectIRI\"/>\n  <$hasProp rdf:resource=\"$subjectIRI\"/>\n</rdf:Description>"
+          s"<rdf:Description rdf:about=\"$parentIRI\">\n  <rdfs:member rdf:resource=\"$subjectIRI\"/>\n</rdf:Description>"
         }
 
         val attrLines = attrs.collect {
-          case Attr(QName(_, "id"), _)  => None
           case Attr(QName(_, "lang"), _) => None
           case Attr(name, value) =>
             val attrVal = value.collect { case XmlString(s, _) => s }.mkString
@@ -91,30 +106,36 @@ object XmlToRdf extends IOApp.Simple {
         }.flatten
 
         val subjectBlock =
-          (List(s"<rdf:Description rdf:about=\"$subjectIRI\">", s"  <rdf:type rdf:resource=\"$classIRI\"/>") ++
+          (List(s"<rdf:Description rdf:about=\"$subjectIRI\">", s"  <rdf:type rdf:resource=\"$synClassIRI\"/>") ++
             attrLines ++
             List("</rdf:Description>")).mkString("\n")
 
         stack = (subjectIRI, tag) :: stack
 
-        Stream.emits(parentBlock.toList :+ subjectBlock)
+        Stream.emits(classBlocks ++ parentBlock.toList :+ subjectBlock)
 
       case XmlString(text, _) if text.trim.nonEmpty =>
-        stack.headOption match {
-          case Some((subj, tag)) =>
-            val valueIRI = createIndividualIRI(tag, text.trim)
-            val classIRI = createClassIRI(tag)
-            val hasProp  = createHasProperty(tag)
+        stack.headOption match
+          case Some((_, tag)) =>
+            val valueIRI  = createSemanticIRI(text.trim)
+            val classIRI  = semanticClassIRI(tag)
+            val hasProp   = createHasProperty(tag)
+            val parentIRI = stack.drop(1).headOption.map(_._1)
 
-            val parentBlock =
-              s"<rdf:Description rdf:about=\"$subj\">\n  <rdfs:member rdf:resource=\"$valueIRI\"/>\n  <$hasProp rdf:resource=\"$valueIRI\"/>\n</rdf:Description>"
+            val parentBlock = parentIRI.map { p =>
+              s"<rdf:Description rdf:about=\"$p\">\n  <$hasProp rdf:resource=\"$valueIRI\"/>\n</rdf:Description>"
+            }
 
             val valueBlock =
-              s"<rdf:Description rdf:about=\"$valueIRI\">\n  <rdf:type rdf:resource=\"$classIRI\"/>\n  <rdfs:label xml:lang=\"${lang.getOrElse("en")}\">${escapeXml(text.trim)}</rdfs:label>\n</rdf:Description>"
+              if !emittedSemantic.contains(valueIRI) then
+                emittedSemantic += valueIRI
+                Some(
+                  s"<rdf:Description rdf:about=\"$valueIRI\">\n  <rdf:type rdf:resource=\"$classIRI\"/>\n  <rdfs:label xml:lang=\"${lang.getOrElse("en")}\">${escapeXml(text.trim)}</rdfs:label>\n</rdf:Description>"
+                )
+              else None
 
-            Stream.emit(parentBlock) ++ Stream.emit(valueBlock)
+            Stream.emits(parentBlock.toList ++ valueBlock.toList)
           case None => Stream.empty
-        }
 
       case EndTag(_) =>
         stack = stack.drop(1)

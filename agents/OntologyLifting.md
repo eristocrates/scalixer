@@ -1,144 +1,75 @@
 
+### ✅ `OntologyLifting.md`
+
+```markdown
 # Agent: OntologyLifting
 
 ## Summary
 
-This agent is responsible for semantic enrichment of XML data into RDF/XML following ontological modeling principles. It supports transformation patterns that elevate flat or nested XML into meaningful OWL constructs, including named individuals, classes, properties, and relationships.
+This agent is responsible for the semantic enrichment of RDF generated from XML, especially by distinguishing **syntactic structures** from **semantic meaning** and aligning both with OWL constructs.
 
-## Context
+It works in tandem with `XmlToRdf` to ensure all lifted data is ontologically valid, expressive, and typed according to OWL principles.
 
-This project parses XML using `fs2-data-xml` and streams RDF/XML using idiomatic Scala 3 and FS2. The transformation logic is implemented in `XmlToRdf.scala`. The agent works in tandem with `RdfXmlSpec` and `Fs2XmlDoc`.
+## Responsibilities
 
-## Lifting Philosophy
+- Model every XML element as:
+  - A **syntactic class** (e.g., `Author_Tag`)
+  - A **semantic class** (e.g., `Author`)
+- Generate corresponding named individuals for both forms
+- Ensure `rdfs:member` is used for syntactic containment
+- Ensure domain-specific properties like `:hasAuthor` link semantic content
 
-This agent interprets raw XML data as a **semantic document**. Its job is to infer **meaningful RDF RDF/XML statements**, not just direct structural mappings.
+## Example Transformation
 
-It does so by applying transformation rules that convert XML:
-
-* Elements → Classes or Individuals
-* Attributes → Identifiers or Data Properties
-* Nesting → Membership or Property Relationships
-* Strings → IRIs (via normalization)
-
-## Semantic Lifting Rules
-
-### 1. Class Inference
-
-```xml
-<book> ... </book>
-```
-
-→
-
-```turtle
-:book a owl:Class .
-```
-
-Any element name implies an OWL `Class`.
-
----
-
-### 2. Named Individuals
-
-```xml
-<book id="bk101"> ... </book>
-```
-
-→
-
-```turtle
-:bk101 a :book .
-```
-
-* If `id` is present, treat the element as a named individual of the corresponding class.
-
----
-
-### 3. Nested Elements → Membership
-
-```xml
-<book>
-  <author>Matthew</author>
-</book>
-```
-
-→
-
-```turtle
-_:book123 rdfs:member _:author456 .
-```
-
-Child elements imply `rdfs:member` relationships with the parent, which may later be strengthened by domain-specific properties.
-
----
-
-### 4. Property Derivation (hasX Convention)
-
-```xml
-<book>
-  <author>Matthew</author>
-</book>
-```
-
-→
-
-```turtle
-:hasAuthor rdfs:domain :Book ;
-           rdfs:range :Author .
-:book123 :hasAuthor :Matthew .
-```
-
-From element `<author>`, derive property `:hasAuthor` based on the parent’s class.
-
----
-
-### 5. Literal Normalization → IRI Identity
+From:
 
 ```xml
 <author>Gambardella, Matthew</author>
-```
+````
 
-→
+Generate:
+
+* Individual: `author_1234` of type `Author_Tag`
+* Individual: `Gambardella_Matthew` of type `Author`
+* `rdfs:member`: subject has `author_1234`
+* `ex:hasAuthor`: subject has `Gambardella_Matthew`
+
+Also assert:
 
 ```turtle
-:GambardellaMatthew a :Author .
+:Author_Tag a owl:Class .
+:Author a owl:Class .
+:Gambardella_Matthew a :Author ;
+  rdfs:label "Gambardella, Matthew"@en .
 ```
 
-Normalize inner text into a safe IRI. All punctuation and whitespace are removed unless semantically relevant. For example:
+## Class System
 
-| Literal Text             | IRI                   |
-| ------------------------ | --------------------- |
-| `"Gambardella, Matthew"` | `:GambardellaMatthew` |
-| `"XML Guide"`            | `:XMLGuide`           |
+* All element tags receive two OWL classes:
 
----
+  * `TagName_Tag`: syntactic class
+  * `TagName`: semantic class
 
-## Agent Responsibilities
+* All IRIs are generated with namespace prefix expansion to ensure compatibility with both RDF/XML and Turtle.
 
-* Infer OWL structure from XML layout
-* Promote IDs and values to named individuals
-* Preserve document structure through semantic links (`rdfs:member`)
-* Derive properties when no explicit attributes exist
-* Prioritize ontological fidelity over lossy flattening
+## Enrichment Rules
 
-## Implementation Notes
+* Literal content yields semantic individuals
+* Attributes may become data properties
+* IDs contribute to syntactic identity
+* Nested structure forms a compositional tree with semantic properties layered atop
 
-* Codex must apply these rules **when editing XmlToRdf.scala**
-* Codex may refactor helper functions (e.g., `normalizeLiteralToIri`, `derivePropertyFromChild`)
-* The agent may suggest use of temporary blank nodes if no ID is present, but must avoid generating anonymous nodes unnecessarily
+## Codex Agent Expectations
 
-## Related Files
+* Maintain structural and semantic dualism
+* Support identity resolution: avoid duplicate semantic individuals
+* Normalize values safely (punctuation removal, casing)
+* Refer to ontology best practices (e.g., use of `rdfs:label`, `owl:Class`)
 
-* `example.xml`: Source data
-* `XmlToRdf.scala`: Transformation entrypoint
-* `RdfXmlSpec.md`: Output serialization format
-* `Fs2XmlDoc.md`: Underlying streaming/parsing library
+## Future Work
 
-## Coordination Notes
+* Integrate schema vocabulary (e.g., XSD/XPath-driven class hierarchies)
+* Emit SHACL/OWL restrictions for known structures
+* Add alignment to external vocabularies (e.g., Dublin Core, schema.org)
 
-This agent delegates:
-
-* XML streaming concerns → `Fs2XmlDoc`
-* RDF/XML serialization constraints → `RdfXmlSpec`
-* Scala 3 idioms and correctness → `Scala3CompilerDoc`
-
+```

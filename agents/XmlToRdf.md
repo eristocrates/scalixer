@@ -1,9 +1,12 @@
 
+### ✅ `XmlToRdf.md`
+
+```markdown
 # Agent: XmlToRdf
 
 ## Summary
 
-This agent transforms XML documents into RDF/XML using FS2 and `fs2-data-xml` in pure Scala 3. Its core responsibility is to stream `XmlEvent`s and produce RDF/XML output conforming to the official RDF/XML syntax specification.
+This agent transforms XML documents into RDF/XML using FS2 and `fs2-data-xml` in pure Scala 3. Its core responsibility is to stream `XmlEvent`s and produce RDF/XML output conforming to the W3C RDF/XML syntax specification.
 
 ## Core File
 
@@ -16,14 +19,16 @@ This agent transforms XML documents into RDF/XML using FS2 and `fs2-data-xml` in
 All RDF/XML output **must** conform to the W3C RDF/XML specification:
 
 ```
-src/main/resources/rdf-1.1-XML-Syntax.html
-```
 
-This is the canonical formatting reference. No output should violate its rules.
+src/main/resources/rdf-1.1-XML-Syntax.html
+
+````
+
+No output should violate its grammar or structural rules.
 
 ## Input Semantics
 
-The input XML is treated as an ontologically structured document.
+The input XML is treated as a syntactic container for semantic content.
 
 Example:
 
@@ -31,68 +36,93 @@ Example:
 <book id="bk101">
   <author>Gambardella, Matthew</author>
 </book>
-```
+````
 
-### Interpretation:
+### RDF Interpretation:
 
-* `book` → OWL `Class`
-* `id="bk101"` → Named individual `:bk101`
-* `:bk101 rdf:type :Book`
-* `author` → OWL `Class` and member of `book`
-* `"Gambardella, Matthew"` → Named individual of type `:Author`
-* `:bk101 rdfs:member :GambardellaMatthew`
-* `:bk101 :hasAuthor :GambardellaMatthew`
+* `book` → OWL `Class` (semantic) and `Book_Tag` (syntactic)
+* `id="bk101"` → Named syntactic individual `:book_...`
+* `"Gambardella, Matthew"` → Named semantic individual `:Gambardella_Matthew`
+* A separate syntactic tag-based node like `:author_...` is created
+* rdfs\:member connects syntactic nodes; `hasX` properties link to semantic values
 
 ## Semantic Lifting Guidelines
 
-1. **Element Classing**
+### 1. **Dual Individual Modeling**
 
-   * Treat each element name as an OWL class.
+* **Syntactic individuals** represent XML tag instances.
 
-2. **Named Individuals**
+  * Named as `<tag>_<hash>`, e.g. `author_1234`
+  * Typed as `<Tag>_Tag`, e.g. `Author_Tag`
 
-   * Elements with an `id` attribute are named individuals.
-   * Their tag becomes the `rdf:type`.
+* **Semantic individuals** represent meaningful values.
 
-3. **Membership**
+  * Normalized from text content (e.g., `Gambardella, Matthew` → `Gambardella_Matthew`)
+  * Typed as `<Tag>`, e.g. `Author`
 
-   * Children of a node imply `rdfs:member` relationships.
+### 2. **Class Declaration**
 
-4. **Property Generation**
+* For every element tag `X`, generate:
 
-   * Each child element yields a property `:hasX`.
+  * `:X_Tag` — OWL class for the syntactic node
+  * `:X` — OWL class for the semantic content
 
-     * Domain: parent type
-     * Range: child type
+### 3. **rdfs\:member vs. hasX Distinction**
 
-5. **Literal Normalization**
+* Use `rdfs:member` for linking to syntactic tag instances
+* Use `ex:hasX` for linking to normalized semantic individuals
 
-   * Convert strings like `"Gambardella, Matthew"` to `:GambardellaMatthew`.
-   * Strip punctuation, collapse whitespace, and ensure IRI safety.
+Example:
 
-6. **RDF/XML statement Emission**
+```xml
+<author>Gambardella, Matthew</author>
+```
 
-   * Each RDF/XML statement must be serialized in correct RDF/XML syntax (e.g., use `rdf:Description`, `rdf:about`, `rdf:resource`).
+Becomes:
+
+```xml
+<rdf:Description rdf:about=".../book_...">
+  <rdfs:member rdf:resource=".../author_1234" />
+  <ex:hasAuthor rdf:resource=".../Gambardella_Matthew" />
+</rdf:Description>
+```
+
+### 4. **Normalization**
+
+* Semantic individual IRIs normalize:
+
+  * Remove punctuation
+  * Collapse whitespace to `_`
+  * PascalCase or Title\_Snake\_Case as needed for readability
+* Tag IRIs always keep the tag name and a hash (for uniqueness)
+
+### 5. **RDF/XML Emission**
+
+* Emit all triples as legal RDF/XML `<rdf:Description>` blocks
+* Maintain proper nesting and scoping
+* Prefixes:
+
+  * `rdf:`, `rdfs:`, `owl:`, and `ex:` must always be declared
 
 ## Agent Behavior
 
-* Operate as a pure `fs2.Stream[IO, Byte]` pipeline.
-* Match on `XmlEvent`s to emit RDF/XML constructs.
-* Maintain streaming structure: no buffering or DOM-like loading.
-* Ensure valid nesting, closing tags, and namespace declarations.
-* Emit prefix bindings if needed (e.g., `xmlns:rdf`, `xmlns:ex`).
+* Stream-based — no buffering or tree-building
+* Matches on `XmlEvent`s and emits RDF/XML strings as `Stream[IO, Byte]`
+* Avoid blocking or imperative IO
+* Composable functional logic
 
 ## Codex Agent Expectations
 
-* When rewriting `XmlToRdf.scala`, always validate output against RDF/XML syntax.
-* Refer to `Fs2XmlDoc.md` for `XmlEvent` model.
-* Avoid Java libraries, mutable state, or blocking IO.
-* Use idiomatic Scala 3 (extension methods, givens, etc.).
-* Prioritize functional readability and composition.
+* Validate output against RDF/XML spec
+* Reference `Fs2XmlDoc.md` for parser behavior
+* Refactor emission logic for reuse across individuals and classes
+* Fully respect prefix expansion in all IRIs
 
 ## Future Goals
 
-* Add support for Turtle and JSON-LD as alternative serialization backends.
-* Refactor RDF/XML statement emission into reusable encoder logic.
-* Introduce schema-based enrichment (e.g., OWL restrictions, rdfs\:subClassOf).
-* Enable streaming validation of output RDF/XML.
+* Turtle / JSON-LD output streaming via same pipeline
+* Automatically emit OWL `Class` declarations for all classes
+* Integrate schema-driven enrichments (e.g., OWL cardinality)
+* Automate rdfs\:label inclusion with fallback language tags
+
+````

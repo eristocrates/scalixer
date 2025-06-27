@@ -3,17 +3,15 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX ex: <http://example.org/>
 
-ex:catalog_377927480
-        rdf:type     ex:Catalog;
+ex:catalog_377927480  rdf:type  ex:Catalog;
         rdfs:member  ex:bk101;
         ex:hasBook   ex:bk101 .
 
-ex:bk101  rdf:type  ex:Book;
-        rdfs:member   ex:author_1263791798;
-        ex:hasAuthor  ex:author_1263791798 .
+ex:bk101  rdf:type    ex:Book;
+        rdfs:member   ex:author_1112816529;
+        ex:hasAuthor  ex:author_1112816529 .
 
-ex:author_1263791798
-        rdf:type      ex:Author;
+ex:author_1112816529  rdf:type  ex:Author;
         rdfs:member   ex:GambardellaMatthew;
         ex:hasAuthor  ex:GambardellaMatthew .
 
@@ -21,11 +19,10 @@ ex:GambardellaMatthew
         rdf:type    ex:Author;
         rdfs:label  "Gambardella, Matthew"@en .
 
-ex:bk101  rdfs:member  ex:title_1263791798;
-        ex:hasTitle  ex:title_1263791798 .
+ex:bk101  rdfs:member  ex:title_1112816529;
+        ex:hasTitle  ex:title_1112816529 .
 
-ex:title_1263791798
-        rdf:type     ex:Title;
+ex:title_1112816529  rdf:type  ex:Title;
         rdfs:member  ex:XMLDevelopersGuide;
         ex:hasTitle  ex:XMLDevelopersGuide .
 
@@ -33,32 +30,30 @@ ex:XMLDevelopersGuide
         rdf:type    ex:Title;
         rdfs:label  "XML Developer's Guide"@en .
 
-ex:bk101  rdfs:member  ex:genre_1263791798;
-        ex:hasGenre  ex:genre_1263791798 .
+ex:bk101  rdfs:member  ex:genre_1112816529;
+        ex:hasGenre  ex:genre_1112816529 .
 
-ex:genre_1263791798
-        rdf:type     ex:Genre;
+ex:genre_1112816529  rdf:type  ex:Genre;
         rdfs:member  ex:Computer;
         ex:hasGenre  ex:Computer .
 
 ex:Computer  rdf:type  ex:Genre;
         rdfs:label  "Computer"@en .
 
-ex:bk101  rdfs:member  ex:price_1263791798;
-        ex:hasPrice  ex:price_1263791798 .
+ex:bk101  rdfs:member  ex:price_1112816529;
+        ex:hasPrice  ex:price_1112816529 .
 
-ex:price_1263791798
-        rdf:type     ex:Price;
+ex:price_1112816529  rdf:type  ex:Price;
         rdfs:member  ex:4495;
         ex:hasPrice  ex:4495 .
 
-ex:4495  rdf:type  ex:Price;
+ex:4495  rdf:type   ex:Price;
         rdfs:label  "44.95"@en .
 
-ex:bk101  rdfs:member    ex:publish_date_1263791798;
-        ex:hasPublishDate  ex:publish_date_1263791798 .
+ex:bk101  rdfs:member      ex:publish_date_1112816529;
+        ex:hasPublishDate  ex:publish_date_1112816529 .
 
-ex:publish_date_1263791798
+ex:publish_date_1112816529
         rdf:type           ex:PublishDate;
         rdfs:member        ex:20001001;
         ex:hasPublishDate  ex:20001001 .
@@ -66,10 +61,10 @@ ex:publish_date_1263791798
 ex:20001001  rdf:type  ex:PublishDate;
         rdfs:label  "2000-10-01"@en .
 
-ex:bk101  rdfs:member    ex:description_1263791798;
-        ex:hasDescription  ex:description_1263791798 .
+ex:bk101  rdfs:member      ex:description_1112816529;
+        ex:hasDescription  ex:description_1112816529 .
 
-ex:description_1263791798
+ex:description_1112816529
         rdf:type           ex:Description;
         rdfs:member        ex:AnindepthlookatcreatingapplicationswithXML;
         ex:hasDescription  ex:AnindepthlookatcreatingapplicationswithXML .
@@ -78,59 +73,54 @@ ex:AnindepthlookatcreatingapplicationswithXML
         rdf:type    ex:Description;
         rdfs:label  "An in-depth look at creating applications\n      with XML."@en .
 
-ex:catalog_377927480
-        rdfs:member  ex:bk102;
+ex:catalog_377927480  rdfs:member  ex:bk102;
         ex:hasBook   ex:bk102 .
 
-ex:bk102  rdf:type  ex:Book;
-        rdfs:member   ex:author_-489129026;
-        ex:hasAuthor  ex:author_-489129026 .
+ex:bk102  rdf:type    ex:Book;
+        rdfs:member   ex:author_1103999610;
+        ex:hasAuthor  ex:author_1103999610 .
 
-ex:author_-489129026
-        rdf:type      ex:Author;
+ex:author_1103999610  rdf:type  ex:Author;
         rdfs:member   ex:RallsKim;
         ex:hasAuthor  ex:RallsKim .
 
 ex:RallsKim  rdf:type  ex:Author;
         rdfs:label  "Ralls, Kim"@en .
 
-ex:bk102  rdfs:member  ex:title_-489129026;
-        ex:hasTitle  ex:title_-489129026 .
+ex:bk102  rdfs:member  ex:title_1103999610;
+        ex:hasTitle  ex:title_1103999610 .
 
-ex:title_-489129026
-        rdf:type     ex:Title;
+ex:title_1103999610  rdf:type  ex:Title;
         rdfs:member  ex:MidnightRain;
         ex:hasTitle  ex:MidnightRain .
 
 ex:MidnightRain  rdf:type  ex:Title;
         rdfs:label  "Midnight Rain"@en .
 
-ex:bk102  rdfs:member  ex:genre_-489129026;
-        ex:hasGenre  ex:genre_-489129026 .
+ex:bk102  rdfs:member  ex:genre_1103999610;
+        ex:hasGenre  ex:genre_1103999610 .
 
-ex:genre_-489129026
-        rdf:type     ex:Genre;
+ex:genre_1103999610  rdf:type  ex:Genre;
         rdfs:member  ex:Fantasy;
         ex:hasGenre  ex:Fantasy .
 
 ex:Fantasy  rdf:type  ex:Genre;
         rdfs:label  "Fantasy"@en .
 
-ex:bk102  rdfs:member  ex:price_-489129026;
-        ex:hasPrice  ex:price_-489129026 .
+ex:bk102  rdfs:member  ex:price_1103999610;
+        ex:hasPrice  ex:price_1103999610 .
 
-ex:price_-489129026
-        rdf:type     ex:Price;
+ex:price_1103999610  rdf:type  ex:Price;
         rdfs:member  ex:595;
         ex:hasPrice  ex:595 .
 
-ex:595  rdf:type  ex:Price;
+ex:595  rdf:type    ex:Price;
         rdfs:label  "5.95"@en .
 
-ex:bk102  rdfs:member    ex:publish_date_-489129026;
-        ex:hasPublishDate  ex:publish_date_-489129026 .
+ex:bk102  rdfs:member      ex:publish_date_1103999610;
+        ex:hasPublishDate  ex:publish_date_1103999610 .
 
-ex:publish_date_-489129026
+ex:publish_date_1103999610
         rdf:type           ex:PublishDate;
         rdfs:member        ex:20001216;
         ex:hasPublishDate  ex:20001216 .
@@ -138,10 +128,10 @@ ex:publish_date_-489129026
 ex:20001216  rdf:type  ex:PublishDate;
         rdfs:label  "2000-12-16"@en .
 
-ex:bk102  rdfs:member    ex:description_-489129026;
-        ex:hasDescription  ex:description_-489129026 .
+ex:bk102  rdfs:member      ex:description_1103999610;
+        ex:hasDescription  ex:description_1103999610 .
 
-ex:description_-489129026
+ex:description_1103999610
         rdf:type           ex:Description;
         rdfs:member        ex:Aformerarchitectbattlescorporatezombiesanevilsorceressandherownchildhoodtobecomequeenoftheworld;
         ex:hasDescription  ex:Aformerarchitectbattlescorporatezombiesanevilsorceressandherownchildhoodtobecomequeenoftheworld .
@@ -150,56 +140,54 @@ ex:Aformerarchitectbattlescorporatezombiesanevilsorceressandherownchildhoodtobec
         rdf:type    ex:Description;
         rdfs:label  "A former architect battles corporate zombies,\n      an evil sorceress, and her own childhood to become queen\n      of the world."@en .
 
-ex:catalog_377927480
-        rdfs:member  ex:bk103;
+ex:catalog_377927480  rdfs:member  ex:bk103;
         ex:hasBook   ex:bk103 .
 
-ex:bk103  rdf:type  ex:Book;
-        rdfs:member   ex:author_-42659733;
-        ex:hasAuthor  ex:author_-42659733 .
+ex:bk103  rdf:type    ex:Book;
+        rdfs:member   ex:author_1637455964;
+        ex:hasAuthor  ex:author_1637455964 .
 
-ex:author_-42659733
-        rdf:type      ex:Author;
+ex:author_1637455964  rdf:type  ex:Author;
         rdfs:member   ex:CoretsEva;
         ex:hasAuthor  ex:CoretsEva .
 
 ex:CoretsEva  rdf:type  ex:Author;
         rdfs:label  "Corets, Eva"@en .
 
-ex:bk103  rdfs:member  ex:title_-42659733;
-        ex:hasTitle  ex:title_-42659733 .
+ex:bk103  rdfs:member  ex:title_1637455964;
+        ex:hasTitle  ex:title_1637455964 .
 
-ex:title_-42659733  rdf:type  ex:Title;
+ex:title_1637455964  rdf:type  ex:Title;
         rdfs:member  ex:MaeveAscendant;
         ex:hasTitle  ex:MaeveAscendant .
 
 ex:MaeveAscendant  rdf:type  ex:Title;
         rdfs:label  "Maeve Ascendant"@en .
 
-ex:bk103  rdfs:member  ex:genre_-42659733;
-        ex:hasGenre  ex:genre_-42659733 .
+ex:bk103  rdfs:member  ex:genre_1637455964;
+        ex:hasGenre  ex:genre_1637455964 .
 
-ex:genre_-42659733  rdf:type  ex:Genre;
+ex:genre_1637455964  rdf:type  ex:Genre;
         rdfs:member  ex:Fantasy;
         ex:hasGenre  ex:Fantasy .
 
 ex:Fantasy  rdf:type  ex:Genre;
         rdfs:label  "Fantasy"@en .
 
-ex:bk103  rdfs:member  ex:price_-42659733;
-        ex:hasPrice  ex:price_-42659733 .
+ex:bk103  rdfs:member  ex:price_1637455964;
+        ex:hasPrice  ex:price_1637455964 .
 
-ex:price_-42659733  rdf:type  ex:Price;
+ex:price_1637455964  rdf:type  ex:Price;
         rdfs:member  ex:595;
         ex:hasPrice  ex:595 .
 
-ex:595  rdf:type  ex:Price;
+ex:595  rdf:type    ex:Price;
         rdfs:label  "5.95"@en .
 
-ex:bk103  rdfs:member    ex:publish_date_-42659733;
-        ex:hasPublishDate  ex:publish_date_-42659733 .
+ex:bk103  rdfs:member      ex:publish_date_1637455964;
+        ex:hasPublishDate  ex:publish_date_1637455964 .
 
-ex:publish_date_-42659733
+ex:publish_date_1637455964
         rdf:type           ex:PublishDate;
         rdfs:member        ex:20001117;
         ex:hasPublishDate  ex:20001117 .
@@ -207,10 +195,10 @@ ex:publish_date_-42659733
 ex:20001117  rdf:type  ex:PublishDate;
         rdfs:label  "2000-11-17"@en .
 
-ex:bk103  rdfs:member    ex:description_-42659733;
-        ex:hasDescription  ex:description_-42659733 .
+ex:bk103  rdfs:member      ex:description_1637455964;
+        ex:hasDescription  ex:description_1637455964 .
 
-ex:description_-42659733
+ex:description_1637455964
         rdf:type           ex:Description;
         rdfs:member        ex:AfterthecollapseofananotechnologysocietyinEnglandtheyoungsurvivorslaythefoundationforanewsociety;
         ex:hasDescription  ex:AfterthecollapseofananotechnologysocietyinEnglandtheyoungsurvivorslaythefoundationforanewsociety .
@@ -219,15 +207,14 @@ ex:AfterthecollapseofananotechnologysocietyinEnglandtheyoungsurvivorslaythefound
         rdf:type    ex:Description;
         rdfs:label  "After the collapse of a nanotechnology\n      society in England, the young survivors lay the\n      foundation for a new society."@en .
 
-ex:catalog_377927480
-        rdfs:member  ex:bk104;
+ex:catalog_377927480  rdfs:member  ex:bk104;
         ex:hasBook   ex:bk104 .
 
-ex:bk104  rdf:type  ex:Book;
-        rdfs:member   ex:author_1453675806;
-        ex:hasAuthor  ex:author_1453675806 .
+ex:bk104  rdf:type    ex:Book;
+        rdfs:member   ex:author_-1482489346;
+        ex:hasAuthor  ex:author_-1482489346 .
 
-ex:author_1453675806
+ex:author_-1482489346
         rdf:type      ex:Author;
         rdfs:member   ex:CoretsEva;
         ex:hasAuthor  ex:CoretsEva .
@@ -235,43 +222,40 @@ ex:author_1453675806
 ex:CoretsEva  rdf:type  ex:Author;
         rdfs:label  "Corets, Eva"@en .
 
-ex:bk104  rdfs:member  ex:title_1453675806;
-        ex:hasTitle  ex:title_1453675806 .
+ex:bk104  rdfs:member  ex:title_-1482489346;
+        ex:hasTitle  ex:title_-1482489346 .
 
-ex:title_1453675806
-        rdf:type     ex:Title;
+ex:title_-1482489346  rdf:type  ex:Title;
         rdfs:member  ex:OberonsLegacy;
         ex:hasTitle  ex:OberonsLegacy .
 
 ex:OberonsLegacy  rdf:type  ex:Title;
         rdfs:label  "Oberon's Legacy"@en .
 
-ex:bk104  rdfs:member  ex:genre_1453675806;
-        ex:hasGenre  ex:genre_1453675806 .
+ex:bk104  rdfs:member  ex:genre_-1482489346;
+        ex:hasGenre  ex:genre_-1482489346 .
 
-ex:genre_1453675806
-        rdf:type     ex:Genre;
+ex:genre_-1482489346  rdf:type  ex:Genre;
         rdfs:member  ex:Fantasy;
         ex:hasGenre  ex:Fantasy .
 
 ex:Fantasy  rdf:type  ex:Genre;
         rdfs:label  "Fantasy"@en .
 
-ex:bk104  rdfs:member  ex:price_1453675806;
-        ex:hasPrice  ex:price_1453675806 .
+ex:bk104  rdfs:member  ex:price_-1482489346;
+        ex:hasPrice  ex:price_-1482489346 .
 
-ex:price_1453675806
-        rdf:type     ex:Price;
+ex:price_-1482489346  rdf:type  ex:Price;
         rdfs:member  ex:595;
         ex:hasPrice  ex:595 .
 
-ex:595  rdf:type  ex:Price;
+ex:595  rdf:type    ex:Price;
         rdfs:label  "5.95"@en .
 
-ex:bk104  rdfs:member    ex:publish_date_1453675806;
-        ex:hasPublishDate  ex:publish_date_1453675806 .
+ex:bk104  rdfs:member      ex:publish_date_-1482489346;
+        ex:hasPublishDate  ex:publish_date_-1482489346 .
 
-ex:publish_date_1453675806
+ex:publish_date_-1482489346
         rdf:type           ex:PublishDate;
         rdfs:member        ex:20010310;
         ex:hasPublishDate  ex:20010310 .
@@ -279,10 +263,10 @@ ex:publish_date_1453675806
 ex:20010310  rdf:type  ex:PublishDate;
         rdfs:label  "2001-03-10"@en .
 
-ex:bk104  rdfs:member    ex:description_1453675806;
-        ex:hasDescription  ex:description_1453675806 .
+ex:bk104  rdfs:member      ex:description_-1482489346;
+        ex:hasDescription  ex:description_-1482489346 .
 
-ex:description_1453675806
+ex:description_-1482489346
         rdf:type           ex:Description;
         rdfs:member        ex:InpostapocalypseEnglandthemysteriousagentknownonlyasOberonhelpstocreateanewlifefortheinhabitantsofLondonSequeltoMaeveAscendant;
         ex:hasDescription  ex:InpostapocalypseEnglandthemysteriousagentknownonlyasOberonhelpstocreateanewlifefortheinhabitantsofLondonSequeltoMaeveAscendant .
@@ -291,60 +275,54 @@ ex:InpostapocalypseEnglandthemysteriousagentknownonlyasOberonhelpstocreateanewli
         rdf:type    ex:Description;
         rdfs:label  "In post-apocalypse England, the mysterious\n      agent known only as Oberon helps to create a new life\n      for the inhabitants of London. Sequel to Maeve\n      Ascendant."@en .
 
-ex:catalog_377927480
-        rdfs:member  ex:bk105;
+ex:catalog_377927480  rdfs:member  ex:bk105;
         ex:hasBook   ex:bk105 .
 
-ex:bk105  rdf:type  ex:Book;
-        rdfs:member   ex:author_-1591692029;
-        ex:hasAuthor  ex:author_-1591692029 .
+ex:bk105  rdf:type    ex:Book;
+        rdfs:member   ex:author_669327988;
+        ex:hasAuthor  ex:author_669327988 .
 
-ex:author_-1591692029
-        rdf:type      ex:Author;
+ex:author_669327988  rdf:type  ex:Author;
         rdfs:member   ex:CoretsEva;
         ex:hasAuthor  ex:CoretsEva .
 
 ex:CoretsEva  rdf:type  ex:Author;
         rdfs:label  "Corets, Eva"@en .
 
-ex:bk105  rdfs:member  ex:title_-1591692029;
-        ex:hasTitle  ex:title_-1591692029 .
+ex:bk105  rdfs:member  ex:title_669327988;
+        ex:hasTitle  ex:title_669327988 .
 
-ex:title_-1591692029
-        rdf:type     ex:Title;
+ex:title_669327988  rdf:type  ex:Title;
         rdfs:member  ex:TheSunderedGrail;
         ex:hasTitle  ex:TheSunderedGrail .
 
-ex:TheSunderedGrail
-        rdf:type    ex:Title;
+ex:TheSunderedGrail  rdf:type  ex:Title;
         rdfs:label  "The Sundered Grail"@en .
 
-ex:bk105  rdfs:member  ex:genre_-1591692029;
-        ex:hasGenre  ex:genre_-1591692029 .
+ex:bk105  rdfs:member  ex:genre_669327988;
+        ex:hasGenre  ex:genre_669327988 .
 
-ex:genre_-1591692029
-        rdf:type     ex:Genre;
+ex:genre_669327988  rdf:type  ex:Genre;
         rdfs:member  ex:Fantasy;
         ex:hasGenre  ex:Fantasy .
 
 ex:Fantasy  rdf:type  ex:Genre;
         rdfs:label  "Fantasy"@en .
 
-ex:bk105  rdfs:member  ex:price_-1591692029;
-        ex:hasPrice  ex:price_-1591692029 .
+ex:bk105  rdfs:member  ex:price_669327988;
+        ex:hasPrice  ex:price_669327988 .
 
-ex:price_-1591692029
-        rdf:type     ex:Price;
+ex:price_669327988  rdf:type  ex:Price;
         rdfs:member  ex:595;
         ex:hasPrice  ex:595 .
 
-ex:595  rdf:type  ex:Price;
+ex:595  rdf:type    ex:Price;
         rdfs:label  "5.95"@en .
 
-ex:bk105  rdfs:member    ex:publish_date_-1591692029;
-        ex:hasPublishDate  ex:publish_date_-1591692029 .
+ex:bk105  rdfs:member      ex:publish_date_669327988;
+        ex:hasPublishDate  ex:publish_date_669327988 .
 
-ex:publish_date_-1591692029
+ex:publish_date_669327988
         rdf:type           ex:PublishDate;
         rdfs:member        ex:20010910;
         ex:hasPublishDate  ex:20010910 .
@@ -352,10 +330,10 @@ ex:publish_date_-1591692029
 ex:20010910  rdf:type  ex:PublishDate;
         rdfs:label  "2001-09-10"@en .
 
-ex:bk105  rdfs:member    ex:description_-1591692029;
-        ex:hasDescription  ex:description_-1591692029 .
+ex:bk105  rdfs:member      ex:description_669327988;
+        ex:hasDescription  ex:description_669327988 .
 
-ex:description_-1591692029
+ex:description_669327988
         rdf:type           ex:Description;
         rdfs:member        ex:ThetwodaughtersofMaevehalfsistersbattleoneanotherforcontrolofEnglandSequeltoOberonsLegacy;
         ex:hasDescription  ex:ThetwodaughtersofMaevehalfsistersbattleoneanotherforcontrolofEnglandSequeltoOberonsLegacy .
@@ -364,59 +342,54 @@ ex:ThetwodaughtersofMaevehalfsistersbattleoneanotherforcontrolofEnglandSequeltoO
         rdf:type    ex:Description;
         rdfs:label  "The two daughters of Maeve, half-sisters,\n      battle one another for control of England. Sequel to\n      Oberon's Legacy."@en .
 
-ex:catalog_377927480
-        rdfs:member  ex:bk106;
+ex:catalog_377927480  rdfs:member  ex:bk106;
         ex:hasBook   ex:bk106 .
 
-ex:bk106  rdf:type  ex:Book;
-        rdfs:member   ex:author_1484725857;
-        ex:hasAuthor  ex:author_1484725857 .
+ex:bk106  rdf:type    ex:Book;
+        rdfs:member   ex:author_1543805592;
+        ex:hasAuthor  ex:author_1543805592 .
 
-ex:author_1484725857
-        rdf:type      ex:Author;
+ex:author_1543805592  rdf:type  ex:Author;
         rdfs:member   ex:RandallCynthia;
         ex:hasAuthor  ex:RandallCynthia .
 
 ex:RandallCynthia  rdf:type  ex:Author;
         rdfs:label  "Randall, Cynthia"@en .
 
-ex:bk106  rdfs:member  ex:title_1484725857;
-        ex:hasTitle  ex:title_1484725857 .
+ex:bk106  rdfs:member  ex:title_1543805592;
+        ex:hasTitle  ex:title_1543805592 .
 
-ex:title_1484725857
-        rdf:type     ex:Title;
+ex:title_1543805592  rdf:type  ex:Title;
         rdfs:member  ex:LoverBirds;
         ex:hasTitle  ex:LoverBirds .
 
 ex:LoverBirds  rdf:type  ex:Title;
         rdfs:label  "Lover Birds"@en .
 
-ex:bk106  rdfs:member  ex:genre_1484725857;
-        ex:hasGenre  ex:genre_1484725857 .
+ex:bk106  rdfs:member  ex:genre_1543805592;
+        ex:hasGenre  ex:genre_1543805592 .
 
-ex:genre_1484725857
-        rdf:type     ex:Genre;
+ex:genre_1543805592  rdf:type  ex:Genre;
         rdfs:member  ex:Romance;
         ex:hasGenre  ex:Romance .
 
 ex:Romance  rdf:type  ex:Genre;
         rdfs:label  "Romance"@en .
 
-ex:bk106  rdfs:member  ex:price_1484725857;
-        ex:hasPrice  ex:price_1484725857 .
+ex:bk106  rdfs:member  ex:price_1543805592;
+        ex:hasPrice  ex:price_1543805592 .
 
-ex:price_1484725857
-        rdf:type     ex:Price;
+ex:price_1543805592  rdf:type  ex:Price;
         rdfs:member  ex:495;
         ex:hasPrice  ex:495 .
 
-ex:495  rdf:type  ex:Price;
+ex:495  rdf:type    ex:Price;
         rdfs:label  "4.95"@en .
 
-ex:bk106  rdfs:member    ex:publish_date_1484725857;
-        ex:hasPublishDate  ex:publish_date_1484725857 .
+ex:bk106  rdfs:member      ex:publish_date_1543805592;
+        ex:hasPublishDate  ex:publish_date_1543805592 .
 
-ex:publish_date_1484725857
+ex:publish_date_1543805592
         rdf:type           ex:PublishDate;
         rdfs:member        ex:20000902;
         ex:hasPublishDate  ex:20000902 .
@@ -424,10 +397,10 @@ ex:publish_date_1484725857
 ex:20000902  rdf:type  ex:PublishDate;
         rdfs:label  "2000-09-02"@en .
 
-ex:bk106  rdfs:member    ex:description_1484725857;
-        ex:hasDescription  ex:description_1484725857 .
+ex:bk106  rdfs:member      ex:description_1543805592;
+        ex:hasDescription  ex:description_1543805592 .
 
-ex:description_1484725857
+ex:description_1543805592
         rdf:type           ex:Description;
         rdfs:member        ex:WhenCarlameetsPaulatanornithologyconferencetempersflyasfeathersgetruffled;
         ex:hasDescription  ex:WhenCarlameetsPaulatanornithologyconferencetempersflyasfeathersgetruffled .
@@ -436,55 +409,54 @@ ex:WhenCarlameetsPaulatanornithologyconferencetempersflyasfeathersgetruffled
         rdf:type    ex:Description;
         rdfs:label  "When Carla meets Paul at an ornithology\n      conference, tempers fly as feathers get ruffled."@en .
 
-ex:catalog_377927480
-        rdfs:member  ex:bk107;
+ex:catalog_377927480  rdfs:member  ex:bk107;
         ex:hasBook   ex:bk107 .
 
-ex:bk107  rdf:type  ex:Book;
-        rdfs:member   ex:author_93903675;
-        ex:hasAuthor  ex:author_93903675 .
+ex:bk107  rdf:type    ex:Book;
+        rdfs:member   ex:author_1179217414;
+        ex:hasAuthor  ex:author_1179217414 .
 
-ex:author_93903675  rdf:type  ex:Author;
+ex:author_1179217414  rdf:type  ex:Author;
         rdfs:member   ex:ThurmanPaula;
         ex:hasAuthor  ex:ThurmanPaula .
 
 ex:ThurmanPaula  rdf:type  ex:Author;
         rdfs:label  "Thurman, Paula"@en .
 
-ex:bk107  rdfs:member  ex:title_93903675;
-        ex:hasTitle  ex:title_93903675 .
+ex:bk107  rdfs:member  ex:title_1179217414;
+        ex:hasTitle  ex:title_1179217414 .
 
-ex:title_93903675  rdf:type  ex:Title;
+ex:title_1179217414  rdf:type  ex:Title;
         rdfs:member  ex:SplishSplash;
         ex:hasTitle  ex:SplishSplash .
 
 ex:SplishSplash  rdf:type  ex:Title;
         rdfs:label  "Splish Splash"@en .
 
-ex:bk107  rdfs:member  ex:genre_93903675;
-        ex:hasGenre  ex:genre_93903675 .
+ex:bk107  rdfs:member  ex:genre_1179217414;
+        ex:hasGenre  ex:genre_1179217414 .
 
-ex:genre_93903675  rdf:type  ex:Genre;
+ex:genre_1179217414  rdf:type  ex:Genre;
         rdfs:member  ex:Romance;
         ex:hasGenre  ex:Romance .
 
 ex:Romance  rdf:type  ex:Genre;
         rdfs:label  "Romance"@en .
 
-ex:bk107  rdfs:member  ex:price_93903675;
-        ex:hasPrice  ex:price_93903675 .
+ex:bk107  rdfs:member  ex:price_1179217414;
+        ex:hasPrice  ex:price_1179217414 .
 
-ex:price_93903675  rdf:type  ex:Price;
+ex:price_1179217414  rdf:type  ex:Price;
         rdfs:member  ex:495;
         ex:hasPrice  ex:495 .
 
-ex:495  rdf:type  ex:Price;
+ex:495  rdf:type    ex:Price;
         rdfs:label  "4.95"@en .
 
-ex:bk107  rdfs:member    ex:publish_date_93903675;
-        ex:hasPublishDate  ex:publish_date_93903675 .
+ex:bk107  rdfs:member      ex:publish_date_1179217414;
+        ex:hasPublishDate  ex:publish_date_1179217414 .
 
-ex:publish_date_93903675
+ex:publish_date_1179217414
         rdf:type           ex:PublishDate;
         rdfs:member        ex:20001102;
         ex:hasPublishDate  ex:20001102 .
@@ -492,10 +464,10 @@ ex:publish_date_93903675
 ex:20001102  rdf:type  ex:PublishDate;
         rdfs:label  "2000-11-02"@en .
 
-ex:bk107  rdfs:member    ex:description_93903675;
-        ex:hasDescription  ex:description_93903675 .
+ex:bk107  rdfs:member      ex:description_1179217414;
+        ex:hasDescription  ex:description_1179217414 .
 
-ex:description_93903675
+ex:description_1179217414
         rdf:type           ex:Description;
         rdfs:member        ex:Adeepseadiverfindstruelovetwentythousandleaguesbeneaththesea;
         ex:hasDescription  ex:Adeepseadiverfindstruelovetwentythousandleaguesbeneaththesea .
@@ -504,59 +476,54 @@ ex:Adeepseadiverfindstruelovetwentythousandleaguesbeneaththesea
         rdf:type    ex:Description;
         rdfs:label  "A deep sea diver finds true love twenty\n      thousand leagues beneath the sea."@en .
 
-ex:catalog_377927480
-        rdfs:member  ex:bk108;
+ex:catalog_377927480  rdfs:member  ex:bk108;
         ex:hasBook   ex:bk108 .
 
-ex:bk108  rdf:type  ex:Book;
-        rdfs:member   ex:author_2013914835;
-        ex:hasAuthor  ex:author_2013914835 .
+ex:bk108  rdf:type    ex:Book;
+        rdfs:member   ex:author_1084597687;
+        ex:hasAuthor  ex:author_1084597687 .
 
-ex:author_2013914835
-        rdf:type      ex:Author;
+ex:author_1084597687  rdf:type  ex:Author;
         rdfs:member   ex:KnorrStefan;
         ex:hasAuthor  ex:KnorrStefan .
 
 ex:KnorrStefan  rdf:type  ex:Author;
         rdfs:label  "Knorr, Stefan"@en .
 
-ex:bk108  rdfs:member  ex:title_2013914835;
-        ex:hasTitle  ex:title_2013914835 .
+ex:bk108  rdfs:member  ex:title_1084597687;
+        ex:hasTitle  ex:title_1084597687 .
 
-ex:title_2013914835
-        rdf:type     ex:Title;
+ex:title_1084597687  rdf:type  ex:Title;
         rdfs:member  ex:CreepyCrawlies;
         ex:hasTitle  ex:CreepyCrawlies .
 
 ex:CreepyCrawlies  rdf:type  ex:Title;
         rdfs:label  "Creepy Crawlies"@en .
 
-ex:bk108  rdfs:member  ex:genre_2013914835;
-        ex:hasGenre  ex:genre_2013914835 .
+ex:bk108  rdfs:member  ex:genre_1084597687;
+        ex:hasGenre  ex:genre_1084597687 .
 
-ex:genre_2013914835
-        rdf:type     ex:Genre;
+ex:genre_1084597687  rdf:type  ex:Genre;
         rdfs:member  ex:Horror;
         ex:hasGenre  ex:Horror .
 
 ex:Horror  rdf:type  ex:Genre;
         rdfs:label  "Horror"@en .
 
-ex:bk108  rdfs:member  ex:price_2013914835;
-        ex:hasPrice  ex:price_2013914835 .
+ex:bk108  rdfs:member  ex:price_1084597687;
+        ex:hasPrice  ex:price_1084597687 .
 
-ex:price_2013914835
-        rdf:type     ex:Price;
+ex:price_1084597687  rdf:type  ex:Price;
         rdfs:member  ex:495;
         ex:hasPrice  ex:495 .
 
-ex:495  rdf:type  ex:Price;
+ex:495  rdf:type    ex:Price;
         rdfs:label  "4.95"@en .
 
-ex:bk108  rdfs:member    ex:publish_date_2013914835;
-        ex:hasPublishDate  ex:publish_date_2013914835 .
+ex:bk108  rdfs:member      ex:publish_date_1084597687;
+        ex:hasPublishDate  ex:publish_date_1084597687 .
 
-ex:publish_date_2013914835
+ex:publish_date_1084597687
         rdf:type           ex:PublishDate;
         rdfs:member        ex:20001206;
         ex:hasPublishDate  ex:20001206 .
@@ -564,10 +531,10 @@ ex:publish_date_2013914835
 ex:20001206  rdf:type  ex:PublishDate;
         rdfs:label  "2000-12-06"@en .
 
-ex:bk108  rdfs:member    ex:description_2013914835;
-        ex:hasDescription  ex:description_2013914835 .
+ex:bk108  rdfs:member      ex:description_1084597687;
+        ex:hasDescription  ex:description_1084597687 .
 
-ex:description_2013914835
+ex:description_1084597687
         rdf:type           ex:Description;
         rdfs:member        ex:Ananthologyofhorrorstoriesaboutroachescentipedesscorpionsandotherinsects;
         ex:hasDescription  ex:Ananthologyofhorrorstoriesaboutroachescentipedesscorpionsandotherinsects .
@@ -576,59 +543,54 @@ ex:Ananthologyofhorrorstoriesaboutroachescentipedesscorpionsandotherinsects
         rdf:type    ex:Description;
         rdfs:label  "An anthology of horror stories about roaches,\n      centipedes, scorpions and other insects."@en .
 
-ex:catalog_377927480
-        rdfs:member  ex:bk109;
+ex:catalog_377927480  rdfs:member  ex:bk109;
         ex:hasBook   ex:bk109 .
 
-ex:bk109  rdf:type  ex:Book;
-        rdfs:member   ex:author_-1486048306;
-        ex:hasAuthor  ex:author_-1486048306 .
+ex:bk109  rdf:type    ex:Book;
+        rdfs:member   ex:author_-927145587;
+        ex:hasAuthor  ex:author_-927145587 .
 
-ex:author_-1486048306
-        rdf:type      ex:Author;
+ex:author_-927145587  rdf:type  ex:Author;
         rdfs:member   ex:KressPeter;
         ex:hasAuthor  ex:KressPeter .
 
 ex:KressPeter  rdf:type  ex:Author;
         rdfs:label  "Kress, Peter"@en .
 
-ex:bk109  rdfs:member  ex:title_-1486048306;
-        ex:hasTitle  ex:title_-1486048306 .
+ex:bk109  rdfs:member  ex:title_-927145587;
+        ex:hasTitle  ex:title_-927145587 .
 
-ex:title_-1486048306
-        rdf:type     ex:Title;
+ex:title_-927145587  rdf:type  ex:Title;
         rdfs:member  ex:ParadoxLost;
         ex:hasTitle  ex:ParadoxLost .
 
 ex:ParadoxLost  rdf:type  ex:Title;
         rdfs:label  "Paradox Lost"@en .
 
-ex:bk109  rdfs:member  ex:genre_-1486048306;
-        ex:hasGenre  ex:genre_-1486048306 .
+ex:bk109  rdfs:member  ex:genre_-927145587;
+        ex:hasGenre  ex:genre_-927145587 .
 
-ex:genre_-1486048306
-        rdf:type     ex:Genre;
+ex:genre_-927145587  rdf:type  ex:Genre;
         rdfs:member  ex:ScienceFiction;
         ex:hasGenre  ex:ScienceFiction .
 
 ex:ScienceFiction  rdf:type  ex:Genre;
         rdfs:label  "Science Fiction"@en .
 
-ex:bk109  rdfs:member  ex:price_-1486048306;
-        ex:hasPrice  ex:price_-1486048306 .
+ex:bk109  rdfs:member  ex:price_-927145587;
+        ex:hasPrice  ex:price_-927145587 .
 
-ex:price_-1486048306
-        rdf:type     ex:Price;
+ex:price_-927145587  rdf:type  ex:Price;
         rdfs:member  ex:695;
         ex:hasPrice  ex:695 .
 
-ex:695  rdf:type  ex:Price;
+ex:695  rdf:type    ex:Price;
         rdfs:label  "6.95"@en .
 
-ex:bk109  rdfs:member    ex:publish_date_-1486048306;
-        ex:hasPublishDate  ex:publish_date_-1486048306 .
+ex:bk109  rdfs:member      ex:publish_date_-927145587;
+        ex:hasPublishDate  ex:publish_date_-927145587 .
 
-ex:publish_date_-1486048306
+ex:publish_date_-927145587
         rdf:type           ex:PublishDate;
         rdfs:member        ex:20001102;
         ex:hasPublishDate  ex:20001102 .
@@ -636,10 +598,10 @@ ex:publish_date_-1486048306
 ex:20001102  rdf:type  ex:PublishDate;
         rdfs:label  "2000-11-02"@en .
 
-ex:bk109  rdfs:member    ex:description_-1486048306;
-        ex:hasDescription  ex:description_-1486048306 .
+ex:bk109  rdfs:member      ex:description_-927145587;
+        ex:hasDescription  ex:description_-927145587 .
 
-ex:description_-1486048306
+ex:description_-927145587
         rdf:type           ex:Description;
         rdfs:member        ex:AfteraninadvertanttripthroughaHeisenbergUncertaintyDeviceJamesSalwaydiscoverstheproblemsofbeingquantum;
         ex:hasDescription  ex:AfteraninadvertanttripthroughaHeisenbergUncertaintyDeviceJamesSalwaydiscoverstheproblemsofbeingquantum .
@@ -648,27 +610,24 @@ ex:AfteraninadvertanttripthroughaHeisenbergUncertaintyDeviceJamesSalwaydiscovers
         rdf:type    ex:Description;
         rdfs:label  "After an inadvertant trip through a Heisenberg\n      Uncertainty Device, James Salway discovers the problems\n      of being quantum."@en .
 
-ex:catalog_377927480
-        rdfs:member  ex:bk110;
+ex:catalog_377927480  rdfs:member  ex:bk110;
         ex:hasBook   ex:bk110 .
 
-ex:bk110  rdf:type  ex:Book;
-        rdfs:member   ex:author_1130853177;
-        ex:hasAuthor  ex:author_1130853177 .
+ex:bk110  rdf:type    ex:Book;
+        rdfs:member   ex:author_-747488600;
+        ex:hasAuthor  ex:author_-747488600 .
 
-ex:author_1130853177
-        rdf:type      ex:Author;
+ex:author_-747488600  rdf:type  ex:Author;
         rdfs:member   ex:OBrienTim;
         ex:hasAuthor  ex:OBrienTim .
 
 ex:OBrienTim  rdf:type  ex:Author;
         rdfs:label  "O'Brien, Tim"@en .
 
-ex:bk110  rdfs:member  ex:title_1130853177;
-        ex:hasTitle  ex:title_1130853177 .
+ex:bk110  rdfs:member  ex:title_-747488600;
+        ex:hasTitle  ex:title_-747488600 .
 
-ex:title_1130853177
-        rdf:type     ex:Title;
+ex:title_-747488600  rdf:type  ex:Title;
         rdfs:member  ex:MicrosoftNETTheProgrammingBible;
         ex:hasTitle  ex:MicrosoftNETTheProgrammingBible .
 
@@ -676,32 +635,30 @@ ex:MicrosoftNETTheProgrammingBible
         rdf:type    ex:Title;
         rdfs:label  "Microsoft .NET: The Programming Bible"@en .
 
-ex:bk110  rdfs:member  ex:genre_1130853177;
-        ex:hasGenre  ex:genre_1130853177 .
+ex:bk110  rdfs:member  ex:genre_-747488600;
+        ex:hasGenre  ex:genre_-747488600 .
 
-ex:genre_1130853177
-        rdf:type     ex:Genre;
+ex:genre_-747488600  rdf:type  ex:Genre;
         rdfs:member  ex:Computer;
         ex:hasGenre  ex:Computer .
 
 ex:Computer  rdf:type  ex:Genre;
         rdfs:label  "Computer"@en .
 
-ex:bk110  rdfs:member  ex:price_1130853177;
-        ex:hasPrice  ex:price_1130853177 .
+ex:bk110  rdfs:member  ex:price_-747488600;
+        ex:hasPrice  ex:price_-747488600 .
 
-ex:price_1130853177
-        rdf:type     ex:Price;
+ex:price_-747488600  rdf:type  ex:Price;
         rdfs:member  ex:3695;
         ex:hasPrice  ex:3695 .
 
-ex:3695  rdf:type  ex:Price;
+ex:3695  rdf:type   ex:Price;
         rdfs:label  "36.95"@en .
 
-ex:bk110  rdfs:member    ex:publish_date_1130853177;
-        ex:hasPublishDate  ex:publish_date_1130853177 .
+ex:bk110  rdfs:member      ex:publish_date_-747488600;
+        ex:hasPublishDate  ex:publish_date_-747488600 .
 
-ex:publish_date_1130853177
+ex:publish_date_-747488600
         rdf:type           ex:PublishDate;
         rdfs:member        ex:20001209;
         ex:hasPublishDate  ex:20001209 .
@@ -709,10 +666,10 @@ ex:publish_date_1130853177
 ex:20001209  rdf:type  ex:PublishDate;
         rdfs:label  "2000-12-09"@en .
 
-ex:bk110  rdfs:member    ex:description_1130853177;
-        ex:hasDescription  ex:description_1130853177 .
+ex:bk110  rdfs:member      ex:description_-747488600;
+        ex:hasDescription  ex:description_-747488600 .
 
-ex:description_1130853177
+ex:description_-747488600
         rdf:type           ex:Description;
         rdfs:member        ex:MicrosoftsNETinitiativeisexploredindetailinthisdeepprogrammersreference;
         ex:hasDescription  ex:MicrosoftsNETinitiativeisexploredindetailinthisdeepprogrammersreference .
@@ -721,15 +678,14 @@ ex:MicrosoftsNETinitiativeisexploredindetailinthisdeepprogrammersreference
         rdf:type    ex:Description;
         rdfs:label  "Microsoft's .NET initiative is explored in\n      detail in this deep programmer's reference."@en .
 
-ex:catalog_377927480
-        rdfs:member  ex:bk111;
+ex:catalog_377927480  rdfs:member  ex:bk111;
         ex:hasBook   ex:bk111 .
 
-ex:bk111  rdf:type  ex:Book;
-        rdfs:member   ex:author_-828622397;
-        ex:hasAuthor  ex:author_-828622397 .
+ex:bk111  rdf:type    ex:Book;
+        rdfs:member   ex:author_-1213443124;
+        ex:hasAuthor  ex:author_-1213443124 .
 
-ex:author_-828622397
+ex:author_-1213443124
         rdf:type      ex:Author;
         rdfs:member   ex:OBrienTim;
         ex:hasAuthor  ex:OBrienTim .
@@ -737,11 +693,10 @@ ex:author_-828622397
 ex:OBrienTim  rdf:type  ex:Author;
         rdfs:label  "O'Brien, Tim"@en .
 
-ex:bk111  rdfs:member  ex:title_-828622397;
-        ex:hasTitle  ex:title_-828622397 .
+ex:bk111  rdfs:member  ex:title_-1213443124;
+        ex:hasTitle  ex:title_-1213443124 .
 
-ex:title_-828622397
-        rdf:type     ex:Title;
+ex:title_-1213443124  rdf:type  ex:Title;
         rdfs:member  ex:MSXML3AComprehensiveGuide;
         ex:hasTitle  ex:MSXML3AComprehensiveGuide .
 
@@ -749,32 +704,30 @@ ex:MSXML3AComprehensiveGuide
         rdf:type    ex:Title;
         rdfs:label  "MSXML3: A Comprehensive Guide"@en .
 
-ex:bk111  rdfs:member  ex:genre_-828622397;
-        ex:hasGenre  ex:genre_-828622397 .
+ex:bk111  rdfs:member  ex:genre_-1213443124;
+        ex:hasGenre  ex:genre_-1213443124 .
 
-ex:genre_-828622397
-        rdf:type     ex:Genre;
+ex:genre_-1213443124  rdf:type  ex:Genre;
         rdfs:member  ex:Computer;
         ex:hasGenre  ex:Computer .
 
 ex:Computer  rdf:type  ex:Genre;
         rdfs:label  "Computer"@en .
 
-ex:bk111  rdfs:member  ex:price_-828622397;
-        ex:hasPrice  ex:price_-828622397 .
+ex:bk111  rdfs:member  ex:price_-1213443124;
+        ex:hasPrice  ex:price_-1213443124 .
 
-ex:price_-828622397
-        rdf:type     ex:Price;
+ex:price_-1213443124  rdf:type  ex:Price;
         rdfs:member  ex:3695;
         ex:hasPrice  ex:3695 .
 
-ex:3695  rdf:type  ex:Price;
+ex:3695  rdf:type   ex:Price;
         rdfs:label  "36.95"@en .
 
-ex:bk111  rdfs:member    ex:publish_date_-828622397;
-        ex:hasPublishDate  ex:publish_date_-828622397 .
+ex:bk111  rdfs:member      ex:publish_date_-1213443124;
+        ex:hasPublishDate  ex:publish_date_-1213443124 .
 
-ex:publish_date_-828622397
+ex:publish_date_-1213443124
         rdf:type           ex:PublishDate;
         rdfs:member        ex:20001201;
         ex:hasPublishDate  ex:20001201 .
@@ -782,10 +735,10 @@ ex:publish_date_-828622397
 ex:20001201  rdf:type  ex:PublishDate;
         rdfs:label  "2000-12-01"@en .
 
-ex:bk111  rdfs:member    ex:description_-828622397;
-        ex:hasDescription  ex:description_-828622397 .
+ex:bk111  rdfs:member      ex:description_-1213443124;
+        ex:hasDescription  ex:description_-1213443124 .
 
-ex:description_-828622397
+ex:description_-1213443124
         rdf:type           ex:Description;
         rdfs:member        ex:TheMicrosoftMSXML3parseriscoveredindetailwithattentiontoXMLDOMinterfacesXSLTprocessingSAXandmore;
         ex:hasDescription  ex:TheMicrosoftMSXML3parseriscoveredindetailwithattentiontoXMLDOMinterfacesXSLTprocessingSAXandmore .
@@ -794,15 +747,14 @@ ex:TheMicrosoftMSXML3parseriscoveredindetailwithattentiontoXMLDOMinterfacesXSLTp
         rdf:type    ex:Description;
         rdfs:label  "The Microsoft MSXML3 parser is covered in\n      detail, with attention to XML DOM interfaces, XSLT processing,\n      SAX and more."@en .
 
-ex:catalog_377927480
-        rdfs:member  ex:bk112;
+ex:catalog_377927480  rdfs:member  ex:bk112;
         ex:hasBook   ex:bk112 .
 
-ex:bk112  rdf:type  ex:Book;
-        rdfs:member   ex:author_-725650641;
-        ex:hasAuthor  ex:author_-725650641 .
+ex:bk112  rdf:type    ex:Book;
+        rdfs:member   ex:author_-1124468728;
+        ex:hasAuthor  ex:author_-1124468728 .
 
-ex:author_-725650641
+ex:author_-1124468728
         rdf:type      ex:Author;
         rdfs:member   ex:GalosMike;
         ex:hasAuthor  ex:GalosMike .
@@ -810,11 +762,10 @@ ex:author_-725650641
 ex:GalosMike  rdf:type  ex:Author;
         rdfs:label  "Galos, Mike"@en .
 
-ex:bk112  rdfs:member  ex:title_-725650641;
-        ex:hasTitle  ex:title_-725650641 .
+ex:bk112  rdfs:member  ex:title_-1124468728;
+        ex:hasTitle  ex:title_-1124468728 .
 
-ex:title_-725650641
-        rdf:type     ex:Title;
+ex:title_-1124468728  rdf:type  ex:Title;
         rdfs:member  ex:VisualStudio7AComprehensiveGuide;
         ex:hasTitle  ex:VisualStudio7AComprehensiveGuide .
 
@@ -822,32 +773,30 @@ ex:VisualStudio7AComprehensiveGuide
         rdf:type    ex:Title;
         rdfs:label  "Visual Studio 7: A Comprehensive Guide"@en .
 
-ex:bk112  rdfs:member  ex:genre_-725650641;
-        ex:hasGenre  ex:genre_-725650641 .
+ex:bk112  rdfs:member  ex:genre_-1124468728;
+        ex:hasGenre  ex:genre_-1124468728 .
 
-ex:genre_-725650641
-        rdf:type     ex:Genre;
+ex:genre_-1124468728  rdf:type  ex:Genre;
         rdfs:member  ex:Computer;
         ex:hasGenre  ex:Computer .
 
 ex:Computer  rdf:type  ex:Genre;
         rdfs:label  "Computer"@en .
 
-ex:bk112  rdfs:member  ex:price_-725650641;
-        ex:hasPrice  ex:price_-725650641 .
+ex:bk112  rdfs:member  ex:price_-1124468728;
+        ex:hasPrice  ex:price_-1124468728 .
 
-ex:price_-725650641
-        rdf:type     ex:Price;
+ex:price_-1124468728  rdf:type  ex:Price;
         rdfs:member  ex:4995;
         ex:hasPrice  ex:4995 .
 
-ex:4995  rdf:type  ex:Price;
+ex:4995  rdf:type   ex:Price;
         rdfs:label  "49.95"@en .
 
-ex:bk112  rdfs:member    ex:publish_date_-725650641;
-        ex:hasPublishDate  ex:publish_date_-725650641 .
+ex:bk112  rdfs:member      ex:publish_date_-1124468728;
+        ex:hasPublishDate  ex:publish_date_-1124468728 .
 
-ex:publish_date_-725650641
+ex:publish_date_-1124468728
         rdf:type           ex:PublishDate;
         rdfs:member        ex:20010416;
         ex:hasPublishDate  ex:20010416 .
@@ -855,10 +804,10 @@ ex:publish_date_-725650641
 ex:20010416  rdf:type  ex:PublishDate;
         rdfs:label  "2001-04-16"@en .
 
-ex:bk112  rdfs:member    ex:description_-725650641;
-        ex:hasDescription  ex:description_-725650641 .
+ex:bk112  rdfs:member      ex:description_-1124468728;
+        ex:hasDescription  ex:description_-1124468728 .
 
-ex:description_-725650641
+ex:description_-1124468728
         rdf:type           ex:Description;
         rdfs:member        ex:MicrosoftVisualStudio7isexploredindepthlookingathowVisualBasicVisualCCandASPareintegratedintoacomprehensivedevelopmentenvironment;
         ex:hasDescription  ex:MicrosoftVisualStudio7isexploredindepthlookingathowVisualBasicVisualCCandASPareintegratedintoacomprehensivedevelopmentenvironment .

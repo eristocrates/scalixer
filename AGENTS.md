@@ -72,7 +72,7 @@ export PATH="$PWD/tools/sbt-launch/bin:$PATH"
 | `Fs2XmlDoc`         | Documents FS2 + `fs2-data-xml`, advises on parser/stream behavior               |
 | `RdfXmlSpec`        | Ensures output matches W3C RDF/XML specification (structure, legality)          |
 | `Scala3CompilerDoc` | Confirms idiomatic Scala 3 usage; references compiler when needed               |
-| `OntologyLifting`   | Translates XML into OWL semantics; enforces named individual and class patterns |
+| `OntologyLifting`   | Translates XML into OWL semantics, distinguishing syntactic vs. semantic individuals and ensuring classes like `Author_Tag` and `Author` are declared and correctly typed |
 | `TestAgent`         | Generates MUnit-based tests to validate RDF/XML conformance and semantic lifting|
 | `MetaAgent`       | Authors and edits agent `.md` files; automates creation and updating of agent definitions |
 

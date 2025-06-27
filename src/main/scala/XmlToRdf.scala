@@ -5,17 +5,22 @@ import fs2.data.xml.XmlEvent._
 import java.io.InputStream
 import java.nio.file.Paths
 import scala.util.hashing.MurmurHash3
+import scala.collection.immutable.ListMap
 
 object XmlToRdf extends IOApp.Simple {
 
-  val rdfHeader =
-    """<?xml version="1.0"?>
-      |<rdf:RDF
-      |  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-      |  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-      |  xmlns:owl="http://www.w3.org/2002/07/owl#"
-      |  xmlns:ex="http://example.org/">
-      |""".stripMargin
+  private val prefixMap: Map[String, String] = ListMap(
+    "rdf"  -> "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" -> "http://www.w3.org/2000/01/rdf-schema#",
+    "owl"  -> "http://www.w3.org/2002/07/owl#",
+    "ex"   -> "http://example.org/"
+  )
+
+  val rdfHeader = {
+    val prefixes = prefixMap.map { case (p, iri) => s"  xmlns:$p=\"$iri\"" }.mkString("\n")
+    s"""<?xml version="1.0"?>
+<rdf:RDF\n$prefixes>"""
+  }
 
   val rdfFooter = "\n</rdf:RDF>"
 
@@ -29,13 +34,16 @@ object XmlToRdf extends IOApp.Simple {
       .map(word => word.head.toUpper + word.tail)
       .mkString
 
-  private val exPrefix = "http://example.org/"
+  private def expandPrefix(name: String): String =
+    name.split(":", 2) match
+      case Array(prefix, local) if prefixMap.contains(prefix) => prefixMap(prefix) + local
+      case _                                                  => name
 
   private def createIndividualIRI(tag: String, value: String): String =
-    s"${exPrefix}${normalizeLiteral(value)}"
+    expandPrefix(s"ex:${normalizeLiteral(value)}")
 
   private def createClassIRI(tag: String): String =
-    s"${exPrefix}${pascalCase(tag)}"
+    expandPrefix(s"ex:${pascalCase(tag)}")
 
   private def createHasProperty(tag: String): String =
     s"ex:has${pascalCase(tag)}"
@@ -63,8 +71,9 @@ object XmlToRdf extends IOApp.Simple {
         }
 
         val subjectIRI = idOpt match {
-          case Some(id) => s"${exPrefix}$id"
-          case None     => s"${exPrefix}${tag}_${MurmurHash3.stringHash(stack.map(_._1).mkString("/"))}"
+          case Some(id) => expandPrefix(s"ex:$id")
+          case None =>
+            expandPrefix(s"ex:${tag}_${MurmurHash3.stringHash(stack.map(_._1).mkString("/"))}")
         }
 
         val parentBlock = stack.headOption.map { case (parentIRI, _) =>

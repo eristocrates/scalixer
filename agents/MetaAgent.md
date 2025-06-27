@@ -34,3 +34,49 @@ In the future, this agent may be backed by a `MetaAgent.scala` or Codex transfor
 
 - `TestAgent` (which it may help generate)
 - `OntologyLifting`, `Fs2XmlDoc` (which it may update based on ontology schema evolution)
+
+## Patch Proposal: Remove Hardcoded exPrefix in XmlToRdf.scala
+
+### Problem
+
+`XmlToRdf.scala` currently embeds the string `"http://example.org/"` directly in IRI
+construction logic. While this guarantees expansion for Turtle round-tripping, it
+prevents configurable namespaces and hinders reuse across different XML files.
+
+### Solution
+
+Introduce prefix-aware expansion derived from the prefix bindings in `rdfHeader`.
+Mapping the `"ex"` prefix to its namespace allows dynamic control and keeps RDF/XML
+and Turtle output in sync.
+
+### Implementation Steps
+
+1. **Replace `exPrefix` constant**
+   - Remove `val exPrefix = "http://example.org/"`
+   - Add a prefix map, for example:
+     ```scala
+     val prefixMap = Map("ex" -> "http://example.org/")
+     ```
+
+2. **Create prefix-aware IRI builder**
+   ```scala
+   def expandPrefix(prefixedName: String): String = {
+     val Array(prefix, local) = prefixedName.split(":", 2)
+     prefixMap.getOrElse(prefix, "") + local
+   }
+   ```
+
+3. **Update IRI construction logic**
+   Replace string concatenations with `expandPrefix`, for example:
+   ```scala
+   expandPrefix(s"ex:${normalizeLiteral(value)}")
+   ```
+
+4. **Update `rdfHeader` writer (optional)**
+   - Auto-generate `xmlns` declarations from `prefixMap` to avoid duplication.
+
+### Follow-Up
+
+Create regression tests (with `TestAgent`) that:
+* Verify IRIs in `rdf:about` and `rdf:resource` are absolute.
+* Ensure the `ex:` prefix is declared and round-trips correctly via Turtle.

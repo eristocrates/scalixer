@@ -74,6 +74,7 @@ export PATH="$PWD/tools/sbt-launch/bin:$PATH"
 | `Scala3CompilerDoc` | Confirms idiomatic Scala 3 usage; references compiler when needed               |
 | `OntologyLifting`   | Translates XML into OWL semantics; enforces named individual and class patterns |
 | `TestAgent`         | Generates MUnit-based tests to validate RDF/XML conformance and semantic lifting|
+| `MetaAgent`       | Authors and edits agent `.md` files; automates creation and updating of agent definitions |
 
 Each agent maintains its own file (e.g., `OntologyLifting.md`), allowing Codex to specialize its behavior based on the active task.
 

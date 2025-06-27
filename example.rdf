@@ -4,51 +4,1223 @@
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:ex="http://example.org/">
-
-  <rdf:Description rdf:about="ex:bk101">
-    <rdf:type rdf:resource="ex:Book"/>
-    <rdfs:member rdf:resource="ex:GambardellaMatthew"/>
-    <ex:hasAuthor rdf:resource="ex:GambardellaMatthew"/>
-    <rdfs:member rdf:resource="ex:XMLDevelopersGuide"/>
-    <ex:hasTitle rdf:resource="ex:XMLDevelopersGuide"/>
-    <rdfs:member rdf:resource="ex:Computer"/>
-    <ex:hasGenre rdf:resource="ex:Computer"/>
-    <rdfs:member rdf:resource="ex:4495"/>
-    <ex:hasPrice rdf:resource="ex:4495"/>
-    <rdfs:member rdf:resource="ex:20001001"/>
-    <ex:hasPublishDate rdf:resource="ex:20001001"/>
-    <rdfs:member rdf:resource="ex:AnindepthlookatcreatingapplicationswithXML"/>
-    <ex:hasDescription rdf:resource="ex:AnindepthlookatcreatingapplicationswithXML"/>
+  <rdf:Description rdf:about="ex:catalog_377927480">
+    <rdf:type rdf:resource="ex:Catalog" />
   </rdf:Description>
-
+  <rdf:Description rdf:about="ex:catalog_377927480">
+    <rdfs:member rdf:resource="ex:bk101" />
+    <ex:hasBook rdf:resource="ex:bk101" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk101">
+    <rdf:type rdf:resource="ex:Book" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk101">
+    <rdfs:member rdf:resource="ex:author_1263791798" />
+    <ex:hasAuthor rdf:resource="ex:author_1263791798" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_1263791798">
+    <rdf:type rdf:resource="ex:Author" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_1263791798">
+    <rdfs:member rdf:resource="ex:GambardellaMatthew" />
+    <ex:hasAuthor rdf:resource="ex:GambardellaMatthew" />
+  </rdf:Description>
   <rdf:Description rdf:about="ex:GambardellaMatthew">
-    <rdf:type rdf:resource="ex:Author"/>
+    <rdf:type rdf:resource="ex:Author" />
     <rdfs:label xml:lang="en">Gambardella, Matthew</rdfs:label>
   </rdf:Description>
-
-  <rdf:Description rdf:about="ex:XMLDevelopersGuide">
-    <rdf:type rdf:resource="ex:Title"/>
-    <rdfs:label xml:lang="en">XML Developer's Guide</rdfs:label>
+  <rdf:Description rdf:about="ex:bk101">
+    <rdfs:member rdf:resource="ex:title_1263791798" />
+    <ex:hasTitle rdf:resource="ex:title_1263791798" />
   </rdf:Description>
-
+  <rdf:Description rdf:about="ex:title_1263791798">
+    <rdf:type rdf:resource="ex:Title" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_1263791798">
+    <rdfs:member rdf:resource="ex:XMLDevelopersGuide" />
+    <ex:hasTitle rdf:resource="ex:XMLDevelopersGuide" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:XMLDevelopersGuide">
+    <rdf:type rdf:resource="ex:Title" />
+    <rdfs:label xml:lang="en">XML Developer&apos;s Guide</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk101">
+    <rdfs:member rdf:resource="ex:genre_1263791798" />
+    <ex:hasGenre rdf:resource="ex:genre_1263791798" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_1263791798">
+    <rdf:type rdf:resource="ex:Genre" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_1263791798">
+    <rdfs:member rdf:resource="ex:Computer" />
+    <ex:hasGenre rdf:resource="ex:Computer" />
+  </rdf:Description>
   <rdf:Description rdf:about="ex:Computer">
-    <rdf:type rdf:resource="ex:Genre"/>
+    <rdf:type rdf:resource="ex:Genre" />
     <rdfs:label xml:lang="en">Computer</rdfs:label>
   </rdf:Description>
-
+  <rdf:Description rdf:about="ex:bk101">
+    <rdfs:member rdf:resource="ex:price_1263791798" />
+    <ex:hasPrice rdf:resource="ex:price_1263791798" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_1263791798">
+    <rdf:type rdf:resource="ex:Price" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_1263791798">
+    <rdfs:member rdf:resource="ex:4495" />
+    <ex:hasPrice rdf:resource="ex:4495" />
+  </rdf:Description>
   <rdf:Description rdf:about="ex:4495">
-    <rdf:type rdf:resource="ex:Price"/>
+    <rdf:type rdf:resource="ex:Price" />
     <rdfs:label xml:lang="en">44.95</rdfs:label>
   </rdf:Description>
-
+  <rdf:Description rdf:about="ex:bk101">
+    <rdfs:member rdf:resource="ex:publish_date_1263791798" />
+    <ex:hasPublishDate rdf:resource="ex:publish_date_1263791798" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_1263791798">
+    <rdf:type rdf:resource="ex:PublishDate" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_1263791798">
+    <rdfs:member rdf:resource="ex:20001001" />
+    <ex:hasPublishDate rdf:resource="ex:20001001" />
+  </rdf:Description>
   <rdf:Description rdf:about="ex:20001001">
-    <rdf:type rdf:resource="ex:PublishDate"/>
+    <rdf:type rdf:resource="ex:PublishDate" />
     <rdfs:label xml:lang="en">2000-10-01</rdfs:label>
   </rdf:Description>
-
-  <rdf:Description rdf:about="ex:AnindepthlookatcreatingapplicationswithXML">
-    <rdf:type rdf:resource="ex:Description"/>
-    <rdfs:label xml:lang="en">An in-depth look at creating applications with XML.</rdfs:label>
+  <rdf:Description rdf:about="ex:bk101">
+    <rdfs:member rdf:resource="ex:description_1263791798" />
+    <ex:hasDescription rdf:resource="ex:description_1263791798" />
   </rdf:Description>
-
+  <rdf:Description rdf:about="ex:description_1263791798">
+    <rdf:type rdf:resource="ex:Description" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_1263791798">
+    <rdfs:member rdf:resource="ex:AnindepthlookatcreatingapplicationswithXML" />
+    <ex:hasDescription rdf:resource="ex:AnindepthlookatcreatingapplicationswithXML" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:AnindepthlookatcreatingapplicationswithXML">
+    <rdf:type rdf:resource="ex:Description" />
+    <rdfs:label xml:lang="en">An in-depth look at creating applications
+      with XML.</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:catalog_377927480">
+    <rdfs:member rdf:resource="ex:bk102" />
+    <ex:hasBook rdf:resource="ex:bk102" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk102">
+    <rdf:type rdf:resource="ex:Book" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk102">
+    <rdfs:member rdf:resource="ex:author_-489129026" />
+    <ex:hasAuthor rdf:resource="ex:author_-489129026" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_-489129026">
+    <rdf:type rdf:resource="ex:Author" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_-489129026">
+    <rdfs:member rdf:resource="ex:RallsKim" />
+    <ex:hasAuthor rdf:resource="ex:RallsKim" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:RallsKim">
+    <rdf:type rdf:resource="ex:Author" />
+    <rdfs:label xml:lang="en">Ralls, Kim</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk102">
+    <rdfs:member rdf:resource="ex:title_-489129026" />
+    <ex:hasTitle rdf:resource="ex:title_-489129026" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_-489129026">
+    <rdf:type rdf:resource="ex:Title" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_-489129026">
+    <rdfs:member rdf:resource="ex:MidnightRain" />
+    <ex:hasTitle rdf:resource="ex:MidnightRain" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:MidnightRain">
+    <rdf:type rdf:resource="ex:Title" />
+    <rdfs:label xml:lang="en">Midnight Rain</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk102">
+    <rdfs:member rdf:resource="ex:genre_-489129026" />
+    <ex:hasGenre rdf:resource="ex:genre_-489129026" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_-489129026">
+    <rdf:type rdf:resource="ex:Genre" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_-489129026">
+    <rdfs:member rdf:resource="ex:Fantasy" />
+    <ex:hasGenre rdf:resource="ex:Fantasy" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:Fantasy">
+    <rdf:type rdf:resource="ex:Genre" />
+    <rdfs:label xml:lang="en">Fantasy</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk102">
+    <rdfs:member rdf:resource="ex:price_-489129026" />
+    <ex:hasPrice rdf:resource="ex:price_-489129026" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_-489129026">
+    <rdf:type rdf:resource="ex:Price" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_-489129026">
+    <rdfs:member rdf:resource="ex:595" />
+    <ex:hasPrice rdf:resource="ex:595" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:595">
+    <rdf:type rdf:resource="ex:Price" />
+    <rdfs:label xml:lang="en">5.95</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk102">
+    <rdfs:member rdf:resource="ex:publish_date_-489129026" />
+    <ex:hasPublishDate rdf:resource="ex:publish_date_-489129026" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_-489129026">
+    <rdf:type rdf:resource="ex:PublishDate" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_-489129026">
+    <rdfs:member rdf:resource="ex:20001216" />
+    <ex:hasPublishDate rdf:resource="ex:20001216" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:20001216">
+    <rdf:type rdf:resource="ex:PublishDate" />
+    <rdfs:label xml:lang="en">2000-12-16</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk102">
+    <rdfs:member rdf:resource="ex:description_-489129026" />
+    <ex:hasDescription rdf:resource="ex:description_-489129026" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_-489129026">
+    <rdf:type rdf:resource="ex:Description" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_-489129026">
+    <rdfs:member
+      rdf:resource="ex:Aformerarchitectbattlescorporatezombiesanevilsorceressandherownchildhoodtobecomequeenoftheworld" />
+    <ex:hasDescription
+      rdf:resource="ex:Aformerarchitectbattlescorporatezombiesanevilsorceressandherownchildhoodtobecomequeenoftheworld" />
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="ex:Aformerarchitectbattlescorporatezombiesanevilsorceressandherownchildhoodtobecomequeenoftheworld">
+    <rdf:type rdf:resource="ex:Description" />
+    <rdfs:label xml:lang="en">A former architect battles corporate zombies,
+      an evil sorceress, and her own childhood to become queen
+      of the world.</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:catalog_377927480">
+    <rdfs:member rdf:resource="ex:bk103" />
+    <ex:hasBook rdf:resource="ex:bk103" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk103">
+    <rdf:type rdf:resource="ex:Book" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk103">
+    <rdfs:member rdf:resource="ex:author_-42659733" />
+    <ex:hasAuthor rdf:resource="ex:author_-42659733" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_-42659733">
+    <rdf:type rdf:resource="ex:Author" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_-42659733">
+    <rdfs:member rdf:resource="ex:CoretsEva" />
+    <ex:hasAuthor rdf:resource="ex:CoretsEva" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:CoretsEva">
+    <rdf:type rdf:resource="ex:Author" />
+    <rdfs:label xml:lang="en">Corets, Eva</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk103">
+    <rdfs:member rdf:resource="ex:title_-42659733" />
+    <ex:hasTitle rdf:resource="ex:title_-42659733" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_-42659733">
+    <rdf:type rdf:resource="ex:Title" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_-42659733">
+    <rdfs:member rdf:resource="ex:MaeveAscendant" />
+    <ex:hasTitle rdf:resource="ex:MaeveAscendant" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:MaeveAscendant">
+    <rdf:type rdf:resource="ex:Title" />
+    <rdfs:label xml:lang="en">Maeve Ascendant</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk103">
+    <rdfs:member rdf:resource="ex:genre_-42659733" />
+    <ex:hasGenre rdf:resource="ex:genre_-42659733" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_-42659733">
+    <rdf:type rdf:resource="ex:Genre" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_-42659733">
+    <rdfs:member rdf:resource="ex:Fantasy" />
+    <ex:hasGenre rdf:resource="ex:Fantasy" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:Fantasy">
+    <rdf:type rdf:resource="ex:Genre" />
+    <rdfs:label xml:lang="en">Fantasy</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk103">
+    <rdfs:member rdf:resource="ex:price_-42659733" />
+    <ex:hasPrice rdf:resource="ex:price_-42659733" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_-42659733">
+    <rdf:type rdf:resource="ex:Price" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_-42659733">
+    <rdfs:member rdf:resource="ex:595" />
+    <ex:hasPrice rdf:resource="ex:595" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:595">
+    <rdf:type rdf:resource="ex:Price" />
+    <rdfs:label xml:lang="en">5.95</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk103">
+    <rdfs:member rdf:resource="ex:publish_date_-42659733" />
+    <ex:hasPublishDate rdf:resource="ex:publish_date_-42659733" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_-42659733">
+    <rdf:type rdf:resource="ex:PublishDate" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_-42659733">
+    <rdfs:member rdf:resource="ex:20001117" />
+    <ex:hasPublishDate rdf:resource="ex:20001117" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:20001117">
+    <rdf:type rdf:resource="ex:PublishDate" />
+    <rdfs:label xml:lang="en">2000-11-17</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk103">
+    <rdfs:member rdf:resource="ex:description_-42659733" />
+    <ex:hasDescription rdf:resource="ex:description_-42659733" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_-42659733">
+    <rdf:type rdf:resource="ex:Description" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_-42659733">
+    <rdfs:member
+      rdf:resource="ex:AfterthecollapseofananotechnologysocietyinEnglandtheyoungsurvivorslaythefoundationforanewsociety" />
+    <ex:hasDescription
+      rdf:resource="ex:AfterthecollapseofananotechnologysocietyinEnglandtheyoungsurvivorslaythefoundationforanewsociety" />
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="ex:AfterthecollapseofananotechnologysocietyinEnglandtheyoungsurvivorslaythefoundationforanewsociety">
+    <rdf:type rdf:resource="ex:Description" />
+    <rdfs:label xml:lang="en">After the collapse of a nanotechnology
+      society in England, the young survivors lay the
+      foundation for a new society.</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:catalog_377927480">
+    <rdfs:member rdf:resource="ex:bk104" />
+    <ex:hasBook rdf:resource="ex:bk104" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk104">
+    <rdf:type rdf:resource="ex:Book" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk104">
+    <rdfs:member rdf:resource="ex:author_1453675806" />
+    <ex:hasAuthor rdf:resource="ex:author_1453675806" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_1453675806">
+    <rdf:type rdf:resource="ex:Author" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_1453675806">
+    <rdfs:member rdf:resource="ex:CoretsEva" />
+    <ex:hasAuthor rdf:resource="ex:CoretsEva" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:CoretsEva">
+    <rdf:type rdf:resource="ex:Author" />
+    <rdfs:label xml:lang="en">Corets, Eva</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk104">
+    <rdfs:member rdf:resource="ex:title_1453675806" />
+    <ex:hasTitle rdf:resource="ex:title_1453675806" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_1453675806">
+    <rdf:type rdf:resource="ex:Title" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_1453675806">
+    <rdfs:member rdf:resource="ex:OberonsLegacy" />
+    <ex:hasTitle rdf:resource="ex:OberonsLegacy" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:OberonsLegacy">
+    <rdf:type rdf:resource="ex:Title" />
+    <rdfs:label xml:lang="en">Oberon&apos;s Legacy</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk104">
+    <rdfs:member rdf:resource="ex:genre_1453675806" />
+    <ex:hasGenre rdf:resource="ex:genre_1453675806" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_1453675806">
+    <rdf:type rdf:resource="ex:Genre" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_1453675806">
+    <rdfs:member rdf:resource="ex:Fantasy" />
+    <ex:hasGenre rdf:resource="ex:Fantasy" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:Fantasy">
+    <rdf:type rdf:resource="ex:Genre" />
+    <rdfs:label xml:lang="en">Fantasy</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk104">
+    <rdfs:member rdf:resource="ex:price_1453675806" />
+    <ex:hasPrice rdf:resource="ex:price_1453675806" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_1453675806">
+    <rdf:type rdf:resource="ex:Price" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_1453675806">
+    <rdfs:member rdf:resource="ex:595" />
+    <ex:hasPrice rdf:resource="ex:595" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:595">
+    <rdf:type rdf:resource="ex:Price" />
+    <rdfs:label xml:lang="en">5.95</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk104">
+    <rdfs:member rdf:resource="ex:publish_date_1453675806" />
+    <ex:hasPublishDate rdf:resource="ex:publish_date_1453675806" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_1453675806">
+    <rdf:type rdf:resource="ex:PublishDate" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_1453675806">
+    <rdfs:member rdf:resource="ex:20010310" />
+    <ex:hasPublishDate rdf:resource="ex:20010310" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:20010310">
+    <rdf:type rdf:resource="ex:PublishDate" />
+    <rdfs:label xml:lang="en">2001-03-10</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk104">
+    <rdfs:member rdf:resource="ex:description_1453675806" />
+    <ex:hasDescription rdf:resource="ex:description_1453675806" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_1453675806">
+    <rdf:type rdf:resource="ex:Description" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_1453675806">
+    <rdfs:member
+      rdf:resource="ex:InpostapocalypseEnglandthemysteriousagentknownonlyasOberonhelpstocreateanewlifefortheinhabitantsofLondonSequeltoMaeveAscendant" />
+    <ex:hasDescription
+      rdf:resource="ex:InpostapocalypseEnglandthemysteriousagentknownonlyasOberonhelpstocreateanewlifefortheinhabitantsofLondonSequeltoMaeveAscendant" />
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="ex:InpostapocalypseEnglandthemysteriousagentknownonlyasOberonhelpstocreateanewlifefortheinhabitantsofLondonSequeltoMaeveAscendant">
+    <rdf:type rdf:resource="ex:Description" />
+    <rdfs:label xml:lang="en">In post-apocalypse England, the mysterious
+      agent known only as Oberon helps to create a new life
+      for the inhabitants of London. Sequel to Maeve
+      Ascendant.</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:catalog_377927480">
+    <rdfs:member rdf:resource="ex:bk105" />
+    <ex:hasBook rdf:resource="ex:bk105" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk105">
+    <rdf:type rdf:resource="ex:Book" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk105">
+    <rdfs:member rdf:resource="ex:author_-1591692029" />
+    <ex:hasAuthor rdf:resource="ex:author_-1591692029" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_-1591692029">
+    <rdf:type rdf:resource="ex:Author" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_-1591692029">
+    <rdfs:member rdf:resource="ex:CoretsEva" />
+    <ex:hasAuthor rdf:resource="ex:CoretsEva" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:CoretsEva">
+    <rdf:type rdf:resource="ex:Author" />
+    <rdfs:label xml:lang="en">Corets, Eva</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk105">
+    <rdfs:member rdf:resource="ex:title_-1591692029" />
+    <ex:hasTitle rdf:resource="ex:title_-1591692029" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_-1591692029">
+    <rdf:type rdf:resource="ex:Title" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_-1591692029">
+    <rdfs:member rdf:resource="ex:TheSunderedGrail" />
+    <ex:hasTitle rdf:resource="ex:TheSunderedGrail" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:TheSunderedGrail">
+    <rdf:type rdf:resource="ex:Title" />
+    <rdfs:label xml:lang="en">The Sundered Grail</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk105">
+    <rdfs:member rdf:resource="ex:genre_-1591692029" />
+    <ex:hasGenre rdf:resource="ex:genre_-1591692029" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_-1591692029">
+    <rdf:type rdf:resource="ex:Genre" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_-1591692029">
+    <rdfs:member rdf:resource="ex:Fantasy" />
+    <ex:hasGenre rdf:resource="ex:Fantasy" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:Fantasy">
+    <rdf:type rdf:resource="ex:Genre" />
+    <rdfs:label xml:lang="en">Fantasy</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk105">
+    <rdfs:member rdf:resource="ex:price_-1591692029" />
+    <ex:hasPrice rdf:resource="ex:price_-1591692029" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_-1591692029">
+    <rdf:type rdf:resource="ex:Price" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_-1591692029">
+    <rdfs:member rdf:resource="ex:595" />
+    <ex:hasPrice rdf:resource="ex:595" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:595">
+    <rdf:type rdf:resource="ex:Price" />
+    <rdfs:label xml:lang="en">5.95</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk105">
+    <rdfs:member rdf:resource="ex:publish_date_-1591692029" />
+    <ex:hasPublishDate rdf:resource="ex:publish_date_-1591692029" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_-1591692029">
+    <rdf:type rdf:resource="ex:PublishDate" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_-1591692029">
+    <rdfs:member rdf:resource="ex:20010910" />
+    <ex:hasPublishDate rdf:resource="ex:20010910" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:20010910">
+    <rdf:type rdf:resource="ex:PublishDate" />
+    <rdfs:label xml:lang="en">2001-09-10</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk105">
+    <rdfs:member rdf:resource="ex:description_-1591692029" />
+    <ex:hasDescription rdf:resource="ex:description_-1591692029" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_-1591692029">
+    <rdf:type rdf:resource="ex:Description" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_-1591692029">
+    <rdfs:member
+      rdf:resource="ex:ThetwodaughtersofMaevehalfsistersbattleoneanotherforcontrolofEnglandSequeltoOberonsLegacy" />
+    <ex:hasDescription
+      rdf:resource="ex:ThetwodaughtersofMaevehalfsistersbattleoneanotherforcontrolofEnglandSequeltoOberonsLegacy" />
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="ex:ThetwodaughtersofMaevehalfsistersbattleoneanotherforcontrolofEnglandSequeltoOberonsLegacy">
+    <rdf:type rdf:resource="ex:Description" />
+    <rdfs:label xml:lang="en">The two daughters of Maeve, half-sisters,
+      battle one another for control of England. Sequel to
+      Oberon&apos;s Legacy.</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:catalog_377927480">
+    <rdfs:member rdf:resource="ex:bk106" />
+    <ex:hasBook rdf:resource="ex:bk106" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk106">
+    <rdf:type rdf:resource="ex:Book" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk106">
+    <rdfs:member rdf:resource="ex:author_1484725857" />
+    <ex:hasAuthor rdf:resource="ex:author_1484725857" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_1484725857">
+    <rdf:type rdf:resource="ex:Author" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_1484725857">
+    <rdfs:member rdf:resource="ex:RandallCynthia" />
+    <ex:hasAuthor rdf:resource="ex:RandallCynthia" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:RandallCynthia">
+    <rdf:type rdf:resource="ex:Author" />
+    <rdfs:label xml:lang="en">Randall, Cynthia</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk106">
+    <rdfs:member rdf:resource="ex:title_1484725857" />
+    <ex:hasTitle rdf:resource="ex:title_1484725857" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_1484725857">
+    <rdf:type rdf:resource="ex:Title" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_1484725857">
+    <rdfs:member rdf:resource="ex:LoverBirds" />
+    <ex:hasTitle rdf:resource="ex:LoverBirds" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:LoverBirds">
+    <rdf:type rdf:resource="ex:Title" />
+    <rdfs:label xml:lang="en">Lover Birds</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk106">
+    <rdfs:member rdf:resource="ex:genre_1484725857" />
+    <ex:hasGenre rdf:resource="ex:genre_1484725857" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_1484725857">
+    <rdf:type rdf:resource="ex:Genre" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_1484725857">
+    <rdfs:member rdf:resource="ex:Romance" />
+    <ex:hasGenre rdf:resource="ex:Romance" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:Romance">
+    <rdf:type rdf:resource="ex:Genre" />
+    <rdfs:label xml:lang="en">Romance</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk106">
+    <rdfs:member rdf:resource="ex:price_1484725857" />
+    <ex:hasPrice rdf:resource="ex:price_1484725857" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_1484725857">
+    <rdf:type rdf:resource="ex:Price" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_1484725857">
+    <rdfs:member rdf:resource="ex:495" />
+    <ex:hasPrice rdf:resource="ex:495" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:495">
+    <rdf:type rdf:resource="ex:Price" />
+    <rdfs:label xml:lang="en">4.95</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk106">
+    <rdfs:member rdf:resource="ex:publish_date_1484725857" />
+    <ex:hasPublishDate rdf:resource="ex:publish_date_1484725857" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_1484725857">
+    <rdf:type rdf:resource="ex:PublishDate" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_1484725857">
+    <rdfs:member rdf:resource="ex:20000902" />
+    <ex:hasPublishDate rdf:resource="ex:20000902" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:20000902">
+    <rdf:type rdf:resource="ex:PublishDate" />
+    <rdfs:label xml:lang="en">2000-09-02</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk106">
+    <rdfs:member rdf:resource="ex:description_1484725857" />
+    <ex:hasDescription rdf:resource="ex:description_1484725857" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_1484725857">
+    <rdf:type rdf:resource="ex:Description" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_1484725857">
+    <rdfs:member
+      rdf:resource="ex:WhenCarlameetsPaulatanornithologyconferencetempersflyasfeathersgetruffled" />
+    <ex:hasDescription
+      rdf:resource="ex:WhenCarlameetsPaulatanornithologyconferencetempersflyasfeathersgetruffled" />
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="ex:WhenCarlameetsPaulatanornithologyconferencetempersflyasfeathersgetruffled">
+    <rdf:type rdf:resource="ex:Description" />
+    <rdfs:label xml:lang="en">When Carla meets Paul at an ornithology
+      conference, tempers fly as feathers get ruffled.</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:catalog_377927480">
+    <rdfs:member rdf:resource="ex:bk107" />
+    <ex:hasBook rdf:resource="ex:bk107" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk107">
+    <rdf:type rdf:resource="ex:Book" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk107">
+    <rdfs:member rdf:resource="ex:author_93903675" />
+    <ex:hasAuthor rdf:resource="ex:author_93903675" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_93903675">
+    <rdf:type rdf:resource="ex:Author" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_93903675">
+    <rdfs:member rdf:resource="ex:ThurmanPaula" />
+    <ex:hasAuthor rdf:resource="ex:ThurmanPaula" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:ThurmanPaula">
+    <rdf:type rdf:resource="ex:Author" />
+    <rdfs:label xml:lang="en">Thurman, Paula</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk107">
+    <rdfs:member rdf:resource="ex:title_93903675" />
+    <ex:hasTitle rdf:resource="ex:title_93903675" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_93903675">
+    <rdf:type rdf:resource="ex:Title" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_93903675">
+    <rdfs:member rdf:resource="ex:SplishSplash" />
+    <ex:hasTitle rdf:resource="ex:SplishSplash" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:SplishSplash">
+    <rdf:type rdf:resource="ex:Title" />
+    <rdfs:label xml:lang="en">Splish Splash</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk107">
+    <rdfs:member rdf:resource="ex:genre_93903675" />
+    <ex:hasGenre rdf:resource="ex:genre_93903675" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_93903675">
+    <rdf:type rdf:resource="ex:Genre" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_93903675">
+    <rdfs:member rdf:resource="ex:Romance" />
+    <ex:hasGenre rdf:resource="ex:Romance" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:Romance">
+    <rdf:type rdf:resource="ex:Genre" />
+    <rdfs:label xml:lang="en">Romance</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk107">
+    <rdfs:member rdf:resource="ex:price_93903675" />
+    <ex:hasPrice rdf:resource="ex:price_93903675" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_93903675">
+    <rdf:type rdf:resource="ex:Price" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_93903675">
+    <rdfs:member rdf:resource="ex:495" />
+    <ex:hasPrice rdf:resource="ex:495" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:495">
+    <rdf:type rdf:resource="ex:Price" />
+    <rdfs:label xml:lang="en">4.95</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk107">
+    <rdfs:member rdf:resource="ex:publish_date_93903675" />
+    <ex:hasPublishDate rdf:resource="ex:publish_date_93903675" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_93903675">
+    <rdf:type rdf:resource="ex:PublishDate" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_93903675">
+    <rdfs:member rdf:resource="ex:20001102" />
+    <ex:hasPublishDate rdf:resource="ex:20001102" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:20001102">
+    <rdf:type rdf:resource="ex:PublishDate" />
+    <rdfs:label xml:lang="en">2000-11-02</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk107">
+    <rdfs:member rdf:resource="ex:description_93903675" />
+    <ex:hasDescription rdf:resource="ex:description_93903675" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_93903675">
+    <rdf:type rdf:resource="ex:Description" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_93903675">
+    <rdfs:member rdf:resource="ex:Adeepseadiverfindstruelovetwentythousandleaguesbeneaththesea" />
+    <ex:hasDescription
+      rdf:resource="ex:Adeepseadiverfindstruelovetwentythousandleaguesbeneaththesea" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:Adeepseadiverfindstruelovetwentythousandleaguesbeneaththesea">
+    <rdf:type rdf:resource="ex:Description" />
+    <rdfs:label xml:lang="en">A deep sea diver finds true love twenty
+      thousand leagues beneath the sea.</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:catalog_377927480">
+    <rdfs:member rdf:resource="ex:bk108" />
+    <ex:hasBook rdf:resource="ex:bk108" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk108">
+    <rdf:type rdf:resource="ex:Book" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk108">
+    <rdfs:member rdf:resource="ex:author_2013914835" />
+    <ex:hasAuthor rdf:resource="ex:author_2013914835" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_2013914835">
+    <rdf:type rdf:resource="ex:Author" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_2013914835">
+    <rdfs:member rdf:resource="ex:KnorrStefan" />
+    <ex:hasAuthor rdf:resource="ex:KnorrStefan" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:KnorrStefan">
+    <rdf:type rdf:resource="ex:Author" />
+    <rdfs:label xml:lang="en">Knorr, Stefan</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk108">
+    <rdfs:member rdf:resource="ex:title_2013914835" />
+    <ex:hasTitle rdf:resource="ex:title_2013914835" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_2013914835">
+    <rdf:type rdf:resource="ex:Title" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_2013914835">
+    <rdfs:member rdf:resource="ex:CreepyCrawlies" />
+    <ex:hasTitle rdf:resource="ex:CreepyCrawlies" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:CreepyCrawlies">
+    <rdf:type rdf:resource="ex:Title" />
+    <rdfs:label xml:lang="en">Creepy Crawlies</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk108">
+    <rdfs:member rdf:resource="ex:genre_2013914835" />
+    <ex:hasGenre rdf:resource="ex:genre_2013914835" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_2013914835">
+    <rdf:type rdf:resource="ex:Genre" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_2013914835">
+    <rdfs:member rdf:resource="ex:Horror" />
+    <ex:hasGenre rdf:resource="ex:Horror" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:Horror">
+    <rdf:type rdf:resource="ex:Genre" />
+    <rdfs:label xml:lang="en">Horror</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk108">
+    <rdfs:member rdf:resource="ex:price_2013914835" />
+    <ex:hasPrice rdf:resource="ex:price_2013914835" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_2013914835">
+    <rdf:type rdf:resource="ex:Price" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_2013914835">
+    <rdfs:member rdf:resource="ex:495" />
+    <ex:hasPrice rdf:resource="ex:495" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:495">
+    <rdf:type rdf:resource="ex:Price" />
+    <rdfs:label xml:lang="en">4.95</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk108">
+    <rdfs:member rdf:resource="ex:publish_date_2013914835" />
+    <ex:hasPublishDate rdf:resource="ex:publish_date_2013914835" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_2013914835">
+    <rdf:type rdf:resource="ex:PublishDate" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_2013914835">
+    <rdfs:member rdf:resource="ex:20001206" />
+    <ex:hasPublishDate rdf:resource="ex:20001206" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:20001206">
+    <rdf:type rdf:resource="ex:PublishDate" />
+    <rdfs:label xml:lang="en">2000-12-06</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk108">
+    <rdfs:member rdf:resource="ex:description_2013914835" />
+    <ex:hasDescription rdf:resource="ex:description_2013914835" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_2013914835">
+    <rdf:type rdf:resource="ex:Description" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_2013914835">
+    <rdfs:member
+      rdf:resource="ex:Ananthologyofhorrorstoriesaboutroachescentipedesscorpionsandotherinsects" />
+    <ex:hasDescription
+      rdf:resource="ex:Ananthologyofhorrorstoriesaboutroachescentipedesscorpionsandotherinsects" />
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="ex:Ananthologyofhorrorstoriesaboutroachescentipedesscorpionsandotherinsects">
+    <rdf:type rdf:resource="ex:Description" />
+    <rdfs:label xml:lang="en">An anthology of horror stories about roaches,
+      centipedes, scorpions and other insects.</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:catalog_377927480">
+    <rdfs:member rdf:resource="ex:bk109" />
+    <ex:hasBook rdf:resource="ex:bk109" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk109">
+    <rdf:type rdf:resource="ex:Book" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk109">
+    <rdfs:member rdf:resource="ex:author_-1486048306" />
+    <ex:hasAuthor rdf:resource="ex:author_-1486048306" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_-1486048306">
+    <rdf:type rdf:resource="ex:Author" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_-1486048306">
+    <rdfs:member rdf:resource="ex:KressPeter" />
+    <ex:hasAuthor rdf:resource="ex:KressPeter" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:KressPeter">
+    <rdf:type rdf:resource="ex:Author" />
+    <rdfs:label xml:lang="en">Kress, Peter</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk109">
+    <rdfs:member rdf:resource="ex:title_-1486048306" />
+    <ex:hasTitle rdf:resource="ex:title_-1486048306" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_-1486048306">
+    <rdf:type rdf:resource="ex:Title" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_-1486048306">
+    <rdfs:member rdf:resource="ex:ParadoxLost" />
+    <ex:hasTitle rdf:resource="ex:ParadoxLost" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:ParadoxLost">
+    <rdf:type rdf:resource="ex:Title" />
+    <rdfs:label xml:lang="en">Paradox Lost</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk109">
+    <rdfs:member rdf:resource="ex:genre_-1486048306" />
+    <ex:hasGenre rdf:resource="ex:genre_-1486048306" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_-1486048306">
+    <rdf:type rdf:resource="ex:Genre" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_-1486048306">
+    <rdfs:member rdf:resource="ex:ScienceFiction" />
+    <ex:hasGenre rdf:resource="ex:ScienceFiction" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:ScienceFiction">
+    <rdf:type rdf:resource="ex:Genre" />
+    <rdfs:label xml:lang="en">Science Fiction</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk109">
+    <rdfs:member rdf:resource="ex:price_-1486048306" />
+    <ex:hasPrice rdf:resource="ex:price_-1486048306" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_-1486048306">
+    <rdf:type rdf:resource="ex:Price" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_-1486048306">
+    <rdfs:member rdf:resource="ex:695" />
+    <ex:hasPrice rdf:resource="ex:695" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:695">
+    <rdf:type rdf:resource="ex:Price" />
+    <rdfs:label xml:lang="en">6.95</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk109">
+    <rdfs:member rdf:resource="ex:publish_date_-1486048306" />
+    <ex:hasPublishDate rdf:resource="ex:publish_date_-1486048306" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_-1486048306">
+    <rdf:type rdf:resource="ex:PublishDate" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_-1486048306">
+    <rdfs:member rdf:resource="ex:20001102" />
+    <ex:hasPublishDate rdf:resource="ex:20001102" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:20001102">
+    <rdf:type rdf:resource="ex:PublishDate" />
+    <rdfs:label xml:lang="en">2000-11-02</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk109">
+    <rdfs:member rdf:resource="ex:description_-1486048306" />
+    <ex:hasDescription rdf:resource="ex:description_-1486048306" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_-1486048306">
+    <rdf:type rdf:resource="ex:Description" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_-1486048306">
+    <rdfs:member
+      rdf:resource="ex:AfteraninadvertanttripthroughaHeisenbergUncertaintyDeviceJamesSalwaydiscoverstheproblemsofbeingquantum" />
+    <ex:hasDescription
+      rdf:resource="ex:AfteraninadvertanttripthroughaHeisenbergUncertaintyDeviceJamesSalwaydiscoverstheproblemsofbeingquantum" />
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="ex:AfteraninadvertanttripthroughaHeisenbergUncertaintyDeviceJamesSalwaydiscoverstheproblemsofbeingquantum">
+    <rdf:type rdf:resource="ex:Description" />
+    <rdfs:label xml:lang="en">After an inadvertant trip through a Heisenberg
+      Uncertainty Device, James Salway discovers the problems
+      of being quantum.</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:catalog_377927480">
+    <rdfs:member rdf:resource="ex:bk110" />
+    <ex:hasBook rdf:resource="ex:bk110" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk110">
+    <rdf:type rdf:resource="ex:Book" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk110">
+    <rdfs:member rdf:resource="ex:author_1130853177" />
+    <ex:hasAuthor rdf:resource="ex:author_1130853177" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_1130853177">
+    <rdf:type rdf:resource="ex:Author" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_1130853177">
+    <rdfs:member rdf:resource="ex:OBrienTim" />
+    <ex:hasAuthor rdf:resource="ex:OBrienTim" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:OBrienTim">
+    <rdf:type rdf:resource="ex:Author" />
+    <rdfs:label xml:lang="en">O&apos;Brien, Tim</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk110">
+    <rdfs:member rdf:resource="ex:title_1130853177" />
+    <ex:hasTitle rdf:resource="ex:title_1130853177" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_1130853177">
+    <rdf:type rdf:resource="ex:Title" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_1130853177">
+    <rdfs:member rdf:resource="ex:MicrosoftNETTheProgrammingBible" />
+    <ex:hasTitle rdf:resource="ex:MicrosoftNETTheProgrammingBible" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:MicrosoftNETTheProgrammingBible">
+    <rdf:type rdf:resource="ex:Title" />
+    <rdfs:label xml:lang="en">Microsoft .NET: The Programming Bible</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk110">
+    <rdfs:member rdf:resource="ex:genre_1130853177" />
+    <ex:hasGenre rdf:resource="ex:genre_1130853177" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_1130853177">
+    <rdf:type rdf:resource="ex:Genre" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_1130853177">
+    <rdfs:member rdf:resource="ex:Computer" />
+    <ex:hasGenre rdf:resource="ex:Computer" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:Computer">
+    <rdf:type rdf:resource="ex:Genre" />
+    <rdfs:label xml:lang="en">Computer</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk110">
+    <rdfs:member rdf:resource="ex:price_1130853177" />
+    <ex:hasPrice rdf:resource="ex:price_1130853177" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_1130853177">
+    <rdf:type rdf:resource="ex:Price" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_1130853177">
+    <rdfs:member rdf:resource="ex:3695" />
+    <ex:hasPrice rdf:resource="ex:3695" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:3695">
+    <rdf:type rdf:resource="ex:Price" />
+    <rdfs:label xml:lang="en">36.95</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk110">
+    <rdfs:member rdf:resource="ex:publish_date_1130853177" />
+    <ex:hasPublishDate rdf:resource="ex:publish_date_1130853177" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_1130853177">
+    <rdf:type rdf:resource="ex:PublishDate" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_1130853177">
+    <rdfs:member rdf:resource="ex:20001209" />
+    <ex:hasPublishDate rdf:resource="ex:20001209" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:20001209">
+    <rdf:type rdf:resource="ex:PublishDate" />
+    <rdfs:label xml:lang="en">2000-12-09</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk110">
+    <rdfs:member rdf:resource="ex:description_1130853177" />
+    <ex:hasDescription rdf:resource="ex:description_1130853177" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_1130853177">
+    <rdf:type rdf:resource="ex:Description" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_1130853177">
+    <rdfs:member
+      rdf:resource="ex:MicrosoftsNETinitiativeisexploredindetailinthisdeepprogrammersreference" />
+    <ex:hasDescription
+      rdf:resource="ex:MicrosoftsNETinitiativeisexploredindetailinthisdeepprogrammersreference" />
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="ex:MicrosoftsNETinitiativeisexploredindetailinthisdeepprogrammersreference">
+    <rdf:type rdf:resource="ex:Description" />
+    <rdfs:label xml:lang="en">Microsoft&apos;s .NET initiative is explored in
+      detail in this deep programmer&apos;s reference.</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:catalog_377927480">
+    <rdfs:member rdf:resource="ex:bk111" />
+    <ex:hasBook rdf:resource="ex:bk111" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk111">
+    <rdf:type rdf:resource="ex:Book" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk111">
+    <rdfs:member rdf:resource="ex:author_-828622397" />
+    <ex:hasAuthor rdf:resource="ex:author_-828622397" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_-828622397">
+    <rdf:type rdf:resource="ex:Author" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_-828622397">
+    <rdfs:member rdf:resource="ex:OBrienTim" />
+    <ex:hasAuthor rdf:resource="ex:OBrienTim" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:OBrienTim">
+    <rdf:type rdf:resource="ex:Author" />
+    <rdfs:label xml:lang="en">O&apos;Brien, Tim</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk111">
+    <rdfs:member rdf:resource="ex:title_-828622397" />
+    <ex:hasTitle rdf:resource="ex:title_-828622397" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_-828622397">
+    <rdf:type rdf:resource="ex:Title" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_-828622397">
+    <rdfs:member rdf:resource="ex:MSXML3AComprehensiveGuide" />
+    <ex:hasTitle rdf:resource="ex:MSXML3AComprehensiveGuide" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:MSXML3AComprehensiveGuide">
+    <rdf:type rdf:resource="ex:Title" />
+    <rdfs:label xml:lang="en">MSXML3: A Comprehensive Guide</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk111">
+    <rdfs:member rdf:resource="ex:genre_-828622397" />
+    <ex:hasGenre rdf:resource="ex:genre_-828622397" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_-828622397">
+    <rdf:type rdf:resource="ex:Genre" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_-828622397">
+    <rdfs:member rdf:resource="ex:Computer" />
+    <ex:hasGenre rdf:resource="ex:Computer" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:Computer">
+    <rdf:type rdf:resource="ex:Genre" />
+    <rdfs:label xml:lang="en">Computer</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk111">
+    <rdfs:member rdf:resource="ex:price_-828622397" />
+    <ex:hasPrice rdf:resource="ex:price_-828622397" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_-828622397">
+    <rdf:type rdf:resource="ex:Price" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_-828622397">
+    <rdfs:member rdf:resource="ex:3695" />
+    <ex:hasPrice rdf:resource="ex:3695" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:3695">
+    <rdf:type rdf:resource="ex:Price" />
+    <rdfs:label xml:lang="en">36.95</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk111">
+    <rdfs:member rdf:resource="ex:publish_date_-828622397" />
+    <ex:hasPublishDate rdf:resource="ex:publish_date_-828622397" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_-828622397">
+    <rdf:type rdf:resource="ex:PublishDate" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_-828622397">
+    <rdfs:member rdf:resource="ex:20001201" />
+    <ex:hasPublishDate rdf:resource="ex:20001201" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:20001201">
+    <rdf:type rdf:resource="ex:PublishDate" />
+    <rdfs:label xml:lang="en">2000-12-01</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk111">
+    <rdfs:member rdf:resource="ex:description_-828622397" />
+    <ex:hasDescription rdf:resource="ex:description_-828622397" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_-828622397">
+    <rdf:type rdf:resource="ex:Description" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_-828622397">
+    <rdfs:member
+      rdf:resource="ex:TheMicrosoftMSXML3parseriscoveredindetailwithattentiontoXMLDOMinterfacesXSLTprocessingSAXandmore" />
+    <ex:hasDescription
+      rdf:resource="ex:TheMicrosoftMSXML3parseriscoveredindetailwithattentiontoXMLDOMinterfacesXSLTprocessingSAXandmore" />
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="ex:TheMicrosoftMSXML3parseriscoveredindetailwithattentiontoXMLDOMinterfacesXSLTprocessingSAXandmore">
+    <rdf:type rdf:resource="ex:Description" />
+    <rdfs:label xml:lang="en">The Microsoft MSXML3 parser is covered in
+      detail, with attention to XML DOM interfaces, XSLT processing,
+      SAX and more.</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:catalog_377927480">
+    <rdfs:member rdf:resource="ex:bk112" />
+    <ex:hasBook rdf:resource="ex:bk112" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk112">
+    <rdf:type rdf:resource="ex:Book" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk112">
+    <rdfs:member rdf:resource="ex:author_-725650641" />
+    <ex:hasAuthor rdf:resource="ex:author_-725650641" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_-725650641">
+    <rdf:type rdf:resource="ex:Author" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:author_-725650641">
+    <rdfs:member rdf:resource="ex:GalosMike" />
+    <ex:hasAuthor rdf:resource="ex:GalosMike" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:GalosMike">
+    <rdf:type rdf:resource="ex:Author" />
+    <rdfs:label xml:lang="en">Galos, Mike</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk112">
+    <rdfs:member rdf:resource="ex:title_-725650641" />
+    <ex:hasTitle rdf:resource="ex:title_-725650641" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_-725650641">
+    <rdf:type rdf:resource="ex:Title" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:title_-725650641">
+    <rdfs:member rdf:resource="ex:VisualStudio7AComprehensiveGuide" />
+    <ex:hasTitle rdf:resource="ex:VisualStudio7AComprehensiveGuide" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:VisualStudio7AComprehensiveGuide">
+    <rdf:type rdf:resource="ex:Title" />
+    <rdfs:label xml:lang="en">Visual Studio 7: A Comprehensive Guide</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk112">
+    <rdfs:member rdf:resource="ex:genre_-725650641" />
+    <ex:hasGenre rdf:resource="ex:genre_-725650641" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_-725650641">
+    <rdf:type rdf:resource="ex:Genre" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:genre_-725650641">
+    <rdfs:member rdf:resource="ex:Computer" />
+    <ex:hasGenre rdf:resource="ex:Computer" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:Computer">
+    <rdf:type rdf:resource="ex:Genre" />
+    <rdfs:label xml:lang="en">Computer</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk112">
+    <rdfs:member rdf:resource="ex:price_-725650641" />
+    <ex:hasPrice rdf:resource="ex:price_-725650641" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_-725650641">
+    <rdf:type rdf:resource="ex:Price" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:price_-725650641">
+    <rdfs:member rdf:resource="ex:4995" />
+    <ex:hasPrice rdf:resource="ex:4995" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:4995">
+    <rdf:type rdf:resource="ex:Price" />
+    <rdfs:label xml:lang="en">49.95</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk112">
+    <rdfs:member rdf:resource="ex:publish_date_-725650641" />
+    <ex:hasPublishDate rdf:resource="ex:publish_date_-725650641" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_-725650641">
+    <rdf:type rdf:resource="ex:PublishDate" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:publish_date_-725650641">
+    <rdfs:member rdf:resource="ex:20010416" />
+    <ex:hasPublishDate rdf:resource="ex:20010416" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:20010416">
+    <rdf:type rdf:resource="ex:PublishDate" />
+    <rdfs:label xml:lang="en">2001-04-16</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:bk112">
+    <rdfs:member rdf:resource="ex:description_-725650641" />
+    <ex:hasDescription rdf:resource="ex:description_-725650641" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_-725650641">
+    <rdf:type rdf:resource="ex:Description" />
+  </rdf:Description>
+  <rdf:Description rdf:about="ex:description_-725650641">
+    <rdfs:member
+      rdf:resource="ex:MicrosoftVisualStudio7isexploredindepthlookingathowVisualBasicVisualCCandASPareintegratedintoacomprehensivedevelopmentenvironment" />
+    <ex:hasDescription
+      rdf:resource="ex:MicrosoftVisualStudio7isexploredindepthlookingathowVisualBasicVisualCCandASPareintegratedintoacomprehensivedevelopmentenvironment" />
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="ex:MicrosoftVisualStudio7isexploredindepthlookingathowVisualBasicVisualCCandASPareintegratedintoacomprehensivedevelopmentenvironment">
+    <rdf:type rdf:resource="ex:Description" />
+    <rdfs:label xml:lang="en">Microsoft Visual Studio 7 is explored in depth,
+      looking at how Visual Basic, Visual C++, C#, and ASP+ are
+      integrated into a comprehensive development
+      environment.</rdfs:label>
+  </rdf:Description>
 </rdf:RDF>

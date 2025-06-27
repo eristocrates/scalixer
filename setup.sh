@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# --- JAVA SETUP ---
-# Set JAVA_HOME and add java.exe to PATH
-export JAVA_HOME="$PWD/tools/jdk-17.0.15.6-hotspot"
-export PATH="$JAVA_HOME/bin:$PATH"
-
 # Confirm Java is available
 if ! command -v java >/dev/null 2>&1; then
   echo "❌ Java not found at $JAVA_HOME"
@@ -14,6 +9,7 @@ fi
 
 # --- SBT SETUP ---
 # Point to SBT launcher JAR and create a wrapper script
+export PATH="/workspace/scalixer/tools/sbt-launch/bin:$PATH"
 SBT_DIR="$PWD/tools/sbt-launch"
 mkdir -p "$SBT_DIR/bin"
 

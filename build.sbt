@@ -8,5 +8,6 @@ lazy val root = (project in file("."))
       "co.fs2" %% "fs2-core" % "3.10.1",
       "co.fs2" %% "fs2-io" % "3.10.1",
       "org.gnieh" %% "fs2-data-xml" % "1.12.0",
+      "org.scalameta" %% "munit" % "1.0.0" % Test
     )
   )

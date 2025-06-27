@@ -80,7 +80,7 @@ This agent supports:
 ## Codex Instructions
 
 * Prefer working with XML as a stream of `XmlEvent`s, not as a DOM
-* Use `StartTag`, `Text`, and `EndTag` to construct triples dynamically
+* Use `StartTag`, `Text`, and `EndTag` to construct rdf/xml statements dynamically
 * Pay special attention to namespace resolution and qualified names
 * Respect ordering constraints (e.g., attributes must be present before content)
 * Do not buffer the entire XML document in memory unless explicitly requested

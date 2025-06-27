@@ -1,20 +1,36 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+set -euo pipefail
 
-echo "Setting up Scala 3 environment..."
+# --- JAVA SETUP ---
+# Set JAVA_HOME and add java.exe to PATH
+export JAVA_HOME="$PWD/tools/jdk-17.0.15.6-hotspot"
+export PATH="$JAVA_HOME/bin:$PATH"
 
-# Ensure Java is installed
-if ! type -p java > /dev/null; then
-  echo "Java is required. Please install OpenJDK 17+."
+# Confirm Java is available
+if ! command -v java >/dev/null 2>&1; then
+  echo "❌ Java not found at $JAVA_HOME"
   exit 1
 fi
 
-# Install sbt if not available
-if ! type -p sbt > /dev/null; then
-  echo "Installing sbt..."
-  curl -L https://github.com/sbt/sbt/releases/download/v1.9.7/sbt-1.9.7.tgz | tar xz
-  export PATH="$PWD/sbt/bin:$PATH"
+# --- SBT SETUP ---
+# Point to SBT launcher JAR and create a wrapper script
+SBT_DIR="$PWD/tools/sbt-launch"
+mkdir -p "$SBT_DIR/bin"
+
+cat > "$SBT_DIR/bin/sbt" <<'EOF'
+#!/usr/bin/env bash
+java -Xms512M -Xmx1G -jar "$(dirname "$0")/sbt-launch.jar" "$@"
+EOF
+
+chmod +x "$SBT_DIR/bin/sbt"
+
+# Add to PATH
+export PATH="$SBT_DIR/bin:$PATH"
+
+# Confirm SBT works
+if ! command -v sbt >/dev/null 2>&1; then
+  echo "❌ SBT setup failed"
+  exit 1
 fi
 
-# Compile once to fetch dependencies
-sbt compile
+echo "✅ Environment configured with offline Java and SBT."

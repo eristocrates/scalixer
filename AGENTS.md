@@ -49,6 +49,21 @@ RDF/XML Serializer (RdfXmlSpec agent)
 | `src/main/resources/fs2-data-docs-*`         | JavaDoc mirror of `fs2-data-xml` for streaming details |
 | `src/main/resources/scala3/docs/_docs`       | Scala 3 language and compiler documentation            |
 
+## Environment: Offline Java + SBT Configuration
+
+This project includes a fully offline development environment using pre-bundled binaries:
+
+- **Java**: located at `tools/jdk-17.0.15.6-hotspot/bin/java.exe`
+- **SBT Launcher**: `tools/sbt-launch/bin/sbt-launch.jar`
+
+The `setup.sh` script ensures these tools are made available in `PATH`:
+
+```bash
+export JAVA_HOME="$PWD/tools/jdk-17.0.15.6-hotspot"
+export PATH="$JAVA_HOME/bin:$PATH"
+
+# Wraps sbt-launch.jar in a shell script:
+export PATH="$PWD/tools/sbt-launch/bin:$PATH"
 ## Agents
 
 | Agent Name          | Responsibility                                                                  |
@@ -58,6 +73,7 @@ RDF/XML Serializer (RdfXmlSpec agent)
 | `RdfXmlSpec`        | Ensures output matches W3C RDF/XML specification (structure, legality)          |
 | `Scala3CompilerDoc` | Confirms idiomatic Scala 3 usage; references compiler when needed               |
 | `OntologyLifting`   | Translates XML into OWL semantics; enforces named individual and class patterns |
+| `TestAgent`         | Generates MUnit-based tests to validate RDF/XML conformance and semantic lifting|
 
 Each agent maintains its own file (e.g., `OntologyLifting.md`), allowing Codex to specialize its behavior based on the active task.
 
@@ -79,13 +95,22 @@ When editing or improving this project:
 4. **Use Scala 3 idioms** and features (e.g., `using`, `given`, for-comprehensions)
 5. **Defer to specialized agents** as needed — this file defines the architecture, not the implementation specifics
 
+## Testing Philosophy
+
+- There is **no need to manually write tests** — Codex is encouraged to **generate them**.
+- Tests should be created for new functionality or to verify specification adherence.
+- Generated tests go under: `src/test/scala/`
+- Use: MUnit (`org.scalameta %% munit % 1.0.0`) as the test framework.
+- Emphasize tests that:
+  - Confirm RDF/XML syntax is valid
+  - Assert that RDF match expected outputs
+  - Validate semantic lifting behavior (e.g., class inference, rdfs:member, property generation)
+
+The Codex agent should **assume the role of a semantic quality validator**, ensuring that each RDF/XML output structurally and semantically matches the design intent.
+
 ## Future Directions
 
 * Add support for output format fan-out (Turtle, JSON-LD)
 * Incorporate SHACL or OWL reasoning checks
 * Provide round-trip validation (lower RDF/XML back to XML)
 * Integrate Watchman-like file monitoring to stream incoming XML
-
----
-
-Let me know if you'd like a `DevToolsAgent`, `TestingAgent`, `PerformanceAgent`, or any other supporting role next.

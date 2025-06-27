@@ -19,35 +19,40 @@ object XmlToRdf extends IOApp.Simple {
 
   val rdfFooter = "\n</rdf:RDF>"
 
-  def normalize(value: String): String =
-    value.replaceAll("[^\\p{IsAlphabetic}\\p{IsDigit}]", "").capitalize
+  private def normalizeLiteral(value: String): String =
+    value.replaceAll("[^\\p{IsAlphabetic}\\p{IsDigit}]", "")
 
-  def createIndividualIRI(tag: String, value: String): String =
-    s"ex:${normalize(value)}"
+  private def pascalCase(value: String): String =
+    value
+      .split("[^\\p{IsAlphabetic}\\p{IsDigit}]+")
+      .filter(_.nonEmpty)
+      .map(word => word.head.toUpper + word.tail)
+      .mkString
 
-  def createClassIRI(tag: String): String =
-    s"ex:${normalize(tag)}"
+  private def createIndividualIRI(tag: String, value: String): String =
+    s"ex:${normalizeLiteral(value)}"
 
-  def createHasProperty(tag: String): String =
-    s"ex:has${tag.capitalize}"
+  private def createClassIRI(tag: String): String =
+    s"ex:${pascalCase(tag)}"
 
-  def emitTriple(s: String, p: String, o: String, literal: Boolean = false, lang: Option[String] = None): String = {
-    val obj = if (literal) {
-      val langTag = lang.map(l => s" xml:lang=\"$l\"").getOrElse("")
-      s"\"$o\"$langTag"
-    } else o
-    s"<$s> <$p> $obj ."
-  }
+  private def createHasProperty(tag: String): String =
+    s"ex:has${pascalCase(tag)}"
+
+  private def escapeXml(s: String): String =
+    s.replace("&", "&amp;")
+      .replace("<", "&lt;")
+      .replace(">", "&gt;")
+      .replace("\"", "&quot;")
+      .replace("'", "&apos;")
 
   def liftEvent(
       lang: Option[String]
   ): XmlEvent => Stream[IO, String] = {
-    var currentSubject: Option[String] = None
-    var parentStack: List[String] = Nil
+    var stack: List[(String, String)] = Nil
 
     {
       case StartTag(qn, attrs, _) =>
-        val tag = qn.local
+        val tag      = qn.local
         val classIRI = createClassIRI(tag)
 
         val idOpt = attrs.collectFirst {
@@ -57,51 +62,51 @@ object XmlToRdf extends IOApp.Simple {
 
         val subjectIRI = idOpt match {
           case Some(id) => s"ex:$id"
-          case None     => s"ex:${tag}_${MurmurHash3.stringHash(parentStack.mkString("/"))}"
+          case None     => s"ex:${tag}_${MurmurHash3.stringHash(stack.map(_._1).mkString("/"))}"
         }
 
-        val classDecl = s"<$classIRI> a owl:Class ."
-        val instanceDecl = s"<$subjectIRI> a <$classIRI> ."
-
-        val membership = parentStack.headOption.map { parent =>
-          s"<$parent> <rdfs:member> <$subjectIRI> ."
+        val parentBlock = stack.headOption.map { case (parentIRI, _) =>
+          val hasProp = createHasProperty(tag)
+          s"<rdf:Description rdf:about=\"$parentIRI\">\n  <rdfs:member rdf:resource=\"$subjectIRI\"/>\n  <$hasProp rdf:resource=\"$subjectIRI\"/>\n</rdf:Description>"
         }
 
-        val attrTriples = attrs.map {
-          case Attr(QName(_, "id"), _) => None // Already used
-          case Attr(QName(_, "lang"), _) => None // Will be handled by lang propagation
+        val attrLines = attrs.collect {
+          case Attr(QName(_, "id"), _)  => None
+          case Attr(QName(_, "lang"), _) => None
           case Attr(name, value) =>
             val attrVal = value.collect { case XmlString(s, _) => s }.mkString
-            val propIRI = s"ex:has${name.local.capitalize}"
-            Some(s"<$subjectIRI> <$propIRI> \"$attrVal\" .")
+            val prop    = createHasProperty(name.local)
+            Some(s"  <$prop>${escapeXml(attrVal)}</$prop>")
         }.flatten
 
-        currentSubject = Some(subjectIRI)
-        parentStack = subjectIRI :: parentStack
+        val subjectBlock =
+          (List(s"<rdf:Description rdf:about=\"$subjectIRI\">", s"  <rdf:type rdf:resource=\"$classIRI\"/>") ++
+            attrLines ++
+            List("</rdf:Description>")).mkString("\n")
 
-        Stream.emits((membership.toList :+ classDecl :+ instanceDecl) ++ attrTriples)
+        stack = (subjectIRI, tag) :: stack
+
+        Stream.emits(parentBlock.toList :+ subjectBlock)
 
       case XmlString(text, _) if text.trim.nonEmpty =>
-        currentSubject match {
-          case Some(subj) =>
-            val normalized = normalize(text)
-            val classTag   = parentStack.headOption.map(_.split("/").lastOption.getOrElse("Unknown")).getOrElse("Unknown")
-            val valueIRI   = createIndividualIRI(classTag, text.trim)
-            val classIRI   = createClassIRI(classTag)
-            val hasProp    = createHasProperty(classTag)
+        stack.headOption match {
+          case Some((subj, tag)) =>
+            val valueIRI = createIndividualIRI(tag, text.trim)
+            val classIRI = createClassIRI(tag)
+            val hasProp  = createHasProperty(tag)
 
-            Stream.emits(List(
-              s"<$valueIRI> a <$classIRI> .",
-              emitTriple(subj, "rdfs:member", valueIRI),
-              emitTriple(subj, hasProp, valueIRI),
-              emitTriple(valueIRI, "rdfs:label", text.trim, literal = true, lang)
-            ))
+            val parentBlock =
+              s"<rdf:Description rdf:about=\"$subj\">\n  <rdfs:member rdf:resource=\"$valueIRI\"/>\n  <$hasProp rdf:resource=\"$valueIRI\"/>\n</rdf:Description>"
+
+            val valueBlock =
+              s"<rdf:Description rdf:about=\"$valueIRI\">\n  <rdf:type rdf:resource=\"$classIRI\"/>\n  <rdfs:label xml:lang=\"${lang.getOrElse("en")}\">${escapeXml(text.trim)}</rdfs:label>\n</rdf:Description>"
+
+            Stream.emit(parentBlock) ++ Stream.emit(valueBlock)
           case None => Stream.empty
         }
 
       case EndTag(_) =>
-        parentStack = parentStack.drop(1)
-        currentSubject = parentStack.headOption
+        stack = stack.drop(1)
         Stream.empty
 
       case _ => Stream.empty
@@ -117,10 +122,10 @@ object XmlToRdf extends IOApp.Simple {
           .through(fs2.text.utf8.decode)
           .through(events[IO, String]())
 
-      val triplesStream = xmlEvents.flatMap(liftEvent(Some("en")))
+      val rdfStream = xmlEvents.flatMap(liftEvent(Some("en")))
 
       val output = Stream.emit(rdfHeader) ++
-        triplesStream.intersperse("\n") ++
+        rdfStream.intersperse("\n") ++
         Stream.emit(rdfFooter)
 
       output

@@ -3,6 +3,22 @@
 ## Project Description
 
 This project streams XML using FS2, parses with fs2-data-xml, and emits RDF/XML. We are using pure Scala 3 and avoiding Jena. The RDF/XML is streamed directly from XML elements via functional transformation logic.
+## Guidance Sources
+
+- When generating or rewriting RDF/XML output, follow the W3C RDF/XML Syntax Specification located at:
+  
+  `src/main/resources/rdf-1.1-XML-Syntax.html`
+
+  Treat this document as the normative reference for correct RDF/XML formatting.
+
+- The agent should ensure that any serialization of RDF conforms to this specification, especially when modifying `XmlToRdf.scala` or any related serialization logic.
+
+- Do **not** use heuristics or undocumented formats; rely only on the structure and constraints defined in this RDF/XML spec.
+
+## XmlToRdf.scala Agent Behavior
+
+- Your goal is to produce RDF/XML output that fully conforms to the W3C specification (see reference above).
+- When unsure how to serialize an element or triple, consult `rdf-1.1-XML-Syntax.html` first.
 
 ## Goals
 
@@ -29,3 +45,4 @@ This project streams XML using FS2, parses with fs2-data-xml, and emits RDF/XML.
 - Extend how attributes or nested text nodes are handled.
 - Debug or profile bottlenecks (if any).
 - Structure streaming pipelines functionally and efficiently.
+

@@ -285,7 +285,8 @@ object XmlToRdf extends IOApp.Simple {
           stack.headOption match {
             case Some((tag: String)) => 
               tagSet += tag
-              tagToStrings(tag) += str
+              val strings = tagToStrings.getOrElseUpdate(tag, mutable.Set())
+              strings += str
             case None => // Ignore
           }
           IO.unit
@@ -306,9 +307,10 @@ object XmlToRdf extends IOApp.Simple {
 
           for (tag <- tagSet) {
             val sanitizedTag = sanitizeForFilename(tag)
-            val lines = tagToStrings(tag).toList.sorted
+            val lines = tagToStrings.getOrElse(tag, mutable.Set.empty).toList.sorted
             Files.write(tagDir.resolve(s"$sanitizedTag.txt"), lines.asJava)
           }
+
         }
 
       } yield ()

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<declarations>
+   <dtd relSysId="example.xml.dtd"
+        systemId="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/xmall/example.xml.dtd"/>
+   <elements>
+      <element name="catalog" dtdOrder="1">
+         <declaredIn systemId="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/xmall/example.xml.dtd"
+                     lineNumber="3"/>
+         <content-model spec="element" minified="(book)+" spaced="( book )+">
+            <choice q="+">
+               <child>book</child>
+            </choice>
+         </content-model>
+      </element>
+      <element name="price" dtdOrder="6">
+         <declaredIn systemId="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/xmall/example.xml.dtd"
+                     lineNumber="24"/>
+         <content-model spec="text" minified="(#PCDATA)" spaced="( #PCDATA )"/>
+         <context>
+            <parent name="book"/>
+         </context>
+      </element>
+      <element name="publish_date" dtdOrder="7">
+         <declaredIn systemId="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/xmall/example.xml.dtd"
+                     lineNumber="28"/>
+         <content-model spec="text" minified="(#PCDATA)" spaced="( #PCDATA )"/>
+         <context>
+            <parent name="book"/>
+         </context>
+      </element>
+      <element name="genre" dtdOrder="5">
+         <declaredIn systemId="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/xmall/example.xml.dtd"
+                     lineNumber="20"/>
+         <content-model spec="text" minified="(#PCDATA)" spaced="( #PCDATA )"/>
+         <context>
+            <parent name="book"/>
+         </context>
+      </element>
+      <element name="author" dtdOrder="3">
+         <declaredIn systemId="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/xmall/example.xml.dtd"
+                     lineNumber="12"/>
+         <content-model spec="text" minified="(#PCDATA)" spaced="( #PCDATA )"/>
+         <context>
+            <parent name="book"/>
+         </context>
+      </element>
+      <element name="book" dtdOrder="2">
+         <declaredIn systemId="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/xmall/example.xml.dtd"
+                     lineNumber="7"/>
+         <content-model spec="element"
+                        minified="(author,title,genre,price,publish_date,description)"
+                        spaced="( author, title, genre, price, publish_date, description )">
+            <seq>
+               <child>author</child>
+               <child>title</child>
+               <child>genre</child>
+               <child>price</child>
+               <child>publish_date</child>
+               <child>description</child>
+            </seq>
+         </content-model>
+         <context>
+            <parent name="catalog"/>
+         </context>
+      </element>
+      <element name="description" dtdOrder="8">
+         <declaredIn systemId="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/xmall/example.xml.dtd"
+                     lineNumber="32"/>
+         <content-model spec="text" minified="(#PCDATA)" spaced="( #PCDATA )"/>
+         <context>
+            <parent name="book"/>
+         </context>
+      </element>
+      <element name="title" dtdOrder="4">
+         <declaredIn systemId="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/xmall/example.xml.dtd"
+                     lineNumber="16"/>
+         <content-model spec="text" minified="(#PCDATA)" spaced="( #PCDATA )"/>
+         <context>
+            <parent name="book"/>
+         </context>
+      </element>
+   </elements>
+   <attributes>
+      <attribute name="id">
+         <attributeDeclaration element="book" type="NMTOKEN" mode="#REQUIRED">
+            <declaredIn systemId="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/xmall/example.xml.dtd"
+                        lineNumber="10"/>
+         </attributeDeclaration>
+      </attribute>
+      <attribute name="xmlns">
+         <attributeDeclaration element="title" type="CDATA" defaultValue="" mode="#FIXED">
+            <declaredIn systemId="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/xmall/example.xml.dtd"
+                        lineNumber="18"/>
+         </attributeDeclaration>
+         <attributeDeclaration element="book" type="CDATA" defaultValue="" mode="#FIXED">
+            <declaredIn systemId="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/xmall/example.xml.dtd"
+                        lineNumber="9"/>
+         </attributeDeclaration>
+         <attributeDeclaration element="catalog" type="CDATA" defaultValue="" mode="#FIXED">
+            <declaredIn systemId="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/xmall/example.xml.dtd"
+                        lineNumber="5"/>
+         </attributeDeclaration>
+         <attributeDeclaration element="genre" type="CDATA" defaultValue="" mode="#FIXED">
+            <declaredIn systemId="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/xmall/example.xml.dtd"
+                        lineNumber="22"/>
+         </attributeDeclaration>
+         <attributeDeclaration element="author" type="CDATA" defaultValue="" mode="#FIXED">
+            <declaredIn systemId="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/xmall/example.xml.dtd"
+                        lineNumber="14"/>
+         </attributeDeclaration>
+         <attributeDeclaration element="price" type="CDATA" defaultValue="" mode="#FIXED">
+            <declaredIn systemId="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/xmall/example.xml.dtd"
+                        lineNumber="26"/>
+         </attributeDeclaration>
+         <attributeDeclaration element="description"
+                               type="CDATA"
+                               defaultValue=""
+                               mode="#FIXED">
+            <declaredIn systemId="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/xmall/example.xml.dtd"
+                        lineNumber="34"/>
+         </attributeDeclaration>
+         <attributeDeclaration element="publish_date"
+                               type="CDATA"
+                               defaultValue=""
+                               mode="#FIXED">
+            <declaredIn systemId="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/xmall/example.xml.dtd"
+                        lineNumber="30"/>
+         </attributeDeclaration>
+      </attribute>
+   </attributes>
+</declarations>

@@ -1,0 +1,8 @@
+author
+book
+catalog
+description
+genre
+price
+publish_date
+title

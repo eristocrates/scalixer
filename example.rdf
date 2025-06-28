@@ -6,7 +6,7 @@
   xmlns:ex="http://example.org/"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 <rdf:Description rdf:about="http://example.org/Document">
-  <rdf:type rdf:resource="http://example.org/Document"/>
+  <rdf:type rdf:resource="http://example.org/XmlDocument"/>
   <ex:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string" >file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml</ex:filePath>
   <ex:fileBaseName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">example</ex:fileBaseName>
   <ex:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xml</ex:fileExtension>
@@ -50,7 +50,7 @@
   <ex:hasAuthor rdf:resource="http://example.org/Gambardella_Matthew"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Gambardella_Matthew">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@cf947fa"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@211cf96c"/>
   <rdfs:label xml:lang="en">Gambardella, Matthew</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Title_Tag">
@@ -69,7 +69,7 @@
   <ex:hasTitle rdf:resource="http://example.org/Xml_Developer_S_Guide"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Xml_Developer_S_Guide">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@1bc99204"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@8816c48"/>
   <rdfs:label xml:lang="en">XML Developer&apos;s Guide</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Genre_Tag">
@@ -88,7 +88,7 @@
   <ex:hasGenre rdf:resource="http://example.org/Computer"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Computer">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@5c3b044f"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@3d668837"/>
   <rdfs:label xml:lang="en">Computer</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Price_Tag">
@@ -107,7 +107,7 @@
   <ex:hasPrice rdf:resource="http://example.org/44_95"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/44_95">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@376f4e08"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@1a58b26d"/>
   <rdfs:label xml:lang="en">44.95</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/PublishDate_Tag">
@@ -126,7 +126,7 @@
   <ex:hasPublishDate rdf:resource="http://example.org/2000_10_01"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/2000_10_01">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@6a61a19b"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@6f479d7c"/>
   <rdfs:label xml:lang="en">2000-10-01</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Description_Tag">
@@ -145,7 +145,7 @@
   <ex:hasDescription rdf:resource="http://example.org/An_In_Depth_Look_At_Creating_Applications_With_Xml"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/An_In_Depth_Look_At_Creating_Applications_With_Xml">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@727f1e36"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@30badb72"/>
   <rdfs:label xml:lang="en">An in-depth look at creating applications
       with XML.</rdfs:label>
 </rdf:Description>
@@ -166,7 +166,7 @@
   <ex:hasAuthor rdf:resource="http://example.org/Ralls_Kim"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Ralls_Kim">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@76e2654a"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@3994ca62"/>
   <rdfs:label xml:lang="en">Ralls, Kim</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_2">
@@ -179,7 +179,7 @@
   <ex:hasTitle rdf:resource="http://example.org/Midnight_Rain"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Midnight_Rain">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@3bb07a90"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@6680dce7"/>
   <rdfs:label xml:lang="en">Midnight Rain</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_2">
@@ -192,7 +192,7 @@
   <ex:hasGenre rdf:resource="http://example.org/Fantasy"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Fantasy">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@5c3a6904"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@357f1136"/>
   <rdfs:label xml:lang="en">Fantasy</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_2">
@@ -205,7 +205,7 @@
   <ex:hasPrice rdf:resource="http://example.org/5_95"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/5_95">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@56be521b"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@53f82da0"/>
   <rdfs:label xml:lang="en">5.95</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_2">
@@ -218,7 +218,7 @@
   <ex:hasPublishDate rdf:resource="http://example.org/2000_12_16"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/2000_12_16">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@3313b5b3"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@4ca03a67"/>
   <rdfs:label xml:lang="en">2000-12-16</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_2">
@@ -231,7 +231,7 @@
   <ex:hasDescription rdf:resource="http://example.org/A_Former_Architect_Battles_Corporate_Zombies_An_Evil_Sorceress_And_Her_Own_Childhood_To_Become_Queen_Of_The_World"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/A_Former_Architect_Battles_Corporate_Zombies_An_Evil_Sorceress_And_Her_Own_Childhood_To_Become_Queen_Of_The_World">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@bcf3dbb"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@2c27a0f0"/>
   <rdfs:label xml:lang="en">A former architect battles corporate zombies,
       an evil sorceress, and her own childhood to become queen
       of the world.</rdfs:label>
@@ -253,7 +253,7 @@
   <ex:hasAuthor rdf:resource="http://example.org/Corets_Eva"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Corets_Eva">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@4b2078f"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@619cf2e3"/>
   <rdfs:label xml:lang="en">Corets, Eva</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_3">
@@ -266,7 +266,7 @@
   <ex:hasTitle rdf:resource="http://example.org/Maeve_Ascendant"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Maeve_Ascendant">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@20b8a388"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@739b465d"/>
   <rdfs:label xml:lang="en">Maeve Ascendant</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_3">
@@ -297,7 +297,7 @@
   <ex:hasPublishDate rdf:resource="http://example.org/2000_11_17"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/2000_11_17">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@e283401"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@3e25294b"/>
   <rdfs:label xml:lang="en">2000-11-17</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_3">
@@ -310,7 +310,7 @@
   <ex:hasDescription rdf:resource="http://example.org/After_The_Collapse_Of_A_Nanotechnology_Society_In_England_The_Young_Survivors_Lay_The_Foundation_For_A_New_Society"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/After_The_Collapse_Of_A_Nanotechnology_Society_In_England_The_Young_Survivors_Lay_The_Foundation_For_A_New_Society">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@7c78f29a"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@2f142e5f"/>
   <rdfs:label xml:lang="en">After the collapse of a nanotechnology
       society in England, the young survivors lay the
       foundation for a new society.</rdfs:label>
@@ -341,7 +341,7 @@
   <ex:hasTitle rdf:resource="http://example.org/Oberon_S_Legacy"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Oberon_S_Legacy">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@68620ce5"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@2999cab4"/>
   <rdfs:label xml:lang="en">Oberon&apos;s Legacy</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_4">
@@ -372,7 +372,7 @@
   <ex:hasPublishDate rdf:resource="http://example.org/2001_03_10"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/2001_03_10">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@d235682"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@19d874"/>
   <rdfs:label xml:lang="en">2001-03-10</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_4">
@@ -385,7 +385,7 @@
   <ex:hasDescription rdf:resource="http://example.org/In_Post_Apocalypse_England_The_Mysterious_Agent_Known_Only_As_Oberon_Helps_To_Create_A_New_Life_For_The_Inhabitants_Of_London_Sequel_To_Maeve_Ascendant"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/In_Post_Apocalypse_England_The_Mysterious_Agent_Known_Only_As_Oberon_Helps_To_Create_A_New_Life_For_The_Inhabitants_Of_London_Sequel_To_Maeve_Ascendant">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@42e4e31b"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@1761d64d"/>
   <rdfs:label xml:lang="en">In post-apocalypse England, the mysterious
       agent known only as Oberon helps to create a new life
       for the inhabitants of London. Sequel to Maeve
@@ -417,7 +417,7 @@
   <ex:hasTitle rdf:resource="http://example.org/The_Sundered_Grail"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/The_Sundered_Grail">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@79b325ff"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@19897428"/>
   <rdfs:label xml:lang="en">The Sundered Grail</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_5">
@@ -448,7 +448,7 @@
   <ex:hasPublishDate rdf:resource="http://example.org/2001_09_10"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/2001_09_10">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@14e1b08"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@7e22d1c7"/>
   <rdfs:label xml:lang="en">2001-09-10</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_5">
@@ -461,7 +461,7 @@
   <ex:hasDescription rdf:resource="http://example.org/The_Two_Daughters_Of_Maeve_Half_Sisters_Battle_One_Another_For_Control_Of_England_Sequel_To_Oberon_S_Legacy"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/The_Two_Daughters_Of_Maeve_Half_Sisters_Battle_One_Another_For_Control_Of_England_Sequel_To_Oberon_S_Legacy">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@16cecae5"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@30b67c0f"/>
   <rdfs:label xml:lang="en">The two daughters of Maeve, half-sisters,
       battle one another for control of England. Sequel to
       Oberon&apos;s Legacy.</rdfs:label>
@@ -483,7 +483,7 @@
   <ex:hasAuthor rdf:resource="http://example.org/Randall_Cynthia"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Randall_Cynthia">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@73570f1c"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@29fc17ea"/>
   <rdfs:label xml:lang="en">Randall, Cynthia</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_6">
@@ -496,7 +496,7 @@
   <ex:hasTitle rdf:resource="http://example.org/Lover_Birds"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Lover_Birds">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@13ab4054"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@7b861ec9"/>
   <rdfs:label xml:lang="en">Lover Birds</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_6">
@@ -509,7 +509,7 @@
   <ex:hasGenre rdf:resource="http://example.org/Romance"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Romance">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@624c8f72"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@13424497"/>
   <rdfs:label xml:lang="en">Romance</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_6">
@@ -522,7 +522,7 @@
   <ex:hasPrice rdf:resource="http://example.org/4_95"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/4_95">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@2b5f83c"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@109704f4"/>
   <rdfs:label xml:lang="en">4.95</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_6">
@@ -535,7 +535,7 @@
   <ex:hasPublishDate rdf:resource="http://example.org/2000_09_02"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/2000_09_02">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@49513899"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@599d024b"/>
   <rdfs:label xml:lang="en">2000-09-02</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_6">
@@ -548,7 +548,7 @@
   <ex:hasDescription rdf:resource="http://example.org/When_Carla_Meets_Paul_At_An_Ornithology_Conference_Tempers_Fly_As_Feathers_Get_Ruffled"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/When_Carla_Meets_Paul_At_An_Ornithology_Conference_Tempers_Fly_As_Feathers_Get_Ruffled">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@b16807"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@12262fe7"/>
   <rdfs:label xml:lang="en">When Carla meets Paul at an ornithology
       conference, tempers fly as feathers get ruffled.</rdfs:label>
 </rdf:Description>
@@ -569,7 +569,7 @@
   <ex:hasAuthor rdf:resource="http://example.org/Thurman_Paula"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Thurman_Paula">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@680507c"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@13c1a7c8"/>
   <rdfs:label xml:lang="en">Thurman, Paula</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_7">
@@ -582,7 +582,7 @@
   <ex:hasTitle rdf:resource="http://example.org/Splish_Splash"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Splish_Splash">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@2b592c88"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@3bd9b1e0"/>
   <rdfs:label xml:lang="en">Splish Splash</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_7">
@@ -613,7 +613,7 @@
   <ex:hasPublishDate rdf:resource="http://example.org/2000_11_02"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/2000_11_02">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@6b8c4c8a"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@ae7738a"/>
   <rdfs:label xml:lang="en">2000-11-02</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_7">
@@ -626,7 +626,7 @@
   <ex:hasDescription rdf:resource="http://example.org/A_Deep_Sea_Diver_Finds_True_Love_Twenty_Thousand_Leagues_Beneath_The_Sea"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/A_Deep_Sea_Diver_Finds_True_Love_Twenty_Thousand_Leagues_Beneath_The_Sea">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@6076e0ac"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@291d3c26"/>
   <rdfs:label xml:lang="en">A deep sea diver finds true love twenty
       thousand leagues beneath the sea.</rdfs:label>
 </rdf:Description>
@@ -647,7 +647,7 @@
   <ex:hasAuthor rdf:resource="http://example.org/Knorr_Stefan"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Knorr_Stefan">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@64f15f6e"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@37fc312a"/>
   <rdfs:label xml:lang="en">Knorr, Stefan</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_8">
@@ -660,7 +660,7 @@
   <ex:hasTitle rdf:resource="http://example.org/Creepy_Crawlies"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Creepy_Crawlies">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@62e1214"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@41dcc084"/>
   <rdfs:label xml:lang="en">Creepy Crawlies</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_8">
@@ -673,7 +673,7 @@
   <ex:hasGenre rdf:resource="http://example.org/Horror"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Horror">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@fcfe647"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@70968016"/>
   <rdfs:label xml:lang="en">Horror</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_8">
@@ -695,7 +695,7 @@
   <ex:hasPublishDate rdf:resource="http://example.org/2000_12_06"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/2000_12_06">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@586b1492"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@302a6e2e"/>
   <rdfs:label xml:lang="en">2000-12-06</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_8">
@@ -708,7 +708,7 @@
   <ex:hasDescription rdf:resource="http://example.org/An_Anthology_Of_Horror_Stories_About_Roaches_Centipedes_Scorpions_And_Other_Insects"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/An_Anthology_Of_Horror_Stories_About_Roaches_Centipedes_Scorpions_And_Other_Insects">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@360f2ade"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@66096c60"/>
   <rdfs:label xml:lang="en">An anthology of horror stories about roaches,
       centipedes, scorpions and other insects.</rdfs:label>
 </rdf:Description>
@@ -729,7 +729,7 @@
   <ex:hasAuthor rdf:resource="http://example.org/Kress_Peter"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Kress_Peter">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@40c730b9"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@41f648c5"/>
   <rdfs:label xml:lang="en">Kress, Peter</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_9">
@@ -742,7 +742,7 @@
   <ex:hasTitle rdf:resource="http://example.org/Paradox_Lost"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Paradox_Lost">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@304a0b38"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@524f6dd"/>
   <rdfs:label xml:lang="en">Paradox Lost</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_9">
@@ -755,7 +755,7 @@
   <ex:hasGenre rdf:resource="http://example.org/Science_Fiction"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Science_Fiction">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@30055627"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@669ca349"/>
   <rdfs:label xml:lang="en">Science Fiction</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_9">
@@ -768,7 +768,7 @@
   <ex:hasPrice rdf:resource="http://example.org/6_95"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/6_95">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@7f93d323"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@4b5ba996"/>
   <rdfs:label xml:lang="en">6.95</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_9">
@@ -790,7 +790,7 @@
   <ex:hasDescription rdf:resource="http://example.org/After_An_Inadvertant_Trip_Through_A_Heisenberg_Uncertainty_Device_James_Salway_Discovers_The_Problems_Of_Being_Quantum"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/After_An_Inadvertant_Trip_Through_A_Heisenberg_Uncertainty_Device_James_Salway_Discovers_The_Problems_Of_Being_Quantum">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@6287690"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@38986058"/>
   <rdfs:label xml:lang="en">After an inadvertant trip through a Heisenberg
       Uncertainty Device, James Salway discovers the problems
       of being quantum.</rdfs:label>
@@ -812,7 +812,7 @@
   <ex:hasAuthor rdf:resource="http://example.org/O_Brien_Tim"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/O_Brien_Tim">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@66dbaea6"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@1aa8fb88"/>
   <rdfs:label xml:lang="en">O&apos;Brien, Tim</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_10">
@@ -825,7 +825,7 @@
   <ex:hasTitle rdf:resource="http://example.org/Microsoft_Net_The_Programming_Bible"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Microsoft_Net_The_Programming_Bible">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@7c756834"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@19ad957f"/>
   <rdfs:label xml:lang="en">Microsoft .NET: The Programming Bible</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_10">
@@ -847,7 +847,7 @@
   <ex:hasPrice rdf:resource="http://example.org/36_95"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/36_95">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@1d1eb652"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@fac88c5"/>
   <rdfs:label xml:lang="en">36.95</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_10">
@@ -860,7 +860,7 @@
   <ex:hasPublishDate rdf:resource="http://example.org/2000_12_09"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/2000_12_09">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@58c7cf97"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@744da3c8"/>
   <rdfs:label xml:lang="en">2000-12-09</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_10">
@@ -873,7 +873,7 @@
   <ex:hasDescription rdf:resource="http://example.org/Microsoft_S_Net_Initiative_Is_Explored_In_Detail_In_This_Deep_Programmer_S_Reference"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Microsoft_S_Net_Initiative_Is_Explored_In_Detail_In_This_Deep_Programmer_S_Reference">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@6352e4b7"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@29647272"/>
   <rdfs:label xml:lang="en">Microsoft&apos;s .NET initiative is explored in
       detail in this deep programmer&apos;s reference.</rdfs:label>
 </rdf:Description>
@@ -903,7 +903,7 @@
   <ex:hasTitle rdf:resource="http://example.org/Msxml3_A_Comprehensive_Guide"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Msxml3_A_Comprehensive_Guide">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@34310421"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@5c970c4c"/>
   <rdfs:label xml:lang="en">MSXML3: A Comprehensive Guide</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_11">
@@ -934,7 +934,7 @@
   <ex:hasPublishDate rdf:resource="http://example.org/2000_12_01"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/2000_12_01">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@5cf598d3"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@37964dbb"/>
   <rdfs:label xml:lang="en">2000-12-01</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_11">
@@ -947,7 +947,7 @@
   <ex:hasDescription rdf:resource="http://example.org/The_Microsoft_Msxml3_Parser_Is_Covered_In_Detail_With_Attention_To_Xml_Dom_Interfaces_Xslt_Processing_Sax_And_More"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/The_Microsoft_Msxml3_Parser_Is_Covered_In_Detail_With_Attention_To_Xml_Dom_Interfaces_Xslt_Processing_Sax_And_More">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@3aa84fad"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@2e5ceb62"/>
   <rdfs:label xml:lang="en">The Microsoft MSXML3 parser is covered in
       detail, with attention to XML DOM interfaces, XSLT processing,
       SAX and more.</rdfs:label>
@@ -969,7 +969,7 @@
   <ex:hasAuthor rdf:resource="http://example.org/Galos_Mike"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Galos_Mike">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@4eab6313"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@2421fb39"/>
   <rdfs:label xml:lang="en">Galos, Mike</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_12">
@@ -982,7 +982,7 @@
   <ex:hasTitle rdf:resource="http://example.org/Visual_Studio_7_A_Comprehensive_Guide"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Visual_Studio_7_A_Comprehensive_Guide">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@728776eb"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@4030769d"/>
   <rdfs:label xml:lang="en">Visual Studio 7: A Comprehensive Guide</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_12">
@@ -1004,7 +1004,7 @@
   <ex:hasPrice rdf:resource="http://example.org/49_95"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/49_95">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@2c44b68"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@45ce10b5"/>
   <rdfs:label xml:lang="en">49.95</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_12">
@@ -1017,7 +1017,7 @@
   <ex:hasPublishDate rdf:resource="http://example.org/2001_04_16"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/2001_04_16">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@6097d96"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@516acf79"/>
   <rdfs:label xml:lang="en">2001-04-16</rdfs:label>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/book_12">
@@ -1030,7 +1030,7 @@
   <ex:hasDescription rdf:resource="http://example.org/Microsoft_Visual_Studio_7_Is_Explored_In_Depth_Looking_At_How_Visual_Basic_Visual_C_C_And_Asp_Are_Integrated_Into_A_Comprehensive_Development_Environment"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Microsoft_Visual_Studio_7_Is_Explored_In_Depth_Looking_At_How_Visual_Basic_Visual_C_C_And_Asp_Are_Integrated_Into_A_Comprehensive_Development_Environment">
-  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8761/0x0000024702569938@319ab084"/>
+  <rdf:type rdf:resource="XmlToRdf$$$Lambda$8300/0x000002bad84e12b8@5ac5bd8d"/>
   <rdfs:label xml:lang="en">Microsoft Visual Studio 7 is explored in depth,
       looking at how Visual Basic, Visual C++, C#, and ASP+ are
       integrated into a comprehensive development

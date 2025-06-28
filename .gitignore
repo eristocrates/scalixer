@@ -35,3 +35,4 @@ null/
 credentials.sbt
 tools/sbt-launch/bin/sbtn-universal-apple-darwin
 tools/jdk-17.0.15.6-hotspot/lib/modules
+src/main/resources/rgdb/

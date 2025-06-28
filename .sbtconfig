@@ -1,0 +1,5 @@
+-Xmx32G
+-Xms4G
+-XX:ReservedCodeCacheSize=1024m
+-XX:+UseParallelGC
+-XX:MaxInlineLevel=20

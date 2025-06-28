@@ -3,9 +3,11 @@ import fs2.Stream
 import fs2.data.xml._
 import fs2.data.xml.XmlEvent._
 import java.io.InputStream
-import java.nio.file.Paths
+import java.nio.file.{Paths, Files}
 import scala.util.hashing.MurmurHash3
 import scala.collection.immutable.ListMap
+import scala.collection.mutable
+import scala.jdk.CollectionConverters._
 
 object XmlToRdf extends IOApp.Simple {
   
@@ -77,10 +79,37 @@ object XmlToRdf extends IOApp.Simple {
       .replace("\"", "&quot;")
       .replace("'", "&apos;")
 
+  enum TagRole:
+    case EntityTag,
+        PropertyTag,
+        ContainerTag,
+        TypenameTag,
+        WrapperTag,
+        ReferenceTag,
+        AnnotationTag
+
+  enum StringRole:
+    case LabelString,
+        LiteralValueString,
+        IdentifierString,
+        ReferenceString,
+        ClassValueString,
+        EmptyString,
+        MixedContentString
+
+  def inferLiteralType(text: String): String = text.trim match { 
+    case s if s.matches("""^-?\d+\.\d+$""") => "xsd:decimal"
+    case s if s.matches("""^-?\d+$""")      => "xsd:integer"
+    case s if s.matches("""\d{4}-\d{2}-\d{2}""") => "xsd:date"
+    case _                                  => "xsd:string"
+  }
   def liftEvent(
       lang: Option[String],
       path: java.nio.file.Path
   ): XmlEvent => Stream[IO, String] = {
+    val tagSet = mutable.Set[String]() 
+    val tagToStrings = mutable.Map[String, mutable.Set[String]]().withDefault(_ => mutable.Set())
+
     var stack: List[(String, String)]    = Nil
     var emittedClasses: Set[String]      = Set.empty
     var emittedSemantic: Set[String]     = Set.empty
@@ -126,9 +155,11 @@ object XmlToRdf extends IOApp.Simple {
         Stream.emits(lines)
 
       case StartTag(qn, attrs, _) =>
-        val prefix = qn.prefix
         val tag = qn.local
-        tagCounter(tag) += 1 // ← ADDITION
+        val prefix = qn.prefix
+        
+        tagSet += tag
+        tagCounter(tag) += 1
 
         val synClassIRI   = syntacticClassIRI(prefix, tag)
         val semClassIRI   = semanticClassIRI(prefix, tag)
@@ -172,6 +203,8 @@ object XmlToRdf extends IOApp.Simple {
             val classIRI  = semanticClassIRI(_, tag)
             val hasProp   = createHasProperty(tag)
             val parentIRI = stack.drop(1).headOption.map(_._1)
+            
+            tagToStrings(tag) += text.trim
 
             val parentBlock = parentIRI.map { p =>
               s"<rdf:Description rdf:about=\"$p\">\n  <$hasProp rdf:resource=\"$valueIRI\"/>\n</rdf:Description>"
@@ -218,5 +251,69 @@ object XmlToRdf extends IOApp.Simple {
         .drain
     }
   }
+  def sanitizeForFilename(tag: String): String =
+    tag.trim
+      .replaceAll("""[\\/:*?"<>|]""", "_") // Windows forbidden characters
+      .replaceAll("\\s+", "_")             // Replace whitespace with underscores
+
+  def runInferAndLexicon: IO[Unit] = {
+    val in: InputStream = getClass.getResourceAsStream("/example.xml")
+    if (in == null) IO.raiseError(new IllegalArgumentException("Missing example.xml"))
+    else {
+      val tagSet = mutable.Set[String]()
+      val tagToStrings = mutable.Map[String, mutable.Set[String]]().withDefault(_ => mutable.Set())
+      var stack: List[String] = Nil // Only need tag names, not IRIs
+
+      val xmlEvents =
+        fs2.io.readInputStream(IO.pure(in), 4096)
+          .through(fs2.text.utf8.decode)
+          .through(events[IO, String]())
+
+      val process = xmlEvents.evalMap {
+        case StartTag(qn, _, _) =>
+          val tag = qn.local
+          tagSet += tag
+          stack = tag :: stack
+          IO.unit
+
+        case EndTag(qn) =>
+          stack = stack.drop(1)
+          IO.unit
+
+        case XmlString(text, _) if text.trim.nonEmpty =>
+          val str = text.trim
+          stack.headOption match {
+            case Some((tag: String)) => 
+              tagSet += tag
+              tagToStrings(tag) += str
+            case None => // Ignore
+          }
+          IO.unit
+
+        case _ => IO.unit
+      }
+
+      for {
+        _ <- process.compile.drain
+
+        // Output lexicon
+        _ <- IO {
+          val tagDir = Paths.get("tags")
+          Files.createDirectories(tagDir)
+
+          // Save the list of tag names (raw, unsanitized) to a central index
+          Files.write(tagDir.resolve("tags.txt"), tagSet.toList.sorted.asJava)
+
+          for (tag <- tagSet) {
+            val sanitizedTag = sanitizeForFilename(tag)
+            val lines = tagToStrings(tag).toList.sorted
+            Files.write(tagDir.resolve(s"$sanitizedTag.txt"), lines.asJava)
+          }
+        }
+
+      } yield ()
+    }
+  }
+
 }
 

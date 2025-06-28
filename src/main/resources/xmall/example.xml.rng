@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar ns="" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <start>
+    <element name="catalog">
+      <oneOrMore>
+        <element name="book">
+          <attribute name="id">
+            <data type="NCName"/>
+          </attribute>
+          <element name="author">
+            <text/>
+          </element>
+          <element name="title">
+            <text/>
+          </element>
+          <element name="genre">
+            <text/>
+          </element>
+          <element name="price">
+            <data type="decimal"/>
+          </element>
+          <element name="publish_date">
+            <data type="date"/>
+          </element>
+          <element name="description">
+            <text/>
+          </element>
+        </element>
+      </oneOrMore>
+    </element>
+  </start>
+</grammar>

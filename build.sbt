@@ -1,4 +1,9 @@
 ThisBuild / scalaVersion := "3.4.1"
+ThisBuild / turbo := true
+ThisBuild / concurrentRestrictions += Tags.limit(Tags.All, 16)
+ThisBuild / parallelExecution := true
+
+Compile / mainClass := Some("MainApp")
 
 lazy val root = (project in file("."))
   .settings(

@@ -310,6 +310,12 @@ object XmlToRdf extends IOApp.Simple {
             val lines = tagToStrings.getOrElse(tag, mutable.Set.empty).toList.sorted
             Files.write(tagDir.resolve(s"$sanitizedTag.txt"), lines.asJava)
           }
+          val summaryLines = tagSet.toList.sorted.map { tag =>
+            val count = tagToStrings.getOrElse(tag, mutable.Set.empty).size
+            s"$tag: $count string(s)"
+          }
+
+          Files.write(Paths.get("tags/_summary.txt"), summaryLines.asJava)
 
         }
 

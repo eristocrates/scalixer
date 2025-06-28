@@ -8,12 +8,15 @@ import scala.util.hashing.MurmurHash3
 import scala.collection.immutable.ListMap
 
 object XmlToRdf extends IOApp.Simple {
-
+  
+  // TODO add namespaces and their iris discovered during streaming
   private val prefixMap: Map[String, String] = ListMap(
     "rdf"  -> "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" -> "http://www.w3.org/2000/01/rdf-schema#",
     "owl"  -> "http://www.w3.org/2002/07/owl#",
-    "ex"   -> "http://example.org/"
+    "ex"   -> "http://example.org/",
+    "xsd" -> "http://www.w3.org/2001/XMLSchema#"
+
   )
 
   val rdfHeader = {
@@ -46,21 +49,26 @@ object XmlToRdf extends IOApp.Simple {
       case Array(prefix, local) if prefixMap.contains(prefix) => prefixMap(prefix) + local
       case _                                                  => name
 
-
+  // TODO use actual prefx and fall back on base if none exist
   private def createHasProperty(tag: String): String =
     s"ex:has${pascalCase(tag)}"
 
-  private def createSyntacticIRI(tag: String, stack: List[(String, String)]): String =
-    expandPrefix(s"ex:${tag}_${MurmurHash3.stringHash((tag :: stack.map(_._2)).mkString("/"))}")
+  private def createSyntacticIRI(prefix: Option[String], tag: String, stack: List[(String, String)], count: Int): String =
+    val base = (tag :: stack.map(_._2)).mkString("/") + s"$count"
+    val pfx = prefix.getOrElse("ex")
+    expandPrefix(s"$pfx:${tag}_${count}")
+    // kexpandPrefix(s"ex:${tag}_${MurmurHash3.stringHash(base)}")
 
   private def createSemanticIRI(value: String): String =
     expandPrefix(s"ex:${pascalSnakeCase(value)}")
 
-  private def syntacticClassIRI(tag: String): String =
-    expandPrefix(s"ex:${pascalCase(tag)}_Tag")
+  private def syntacticClassIRI(prefix: Option[String], tag: String): String =
+    val pfx = prefix.getOrElse("ex")
+    expandPrefix(s"$pfx:${pascalCase(tag)}_Tag")
 
-  private def semanticClassIRI(tag: String): String =
-    expandPrefix(s"ex:${pascalCase(tag)}")
+  private def semanticClassIRI(prefix: Option[String], tag: String): String =
+    val pfx = prefix.getOrElse("ex")
+    expandPrefix(s"$pfx:${pascalCase(tag)}")
 
   private def escapeXml(s: String): String =
     s.replace("&", "&amp;")
@@ -70,17 +78,60 @@ object XmlToRdf extends IOApp.Simple {
       .replace("'", "&apos;")
 
   def liftEvent(
-      lang: Option[String]
+      lang: Option[String],
+      path: java.nio.file.Path
   ): XmlEvent => Stream[IO, String] = {
     var stack: List[(String, String)]    = Nil
     var emittedClasses: Set[String]      = Set.empty
     var emittedSemantic: Set[String]     = Set.empty
+    val tagCounter: scala.collection.mutable.Map[String, Int] =
+      scala.collection.mutable.Map.empty.withDefaultValue(0)
+    val fileName = path.getFileName.toString
+    val fileExtension = {
+      val idx = fileName.lastIndexOf('.')
+      if (idx >= 0 && idx < fileName.length - 1) fileName.substring(idx + 1)
+      else "unknown"
+    }
+    val fileBaseName = {
+      val idx = fileName.lastIndexOf('.')
+      if (idx > 0) fileName.substring(0, idx) else fileName
+    }
+
+    val filePathStr = path.toAbsolutePath.toString
+    val fileUri = "file:///" + filePathStr.replace("\\", "/")
+      
+    val documentProvenance = List(
+      s"\n<rdf:Description rdf:about=\"${expandPrefix("ex:Document")}\">",
+      s"  <rdf:type rdf:resource=\"${expandPrefix("ex:XmlDocument")}\"/>",
+      s"  <ex:filePath rdf:datatype=\"${expandPrefix("xsd:string")}\" >${escapeXml(fileUri)}</ex:filePath>",
+      s"  <ex:fileBaseName rdf:datatype=\"${expandPrefix("xsd:string")}\">${escapeXml(fileBaseName)}</ex:fileBaseName>",
+      s"  <ex:fileExtension rdf:datatype=\"${expandPrefix("xsd:string")}\">${escapeXml(fileExtension)}</ex:fileExtension>",
+      s"  <ex:fileName rdf:datatype=\"${expandPrefix("xsd:string")}\">${escapeXml(fileName)}</ex:fileName>",
+      s"</rdf:Description>"
+    )
 
     {
+      case _: XmlEvent.StartDocument.type =>
+        Stream.emits(documentProvenance)
+
+      case XmlDoctype(name, externalId, internalSubsetOpt) =>
+        val lines = List(
+          s"\n<rdf:Description rdf:about=\"ex:Document\">",
+          s"  <rdf:type rdf:resource=\"${expandPrefix("owl:Ontology")}\"/>",
+          s"  <rdfs:label>${escapeXml(name)}</rdfs:label>",
+          s"  <ex:externalId>${escapeXml(externalId)}</ex:externalId>"
+        ) ++ internalSubsetOpt.map(sub => s"  <ex:internalSubset>${escapeXml(sub)}</ex:internalSubset>") ++
+          List("</rdf:Description>")
+
+        Stream.emits(lines)
+
       case StartTag(qn, attrs, _) =>
-        val tag           = qn.local
-        val synClassIRI   = syntacticClassIRI(tag)
-        val semClassIRI   = semanticClassIRI(tag)
+        val prefix = qn.prefix
+        val tag = qn.local
+        tagCounter(tag) += 1 // ← ADDITION
+
+        val synClassIRI   = syntacticClassIRI(prefix, tag)
+        val semClassIRI   = semanticClassIRI(prefix, tag)
 
         val classBlocks =
           if (!emittedClasses.contains(tag)) then
@@ -91,7 +142,7 @@ object XmlToRdf extends IOApp.Simple {
             )
           else Nil
 
-        val subjectIRI = createSyntacticIRI(tag, stack)
+        val subjectIRI = createSyntacticIRI(prefix, tag, stack, tagCounter(tag))
 
         val parentBlock = stack.headOption.map { case (parentIRI, _) =>
           s"<rdf:Description rdf:about=\"$parentIRI\">\n  <rdfs:member rdf:resource=\"$subjectIRI\"/>\n</rdf:Description>"
@@ -118,7 +169,7 @@ object XmlToRdf extends IOApp.Simple {
         stack.headOption match
           case Some((_, tag)) =>
             val valueIRI  = createSemanticIRI(text.trim)
-            val classIRI  = semanticClassIRI(tag)
+            val classIRI  = semanticClassIRI(_, tag)
             val hasProp   = createHasProperty(tag)
             val parentIRI = stack.drop(1).headOption.map(_._1)
 
@@ -154,7 +205,7 @@ object XmlToRdf extends IOApp.Simple {
           .through(fs2.text.utf8.decode)
           .through(events[IO, String]())
 
-      val rdfStream = xmlEvents.flatMap(liftEvent(Some("en")))
+      val rdfStream = xmlEvents.flatMap(liftEvent(Some("en"), Paths.get("src/main/resources/example.xml")))
 
       val output = Stream.emit(rdfHeader) ++
         rdfStream.intersperse("\n") ++

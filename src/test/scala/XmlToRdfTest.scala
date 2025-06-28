@@ -12,4 +12,13 @@ class XmlToRdfTest extends munit.FunSuite {
     assert(!rdf.contains("rdf:about=\"ex:"))
     assert(!rdf.contains("rdf:resource=\"ex:"))
   }
+
+  test("dual individuals emitted") {
+    XmlToRdf.run.unsafeRunSync()
+    val rdf = scala.io.Source.fromFile("example.rdf").mkString
+    assert(rdf.contains("Author_Tag\">"))
+    assert(rdf.contains("Author\">"))
+    assert(rdf.contains("rdfs:member rdf:resource=\"http://example.org/author_"))
+    assert(rdf.contains("ex:hasAuthor rdf:resource=\"http://example.org/Gambardella_Matthew"))
+  }
 }

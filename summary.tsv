@@ -1,0 +1,9 @@
+tag	count	filename
+author	9	tags/author.txt
+book	0	tags/book.txt
+catalog	0	tags/catalog.txt
+description	12	tags/description.txt
+genre	5	tags/genre.txt
+price	6	tags/price.txt
+publish_date	11	tags/publish_date.txt
+title	12	tags/title.txt

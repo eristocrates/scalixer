@@ -3,6 +3,7 @@ import fs2.Stream
 import fs2.data.xml._
 import fs2.data.xml.XmlEvent._
 import java.io.InputStream
+import java.nio.charset.StandardCharsets
 import java.nio.file.{Paths, Files}
 import scala.util.hashing.MurmurHash3
 import scala.collection.immutable.ListMap
@@ -309,14 +310,56 @@ object XmlToRdf extends IOApp.Simple {
             val sanitizedTag = sanitizeForFilename(tag)
             val lines = tagToStrings.getOrElse(tag, mutable.Set.empty).toList.sorted
             Files.write(tagDir.resolve(s"$sanitizedTag.txt"), lines.asJava)
-          }
+          } 
+
+          // --- Emit summary.tsv ---
+          // val summaryPath = Paths.get("summary.tsv")
+          // val summaryMetaPath = Paths.get("summary.csv-metadata.json")
+
+          val summaryHeader = "tag\tcount\tfilename\n"
           val summaryLines = tagSet.toList.sorted.map { tag =>
-            val count = tagToStrings.getOrElse(tag, mutable.Set.empty).size
-            s"$tag: $count string(s)"
+            val count = tagToStrings(tag).size
+            val sanitizedTag = sanitizeForFilename(tag)
+            s"$tag\t$count\ttags/$sanitizedTag.txt"
           }
 
-          Files.write(Paths.get("tags/_summary.txt"), summaryLines.asJava)
+          // Write TSV summary
+          Files.write(tagDir, (summaryHeader + summaryLines.mkString("\n")).getBytes(StandardCharsets.UTF_8))
 
+          // --- Emit summary.csvw metadata JSON ---
+          val csvwJson =
+            s"""
+            {
+              "@context": "http://www.w3.org/ns/csvw",
+              "url": "summary.tsv",
+              "tableSchema": {
+                "columns": [
+                  {
+                    "name": "tag",
+                    "titles": "Tag",
+                    "datatype": "string"
+                    "description": "Tag found in xml file"
+                  },
+                  {
+                    "name": "count",
+                    "titles": "Count",
+                    "datatype": "integer"
+                    "description": "Count of unique strings found for this tag"
+                  },
+                  {
+                    "name": "filename",
+                    "titles": "Filename",
+                    "datatype": "string"
+                    "description": "Filename tag was found in"
+                  }
+                ],
+                "primaryKey": "tag",
+                "description": "Summary of tags found in xml file"
+              }
+            }
+            """.stripMargin.trim
+
+          Files.write(tagDir, csvwJson.getBytes(StandardCharsets.UTF_8))
         }
 
       } yield ()

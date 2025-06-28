@@ -1,0 +1,24 @@
+{
+              "@context": "http://www.w3.org/ns/csvw",
+              "url": "summary.tsv",
+              "tableSchema": {
+                "columns": [
+                  {
+                    "name": "tag",
+                    "titles": "tag",
+                    "datatype": "string"
+                  },
+                  {
+                    "name": "count",
+                    "titles": "count",
+                    "datatype": "integer"
+                  },
+                  {
+                    "name": "filename",
+                    "titles": "filename",
+                    "datatype": "string"
+                  }
+                ],
+                "primaryKey": "tag"
+              }
+            }

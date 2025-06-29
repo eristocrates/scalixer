@@ -1,4 +1,5 @@
 tag	count	filename	inferredDatatype	tagRole	stringRole
+@id	12	tags/@id.txt	xsd:string		
 author	9	tags/author.txt	xsd:string		
 book	0	tags/book.txt	xsd:string		
 catalog	0	tags/catalog.txt	xsd:string		

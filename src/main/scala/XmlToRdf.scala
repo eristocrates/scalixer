@@ -11,8 +11,6 @@ import scala.collection.mutable
 import scala.jdk.CollectionConverters._
 
 object XmlToRdf extends IOApp.Simple {
-  val tagRoles: Map[String, Set[String]] = loadRoleMap(Paths.get("roles/TagRoles"))
-  val stringRoles: Map[String, Set[String]] = loadRoleMap(Paths.get("roles/StringRoles"))
 
   // TODO add namespaces and their iris discovered during streaming
   private val prefixMap: Map[String, String] = ListMap(
@@ -100,11 +98,15 @@ object XmlToRdf extends IOApp.Simple {
          EmptyString,
          MixedContentString
 
+  lazy val tagRoleMap: Map[String, Set[String]] = loadRoleMap(tagRoleDir)
+
   def tagRole(tag: String): Option[String] =
-    tagRoles.collectFirst { case (role, tags) if tags.contains(tag) => role }
+    tagRoleMap.collectFirst { case (role, tags) if tags.contains(tag) => role }
+
+  lazy val stringRoleMap: Map[String, Set[String]] = loadRoleMap(stringRoleDir)
 
   def stringRole(tag: String): Option[String] =
-    stringRoles.collectFirst { case (role, tags) if tags.contains(tag) => role }
+    stringRoleMap.collectFirst { case (role, tags) if tags.contains(tag) => role }
 
   def inferLiteralType(text: String): String = text.trim match { 
     case s if s.matches("""^-?\d+\.\d+$""") => "xsd:decimal"
@@ -113,19 +115,26 @@ object XmlToRdf extends IOApp.Simple {
     case _                                  => "xsd:string"
   }
 
-  def ensureRoleStub(roleType: String, roleNames: List[String]): Unit = {
-    val roleDir = Paths.get("roles").resolve(roleType)
-    if (!Files.exists(roleDir)) Files.createDirectories(roleDir)
+  val rolesDir = Paths.get("roles")
+  val tagRoleDir = rolesDir.resolve("TagRoles")
+  val stringRoleDir = rolesDir.resolve("StringRoles")
 
-    roleNames.foreach { name =>
-      val path = roleDir.resolve(s"$name.txt")
-      if (!Files.exists(path)) Files.write(path, Array.emptyByteArray)
-    }
+  Files.createDirectories(tagRoleDir)
+  Files.createDirectories(stringRoleDir)
+
+  // Enum values
+  val tagRoles = TagRole.values.map(_.toString)
+  val stringRoles = StringRole.values.map(_.toString)
+
+  // Write .txt file for each role if it doesn’t exist
+  for (role <- tagRoles) {
+    val path = tagRoleDir.resolve(s"$role.txt")
+    if (!Files.exists(path)) Files.write(path, List.empty[String].asJava)
   }
-
-  // Call once in setup
-  ensureRoleStub("TagRoles", List("EntityTag", "ContainerTag", "PropertyTag"))
-  ensureRoleStub("StringRoles", List("LabelString", "LiteralValueString", "IdentifierString"))
+  for (role <- stringRoles) {
+    val path = stringRoleDir.resolve(s"$role.txt")
+    if (!Files.exists(path)) Files.write(path, List.empty[String].asJava)
+  }
 
   def liftEvent(
       lang: Option[String],
@@ -305,12 +314,19 @@ object XmlToRdf extends IOApp.Simple {
           .through(events[IO, String]())
 
       val process = xmlEvents.evalMap {
-        case StartTag(qn, _, _) =>
+        case StartTag(qn, attrs, _) =>
           val tag = qn.local
           tagSet += tag
           stack = tag :: stack
-          IO.unit
 
+        for (attr <- attrs) {
+          val attrTag = s"@${attr.name.local}"
+          tagSet += attrTag
+          val strings = tagToStrings.getOrElseUpdate(attrTag, mutable.Set())
+          strings += attr.value.collect { case XmlString(text, _) => text }.mkString.trim
+        }
+
+          IO.unit
         case EndTag(_) =>
           stack = stack.drop(1)
           IO.unit
@@ -336,14 +352,14 @@ object XmlToRdf extends IOApp.Simple {
           Files.createDirectories(tagDir)
           Files.write(tagDir.resolve("tags.txt"), tagSet.toList.sorted.asJava)
 
-          // Output each tag's values
+          // Write each tag's value list
           for (tag <- tagSet) {
             val sanitizedTag = sanitizeForFilename(tag)
             val lines = tagToStrings.getOrElse(tag, mutable.Set.empty).toList.sorted
             Files.write(tagDir.resolve(s"$sanitizedTag.txt"), lines.asJava)
           }
 
-          // Helper to infer XSD primitive datatype
+          // --- Datatype inference helper ---
           def inferDatatype(values: Iterable[String]): String = {
             def allMatch(regex: String): Boolean =
               values.nonEmpty && values.forall(_.matches(regex))
@@ -355,7 +371,7 @@ object XmlToRdf extends IOApp.Simple {
             else if (allMatch("""\d{4}-\d{2}""")) "xsd:gYearMonth"
             else if (allMatch("""\d{4}""")) "xsd:gYear"
             else if (allMatch("""\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}""")) "xsd:dateTime"
-            else "xsd:string" // fallback
+            else "xsd:string"
           }
 
           // --- Emit summary.tsv ---
@@ -366,12 +382,11 @@ object XmlToRdf extends IOApp.Simple {
             val sanitizedTag = sanitizeForFilename(tag)
             val filename = s"tags/$sanitizedTag.txt"
             val inferredDatatype = inferDatatype(strings)
-            val tagRole = "" // User will fill this in manually
+            val tagRole = "" // editable by user
             val stringRole = if (inferredDatatype != "xsd:string") "LiteralValueString" else ""
 
             s"$tag\t$count\t$filename\t$inferredDatatype\t$tagRole\t$stringRole"
           }
-
           // Write summary.tsv
           val summaryPath = tagDir.resolve("summary.tsv")
           Files.write(summaryPath, (summaryHeader + summaryLines.mkString("\n")).getBytes(StandardCharsets.UTF_8))

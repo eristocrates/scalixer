@@ -8,6 +8,7 @@ import java.nio.file.{Paths, Files, Path}
 import scala.util.hashing.MurmurHash3
 import scala.collection.immutable.ListMap
 import scala.collection.mutable
+import scala.collection.mutable.ListBuffer
 import scala.jdk.CollectionConverters._
 
 object XmlToRdf extends IOApp.Simple {
@@ -273,7 +274,11 @@ object XmlToRdf extends IOApp.Simple {
 
       val rdfStream = xmlEvents.flatMap(liftEvent(Some("en"), Paths.get("src/main/resources/example.xml")))
 
+      val alignmentLines = loadAlignmentAxioms(Paths.get("alignments").resolve("semantic-alignments.ttl"))
+      val alignmentStream = Stream.emits(alignmentLines)
+
       val output = Stream.emit(rdfHeader) ++
+        alignmentStream.intersperse("\n") ++
         rdfStream.intersperse("\n") ++
         Stream.emit(rdfFooter)
 
@@ -299,6 +304,35 @@ object XmlToRdf extends IOApp.Simple {
         roleName -> tags
       }.toMap
   }
+
+  def loadAlignmentAxioms(path: Path): List[String] =
+    if !Files.exists(path) then Nil
+    else
+      val prefixPattern = "(?i)(?:@prefix|PREFIX)\\s+(\\w+):\\s*<([^>]+)>".r
+      val triplePattern = "(\\S+)\\s+(\\S+)\\s+(\\S+)\\s*\\.".r
+      var localPrefixes = Map.empty[String, String]
+      val blocks       = ListBuffer[List[String]]()
+      for line <- Files.readAllLines(path, StandardCharsets.UTF_8).asScala.map(_.trim) do
+        if line.nonEmpty && !line.startsWith("#") then
+          line match
+            case prefixPattern(p, iri) => localPrefixes += (p -> iri)
+            case triplePattern(s, p, o) =>
+              val pm = prefixMap ++ localPrefixes
+              def expand(name: String): String =
+                if name.startsWith("<") && name.endsWith(">") then name.substring(1, name.length - 1)
+                else
+                  name.split(":", 2) match
+                    case Array(pre, local) if pm.contains(pre) => pm(pre) + local
+                    case _                                     => name
+              val subj = expand(s)
+              val obj  = expand(o)
+              blocks += List(
+                s"<rdf:Description rdf:about=\"$subj\">",
+                s"  <$p rdf:resource=\"$obj\"/>",
+                s"</rdf:Description>"
+              )
+            case _ =>
+      blocks.flatten.toList
 
   def runInferAndLexicon: IO[Unit] = {
     val in: InputStream = getClass.getResourceAsStream("/example.xml")

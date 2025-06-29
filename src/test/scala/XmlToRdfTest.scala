@@ -21,4 +21,13 @@ class XmlToRdfTest extends munit.FunSuite {
     assert(rdf.contains("rdfs:member rdf:resource=\"http://example.org/author_"))
     assert(rdf.contains("ex:hasAuthor rdf:resource=\"http://example.org/Gambardella_Matthew"))
   }
+
+  test("alignment axioms merged") {
+    XmlToRdf.run.unsafeRunSync()
+    val rdf = scala.io.Source.fromFile("example.rdf").mkString
+    assert(rdf.contains("rdf:about=\"http://example.org/Author\""))
+    assert(rdf.contains("owl:sameAs rdf:resource=\"http://example.org/Writer\""))
+    assert(rdf.contains("rdf:about=\"http://example.org/Book\""))
+    assert(rdf.contains("rdfs:subClassOf rdf:resource=\"http://example.org/Publication\""))
+  }
 }

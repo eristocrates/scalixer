@@ -32,6 +32,9 @@ object RdfToXml:
     val rdf     = XML.loadFile(rdfPath.toFile)
 
     val nodes = mutable.Map.empty[String, Node]
+    val attrKeyMap   = mutable.Map.empty[String, String] // attrNodeId -> key
+    val attrValueMap = mutable.Map.empty[String, String] // attrNodeId -> value
+
     def node(id: String): Node = nodes.getOrElseUpdate(id, Node())
 
     for desc <- (rdf \ "Description") do
@@ -45,35 +48,51 @@ object RdfToXml:
           val name = res.split('/').last.stripSuffix("_Tag")
           n.tagName = Some(name)
 
+      // Track attribute_key and attribute_value for separate attr nodes
+      for e <- desc.child.collect { case el: scala.xml.Elem => el } do
+        val resAttr = e.attribute(rdfNS, "resource").map(_.text)
+        val q       = Option(e.prefix).map(_ + ":" + e.label).getOrElse(e.label)
+        q match
+          case "rdf:type" | "rdfs:member" => // handled elsewhere
+          case "ex:attribute_key" =>
+            attrKeyMap(about) = e.text
+          case "ex:attribute_value" =>
+            attrValueMap(about) = e.text
+          case "ex:attribute" =>
+            val attrId = resAttr.getOrElse("")
+            if attrId.nonEmpty then
+              // Delay real insertion to build time
+              n.attrs(attrId) = "__ATTR_PLACEHOLDER__"
+          case "ex:sourceProfile" =>
+            n.sourceProfile = Some(e.text)
+          case "rdfs:label" =>
+            n.text = Some(e.text)
+          case "ex:xmlString" =>
+            n.text = Some(e.text)
+
+          case other =>
+            val attrName = attrNameFromProp(e.label)
+            n.attrs(attrName) = e.text
+
       // rdfs:member children
       for m <- desc \ "member" do
         val child = (m \ s"@{${rdfNS}}resource").text
         if child.nonEmpty then n.children += child
-
-      // other elements
-      for e <- desc.child.collect { case el: scala.xml.Elem => el } do
-        val q = Option(e.prefix).map(_ + ":" + e.label).getOrElse(e.label)
-        q match
-          case "rdf:type" | "rdfs:member" =>
-          case "rdfs:label"                 => n.text = Some(e.text)
-          case "ex:sourceProfile"           => n.sourceProfile = Some(e.text)
-          case other =>
-            val resAttr = e.attribute(rdfNS, "resource").map(_.text)
-            resAttr match
-              case Some(childId) if childId.nonEmpty =>
-                n.children += childId
-              case _ =>
-                val attrName = attrNameFromProp(e.label)
-                n.attrs(attrName) = e.text
 
     val referenced = nodes.values.flatMap(_.children).toSet
     val rootId = nodes.collectFirst { case (id, nd) if nd.tagName.nonEmpty && !referenced(id) => id }.get
 
     def build(id: String): XmlNode =
       val nd      = nodes(id)
-      val metadata = nd.attrs.foldLeft(XmlNull: MetaData) { case (acc, (k, v)) =>
-        new UnprefixedAttribute(k, v, acc)
+      val metadata = nd.attrs.foldLeft(XmlNull: MetaData) {
+        case (acc, (attrId, "__ATTR_PLACEHOLDER__")) =>
+          val key = attrKeyMap.getOrElse(attrId, "unknown")
+          val value = attrValueMap.getOrElse(attrId, "")
+          new UnprefixedAttribute(key, value, acc)
+        case (acc, (k, v)) =>
+          new UnprefixedAttribute(k, v, acc)
       }
+
       val childNodes = nd.children.map(build) ++ nd.text.map(Text(_))
       Elem(null, nd.tagName.getOrElse(""), metadata, scala.xml.TopScope, minimizeEmpty = false, childNodes* )
 

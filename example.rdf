@@ -4,13 +4,13 @@
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:ex="http://example.org/"
+  xmlns:prov="http://www.w3.org/ns/prov#"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><rdf:Description rdf:about="http://example.org/xmlString">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://example.org/Document">
+<rdf:Description rdf:about="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml">
   <rdf:type rdf:resource="http://example.org/XmlDocument"/>
-  <ex:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string" >file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml</ex:filePath>
   <ex:fileBaseName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">example</ex:fileBaseName>
   <ex:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xml</ex:fileExtension>
   <ex:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">example.xml</ex:fileName>
@@ -53,6 +53,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/SemanticTechOverview_1">
   <rdf:type rdf:resource="http://example.org/SemanticTechOverview_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/xmlns_attribute_1"/>
   <ex:attribute rdf:resource="xmlns:sw_attribute_1"/>
   <ex:attribute rdf:resource="xmlns:ld_attribute_1"/>
@@ -115,6 +119,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Technologies_1">
   <rdf:type rdf:resource="http://example.org/Technologies_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/preferred_attribute_1"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/preferred_attribute_1">
@@ -131,6 +139,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/CoreStandards_1">
   <rdf:type rdf:resource="http://example.org/CoreStandards_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/CoreStandards</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -149,6 +161,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_1">
   <rdf:type rdf:resource="http://example.org/Standard_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/CoreStandards/Standard</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/status_attribute_1"/>
   <ex:attribute rdf:resource="http://example.org/category_attribute_1"/>
 </rdf:Description>
@@ -171,6 +187,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_1">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/CoreStandards/Standard/Name</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_1">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RDF</ex:xmlString>
@@ -188,6 +208,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_1">
   <rdf:type rdf:resource="http://example.org/Spec_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/CoreStandards/Standard/Spec</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#datatype_attribute_1"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#datatype_attribute_1">
@@ -207,6 +231,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Year_1">
   <rdf:type rdf:resource="http://example.org/Year_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/CoreStandards/Standard/Year</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Year_1">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2014</ex:xmlString>
@@ -220,6 +248,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_1">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/CoreStandards/Standard/Purpose</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_1">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Foundation data model for semantic graphs</ex:xmlString>
@@ -229,6 +261,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_2">
   <rdf:type rdf:resource="http://example.org/Standard_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/CoreStandards/Standard</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/status_attribute_2"/>
   <ex:attribute rdf:resource="http://example.org/category_attribute_2"/>
 </rdf:Description>
@@ -247,6 +283,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_2">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/CoreStandards/Standard/Name</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_2">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL</ex:xmlString>
@@ -260,6 +300,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Version_1">
   <rdf:type rdf:resource="http://example.org/Version_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/CoreStandards/Standard/Version</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Version_1">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ex:xmlString>
@@ -269,6 +313,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_2">
   <rdf:type rdf:resource="http://example.org/Spec_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/CoreStandards/Standard/Spec</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_2">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/TR/owl2-overview/</ex:xmlString>
@@ -278,6 +326,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Year_2">
   <rdf:type rdf:resource="http://example.org/Year_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/CoreStandards/Standard/Year</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Year_2">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2012</ex:xmlString>
@@ -287,6 +339,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_2">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/CoreStandards/Standard/Purpose</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_2">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ontology language for expressing logical structure</ex:xmlString>
@@ -300,12 +356,20 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Deprecated_1">
   <rdf:type rdf:resource="http://example.org/Deprecated_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/CoreStandards/Standard/Deprecated</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/CoreStandards_1">
   <rdfs:member rdf:resource="http://example.org/Standard_3"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_3">
   <rdf:type rdf:resource="http://example.org/Standard_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/CoreStandards/Standard</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/status_attribute_3"/>
   <ex:attribute rdf:resource="http://example.org/category_attribute_3"/>
 </rdf:Description>
@@ -324,6 +388,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_3">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">17</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/CoreStandards/Standard/Name</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_3">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SPARQL</ex:xmlString>
@@ -333,6 +401,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_3">
   <rdf:type rdf:resource="http://example.org/Spec_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/CoreStandards/Standard/Spec</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_3">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/TR/sparql11-query/</ex:xmlString>
@@ -342,6 +414,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Year_3">
   <rdf:type rdf:resource="http://example.org/Year_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/CoreStandards/Standard/Year</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Year_3">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2013</ex:xmlString>
@@ -351,6 +427,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_3">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/CoreStandards/Standard/Purpose</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_3">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Query language for RDF</ex:xmlString>
@@ -364,6 +444,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Serializations_1">
   <rdf:type rdf:resource="http://example.org/Serializations_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Serializations</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -378,6 +462,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_1">
   <rdf:type rdf:resource="http://example.org/Format_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Serializations/Format</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/type_attribute_1"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/type_attribute_1">
@@ -390,6 +478,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_4">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Serializations/Format/Name</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_4">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turtle</ex:xmlString>
@@ -403,6 +495,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/MimeType_1">
   <rdf:type rdf:resource="http://example.org/MimeType_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Serializations/Format/MimeType</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/MimeType_1">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">text/turtle</ex:xmlString>
@@ -412,6 +508,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_4">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Serializations/Format/Purpose</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_4">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Readable RDF syntax</ex:xmlString>
@@ -421,6 +521,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_2">
   <rdf:type rdf:resource="http://example.org/Format_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">26</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Serializations/Format</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/type_attribute_2"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/type_attribute_2">
@@ -433,6 +537,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_5">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">27</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Serializations/Format/Name</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_5">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JSON-LD</ex:xmlString>
@@ -442,6 +550,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/MimeType_2">
   <rdf:type rdf:resource="http://example.org/MimeType_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Serializations/Format/MimeType</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/MimeType_2">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">application/ld+json</ex:xmlString>
@@ -451,6 +563,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_5">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">29</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Serializations/Format/Purpose</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_5">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JSON-compatible Linked Data</ex:xmlString>
@@ -464,6 +580,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_3">
   <rdf:type rdf:resource="http://example.org/Format_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Serializations/Format</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/type_attribute_3"/>
   <ex:attribute rdf:resource="http://example.org/deprecated_attribute_1"/>
 </rdf:Description>
@@ -482,6 +602,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_6">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">31</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Serializations/Format/Name</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_6">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RDF/XML</ex:xmlString>
@@ -491,6 +615,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/MimeType_3">
   <rdf:type rdf:resource="http://example.org/MimeType_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Serializations/Format/MimeType</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/MimeType_3">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">application/rdf+xml</ex:xmlString>
@@ -500,6 +628,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_6">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">33</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Serializations/Format/Purpose</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_6">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XML-native RDF encoding</ex:xmlString>
@@ -513,12 +645,20 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Legacy_1">
   <rdf:type rdf:resource="http://example.org/Legacy_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">34</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Legacy</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Legacy_1">
   <rdfs:member rdf:resource="http://example.org/Standard_4"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_4">
   <rdf:type rdf:resource="http://example.org/Standard_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Legacy/Standard</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/status_attribute_4"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/status_attribute_4">
@@ -531,6 +671,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_7">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Legacy/Standard/Name</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_7">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GRDDL</ex:xmlString>
@@ -540,6 +684,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_4">
   <rdf:type rdf:resource="http://example.org/Spec_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">37</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Legacy/Standard/Spec</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_4">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/TR/grddl/</ex:xmlString>
@@ -549,6 +697,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_7">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Legacy/Standard/Purpose</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_7">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transform XML/XHTML to RDF via XSLT</ex:xmlString>
@@ -558,12 +710,20 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Deprecated_2">
   <rdf:type rdf:resource="http://example.org/Deprecated_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">39</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Legacy/Standard/Deprecated</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Legacy_1">
   <rdfs:member rdf:resource="http://example.org/Standard_5"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_5">
   <rdf:type rdf:resource="http://example.org/Standard_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Legacy/Standard</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/status_attribute_5"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/status_attribute_5">
@@ -576,6 +736,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_8">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">41</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Legacy/Standard/Name</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_8">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SAWSDL</ex:xmlString>
@@ -585,6 +749,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_5">
   <rdf:type rdf:resource="http://example.org/Spec_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Legacy/Standard/Spec</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_5">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/TR/sawsdl/</ex:xmlString>
@@ -594,6 +762,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_8">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">43</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Legacy/Standard/Purpose</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_8">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Annotate WSDL with semantic metadata</ex:xmlString>
@@ -607,6 +779,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Notes_1">
   <rdf:type rdf:resource="http://example.org/Notes_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">44</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Legacy/Standard/Notes</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Notes_1">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Still relevant in some enterprise contexts</ex:xmlString>
@@ -620,6 +796,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Microformats_1">
   <rdf:type rdf:resource="http://example.org/Microformats_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Microformats</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Usage_Attribute">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -630,6 +810,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_4">
   <rdf:type rdf:resource="http://example.org/Format_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">46</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Microformats/Format</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/type_attribute_4"/>
   <ex:attribute rdf:resource="http://example.org/usage_attribute_1"/>
 </rdf:Description>
@@ -648,6 +832,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_9">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">47</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Microformats/Format/Name</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_9">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hCard</ex:xmlString>
@@ -661,6 +849,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Use_1">
   <rdf:type rdf:resource="http://example.org/Use_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Microformats/Format/Use</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Use_1">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represent people and organizations</ex:xmlString>
@@ -670,6 +862,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_5">
   <rdf:type rdf:resource="http://example.org/Format_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">49</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Microformats/Format</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/type_attribute_5"/>
   <ex:attribute rdf:resource="http://example.org/usage_attribute_2"/>
 </rdf:Description>
@@ -688,6 +884,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_10">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Microformats/Format/Name</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_10">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hCalendar</ex:xmlString>
@@ -697,6 +897,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Use_2">
   <rdf:type rdf:resource="http://example.org/Use_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">51</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Microformats/Format/Use</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Use_2">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represent events and dates</ex:xmlString>
@@ -706,6 +910,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Deprecated_3">
   <rdf:type rdf:resource="http://example.org/Deprecated_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Microformats/Format/Deprecated</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/RuntimeSemantics_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -716,6 +924,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/RuntimeSemantics_1">
   <rdf:type rdf:resource="http://example.org/RuntimeSemantics_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/RuntimeSemantics</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/StreamSystem_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -730,6 +942,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/StreamSystem_1">
   <rdf:type rdf:resource="http://example.org/StreamSystem_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">54</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/stable_attribute_1"/>
   <ex:attribute rdf:resource="http://example.org/version_attribute_2"/>
 </rdf:Description>
@@ -748,6 +964,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_11">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">55</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem/Name</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_11">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CQELS</ex:xmlString>
@@ -757,6 +977,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_6">
   <rdf:type rdf:resource="http://example.org/Spec_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">56</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem/Spec</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_6">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://cqels.sourceforge.net/</ex:xmlString>
@@ -766,6 +990,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_9">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">57</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem/Purpose</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_9">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Continuous query over linked streams</ex:xmlString>
@@ -779,6 +1007,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/StreamSystem_2">
   <rdf:type rdf:resource="http://example.org/StreamSystem_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">58</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/stable_attribute_2"/>
   <ex:attribute rdf:resource="http://example.org/experimental_attribute_1"/>
 </rdf:Description>
@@ -797,6 +1029,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_12">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">59</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem/Name</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_12">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C-SPARQL</ex:xmlString>
@@ -806,6 +1042,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_7">
   <rdf:type rdf:resource="http://example.org/Spec_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem/Spec</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_7">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://streamreasoning.github.io/C-SPARQL-engine/</ex:xmlString>
@@ -815,6 +1055,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_10">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">61</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem/Purpose</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_10">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SPARQL queries over time-annotated data</ex:xmlString>
@@ -824,6 +1068,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/StreamSystem_3">
   <rdf:type rdf:resource="http://example.org/StreamSystem_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">62</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/stable_attribute_3"/>
   <ex:attribute rdf:resource="http://example.org/preferred_attribute_2"/>
 </rdf:Description>
@@ -842,6 +1090,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_13">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">63</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem/Name</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_13">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LDES</ex:xmlString>
@@ -851,6 +1103,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_8">
   <rdf:type rdf:resource="http://example.org/Spec_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">64</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem/Spec</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_8">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://w3id.org/ldes</ex:xmlString>
@@ -860,6 +1116,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_11">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">65</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem/Purpose</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_11">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Linked Data Event Streams</ex:xmlString>
@@ -869,6 +1129,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Version_2">
   <rdf:type rdf:resource="http://example.org/Version_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">66</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem/Version</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Version_2">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0.2</ex:xmlString>
@@ -882,6 +1146,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Nanopublishing_1">
   <rdf:type rdf:resource="http://example.org/Nanopublishing_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">67</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Nanopublishing</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Nanopub_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -896,6 +1164,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Nanopub_1">
   <rdf:type rdf:resource="http://example.org/Nanopub_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">68</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Nanopublishing/Nanopub</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/id_attribute_1"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/id_attribute_1">
@@ -912,6 +1184,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Assertion_1">
   <rdf:type rdf:resource="http://example.org/Assertion_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">69</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Nanopublishing/Nanopub/Assertion</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Assertion_1">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Terra est rotunda</ex:xmlString>
@@ -925,6 +1201,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Provenance_1">
   <rdf:type rdf:resource="http://example.org/Provenance_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Nanopublishing/Nanopub/Provenance</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Provenance_1">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Galileo Galilei</ex:xmlString>
@@ -942,6 +1222,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/PublicationInfo_1">
   <rdf:type rdf:resource="http://example.org/PublicationInfo_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">71</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Nanopublishing/Nanopub/PublicationInfo</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/peerReviewed_attribute_1"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/peerReviewed_attribute_1">
@@ -958,6 +1242,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Date_1">
   <rdf:type rdf:resource="http://example.org/Date_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">72</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Nanopublishing/Nanopub/PublicationInfo/Date</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/datatype_attribute_2"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/datatype_attribute_2">
@@ -977,6 +1265,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Publisher_1">
   <rdf:type rdf:resource="http://example.org/Publisher_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">73</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Nanopublishing/Nanopub/PublicationInfo/Publisher</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Publisher_1">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">np:Galileo</ex:xmlString>
@@ -990,6 +1282,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Tools_1">
   <rdf:type rdf:resource="http://example.org/Tools_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">74</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Tools</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Tool_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -1004,6 +1300,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Tool_1">
   <rdf:type rdf:resource="http://example.org/Tool_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">75</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Tools/Tool</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/language_attribute_1"/>
   <ex:attribute rdf:resource="http://example.org/version_attribute_3"/>
 </rdf:Description>
@@ -1022,6 +1322,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_14">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">76</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Tools/Tool/Name</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_14">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SPARQL Anything</ex:xmlString>
@@ -1031,6 +1335,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_12">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">77</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Tools/Tool/Purpose</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_12">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Query anything as RDF: XML, CSV, HTML, JSON</ex:xmlString>
@@ -1044,6 +1352,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/License_1">
   <rdf:type rdf:resource="http://example.org/License_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">78</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Tools/Tool/License</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/License_1">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache-2.0</ex:xmlString>
@@ -1053,6 +1365,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Tool_2">
   <rdf:type rdf:resource="http://example.org/Tool_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">79</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Tools/Tool</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/language_attribute_2"/>
   <ex:attribute rdf:resource="http://example.org/status_attribute_6"/>
 </rdf:Description>
@@ -1071,6 +1387,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_15">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Tools/Tool/Name</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_15">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XSPARQL</ex:xmlString>
@@ -1080,6 +1400,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_13">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">81</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Tools/Tool/Purpose</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_13">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transformation language for XML ↔ RDF</ex:xmlString>
@@ -1089,6 +1413,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Tool_3">
   <rdf:type rdf:resource="http://example.org/Tool_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">82</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Tools/Tool</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
   <ex:attribute rdf:resource="http://example.org/language_attribute_3"/>
   <ex:attribute rdf:resource="http://example.org/deprecated_attribute_2"/>
 </rdf:Description>
@@ -1107,6 +1435,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_16">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">83</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Tools/Tool/Name</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_16">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RMLMapper</ex:xmlString>
@@ -1116,6 +1448,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_14">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">84</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Tools/Tool/Purpose</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_14">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Generate RDF from heterogeneous formats</ex:xmlString>
@@ -1129,6 +1465,10 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Description_1">
   <rdf:type rdf:resource="http://example.org/Description_Tag"/>
+  <prov:wasDerivedFrom rdf:resource="file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml"/>
+  <ex:sourceLine rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">85</ex:sourceLine>
+  <ex:sourceXmlPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/SemanticTechOverview/Technologies/Tools/Tool/Description</ex:sourceXmlPath>
+  <ex:liftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e8d50f3f-18b1-46db-aaae-8d181a343731</ex:liftedBy>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Description_1">
   <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Générateur RDF utilisant des règles de mappage RML</ex:xmlString>

@@ -183,9 +183,8 @@ object XmlToRdf extends IOApp.Simple {
     )
 
     val documentProvenance = baseClasses ++ List(
-      s"\n<rdf:Description rdf:about=\"${expandPrefix("ex:Document")}\">",
+      s"\n<rdf:Description rdf:about=\"${escapeXml(fileUri)}\">",
       s"  <rdf:type rdf:resource=\"${expandPrefix("ex:XmlDocument")}\"/>",
-      s"  <ex:filePath rdf:datatype=\"${expandPrefix("xsd:string")}\" >${escapeXml(fileUri)}</ex:filePath>",
       s"  <ex:fileBaseName rdf:datatype=\"${expandPrefix("xsd:string")}\">${escapeXml(fileBaseName)}</ex:fileBaseName>",
       s"  <ex:fileExtension rdf:datatype=\"${expandPrefix("xsd:string")}\">${escapeXml(fileExtension)}</ex:fileExtension>",
       s"  <ex:fileName rdf:datatype=\"${expandPrefix("xsd:string")}\">${escapeXml(fileName)}</ex:fileName>",

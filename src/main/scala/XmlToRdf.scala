@@ -173,8 +173,8 @@ object XmlToRdf extends IOApp.Simple {
     val fileUri = "file:///" + filePathStr.replace("\\", "/")
       
     val baseClasses = List(
-      s"<rdf:Description rdf:about=\"${expandPrefix("ex:xmlTag")}\">\n  <rdf:type rdf:resource=\"${expandPrefix("owl:Class")}\"/>\n</rdf:Description>",
-      s"<rdf:Description rdf:about=\"${expandPrefix("ex:xmlAttribute")}\">\n  <rdf:type rdf:resource=\"${expandPrefix("owl:Class")}\"/>\n</rdf:Description>",
+      // s"<rdf:Description rdf:about=\"${expandPrefix("ex:xmlTag")}\">\n  <rdf:type rdf:resource=\"${expandPrefix("owl:Class")}\"/>\n</rdf:Description>",
+      // s"<rdf:Description rdf:about=\"${expandPrefix("ex:xmlAttribute")}\">\n  <rdf:type rdf:resource=\"${expandPrefix("owl:Class")}\"/>\n</rdf:Description>",
       s"<rdf:Description rdf:about=\"${expandPrefix("ex:xmlString")}\">\n  <rdf:type rdf:resource=\"${expandPrefix("owl:Class")}\"/>\n</rdf:Description>"
     )
 
@@ -255,7 +255,7 @@ object XmlToRdf extends IOApp.Simple {
               List(
                 s"<rdf:Description rdf:about=\"$attrIRI\">",
                 s"  <rdf:type rdf:resource=\"$attrClass\"/>",
-                s"  <rdf:type rdf:resource=\"${expandPrefix("ex:xmlAttribute")}\"/>",
+                // s"  <rdf:type rdf:resource=\"${expandPrefix("ex:xmlAttribute")}\"/>",
                 s"  <ex:attribute_key rdf:datatype=\"${expandPrefix("xsd:string")}\">${escapeXml(name.local)}</ex:attribute_key>",
                 s"  <ex:attribute_value rdf:datatype=\"$dt\">${escapeXml(attrVal)}</ex:attribute_value>",
                 s"</rdf:Description>"
@@ -272,7 +272,7 @@ object XmlToRdf extends IOApp.Simple {
           (List(
             s"<rdf:Description rdf:about=\"$subjectIRI\">",
             s"  <rdf:type rdf:resource=\"$synClassIRI\"/>",
-            s"  <rdf:type rdf:resource=\"${expandPrefix("ex:xmlTag")}\"/>"
+            // s"  <rdf:type rdf:resource=\"${expandPrefix("ex:xmlTag")}\"/>"
           ) ++
             attrLines ++
             List("</rdf:Description>")).mkString("\n")

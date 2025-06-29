@@ -1,0 +1,46 @@
+{
+              "@context": "http://www.w3.org/ns/csvw",
+              "url": "summary.tsv",
+              "tableSchema": {
+                "columns": [
+                  {
+                    "name": "tag",
+                    "titles": "Tag",
+                    "datatype": "string",
+                    "description": "Tag found in XML file"
+                  },
+                  {
+                    "name": "count",
+                    "titles": "Count",
+                    "datatype": "integer",
+                    "description": "Number of unique strings for this tag"
+                  },
+                  {
+                    "name": "filename",
+                    "titles": "Filename",
+                    "datatype": "string",
+                    "description": "Output path of .txt file containing tag strings"
+                  },
+                  {
+                    "name": "inferredDatatype",
+                    "titles": "Inferred Datatype",
+                    "datatype": "string",
+                    "description": "XSD primitive type inferred from the values"
+                  },
+                  {
+                    "name": "tagRole",
+                    "titles": "Tag Role",
+                    "datatype": "string",
+                    "description": "User-defined semantic role of the tag"
+                  },
+                  {
+                    "name": "stringRole",
+                    "titles": "String Role",
+                    "datatype": "string",
+                    "description": "User-defined semantic role of the string; defaults to 'LiteralValueString' for non-xsd:string types"
+                  }
+                ],
+                "primaryKey": "tag",
+                "description": "Summary of tags and inferred datatypes from XML, for staging user-defined semantic roles"
+              }
+            }

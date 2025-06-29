@@ -4,14 +4,16 @@ import fs2.data.xml._
 import fs2.data.xml.XmlEvent._
 import java.io.InputStream
 import java.nio.charset.StandardCharsets
-import java.nio.file.{Paths, Files}
+import java.nio.file.{Paths, Files, Path}
 import scala.util.hashing.MurmurHash3
 import scala.collection.immutable.ListMap
 import scala.collection.mutable
 import scala.jdk.CollectionConverters._
 
 object XmlToRdf extends IOApp.Simple {
-  
+  val tagRoles: Map[String, Set[String]] = loadRoleMap(Paths.get("roles/TagRoles"))
+  val stringRoles: Map[String, Set[String]] = loadRoleMap(Paths.get("roles/StringRoles"))
+
   // TODO add namespaces and their iris discovered during streaming
   private val prefixMap: Map[String, String] = ListMap(
     "rdf"  -> "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -82,21 +84,27 @@ object XmlToRdf extends IOApp.Simple {
 
   enum TagRole:
     case EntityTag,
-        PropertyTag,
-        ContainerTag,
-        TypenameTag,
-        WrapperTag,
-        ReferenceTag,
-        AnnotationTag
+         PropertyTag,
+         ContainerTag,
+         TypenameTag,
+         ReferenceTag,
+         AnnotationTag,
+         CollectionTag
 
   enum StringRole:
     case LabelString,
-        LiteralValueString,
-        IdentifierString,
-        ReferenceString,
-        ClassValueString,
-        EmptyString,
-        MixedContentString
+         LiteralValueString,
+         IdentifierString,
+         ReferenceString,
+         ClassValueString,
+         EmptyString,
+         MixedContentString
+
+  def tagRole(tag: String): Option[String] =
+    tagRoles.collectFirst { case (role, tags) if tags.contains(tag) => role }
+
+  def stringRole(tag: String): Option[String] =
+    stringRoles.collectFirst { case (role, tags) if tags.contains(tag) => role }
 
   def inferLiteralType(text: String): String = text.trim match { 
     case s if s.matches("""^-?\d+\.\d+$""") => "xsd:decimal"
@@ -104,6 +112,21 @@ object XmlToRdf extends IOApp.Simple {
     case s if s.matches("""\d{4}-\d{2}-\d{2}""") => "xsd:date"
     case _                                  => "xsd:string"
   }
+
+  def ensureRoleStub(roleType: String, roleNames: List[String]): Unit = {
+    val roleDir = Paths.get("roles").resolve(roleType)
+    if (!Files.exists(roleDir)) Files.createDirectories(roleDir)
+
+    roleNames.foreach { name =>
+      val path = roleDir.resolve(s"$name.txt")
+      if (!Files.exists(path)) Files.write(path, Array.emptyByteArray)
+    }
+  }
+
+  // Call once in setup
+  ensureRoleStub("TagRoles", List("EntityTag", "ContainerTag", "PropertyTag"))
+  ensureRoleStub("StringRoles", List("LabelString", "LiteralValueString", "IdentifierString"))
+
   def liftEvent(
       lang: Option[String],
       path: java.nio.file.Path
@@ -256,6 +279,17 @@ object XmlToRdf extends IOApp.Simple {
     tag.trim
       .replaceAll("""[\\/:*?"<>|]""", "_") // Windows forbidden characters
       .replaceAll("\\s+", "_")             // Replace whitespace with underscores
+      
+  def loadRoleMap(roleDir: Path): Map[String, Set[String]] = {
+    if (!Files.exists(roleDir)) Files.createDirectories(roleDir)
+    Files.list(roleDir).iterator().asScala
+      .filter(p => Files.isRegularFile(p) && p.toString.endsWith(".txt"))
+      .map { path =>
+        val roleName = path.getFileName.toString.stripSuffix(".txt")
+        val tags = Files.readAllLines(path, StandardCharsets.UTF_8).asScala.map(_.trim).filter(_.nonEmpty).toSet
+        roleName -> tags
+      }.toMap
+  }
 
   def runInferAndLexicon: IO[Unit] = {
     val in: InputStream = getClass.getResourceAsStream("/example.xml")
@@ -263,7 +297,7 @@ object XmlToRdf extends IOApp.Simple {
     else {
       val tagSet = mutable.Set[String]()
       val tagToStrings = mutable.Map[String, mutable.Set[String]]().withDefault(_ => mutable.Set())
-      var stack: List[String] = Nil // Only need tag names, not IRIs
+      var stack: List[String] = Nil
 
       val xmlEvents =
         fs2.io.readInputStream(IO.pure(in), 4096)
@@ -277,14 +311,14 @@ object XmlToRdf extends IOApp.Simple {
           stack = tag :: stack
           IO.unit
 
-        case EndTag(qn) =>
+        case EndTag(_) =>
           stack = stack.drop(1)
           IO.unit
 
         case XmlString(text, _) if text.trim.nonEmpty =>
           val str = text.trim
           stack.headOption match {
-            case Some((tag: String)) => 
+            case Some(tag) =>
               tagSet += tag
               val strings = tagToStrings.getOrElseUpdate(tag, mutable.Set())
               strings += str
@@ -297,39 +331,56 @@ object XmlToRdf extends IOApp.Simple {
 
       for {
         _ <- process.compile.drain
-
-        // Output lexicon
         _ <- IO {
           val tagDir = Paths.get("tags")
           Files.createDirectories(tagDir)
-
-          // Save the list of tag names (raw, unsanitized) to a central index
           Files.write(tagDir.resolve("tags.txt"), tagSet.toList.sorted.asJava)
 
+          // Output each tag's values
           for (tag <- tagSet) {
             val sanitizedTag = sanitizeForFilename(tag)
             val lines = tagToStrings.getOrElse(tag, mutable.Set.empty).toList.sorted
             Files.write(tagDir.resolve(s"$sanitizedTag.txt"), lines.asJava)
-          } 
-
-          // --- Emit summary.tsv ---
-          // val summaryPath = Paths.get("summary.tsv")
-          // val summaryMetaPath = Paths.get("summary.csv-metadata.json")
-
-          val summaryHeader = "tag\tcount\tfilename\n"
-          val summaryLines = tagSet.toList.sorted.map { tag =>
-            val count = tagToStrings(tag).size
-            val sanitizedTag = sanitizeForFilename(tag)
-            s"$tag\t$count\ttags/$sanitizedTag.txt"
           }
 
-          // Write TSV summary
-          Files.write(tagDir, (summaryHeader + summaryLines.mkString("\n")).getBytes(StandardCharsets.UTF_8))
+          // Helper to infer XSD primitive datatype
+          def inferDatatype(values: Iterable[String]): String = {
+            def allMatch(regex: String): Boolean =
+              values.nonEmpty && values.forall(_.matches(regex))
 
-          // --- Emit summary.csvw metadata JSON ---
+            if (allMatch("""true|false""")) "xsd:boolean"
+            else if (allMatch("""[+-]?\d+""")) "xsd:decimal"
+            else if (allMatch("""[+-]?(\d*\.\d+|\d+\.\d*)([eE][+-]?\d+)?""")) "xsd:double"
+            else if (allMatch("""\d{4}-\d{2}-\d{2}""")) "xsd:date"
+            else if (allMatch("""\d{4}-\d{2}""")) "xsd:gYearMonth"
+            else if (allMatch("""\d{4}""")) "xsd:gYear"
+            else if (allMatch("""\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}""")) "xsd:dateTime"
+            else "xsd:string" // fallback
+          }
+
+          // --- Emit summary.tsv ---
+          val summaryHeader = "tag\tcount\tfilename\tinferredDatatype\ttagRole\tstringRole\n"
+          val summaryLines = tagSet.toList.sorted.map { tag =>
+            val strings = tagToStrings.getOrElse(tag, mutable.Set.empty)
+            val count = strings.size
+            val sanitizedTag = sanitizeForFilename(tag)
+            val filename = s"tags/$sanitizedTag.txt"
+            val inferredDatatype = inferDatatype(strings)
+            val tagRole = "" // User will fill this in manually
+            val stringRole = if (inferredDatatype != "xsd:string") "LiteralValueString" else ""
+
+            s"$tag\t$count\t$filename\t$inferredDatatype\t$tagRole\t$stringRole"
+          }
+
+          // Write summary.tsv
+          val summaryPath = tagDir.resolve("summary.tsv")
+          Files.write(summaryPath, (summaryHeader + summaryLines.mkString("\n")).getBytes(StandardCharsets.UTF_8))
+
+          // --- Emit summary.csvw metadata ---
+          val summaryMetaPath = tagDir.resolve("summary.csv-metadata.json")
           val csvwJson =
             s"""
-            {
+              {
               "@context": "http://www.w3.org/ns/csvw",
               "url": "summary.tsv",
               "tableSchema": {
@@ -337,31 +388,48 @@ object XmlToRdf extends IOApp.Simple {
                   {
                     "name": "tag",
                     "titles": "Tag",
-                    "datatype": "string"
-                    "description": "Tag found in xml file"
+                    "datatype": "string",
+                    "description": "Tag found in XML file"
                   },
                   {
                     "name": "count",
                     "titles": "Count",
-                    "datatype": "integer"
-                    "description": "Count of unique strings found for this tag"
+                    "datatype": "integer",
+                    "description": "Number of unique strings for this tag"
                   },
                   {
                     "name": "filename",
                     "titles": "Filename",
-                    "datatype": "string"
-                    "description": "Filename tag was found in"
+                    "datatype": "string",
+                    "description": "Output path of .txt file containing tag strings"
+                  },
+                  {
+                    "name": "inferredDatatype",
+                    "titles": "Inferred Datatype",
+                    "datatype": "string",
+                    "description": "XSD primitive type inferred from the values"
+                  },
+                  {
+                    "name": "tagRole",
+                    "titles": "Tag Role",
+                    "datatype": "string",
+                    "description": "User-defined semantic role of the tag"
+                  },
+                  {
+                    "name": "stringRole",
+                    "titles": "String Role",
+                    "datatype": "string",
+                    "description": "User-defined semantic role of the string; defaults to 'LiteralValueString' for non-xsd:string types"
                   }
                 ],
                 "primaryKey": "tag",
-                "description": "Summary of tags found in xml file"
+                "description": "Summary of tags and inferred datatypes from XML, for staging user-defined semantic roles"
               }
             }
             """.stripMargin.trim
 
-          Files.write(tagDir, csvwJson.getBytes(StandardCharsets.UTF_8))
+          Files.write(summaryMetaPath, csvwJson.getBytes(java.nio.charset.StandardCharsets.UTF_8))
         }
-
       } yield ()
     }
   }

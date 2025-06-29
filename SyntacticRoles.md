@@ -1,266 +1,34 @@
-# Let’s build a **taxonomy of XML tag roles** and **string content roles**, designed for the purpose of RDF/OWL semantic lifting.
+# 🏷️ `TagRole` Documentation
 
-These roles will become the *discrete values* you can later use in heuristics, schema-based discriminators, or user configuration like `assumeTagEntities = true`.
-
-## 🏷️ **Tag Roles** (XML Tags)
-
-These describe the *semantic function* of an XML tag — that is, *what kind of RDF structure the tag implies*. A tag can be:
-
-### 1. `EntityTag`
-
-> Tag defines a **real-world entity** or **domain instance**, often represented as an RDF `owl:Class` or instance of a class.
-
-**Examples:**
-
-```xml
-<Book>...</Book>
-<Author>...</Author>
-```
-
-**RDF:**
-
-```ttl
-ex:Book a owl:Class .
-ex:book1 a ex:Book .
-```
+| TagRole           | Description                                                                                                         | Example XML                                                          | RDF Emission Strategy                                                                                                |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **EntityTag**     | Represents a discrete RDF individual (an entity), often with child tags expressing its properties.                  | `<Book>`                                                             | Emits a new named individual with an `rdf:type` derived from the tag name.                                           |
+| **PropertyTag**   | Denotes a property of the current subject. Its object may be a literal (string) or another entity (nested element). | `<title>Semantic Web</title>` or `<Author><Name>Tim</Name></Author>` | Emits a predicate triple. If contents are string: `DatatypeProperty`. If contents are nested tags: `ObjectProperty`. |
+| **ContainerTag**  | An XML wrapper with no direct RDF meaning; exists solely to group children.                                         | `<Metadata><Title>...</Title></Metadata>`                            | Ignored in RDF typing; children are attached directly to the grandparent, optionally via `rdfs:member`.              |
+| **TypenameTag**   | Holds a string that names the *class* of the entity it belongs to. Often used to emit an `rdf:type`.                | `<type>Book</type>`                                                  | Emits an `rdf:type` triple using the string content as the object (resolved to a class).                             |
+| **ReferenceTag**  | Denotes a reference to another RDF entity, typically via identifier or pointer.                                     | `<authorId>123</authorId>`                                           | Emits an `owl:sameAs`, `ex:hasAuthor`, or similar link to another entity, using the string content as a URI or ID.   |
+| **AnnotationTag** | Provides additional metadata or human-readable information about a subject, such as comments or descriptions.       | `<comment>This is deprecated.</comment>`                             | Emits `rdfs:comment`, `skos:note`, or custom annotation properties.                                                  |
+| **CollectionTag** | Groups multiple instances of the same type, such as lists or arrays.                                                | `<Authors><Author>...</Author><Author>...</Author></Authors>`        | Emits `rdfs:member` triples for each child. May also support RDF containers like `rdf:Bag`.                          |
 
 ---
 
-### 2. `PropertyTag`
+## 🧵 `StringRole` Documentation
 
-> Tag expresses a **relationship** or **attribute** of its parent. Typically becomes an RDF property.
-
-**Examples:**
-
-```xml
-<Title>Semantic Web for Dummies</Title>
-<Price>29.99</Price>
-```
-
-**RDF:**
-
-```ttl
-ex:book1 ex:title "Semantic Web for Dummies" .
-```
+| StringRole             | Description                                                                             | Example Text Content         | RDF Emission Strategy                                                                             |
+| ---------------------- | --------------------------------------------------------------------------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------- |
+| **LabelString**        | Serves as a human-readable label or name.                                               | `"Semantic Web for Dummies"` | Emits `rdfs:label`, `skos:prefLabel`, or similar.                                                 |
+| **LiteralValueString** | Encodes a primitive value, such as number, date, or boolean.                            | `"2023-05-01"` or `"42"`     | Emits as an `xsd:...`-typed literal (e.g., `xsd:date`, `xsd:decimal`).                            |
+| **IdentifierString**   | A unique identifier for the entity. May be used for IRI construction or de-duplication. | `"B1234"`                    | Used to construct entity IRI (e.g., `:Book_B1234`), or populate `dc:identifier`.                  |
+| **ReferenceString**    | A pointer to another known entity.                                                      | `"Author123"`                | Emits a triple with a URI derived from the string.                                                |
+| **ClassValueString**   | Indicates the *type* of the subject in string form.                                     | `"Book"` or `"UrbanFeature"` | Used in `rdf:type` statements (interpreted as OWL Class).                                         |
+| **EmptyString**        | Indicates that the tag was present but had no content.                                  | `""` (empty)                 | May be ignored, or used to trigger special fallback logic.                                        |
+| **MixedContentString** | A string that is interleaved with child elements (mixed XML content).                   | `"Hello <em>world</em>!"`    | Either discarded, extracted as plain text, or processed into `rdf:value` plus nested annotations. |
 
 ---
 
-### 3. `ContainerTag`
-
-> Tag is purely **structural**, grouping child elements. It has no semantic value by itself.
-
-**Examples:**
-
-```xml
-<Items>
-  <Item>...</Item>
-</Items>
-```
-
-**RDF:**
-
-> Might emit `rdf:List`, `rdfs:member`, or `ex:hasItem`.
-
----
-
-### 4. `TypenameTag`
-
-> Tag name is a **type label**, and the tag implies typing of its content.
-
-**Examples:**
-
-```xml
-<String>hello</String>
-<Integer>42</Integer>
-```
-
-**RDF:**
-
-```ttl
-ex:hasValue "hello"^^xsd:string .
-```
-
----
-
-### 5. `WrapperTag`
-
-> Tag wraps **metadata** or **non-content information** about another entity.
-
-**Examples:**
-
-```xml
-<Metadata>
-  <CreatedBy>...</CreatedBy>
-</Metadata>
-```
-
----
-
-### 6. `ReferenceTag`
-
-> Tag represents a **pointer** to another entity, often via ID or URI.
-
-**Examples:**
-
-```xml
-<SeeAlso>urn:isbn:12345</SeeAlso>
-```
-
-**RDF:**
-
-```ttl
-ex:thisDoc rdfs:seeAlso <urn:isbn:12345> .
-```
-
----
-
-### 7. `AnnotationTag`
-
-> Tag conveys **labels, descriptions, or comments**, but does not assert factual data.
-
-**Examples:**
-
-```xml
-<Label>This is a note</Label>
-<Comment>Check this later</Comment>
-```
-
-**RDF:**
-
-```ttl
-ex:thing rdfs:label "This is a note" .
-```
-
----
-
-## 📜 **String Roles** (XmlString/Text Content)
-
-These define the role of *text nodes*, often nested inside tags. Strings can be:
-
-### 1. `LabelString`
-
-> Text is a **human-readable label** for a resource.
-
-**Examples:**
-
-```xml
-<Author>J.K. Rowling</Author> <!-- label -->
-```
-
-**RDF:**
-
-```ttl
-ex:jk rdfs:label "J.K. Rowling" .
-```
-
----
-
-### 2. `LiteralValueString`
-
-> Text is a **literal value**, to be interpreted as a `xsd:string`, `xsd:decimal`, etc.
-
-**Examples:**
-
-```xml
-<Price>12.99</Price>
-```
-
-**RDF:**
-
-```ttl
-ex:item ex:price "12.99"^^xsd:decimal .
-```
-
----
-
-### 3. `IdentifierString`
-
-> Text is a **named identifier** or code for a resource, not meant for display.
-
-**Examples:**
-
-```xml
-<ISBN>9781234567890</ISBN>
-```
-
-**RDF:**
-
-```ttl
-ex:book ex:isbn "9781234567890"^^xsd:string .
-```
-
----
-
-### 4. `ReferenceString`
-
-> Text is a **link or URI** that points elsewhere.
-
-**Examples:**
-
-```xml
-<Homepage>https://example.org</Homepage>
-```
-
-**RDF:**
-
-```ttl
-ex:author ex:homepage <https://example.org> .
-```
-
----
-
-### 5. `ClassValueString`
-
-> Text expresses a **concept or category**, not a concrete value.
-
-**Examples:**
-
-```xml
-<Genre>Science Fiction</Genre>
-```
-
-**RDF:**
-
-```ttl
-ex:book ex:hasGenre ex:ScienceFiction .
-```
-
----
-
-### 6. `EmptyString`
-
-> Text is **whitespace or blank**, and should usually be ignored.
-
----
-
-### 7. `MixedContentString`
-
-> Text is part of **mixed content**, often within narrative.
-
-**Examples:**
-
-```xml
-<Para>This book is <b>bold</b> in its claims.</Para>
-```
-
-**RDF:**
-May need to use `rdf:XMLLiteral`.
-
----
-
-## ✅ Summary (Discriminator Value Sets)
-
-```scala
-enum TagRole:
-  case EntityTag, PropertyTag, ContainerTag, TypenameTag,
-       WrapperTag, ReferenceTag, AnnotationTag
-
-enum StringRole:
-  case LabelString, LiteralValueString, IdentifierString,
-       ReferenceString, ClassValueString, EmptyString, MixedContentString
-```
-
-These enums can form the foundation for:
-
-* `assumeTagRole: Tag => TagRole`
-* `assumeStringRole: (Tag, Text) => StringRole`
+### ✅ Notes for Implementation
+
+* A tag can be matched to a **TagRole** via presence in its corresponding `roles/TagRole/*.txt` file.
+* A tag's **StringRole** is inferred at runtime via heuristics or preconfiguration (from `roles/StringRole/*.txt`).
+* Every tag’s string content is written to `tags/<tag>.txt`, and the summary TSV+CSVW contains inferred datatype and configurable roles.
+* The presence of `CollectionTag` or `ContainerTag` triggers recursive RDF expansion, especially useful for generating `rdfs:member`.

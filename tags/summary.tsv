@@ -1,0 +1,9 @@
+tag	count	filename	inferredDatatype	tagRole	stringRole
+author	9	tags/author.txt	xsd:string		
+book	0	tags/book.txt	xsd:string		
+catalog	0	tags/catalog.txt	xsd:string		
+description	12	tags/description.txt	xsd:string		
+genre	5	tags/genre.txt	xsd:string		
+price	6	tags/price.txt	xsd:double		LiteralValueString
+publish_date	11	tags/publish_date.txt	xsd:date		LiteralValueString
+title	12	tags/title.txt	xsd:string		

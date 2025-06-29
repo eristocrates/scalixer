@@ -16,9 +16,16 @@ class XmlToRdfTest extends munit.FunSuite {
   test("dual individuals emitted") {
     XmlToRdf.run.unsafeRunSync()
     val rdf = scala.io.Source.fromFile("example.rdf").mkString
-    assert(rdf.contains("Author_Tag\">"))
-    assert(rdf.contains("Author\">"))
-    assert(rdf.contains("rdfs:member rdf:resource=\"http://example.org/author_"))
-    assert(rdf.contains("ex:hasAuthor rdf:resource=\"http://example.org/Gambardella_Matthew"))
+    assert(rdf.contains("Format_Tag"))
+    assert(rdf.contains("MimeType_Tag"))
+    assert(rdf.contains("rdfs:member rdf:resource=\"http://example.org/Format_"))
+  }
+
+  test("rdf can be lowered back to xml") {
+    XmlToRdf.run.unsafeRunSync()
+    RdfToXml.run(Nil).unsafeRunSync()
+    val xml = scala.io.Source.fromFile("lowered.xml").mkString
+    assert(xml.contains("<SemanticTechOverview"))
+    assert(xml.contains("</SemanticTechOverview>"))
   }
 }

@@ -1,117 +1,92 @@
-Perfect. Here's a rewritten **Core Agent** file (formerly `agents.md`) that serves as the **narrative through line** and coordination point between all other agents. It summarizes the entire project vision and provides the Codex system with top-level orientation.
+
+# Codex Agents
+
+## CoreProject Overview
+
+This project lifts XML into RDF/XML via a pure Scala 3 + FS2 pipeline, guided by semantic staging rules and strict streaming constraints. It is intentionally **idiomatic**, **Java-free**, and **compliant with the W3C RDF/XML syntax specification**.
+
+All RDF emitted is grouped into:
+
+* **Syntactic Statements**: Always emitted. Represent XML structure via `rdfs:member`, tag names, and containment.
+* **Semantic Statements**: Emitted **only when staged** using role configuration files located under `roles/`.
+
+The system supports **idempotent RDF generation**, allowing repeatable builds even as role files are modified.
 
 ---
 
-# Agent: CoreProject
+## Agent System
 
-## Summary
+Each agent is a modular `.md` file and corresponds to a discrete responsibility.
 
-This project transforms XML documents into **RDF/XML output** using a **fully streaming, pure Scala 3 pipeline**. The goal is to semantically enrich XML structures into meaningful OWL ontologies, emitting standards-compliant RDF/XML with zero Java interop or black-box frameworks.
+| Agent Name          | Responsibility                                                                                    |
+| ------------------- | ------------------------------------------------------------------------------------------------- |
+| `XmlToRdf`          | Streaming orchestrator. Parses XML, applies semantic roles, emits RDF/XML compliant output.       |
+| `OntologyLifting`   | Defines logic for RDF/XML semantic enrichment, distinguishing syntactic vs. semantic individuals. |
+| `Fs2XmlDoc`         | Provides FS2 and `fs2-data-xml` streaming guidance and XML parsing idioms.                        |
+| `RdfXmlSpec`        | Validates that RDF/XML output matches W3C RDF/XML Syntax Specification.                           |
+| `Scala3CompilerDoc` | Ensures idiomatic use of Scala 3 features (e.g. givens, enums, extension methods).                |
+| `MetaAgent`         | Generates/maintains agent `.md` files and enforces doc consistency across Codex modules.          |
+| `TestAgent`         | Creates unit tests via MUnit to confirm RDF/XML output conformance and semantic lifting outcomes. |
 
-The agent provides a **central narrative** to align all Codex sub-agents, and serves as the entrypoint for reasoning about the overall architecture, design intentions, and best practices.
+---
 
-## Mission
+## Specialized Subagents
 
-Create a clean, declarative transformation pipeline that:
+| Subagent            | Responsibility                                                                                        |
+| ------------------- | ----------------------------------------------------------------------------------------------------- |
+| `LexiconAgent`      | Collects tag names and inferred XSD primitive types. Generates the `summary.csvw` output.             |
+| `RoleAgent`         | Loads staged roles from `roles/TagRoles/` and `roles/StringRoles/`. Supports empty-file defaults.     |
+| `SyntacticRdfAgent` | Emits RDF/XML structure based on XML tag nesting, containment, and default tag typing.                |
+| `SemanticRdfAgent`  | Emits RDF/XML enrichment based on roles like `EntityTag`, `PropertyTag`, `LabelString`, etc.          |
+| `CsvwAgent`         | Writes `summary.csvw` metadata file summarizing all tag types, datatypes, and their semantic staging. |
 
-* Parses XML using `fs2-data-xml`
-* Semantically lifts XML elements into OWL constructs
-* Serializes triples into **valid RDF/XML** per [W3C RDF/XML Syntax Spec]
-* Leverages **Scala 3 idioms** and **FS2 streaming**
-* Avoids Java frameworks like Jena or Banana-RDF
+---
 
-[W3C RDF/XML Syntax Spec]: ./src/main/resources/rdf-1.1-XML-Syntax.html
+## Role System
 
-## Architecture Overview
+Roles are stored in simple `.txt` files:
 
-```
-[XML Source]
-    ↓
-fs2-data-xml (streaming parser)
-    ↓
-Semantic Lifting Rules (OntologyLifting agent)
-    ↓
-RDF Triple Stream (domain-aware, structured)
-    ↓
-RDF/XML Serializer (RdfXmlSpec agent)
-    ↓
-[RDF/XML Output File]
-```
+* `roles/TagRoles/EntityTag.txt` ← contains tag names like `author`, `workspace`, etc.
+* `roles/StringRoles/LabelString.txt` ← contains strings or tags whose values serve as labels
 
-## Codebase Structure
+Roles are **optional** but **govern semantic RDF output**. Absence of roles defaults to syntactic structure only.
 
-| File / Folder                                | Role                                                   |
-| -------------------------------------------- | ------------------------------------------------------ |
-| `XmlToRdf.scala`                             | Main transformation logic                              |
-| `example.xml`                                | Sample input XML                                       |
-| `example.rdf`                                | RDF/XML output file                                    |
-| `src/main/resources/rdf-1.1-XML-Syntax.html` | Canonical RDF/XML format reference                     |
-| `src/main/resources/fs2-data-docs-*`         | JavaDoc mirror of `fs2-data-xml` for streaming details |
-| `src/main/resources/scala3/docs/_docs`       | Scala 3 language and compiler documentation            |
+---
 
-## Environment: Offline Java + SBT Configuration
+## Semantic Principles
 
-This project includes a fully offline development environment using pre-bundled binaries:
+* Each **XML start tag** becomes a syntactic individual typed as `TagName_Tag`
+* Each **element content** may become a semantic individual if appropriately staged via string role
+* **Attributes** are promoted to RDF properties and subject to datatype inference and semantic role staging
 
-- **Java**: located at `tools/jdk-17.0.15.6-hotspot/bin/java.exe`
-- **SBT Launcher**: `tools/sbt-launch/bin/sbt-launch.jar`
+---
 
-The `setup.sh` script ensures these tools are made available in `PATH`:
+## Design Commitments
 
-```bash
-export JAVA_HOME="$PWD/tools/jdk-17.0.15.6-hotspot"
-export PATH="$JAVA_HOME/bin:$PATH"
+* ✅ Streaming-only logic
+* ✅ W3C RDF/XML compliance
+* ✅ Modular code via agent specialization
+* ✅ Default-safe outputs (never fail on missing roles)
+* ✅ Roles are always read from disk — no cached state
 
-# Wraps sbt-launch.jar in a shell script:
-export PATH="$PWD/tools/sbt-launch/bin:$PATH"
-## Agents
+---
 
-| Agent Name          | Responsibility                                                                  |
-| ------------------- | ------------------------------------------------------------------------------- |
-| `XmlToRdf`          | Coordinates XML parsing, lifting, and RDF/XML streaming logic                   |
-| `Fs2XmlDoc`         | Documents FS2 + `fs2-data-xml`, advises on parser/stream behavior               |
-| `RdfXmlSpec`        | Ensures output matches W3C RDF/XML specification (structure, legality)          |
-| `Scala3CompilerDoc` | Confirms idiomatic Scala 3 usage; references compiler when needed               |
-| `OntologyLifting`   | Translates XML into OWL semantics, distinguishing syntactic vs. semantic individuals and ensuring classes like `Author_Tag` and `Author` are declared and correctly typed |
-| `TestAgent`         | Generates MUnit-based tests to validate RDF/XML conformance and semantic lifting|
-| `MetaAgent`       | Authors and edits agent `.md` files; automates creation and updating of agent definitions |
+## Codex Rules
 
-Each agent maintains its own file (e.g., `OntologyLifting.md`), allowing Codex to specialize its behavior based on the active task.
+1. **Never violate RDF/XML syntax spec**
+2. **Never break FS2 streaming pipeline**
+3. **Emit syntactic RDF/XML by default**
+4. **Emit semantic RDF/XML only when explicitly staged**
+5. **Honor syntactic/semantic disambiguation in both tags and string content**
 
-## Design Goals
+---
 
-* **Streaming**: All logic uses FS2 streams — no intermediate data structures
-* **Semantics-First**: Treat XML as a source of semantic meaning, not just structure
-* **Spec Compliance**: Output RDF/XML must validate against W3C requirements
-* **Scala-Only**: No Java dependencies; fully idiomatic Scala 3
-* **Extensibility**: Future targets include JSON-LD, Turtle output — but via separate steps
+## Example Output Policy
 
-## Codex Instructions
-
-When editing or improving this project:
-
-1. **Always honor the W3C RDF/XML syntax specification**
-2. **Consult the lifting agent** before flattening or normalizing nested XML
-3. **Use only streaming logic**; never introduce non-streaming collection-based code
-4. **Use Scala 3 idioms** and features (e.g., `using`, `given`, for-comprehensions)
-5. **Defer to specialized agents** as needed — this file defines the architecture, not the implementation specifics
-
-## Testing Philosophy
-
-- There is **no need to manually write tests** — Codex is encouraged to **generate them**.
-- Tests should be created for new functionality or to verify specification adherence.
-- Generated tests go under: `src/test/scala/`
-- Use: MUnit (`org.scalameta %% munit % 1.0.0`) as the test framework.
-- Emphasize tests that:
-  - Confirm RDF/XML syntax is valid
-  - Assert that RDF match expected outputs
-  - Validate semantic lifting behavior (e.g., class inference, rdfs:member, property generation)
-
-The Codex agent should **assume the role of a semantic quality validator**, ensuring that each RDF/XML output structurally and semantically matches the design intent.
-
-## Future Directions
-
-* Add support for output format fan-out (Turtle, JSON-LD)
-* Incorporate SHACL or OWL reasoning checks
-* Provide round-trip validation (lower RDF/XML back to XML)
-* Integrate Watchman-like file monitoring to stream incoming XML
+| Element         | Inferred Role        | RDF/XML Emission Example                              |
+| --------------- | -------------------- | ----------------------------------------------------- |
+| `<author>`      | EntityTag            | `:author_123 a :Author_Tag .`                         |
+| `"Gambardella"` | LabelString          | `:Gambardella_Matthew a :Author ; rdfs:label "..." .` |
+| `<table name>`  | PropertyTag + IRIVal | `:StormMain ex:hasName "StormMain"^^xsd:string .`     |
+| `<workspace>`   | EntityTag            | `:Workspace_001 a :Workspace_Tag .`                   |
+| `xsi:type`      | TypenameTag          | Promotes `:StormMain a :Table` if `xsi:type="Table"`  |

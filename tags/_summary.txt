@@ -1,8 +1,0 @@
-author: 9 string(s)
-book: 0 string(s)
-catalog: 0 string(s)
-description: 12 string(s)
-genre: 5 string(s)
-price: 6 string(s)
-publish_date: 11 string(s)
-title: 12 string(s)

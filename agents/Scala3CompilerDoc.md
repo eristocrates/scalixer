@@ -1,101 +1,61 @@
+Here is the updated agent definition for **Scala3CompilerDoc**:
 
 # Agent: Scala3CompilerDoc
 
 ## Summary
 
-This agent provides authoritative knowledge of the Scala 3 programming language, including syntax, semantics, idioms, and compile-time behavior. It is anchored in the full source of the Scala 3 compiler and its documentation, both of which have been mirrored locally.
+The `Scala3CompilerDoc` agent ensures that all source code in the project adheres to idiomatic **Scala 3** style, syntax, and semantics. It acts as the interface between Codex and the Scala 3 language reference, enforcing modern patterns such as `given/using`, `enum`, `opaque type`, and **contextual abstractions** while discouraging legacy or Java-inspired idioms.
 
-## Canonical Sources
+This agent plays a dual role: it provides **compiler-aware advice** and enforces **Scala-native reasoning**, optimizing for purity, type-safety, and elegance within the RDF/XML transformation pipeline.
 
-### 1. Scala 3 Compiler Source Code
+## Mission
 
-Path:
+Ensure the entire pipeline remains:
 
-```
-src/main/resources/scala3
-```
+* Fully idiomatic in Scala 3 syntax
+* Consistent with compiler recommendations and type inference behavior
+* Composable via modern constructs (typeclasses, enums, extension methods)
+* Free from outdated Scala 2 or Java-conversion idioms
 
-Cloned from:
-[https://github.com/scala/scala3](https://github.com/scala/scala3)
+## Responsibilities
 
-Relevant source directories include:
+* Validate use of context-bound logic (e.g., `given`, `using`)
+* Recommend standard library or compiler-intrinsic solutions over custom logic
+* Monitor type inference clarity and verbosity tradeoffs
+* Detect and warn against anti-patterns (e.g., mutable vars, null handling)
+* Support macro-powered transformations if needed (e.g., for compact RDF/XML serialization)
 
-* `compiler/` — all compiler phases, TASTy reflection, macro support
-* `library/` — standard Scala 3 language definitions
-* `tests/` — usage patterns and edge-case coverage
+## Codex-Specific Advice
 
-### 2. Scala 3 Language Documentation
+* Prefer **pattern matching on ADTs** over if-else branching for tag and attribute inspection
+* Use `enum` instead of sealed traits when the set is finite and fixed (e.g., `TagRole`)
+* Recommend extension methods for enriched FS2 or XML types
+* Use `Option`, `Either`, `NonEmptyList` to avoid unsafe null-prone code
+* Annotate with inline types for `IO`, `Stream`, `XmlEvent`, etc., to guide Codex inference
 
-Path:
+## Canonical Patterns
 
-```
-src/main/resources/scala3/docs/_docs
-```
+| Purpose            | Scala 3 Idiom                              |
+| ------------------ | ------------------------------------------ |
+| Role enum          | `enum TagRole: case EntityTag, ...`        |
+| Context handling   | `using config: Config =>`                  |
+| Implicit resources | `given Resource[IO, A]`                    |
+| Type-safe fallback | `Option.getOrElse(default)`                |
+| Pipeline chaining  | `stream.map(...).filter(...).evalMap(...)` |
 
-Includes:
+## Interaction with Other Agents
 
-* Syntax guides
-* Type system docs
-* Contextual abstraction (`given`, `using`)
-* Metaprogramming guides
-* Desugaring references
+* `Fs2XmlDoc`: Resolves low-level XML event types and trait implementations
+* `TestAgent`: Ensures test code also uses idiomatic Scala 3
+* `XmlToRdf`: Refactors core logic to follow best Scala 3 streaming and compositional structure
 
-## Scope of Responsibility
+## Future Directions
 
-* Validate that generated Scala code is valid Scala 3
-* Aid in debugging or refactoring code written in idiomatic Scala 3
-* Reference compiler behavior when precise semantics are needed (e.g., type inference, macro expansion)
+* Automate compiler-based linting or suggestions (e.g., `scalafix`, `scalafmt`)
+* Add `@main` annotations for SBT-friendly testable entrypoints
+* Define formal typeclasses for RDF term generation (`EmitSyntax`, `EmitSemantics`)
+* Introduce `inline` or macro expansion points for critical serialization logic
 
-## Agent Behavior
+---
 
-When Codex is asked to:
-
-* Write new Scala 3 code → prefer idiomatic modern syntax
-* Validate or correct existing Scala 3 code → refer to actual compiler implementation when needed
-* Explain a feature or syntax → quote `_docs` or compiler logic if available
-* Debug compilation issues → trace to specific compiler phases or desugarings
-
-## Scala 3 Features This Agent Prioritizes
-
-* **Intersection & Union Types**: `A & B`, `A | B`
-* **Contextual Abstractions**: `given`, `using`, extension methods
-* **Enums and ADTs**: idiomatic sealed hierarchies and match safety
-* **Inline and Macros**: compile-time logic
-* **TASTy Reflection**: introspection and symbolic manipulation
-* **Pattern Matching Enhancements**: match types, typed patterns
-
-## When to Reference Compiler Source
-
-Use the compiler source (e.g., `Typer.scala`, `TypeComparer.scala`, `ElimRepeated.scala`) to:
-
-* Explain desugarings of syntax (e.g., for-comprehension, `given/using`)
-* Justify type inference outcomes
-* Resolve ambiguities in macro usage
-* Validate that syntax is not just allowed but *resolved correctly*
-
-## Usage Notes
-
-* Codex should **not** suggest Scala 2–style workarounds (e.g., implicits, manual boilerplate)
-* Avoid third-party macro libraries or Java interop unless explicitly permitted
-* Use Scala 3 idioms, especially when modifying any of:
-
-  * `XmlToRdf.scala`
-  * `XmlInfoset.scala`
-  * `RdfEmitter.scala` (if it exists)
-
-## Example Guidance
-
-**Instead of**:
-
-```scala
-implicit val decoder: XmlDecoder[MyType] = ...
-```
-
-**Use**:
-
-```scala
-given XmlDecoder[MyType] = ...
-```
-
-**Desugaring Reference**:
-See: `compiler/src/dotty/tools/dotc/typer/Namer.scala` for how `given` is resolved and auto-inserted.
+Prompt with “continue” to proceed to the next agent: `TestAgent`.

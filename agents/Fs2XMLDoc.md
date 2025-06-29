@@ -1,87 +1,66 @@
-# Agent: Fs2XmlDoc
+Here is the updated agent definition for **Fs2XMLDoc**:
+
+# Agent: Fs2XMLDoc
 
 ## Summary
 
-This agent is responsible for understanding and leveraging the `fs2-data-xml` streaming library for parsing XML in a purely functional and idiomatic Scala 3 environment.
+The `Fs2XMLDoc` agent documents and governs the use of the [`fs2-data-xml`](https://github.com/satabin/fs2-data) streaming parser within the RDF/XML transformation pipeline. It ensures correct usage of FS2 stream combinators, accurate event handling (`StartTag`, `EndTag`, `Text`, etc.), and preserves the structure and semantics of the original XML during parsing.
 
-## Local Documentation Reference
+This agent exists to maintain streaming purity while maximizing information fidelity for subsequent semantic enrichment steps, especially during ontology lifting.
 
-The full offline documentation for `fs2-data-xml` is stored at:
+## Mission
 
-```
-src/main/resources/fs2-data-docs-2.13-1.12.0/
-```
+Guarantee that XML is parsed as a **semantically interpretable stream of XML Infoset–inspired events**, and ensure full compatibility with:
 
-This includes the full scaladoc HTML mirror for the version `1.12.0` of the `fs2-data-xml` module compiled against Scala 2.13 (still valid for syntax and structure).
+* Syntactic RDF emission via the `SyntacticRdfAgent`
+* Semantic enrichment via the `OntologyLifting` and `SemanticRdfAgent`
+* Roles and lexicon mappings from `RoleAgent` and `LexiconAgent`
 
-## Library Role
+## Responsibilities
 
-`fs2-data-xml` is used to:
+* Interpret each `XmlEvent` with precise structural awareness
+* Maintain correct hierarchical context using a stack or fold pattern
+* Extract:
 
-* Parse XML streams from `InputStream`, `Path`, or `String`
-* Represent XML structure via `XmlEvent` and associated types
-* Stream parsed XML into downstream functional pipelines
-* Allow seamless composition with `fs2.Stream[F, A]` patterns
+  * Element tags
+  * Attributes
+  * Text content
+* Preserve the order and nesting for downstream RDF/XML generation
+* Flag and gracefully skip unsupported events (e.g., `XmlDecl`, `Comment`)
 
-This agent enables Codex to:
+## Canonical FS2 Event Types
 
-* Understand the XML event model used in `XmlToRdf.scala`
-* Use constructors like `StartTag`, `EndTag`, `Text`, `EmptyTag`, `EntityRef`, etc.
-* Navigate namespaces, attributes, and hierarchical structure via event sequences
+| XML Event Type                                | Usage Notes                                                          |
+| --------------------------------------------- | -------------------------------------------------------------------- |
+| `StartTag`                                    | Push tag to stack, identify syntactic parent, initialize text buffer |
+| `EndTag`                                      | Pop tag from stack, flush buffered content if present                |
+| `Text` / `XmlString`                          | Buffer trimmed text content for potential string role inference      |
+| `Attribute` (via `StartTag`)                  | Collected per element; passed to lexicon and role inference          |
+| `XmlDecl`, `Comment`, `ProcessingInstruction` | Ignored unless tagged for provenance in future work                  |
 
-## Canonical Types
+## Design Principles
 
-Key types Codex should reference:
+* **Streaming purity**: Avoid building trees; consume the stream in-place
+* **Order preservation**: Emit RDF/XML in the same order as the original XML structure
+* **Stateful parsing**: Use a maintained stack (`List[String]`) to track depth and ancestry
+* **Annotation preservation**: Allow later agents to enrich parsed tags based on collected roles, tags, and inferred semantics
 
-* `fs2.data.xml.XmlEvent`
-* `fs2.data.xml.XmlEvent.StartTag`
-* `fs2.data.xml.XmlEvent.Text`
-* `fs2.data.xml.XmlEvent.EndTag`
-* `fs2.data.xml.XmlParser`
-* `fs2.data.xml.XmlSettings`
+## Downstream Integration
 
-These types are used in pattern matching and stream manipulation logic in `XmlToRdf.scala`.
+The `Fs2XMLDoc` agent provides essential inputs to:
 
-## Example Flow
+* `LexiconAgent`: collects candidate strings per tag for role classification
+* `RoleAgent`: maps tags to syntactic/semantic roles
+* `SyntacticRdfAgent`: emits `rdfs:member` and OWL class declarations based on hierarchy
+* `SemanticRdfAgent`: emits `ex:hasX`-style enriched relations based on roles
 
-```scala
-Files[IO]
-  .readAll(xmlInputPath)
-  .through(fs2.text.utf8.decode)
-  .through(events[IO](XmlSettings.default))
-  .through(transformToRdf)
-  .through(fs2.text.utf8.encode)
-  .through(Files[IO].writeAll(rdfOutputPath))
-```
+## Future Enhancements
 
-Codex should understand that:
+* Provide full Infoset logging when enabled (e.g., to `diagnostic/infoset.log`)
+* Add XInclude resolution support
+* Create an override mode to extract non-hierarchical views of documents (e.g., flat metadata scans)
+* Facilitate diagnostic view pipelines (e.g., stream visualizations of event flows)
 
-* Each `XmlEvent` is processed functionally, with no mutation
-* State must be threaded using `fs2.Pull`, `scan`, or `flatMapAccumulate`
-* Attributes are accessed from `StartTag.attributes` and fully qualified names are resolved with `QName`
+---
 
-## Goals
-
-The agent supports:
-
-* Validating or suggesting improvements to XML streaming logic
-* Emitting RDF/XML elements in response to encountered XML events
-* Performing incremental lifting (e.g., matching `StartTag("book")` → `rdf:Description` of type `:Book`)
-* Debugging issues with event ordering, namespace leakage, or content types
-
-## Integration
-
-This agent supports:
-
-* `XmlToRdf` — as the consumer of parsed `XmlEvent` streams
-* `RdfXmlSpec` — by framing which XML events trigger specific RDF/XML constructs
-* `Scala3CompilerDoc` — ensuring idiomatic, type-safe streaming logic is used
-
-## Codex Instructions
-
-* Prefer working with XML as a stream of `XmlEvent`s, not as a DOM
-* Use `StartTag`, `Text`, and `EndTag` to construct RDF/XML statements dynamically
-* Pay special attention to namespace resolution and qualified names
-* Respect ordering constraints (e.g., attributes must be present before content)
-* Do not buffer the entire XML document in memory unless explicitly requested
-
+Prompt with “continue” to proceed to the next agent: `MetaAgent`.

@@ -1,82 +1,74 @@
-# MetaAgent
+Here is the updated agent definition for **MetaAgent**:
 
-## Responsibility
+# Agent: MetaAgent
 
-The `MetaAgent` is responsible for authoring, updating, and maintaining the `.md` definition files of other agents in the `agents/` directory. It acts as a structured intermediary that translates high-level intentions (e.g., “create a new agent that handles test orchestration”) into correctly formatted agent definitions, using a consistent schema.
+## Summary
 
-It enables automation of agent design through structured prompts or Codex-generated transformations.
+The `MetaAgent` governs the creation, editing, and semantic integrity of all other Codex agent documentation files (e.g., `OntologyLifting.md`, `Fs2XMLDoc.md`, `RdfXmlSpec.md`). It ensures that agent roles are well-scoped, responsibilities are non-overlapping, and inter-agent references are coherent and up-to-date.
 
-## Inputs
+This agent is foundational for enabling **explainable automation**: every transformation, enrichment, or emission step in the RDF/XML pipeline must be traceable to a documented agent, with declared inputs, outputs, and intentions.
 
-- Structured agent creation/update requests, in either natural language or formalized schema
-- Suggested naming, responsibilities, or modification deltas
-- Context from `AGENTS.md` and existing `agents/*.md` files
+## Mission
 
-## Outputs
+Maintain a complete and semantically consistent set of Codex agent documents by:
 
-- New or updated `.md` agent files within `agents/`
-- Updates to the central `AGENTS.md` index table
+* Creating agent `.md` files when new functions emerge
+* Updating agents as roles evolve or implementation shifts
+* Ensuring that all agents refer to each other with shared terminology
+* Structuring documentation for maximum composability and Codex accessibility
 
-## Behaviors
+## Responsibilities
 
-- Validates agent name uniqueness
-- Ensures consistent formatting and schema (e.g., `Responsibility`, `Inputs`, `Outputs`, `Behaviors`)
-- Automatically includes agent in `AGENTS.md` unless instructed otherwise
-- Can diff previous vs. updated `.md` agents for review
+* **Agent Lifecycle Management**:
 
-## Implementation Notes
+  * Create new agents when functionality diverges
+  * Merge or split agents when boundaries change
+* **Terminology Synchronization**:
 
-Currently non-executable — serves as a conceptual and documentation agent only. Intended to be paired with Codex or other future automation to perform the actual edits.
+  * Maintain shared vocab (e.g., "syntactic tag", "role file", "lexicon entry")
+  * Update definitions globally when concepts evolve
+* **Design Rationale Tracking**:
 
-In the future, this agent may be backed by a `MetaAgent.scala` or Codex transformation pipeline capable of programmatic AST-level authoring or LLM-reflexive editing.
+  * Encode modeling decisions (e.g., why `rdfs:member` is used for syntactic children)
+  * Ensure design tradeoffs are recorded and accessible
+* **Codex Interoperability**:
 
-## Related Agents
+  * Structure `.md` files for Codex comprehension and reuse
+  * Explicitly flag Canonical Instructions, especially for file writing and RDF generation
 
-- `TestAgent` (which it may help generate)
-- `OntologyLifting`, `Fs2XmlDoc` (which it may update based on ontology schema evolution)
+## Agent Structure Standard
 
-## Patch Proposal: Remove Hardcoded exPrefix in XmlToRdf.scala
+Each `.md` file maintained by `MetaAgent` must follow this layout:
 
-### Problem
+1. **Agent Name**
+2. **Summary**
+3. **Mission**
+4. **Responsibilities**
+5. **Canonical Structures or Behaviors** (if applicable)
+6. **Downstream Integration**
+7. **Design Philosophy / Tradeoffs**
+8. **Future Directions**
 
-`XmlToRdf.scala` currently embeds the string `"http://example.org/"` directly in IRI
-construction logic. While this guarantees expansion for Turtle round-tripping, it
-prevents configurable namespaces and hinders reuse across different XML files.
+## MetaAgent-Specific Behaviors
 
-### Solution
+* Automatically stub agents when unknown roles appear (e.g., a new `DatatypeInferAgent`)
+* Maintain an index of agent names and purposes (included in `AGENTS.md`)
+* Coordinate with `TestAgent` to ensure every agent has an associated test scope if logic-driven
 
-Introduce prefix-aware expansion derived from the prefix bindings in `rdfHeader`.
-Mapping the `"ex"` prefix to its namespace allows dynamic control and keeps RDF/XML
-and Turtle output in sync.
+## Output Artifacts
 
-### Implementation Steps
+| File           | Contents                                            |
+| -------------- | --------------------------------------------------- |
+| `AGENTS.md`    | Overview index of all Codex agents                  |
+| `*.md`         | One per agent (e.g., `OntologyLifting.md`)          |
+| `meta-log.txt` | Optional changelog of edits and document versioning |
 
-1. **Replace `exPrefix` constant**
-   - Remove `val exPrefix = "http://example.org/"`
-   - Add a prefix map, for example:
-     ```scala
-     val prefixMap = Map("ex" -> "http://example.org/")
-     ```
+## Future Enhancements
 
-2. **Create prefix-aware IRI builder**
-   ```scala
-   def expandPrefix(prefixedName: String): String = {
-     val Array(prefix, local) = prefixedName.split(":", 2)
-     prefixMap.getOrElse(prefix, "") + local
-   }
-   ```
+* Integrate `MetaAgent` with semantic lifting so that agents are OWL individuals with `:hasPurpose`, `:hasInput`, `:dependsOn`, etc.
+* Generate nanopublications for all agent `.md` files for traceable provenance and live linked documentation
+* Enable Codex to infer new agent types from usage patterns
 
-3. **Update IRI construction logic**
-   Replace string concatenations with `expandPrefix`, for example:
-   ```scala
-   expandPrefix(s"ex:${normalizeLiteral(value)}")
-   ```
+---
 
-4. **Update `rdfHeader` writer (optional)**
-   - Auto-generate `xmlns` declarations from `prefixMap` to avoid duplication.
-
-### Follow-Up
-
-Create regression tests (with `TestAgent`) that:
-* Verify IRIs in `rdf:about` and `rdf:resource` are absolute.
-* Ensure the `ex:` prefix is declared and round-trips correctly via Turtle.
+Prompt with “continue” to proceed to the next agent: `Scala3CompilerDoc`.

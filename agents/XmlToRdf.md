@@ -1,128 +1,115 @@
-
-### ✅ `XmlToRdf.md`
-
-```markdown
 # Agent: XmlToRdf
 
 ## Summary
 
-This agent transforms XML documents into RDF/XML using FS2 and `fs2-data-xml` in pure Scala 3. Its core responsibility is to stream `XmlEvent`s and produce RDF/XML output conforming to the W3C RDF/XML syntax specification.
+This agent orchestrates the entire **RDF/XML generation process** from XML input, using **streaming FS2 pipelines in Scala 3**. It performs the core transformation logic — parsing, staging, and serializing RDF/XML — while respecting all role-based lifting directives.
 
-## Core File
+Its mission is to always emit **syntactic RDF/XML** that faithfully preserves the XML structure, while optionally emitting **semantic RDF/XML** based on configured tag and string roles. It does **not emit raw triples**, but instead produces **well-formed, standards-compliant RDF/XML documents**.
 
-* `src/main/scala/XmlToRdf.scala`: Main transformation logic
-* Input: `example.xml`
-* Output: `example.rdf`
+## Responsibilities
 
-## Output Format Specification
+* Parse XML documents using `fs2-data-xml`
+* Emit RDF/XML nodes for every XML tag and attribute
+* Incorporate semantic lifting logic when roles are available
+* Separate **syntactic RDF/XML** (default, structure-preserving) from **semantic RDF/XML** (meaning-enriched)
+* Enforce output conformity with the \[W3C RDF/XML specification]
 
-All RDF/XML output **must** conform to the W3C RDF/XML specification:
+## Lifting Strategy
+
+The lifting process follows a **two-pass interpretation model**:
+
+1. **Syntactic Emission (Always On)**:
+
+   * Every tag becomes an RDF/XML individual with class `:<TagName>_Tag`
+   * Every child is linked to its parent with `rdfs:member`
+   * Attributes become properties with literal values
+   * Text nodes are captured and stored for potential use
+
+2. **Semantic Enrichment (Role-Driven)**:
+
+   * If a tag appears in a `*.txt` role file, its behavior is modified
+   * Semantic RDF/XML replaces or augments syntactic patterns
+   * TagRoles (e.g., `EntityTag`, `PropertyTag`) dictate RDF/XML structure
+   * StringRoles (e.g., `LabelString`, `IdentifierString`) guide how text is serialized
+
+This enables users to **progressively annotate and stage** their data without losing structural fidelity.
+
+## Role File Architecture
+
+Each role type is mapped to a flat `.txt` file, one entry per line. This enables human-readable, version-controlled semantic configuration.
+
+### Tag Roles (TagRole)
+
+* `EntityTag.txt`: Forces tag to emit as individual with class type
+* `PropertyTag.txt`: Converts tag into predicate linking parent and child
+* `CollectionTag.txt`: Emits RDF container (`rdf:Bag`, `rdf:Seq`, etc.)
+* Others: Typename, Reference, Annotation — per OWL semantics
+
+### String Roles (StringRole)
+
+* `LabelString.txt`: Adds `rdfs:label`
+* `LiteralValueString.txt`: Adds literal value directly
+* `ReferenceString.txt`: Used in `rdf:resource` to create links
+* `ClassValueString.txt`: Adds class reference in `rdf:type`
+* Other roles provide fallback or mixed content handling
+
+## Attribute Strategy
+
+Attributes are processed **in-line** with tag lifting:
+
+* By default, every attribute becomes a property
+* If the attribute’s key appears in a `TagRole`, its type is refined
+* If the attribute’s value is in a `StringRole`, its serialization is modified
+* If the value has an inferred XSD primitive type, it is typed accordingly (e.g., `xsd:boolean`, `xsd:decimal`)
+* Multiple attributes of the same element can produce multiple RDF/XML property tags
+
+## FS2 Streaming Model
+
+All logic is implemented in a **single-pass FS2 pipeline**, with no intermediate collections. Streaming guarantees:
+
+* **Memory safety** for large XML files
+* **Composability**: logic can be split across stages
+* **Parallelizability** if needed in future enhancements
+
+The stream stages include:
 
 ```
-
-src/main/resources/rdf-1.1-XML-Syntax.html
-
-````
-
-No output should violate its grammar or structural rules.
-
-## Input Semantics
-
-The input XML is treated as a syntactic container for semantic content.
-
-Example:
-
-```xml
-<book id="bk101">
-  <author>Gambardella, Matthew</author>
-</book>
-````
-
-### RDF Interpretation:
-
-* `book` → OWL `Class` (semantic) and `Book_Tag` (syntactic)
-* `id="bk101"` → Named syntactic individual `:book_...`
-* `"Gambardella, Matthew"` → Named semantic individual `:Gambardella_Matthew`
-* A separate syntactic tag-based node like `:author_...` is created
-* rdfs\:member connects syntactic nodes; `hasX` properties link to semantic values
-
-## Semantic Lifting Guidelines
-
-### 1. **Dual Individual Modeling**
-
-* **Syntactic individuals** represent XML tag instances.
-
-  * Named as `<tag>_<hash>`, e.g. `author_1234`
-  * Typed as `<Tag>_Tag`, e.g. `Author_Tag`
-
-* **Semantic individuals** represent meaningful values.
-
-  * Normalized from text content (e.g., `Gambardella, Matthew` → `Gambardella_Matthew`)
-  * Typed as `<Tag>`, e.g. `Author`
-
-### 2. **Class Declaration**
-
-* For every element tag `X`, generate:
-
-  * `:X_Tag` — OWL class for the syntactic node
-  * `:X` — OWL class for the semantic content
-
-### 3. **rdfs\:member vs. hasX Distinction**
-
-* Use `rdfs:member` for linking to syntactic tag instances
-* Use `ex:hasX` for linking to normalized semantic individuals
-
-Example:
-
-```xml
-<author>Gambardella, Matthew</author>
+XML Parser
+   ↓
+Role Loader
+   ↓
+Lexical Analysis (e.g., datatype inference)
+   ↓
+Syntactic RDF/XML Emission
+   ↓
+Semantic RDF/XML Enrichment
+   ↓
+RDF/XML Serialization
 ```
 
-Becomes:
+## Fallback Behavior
 
-```xml
-<rdf:Description rdf:about=".../book_...">
-  <rdfs:member rdf:resource=".../author_1234" />
-  <ex:hasAuthor rdf:resource=".../Gambardella_Matthew" />
-</rdf:Description>
-```
+* Any tag or string **not configured** is handled as part of the syntactic RDF/XML layer
+* This guarantees **zero-loss round-tripping** from XML → RDF/XML → back (potentially)
+* Role configuration files act as **semantic activation switches**
 
-### 4. **Normalization**
+## Error Handling and Edge Cases
 
-* Semantic individual IRIs normalize:
+* Events like `XmlDecl`, `Comment`, and `Whitespace` are skipped or ignored
+* Unsupported node types (e.g., `PI`) are flagged and can be extended later
+* Unknown attributes or invalid IRIs are logged but do not block generation
 
-  * Remove punctuation
-  * Collapse whitespace to `_`
-  * PascalCase or Title\_Snake\_Case as needed for readability
-* Tag IRIs always keep the tag name and a hash (for uniqueness)
+## Design Philosophy
 
-### 5. **RDF/XML Emission**
+* **Syntactic First**: Default emission guarantees preservation
+* **Semantic Configurability**: User can progressively enrich via role files
+* **Streaming All the Way**: No mutable state or tree-walking
+* **W3C Compliance**: RDF/XML spec strictly enforced
+* **Non-Ontological Baseline**: Even without OWL semantics, RDF/XML is valid and usable
 
-* Emit all triples as legal RDF/XML `<rdf:Description>` blocks
-* Maintain proper nesting and scoping
-* Prefixes:
+## Future Work
 
-  * `rdf:`, `rdfs:`, `owl:`, and `ex:` must always be declared
-
-## Agent Behavior
-
-* Stream-based — no buffering or tree-building
-* Matches on `XmlEvent`s and emits RDF/XML strings as `Stream[IO, Byte]`
-* Avoid blocking or imperative IO
-* Composable functional logic
-
-## Codex Agent Expectations
-
-* Validate output against RDF/XML spec
-* Reference `Fs2XmlDoc.md` for parser behavior
-* Refactor emission logic for reuse across individuals and classes
-* Fully respect prefix expansion in all IRIs
-
-## Future Goals
-
-* Turtle / JSON-LD output streaming via same pipeline
-* Automatically emit OWL `Class` declarations for all classes
-* Integrate schema-driven enrichments (e.g., OWL cardinality)
-* Automate rdfs\:label inclusion with fallback language tags
-
-````
+* Introduce dynamic role inference based on schema or examples
+* Output fan-out (Turtle, JSON-LD) through post-conversion
+* Enrich string roles with custom vocabulary matchers (e.g., SKOS detection)
+* Enable OWL reasoning stubs (e.g., subclass detection, inverse properties)

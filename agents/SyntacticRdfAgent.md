@@ -3,7 +3,7 @@
 
 ## Summary
 
-The `SyntacticRdfAgent` is responsible for generating **RDF/XML statements that reflect the syntactic structure** of the original XML document. These RDF statements are always emitted, regardless of whether semantic roles are present. The purpose of this agent is to provide a **lossless, structurally faithful RDF serialization** of the XML content.
+The `SyntacticRdfAgent` is responsible for generating **RDF/XML statements that reflect the syntactic structure** of the original XML document. Implemented with **FS2 streams** in **Scala 3**, these statements are always emitted, regardless of whether semantic roles are present. The purpose of this agent is to provide a **lossless, structurally faithful RDF serialization** of the XML content.
 
 This agent serves as the **guaranteed fallback** representation — enabling downstream processes to reconstruct the original XML tree or enrich it later without re-parsing the XML itself.
 
@@ -86,4 +86,10 @@ Syntactic RDF/XML emitted (default namespace `ex:` assumed):
 * Support optional base64 encoding of content (for binary-safe lifting)
 * Emit lexical annotations (e.g., inferred datatype hints) as RDF comments
 * Optionally include `rdf:parseType="Literal"` when content is mixed or unsafe
+
+## AGENTS.md Entry
+
+| Agent               | Responsibility |
+| ------------------- | -------------- |
+| `SyntacticRdfAgent` | Emits streaming RDF/XML that mirrors the source XML tree. Always active and adds inferred XSD datatypes as syntactic sugar. |
 

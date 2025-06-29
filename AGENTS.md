@@ -20,7 +20,7 @@ Each agent is a modular `.md` file and corresponds to a discrete responsibility.
 
 | Agent Name          | Responsibility                                                                                    |
 | ------------------- | ------------------------------------------------------------------------------------------------- |
-| `XmlToRdf`          | Streaming orchestrator. Parses XML, applies semantic roles, emits RDF/XML compliant output.       |
+| `XmlToRdf`          | Streaming orchestrator in Scala 3/FS2. Emits syntactic RDF/XML always and semantic RDF/XML only when staged roles exist. |
 | `OntologyLifting`   | Defines logic for RDF/XML semantic enrichment, distinguishing syntactic vs. semantic individuals. |
 | `Fs2XmlDoc`         | Provides FS2 and `fs2-data-xml` streaming guidance and XML parsing idioms.                        |
 | `RdfXmlSpec`        | Validates that RDF/XML output matches W3C RDF/XML Syntax Specification.                           |
@@ -35,9 +35,9 @@ Each agent is a modular `.md` file and corresponds to a discrete responsibility.
 | Subagent            | Responsibility                                                                                        |
 | ------------------- | ----------------------------------------------------------------------------------------------------- |
 | `LexiconAgent`      | Collects tag names and inferred XSD primitive types. Generates the `summary.csvw` output.             |
-| `RoleAgent`         | Loads staged roles from `roles/TagRoles/` and `roles/StringRoles/`. Supports empty-file defaults.     |
-| `SyntacticRdfAgent` | Emits RDF/XML structure based on XML tag nesting, containment, and default tag typing.                |
-| `SemanticRdfAgent`  | Emits RDF/XML enrichment based on roles like `EntityTag`, `PropertyTag`, `LabelString`, etc.          |
+| `RoleAgent`         | Detects staged role files under `roles/` and signals when semantic RDF/XML should be emitted.         |
+| `SyntacticRdfAgent` | Always emits structural RDF/XML using FS2 streams and inferred XSD datatypes.                         |
+| `SemanticRdfAgent`  | Emits additional RDF/XML semantics only when role files are present, using Scala 3 FS2 streams.       |
 | `CsvwAgent`         | Writes `summary.csvw` metadata file summarizing all tag types, datatypes, and their semantic staging. |
 
 ---

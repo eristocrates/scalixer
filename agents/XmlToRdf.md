@@ -4,7 +4,7 @@
 
 This agent orchestrates the entire **RDF/XML generation process** from XML input, using **streaming FS2 pipelines in Scala 3**. It performs the core transformation logic — parsing, staging, and serializing RDF/XML — while respecting all role-based lifting directives.
 
-Its mission is to always emit **syntactic RDF/XML** that faithfully preserves the XML structure, while optionally emitting **semantic RDF/XML** based on configured tag and string roles. It does **not emit raw triples**, but instead produces **well-formed, standards-compliant RDF/XML documents**.
+Its mission is to always emit **syntactic RDF/XML** that faithfully preserves the XML structure, while optionally emitting **semantic RDF/XML** when staging files exist under the `roles/` directory. It does **not emit raw triples**, but produces **well-formed, standards-compliant RDF/XML documents**. Inferred XSD primitive types are emitted as syntactic sugar regardless of roles.
 
 ## Responsibilities
 
@@ -113,3 +113,9 @@ RDF/XML Serialization
 * Output fan-out (Turtle, JSON-LD) through post-conversion
 * Enrich string roles with custom vocabulary matchers (e.g., SKOS detection)
 * Enable OWL reasoning stubs (e.g., subclass detection, inverse properties)
+
+## AGENTS.md Entry
+
+| Agent      | Responsibility |
+| ---------- | -------------- |
+| `XmlToRdf` | FS2-streaming orchestrator converting XML to RDF/XML. Emits syntactic RDF/XML for every document and conditional semantic RDF/XML when staging files exist under `roles/`. |

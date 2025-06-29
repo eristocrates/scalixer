@@ -2,7 +2,7 @@
 
 ## Summary
 
-The `RoleAgent` governs the interpretation of lexicon-defined `tagRole` and `stringRole` values to determine whether **semantic RDF/XML statements** should be emitted during transformation. It operates as a **semantic dispatch controller**, consulting role configuration files produced by the `LexiconAgent` to orchestrate conditional semantic enrichment during RDF generation.
+The `RoleAgent` governs the interpretation of lexicon-defined `tagRole` and `stringRole` values to determine whether **semantic RDF/XML statements** should be emitted during transformation. It operates as a **semantic dispatch controller**, consulting role configuration files produced by the `LexiconAgent`. If no staging files are present under `roles/`, semantic emission is disabled entirely.
 
 ## Mission
 
@@ -73,4 +73,10 @@ ClassTag
 * Add `DefaultRoleRules.scala` to heuristically guess roles if unspecified
 * Enable warnings for mismatches between datatype and role (e.g., `xsd:boolean` with `Label`)
 * Support role ontology vocabularies (e.g., use RDF vocabulary for roles)
+
+## AGENTS.md Entry
+
+| Agent      | Responsibility |
+| ---------- | -------------- |
+| `RoleAgent` | Loads role files from `roles/` and signals whether semantic RDF/XML should be produced. No staged files → semantics disabled. |
 

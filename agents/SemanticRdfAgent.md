@@ -3,7 +3,7 @@
 
 ## Summary
 
-The `SemanticRdfAgent` is responsible for emitting **semantically enriched RDF/XML** derived from the roles assigned to XML tags or values. It **only emits RDF/XML when explicit role configuration files are present** — meaning semantic RDF is always opt-in and guided by the user's interpretive intention.
+The `SemanticRdfAgent` is responsible for emitting **semantically enriched RDF/XML** derived from the roles assigned to XML tags or values. Built with **FS2 streaming** in **Scala 3**, it **only emits RDF/XML when explicit role configuration files are present** — meaning semantic RDF is always opt-in and guided by the user's interpretive intention.
 
 Unlike the always-on `SyntacticRdfAgent`, this agent **lifts XML content into meaningful OWL constructs** such as domain-specific classes, object properties, data properties, and individuals.
 
@@ -94,3 +94,9 @@ Semantic RDF/XML might include:
 * Support role ontology to formalize allowed `tagRole`/`stringRole` values
 * Introduce `skos:Concept` or `prov:Entity` roles where applicable
 * Integrate with annotation frameworks for justification or provenance
+
+## AGENTS.md Entry
+
+| Agent              | Responsibility |
+| ------------------ | -------------- |
+| `SemanticRdfAgent` | Emits role-driven semantic RDF/XML via FS2 streams only when staging files exist. |

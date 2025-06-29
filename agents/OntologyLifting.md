@@ -3,7 +3,7 @@
 
 ## Summary
 
-This agent is responsible for semantically enriching parsed XML content into **valid RDF/XML**, using role-based interpretation to structure and annotate the output as meaningful OWL constructs.
+This agent is responsible for semantically enriching parsed XML content into **valid RDF/XML**, using role-based interpretation to structure and annotate the output as meaningful OWL constructs. It relies on **FS2 streaming** and idiomatic **Scala 3** patterns throughout.
 
 Its mission is to **lift** XML structures into a semantically rich RDF/XML representation — where *lifting* refers to the process of mapping structural XML features into higher-level OWL semantics using external role configuration files.
 
@@ -93,3 +93,9 @@ When roles are configured, the agent **lifts** specific tags and strings into hi
 * Integrate role reasoning (e.g., OWL inference for class hierarchies)
 * Add support for semantic vocabularies (SKOS, DC, PROV-O) via role-to-namespace mapping
 * Allow users to specify default role behavior per namespace or tag pattern
+
+## AGENTS.md Entry
+
+| Agent             | Responsibility |
+| ----------------- | -------------- |
+| `OntologyLifting` | Lifts XML events into OWL-aware RDF/XML using Scala 3 FS2 streams; emits semantic statements only when roles are staged and preserves inferred XSD types as syntactic sugar. |

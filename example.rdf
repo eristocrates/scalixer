@@ -4,7 +4,10 @@
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:ex="http://example.org/"
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><rdf:Description rdf:about="http://example.org/xmlString">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
 <rdf:Description rdf:about="http://example.org/Document">
   <rdf:type rdf:resource="http://example.org/XmlDocument"/>
   <ex:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string" >file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml</ex:filePath>
@@ -14,29 +17,114 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/SemanticTechOverview_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Xmlns_Attribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlAttribute"/>
+</rdf:Description>
+<rdf:Description rdf:about="xmlns:Sw_Attribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlAttribute"/>
+</rdf:Description>
+<rdf:Description rdf:about="xmlns:Ld_Attribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlAttribute"/>
+</rdf:Description>
+<rdf:Description rdf:about="xmlns:Prov_Attribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlAttribute"/>
+</rdf:Description>
+<rdf:Description rdf:about="xmlns:Micro_Attribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlAttribute"/>
+</rdf:Description>
+<rdf:Description rdf:about="xmlns:Np_Attribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlAttribute"/>
+</rdf:Description>
+<rdf:Description rdf:about="xmlns:Ls_Attribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlAttribute"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Version_Attribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlAttribute"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/SemanticTechOverview_1">
   <rdf:type rdf:resource="http://example.org/SemanticTechOverview_Tag"/>
-  <ex:hasXmlns rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://example.org/semantic</ex:hasXmlns>
-  <ex:hasSw rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/2001/sw/</ex:hasSw>
-  <ex:hasLd rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/ns/ld/</ex:hasLd>
-  <ex:hasProv rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/ns/prov#</ex:hasProv>
-  <ex:hasMicro rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://microformats.org/</ex:hasMicro>
-  <ex:hasNp rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.org/nanopub#</ex:hasNp>
-  <ex:hasLs rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://w3id.org/ldes#</ex:hasLs>
-  <ex:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</ex:hasVersion>
+  <ex:attribute rdf:resource="http://example.org/xmlns_attribute_1"/>
+  <ex:attribute rdf:resource="xmlns:sw_attribute_1"/>
+  <ex:attribute rdf:resource="xmlns:ld_attribute_1"/>
+  <ex:attribute rdf:resource="xmlns:prov_attribute_1"/>
+  <ex:attribute rdf:resource="xmlns:micro_attribute_1"/>
+  <ex:attribute rdf:resource="xmlns:np_attribute_1"/>
+  <ex:attribute rdf:resource="xmlns:ls_attribute_1"/>
+  <ex:attribute rdf:resource="http://example.org/version_attribute_1"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/xmlns_attribute_1">
+  <rdf:type rdf:resource="http://example.org/Xmlns_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xmlns</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://example.org/semantic</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="xmlns:sw_attribute_1">
+  <rdf:type rdf:resource="xmlns:Sw_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sw</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/2001/sw/</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="xmlns:ld_attribute_1">
+  <rdf:type rdf:resource="xmlns:Ld_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ld</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/ns/ld/</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="xmlns:prov_attribute_1">
+  <rdf:type rdf:resource="xmlns:Prov_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prov</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/ns/prov#</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="xmlns:micro_attribute_1">
+  <rdf:type rdf:resource="xmlns:Micro_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">micro</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://microformats.org/</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="xmlns:np_attribute_1">
+  <rdf:type rdf:resource="xmlns:Np_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">np</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.org/nanopub#</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="xmlns:ls_attribute_1">
+  <rdf:type rdf:resource="xmlns:Ls_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ls</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://w3id.org/ldes#</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/version_attribute_1">
+  <rdf:type rdf:resource="http://example.org/Version_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">version</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</ex:attribute_value>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Technologies_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Preferred_Attribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlAttribute"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/SemanticTechOverview_1">
   <rdfs:member rdf:resource="http://example.org/Technologies_1"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Technologies_1">
   <rdf:type rdf:resource="http://example.org/Technologies_Tag"/>
+  <ex:attribute rdf:resource="http://example.org/preferred_attribute_1"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/preferred_attribute_1">
+  <rdf:type rdf:resource="http://example.org/Preferred_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">preferred</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</ex:attribute_value>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/CoreStandards_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Technologies_1">
   <rdfs:member rdf:resource="http://example.org/CoreStandards_1"/>
@@ -46,15 +134,37 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Status_Attribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlAttribute"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Category_Attribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlAttribute"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/CoreStandards_1">
   <rdfs:member rdf:resource="http://example.org/Standard_1"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_1">
   <rdf:type rdf:resource="http://example.org/Standard_Tag"/>
+  <ex:attribute rdf:resource="http://example.org/status_attribute_1"/>
+  <ex:attribute rdf:resource="http://example.org/category_attribute_1"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/status_attribute_1">
+  <rdf:type rdf:resource="http://example.org/Status_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">status</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stable</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/category_attribute_1">
+  <rdf:type rdf:resource="http://example.org/Category_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">category</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">modeling</ex:attribute_value>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Name_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_1">
   <rdfs:member rdf:resource="http://example.org/Name_1"/>
@@ -62,17 +172,35 @@
 <rdf:Description rdf:about="http://example.org/Name_1">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Name_1">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RDF</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Datatype_Attribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlAttribute"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_1">
   <rdfs:member rdf:resource="http://example.org/Spec_1"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_1">
   <rdf:type rdf:resource="http://example.org/Spec_Tag"/>
+  <ex:attribute rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#datatype_attribute_1"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#datatype_attribute_1">
+  <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Datatype_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">datatype</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:anyURI</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Spec_1">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/TR/rdf11-concepts/</ex:xmlString>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Year_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_1">
   <rdfs:member rdf:resource="http://example.org/Year_1"/>
@@ -80,8 +208,12 @@
 <rdf:Description rdf:about="http://example.org/Year_1">
   <rdf:type rdf:resource="http://example.org/Year_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Year_1">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2014</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_1">
   <rdfs:member rdf:resource="http://example.org/Purpose_1"/>
@@ -89,11 +221,26 @@
 <rdf:Description rdf:about="http://example.org/Purpose_1">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Purpose_1">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Foundation data model for semantic graphs</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/CoreStandards_1">
   <rdfs:member rdf:resource="http://example.org/Standard_2"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_2">
   <rdf:type rdf:resource="http://example.org/Standard_Tag"/>
+  <ex:attribute rdf:resource="http://example.org/status_attribute_2"/>
+  <ex:attribute rdf:resource="http://example.org/category_attribute_2"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/status_attribute_2">
+  <rdf:type rdf:resource="http://example.org/Status_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">status</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stable</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/category_attribute_2">
+  <rdf:type rdf:resource="http://example.org/Category_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">category</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reasoning</ex:attribute_value>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_2">
   <rdfs:member rdf:resource="http://example.org/Name_2"/>
@@ -101,11 +248,30 @@
 <rdf:Description rdf:about="http://example.org/Name_2">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Name_2">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL</ex:xmlString>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Version_Tag">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Standard_2">
+  <rdfs:member rdf:resource="http://example.org/Version_1"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Version_1">
+  <rdf:type rdf:resource="http://example.org/Version_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Version_1">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_2">
   <rdfs:member rdf:resource="http://example.org/Spec_2"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_2">
   <rdf:type rdf:resource="http://example.org/Spec_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Spec_2">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/TR/owl2-overview/</ex:xmlString>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_2">
   <rdfs:member rdf:resource="http://example.org/Year_2"/>
@@ -113,17 +279,45 @@
 <rdf:Description rdf:about="http://example.org/Year_2">
   <rdf:type rdf:resource="http://example.org/Year_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Year_2">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2012</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_2">
   <rdfs:member rdf:resource="http://example.org/Purpose_2"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_2">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Purpose_2">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ontology language for expressing logical structure</ex:xmlString>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Deprecated_Tag">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Standard_2">
+  <rdfs:member rdf:resource="http://example.org/Deprecated_1"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Deprecated_1">
+  <rdf:type rdf:resource="http://example.org/Deprecated_Tag"/>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/CoreStandards_1">
   <rdfs:member rdf:resource="http://example.org/Standard_3"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_3">
   <rdf:type rdf:resource="http://example.org/Standard_Tag"/>
+  <ex:attribute rdf:resource="http://example.org/status_attribute_3"/>
+  <ex:attribute rdf:resource="http://example.org/category_attribute_3"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/status_attribute_3">
+  <rdf:type rdf:resource="http://example.org/Status_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">status</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stable</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/category_attribute_3">
+  <rdf:type rdf:resource="http://example.org/Category_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">category</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">query</ex:attribute_value>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_3">
   <rdfs:member rdf:resource="http://example.org/Name_3"/>
@@ -131,11 +325,17 @@
 <rdf:Description rdf:about="http://example.org/Name_3">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Name_3">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SPARQL</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_3">
   <rdfs:member rdf:resource="http://example.org/Spec_3"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_3">
   <rdf:type rdf:resource="http://example.org/Spec_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Spec_3">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/TR/sparql11-query/</ex:xmlString>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_3">
   <rdfs:member rdf:resource="http://example.org/Year_3"/>
@@ -143,14 +343,21 @@
 <rdf:Description rdf:about="http://example.org/Year_3">
   <rdf:type rdf:resource="http://example.org/Year_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Year_3">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2013</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_3">
   <rdfs:member rdf:resource="http://example.org/Purpose_3"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_3">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Purpose_3">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Query language for RDF</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Serializations_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Technologies_1">
   <rdfs:member rdf:resource="http://example.org/Serializations_1"/>
@@ -160,12 +367,23 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Type_Attribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlAttribute"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Serializations_1">
   <rdfs:member rdf:resource="http://example.org/Format_1"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_1">
   <rdf:type rdf:resource="http://example.org/Format_Tag"/>
+  <ex:attribute rdf:resource="http://example.org/type_attribute_1"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/type_attribute_1">
+  <rdf:type rdf:resource="http://example.org/Type_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">text</ex:attribute_value>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_1">
   <rdfs:member rdf:resource="http://example.org/Name_4"/>
@@ -173,8 +391,12 @@
 <rdf:Description rdf:about="http://example.org/Name_4">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Name_4">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turtle</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/MimeType_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_1">
   <rdfs:member rdf:resource="http://example.org/MimeType_1"/>
@@ -182,17 +404,29 @@
 <rdf:Description rdf:about="http://example.org/MimeType_1">
   <rdf:type rdf:resource="http://example.org/MimeType_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/MimeType_1">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">text/turtle</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_1">
   <rdfs:member rdf:resource="http://example.org/Purpose_4"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_4">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Purpose_4">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Readable RDF syntax</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Serializations_1">
   <rdfs:member rdf:resource="http://example.org/Format_2"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_2">
   <rdf:type rdf:resource="http://example.org/Format_Tag"/>
+  <ex:attribute rdf:resource="http://example.org/type_attribute_2"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/type_attribute_2">
+  <rdf:type rdf:resource="http://example.org/Type_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">json</ex:attribute_value>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_2">
   <rdfs:member rdf:resource="http://example.org/Name_5"/>
@@ -200,11 +434,17 @@
 <rdf:Description rdf:about="http://example.org/Name_5">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Name_5">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JSON-LD</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_2">
   <rdfs:member rdf:resource="http://example.org/MimeType_2"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/MimeType_2">
   <rdf:type rdf:resource="http://example.org/MimeType_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/MimeType_2">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">application/ld+json</ex:xmlString>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_2">
   <rdfs:member rdf:resource="http://example.org/Purpose_5"/>
@@ -212,11 +452,30 @@
 <rdf:Description rdf:about="http://example.org/Purpose_5">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Purpose_5">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JSON-compatible Linked Data</ex:xmlString>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Deprecated_Attribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlAttribute"/>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Serializations_1">
   <rdfs:member rdf:resource="http://example.org/Format_3"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_3">
   <rdf:type rdf:resource="http://example.org/Format_Tag"/>
+  <ex:attribute rdf:resource="http://example.org/type_attribute_3"/>
+  <ex:attribute rdf:resource="http://example.org/deprecated_attribute_1"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/type_attribute_3">
+  <rdf:type rdf:resource="http://example.org/Type_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xml</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/deprecated_attribute_1">
+  <rdf:type rdf:resource="http://example.org/Deprecated_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deprecated</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</ex:attribute_value>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_3">
   <rdfs:member rdf:resource="http://example.org/Name_6"/>
@@ -224,11 +483,17 @@
 <rdf:Description rdf:about="http://example.org/Name_6">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Name_6">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RDF/XML</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_3">
   <rdfs:member rdf:resource="http://example.org/MimeType_3"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/MimeType_3">
   <rdf:type rdf:resource="http://example.org/MimeType_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/MimeType_3">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">application/rdf+xml</ex:xmlString>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_3">
   <rdfs:member rdf:resource="http://example.org/Purpose_6"/>
@@ -236,8 +501,12 @@
 <rdf:Description rdf:about="http://example.org/Purpose_6">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Purpose_6">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XML-native RDF encoding</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Legacy_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Technologies_1">
   <rdfs:member rdf:resource="http://example.org/Legacy_1"/>
@@ -250,6 +519,12 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_4">
   <rdf:type rdf:resource="http://example.org/Standard_Tag"/>
+  <ex:attribute rdf:resource="http://example.org/status_attribute_4"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/status_attribute_4">
+  <rdf:type rdf:resource="http://example.org/Status_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">status</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">legacy</ex:attribute_value>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_4">
   <rdfs:member rdf:resource="http://example.org/Name_7"/>
@@ -257,11 +532,17 @@
 <rdf:Description rdf:about="http://example.org/Name_7">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Name_7">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GRDDL</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_4">
   <rdfs:member rdf:resource="http://example.org/Spec_4"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_4">
   <rdf:type rdf:resource="http://example.org/Spec_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Spec_4">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/TR/grddl/</ex:xmlString>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_4">
   <rdfs:member rdf:resource="http://example.org/Purpose_7"/>
@@ -269,11 +550,26 @@
 <rdf:Description rdf:about="http://example.org/Purpose_7">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Purpose_7">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transform XML/XHTML to RDF via XSLT</ex:xmlString>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Standard_4">
+  <rdfs:member rdf:resource="http://example.org/Deprecated_2"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Deprecated_2">
+  <rdf:type rdf:resource="http://example.org/Deprecated_Tag"/>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Legacy_1">
   <rdfs:member rdf:resource="http://example.org/Standard_5"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_5">
   <rdf:type rdf:resource="http://example.org/Standard_Tag"/>
+  <ex:attribute rdf:resource="http://example.org/status_attribute_5"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/status_attribute_5">
+  <rdf:type rdf:resource="http://example.org/Status_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">status</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">legacy</ex:attribute_value>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_5">
   <rdfs:member rdf:resource="http://example.org/Name_8"/>
@@ -281,11 +577,17 @@
 <rdf:Description rdf:about="http://example.org/Name_8">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Name_8">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SAWSDL</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_5">
   <rdfs:member rdf:resource="http://example.org/Spec_5"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_5">
   <rdf:type rdf:resource="http://example.org/Spec_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Spec_5">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/TR/sawsdl/</ex:xmlString>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Standard_5">
   <rdfs:member rdf:resource="http://example.org/Purpose_8"/>
@@ -293,8 +595,25 @@
 <rdf:Description rdf:about="http://example.org/Purpose_8">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Purpose_8">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Annotate WSDL with semantic metadata</ex:xmlString>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Notes_Tag">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Standard_5">
+  <rdfs:member rdf:resource="http://example.org/Notes_1"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Notes_1">
+  <rdf:type rdf:resource="http://example.org/Notes_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Notes_1">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Still relevant in some enterprise contexts</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Microformats_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Technologies_1">
   <rdfs:member rdf:resource="http://example.org/Microformats_1"/>
@@ -302,11 +621,27 @@
 <rdf:Description rdf:about="http://example.org/Microformats_1">
   <rdf:type rdf:resource="http://example.org/Microformats_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Usage_Attribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlAttribute"/>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Microformats_1">
   <rdfs:member rdf:resource="http://example.org/Format_4"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_4">
   <rdf:type rdf:resource="http://example.org/Format_Tag"/>
+  <ex:attribute rdf:resource="http://example.org/type_attribute_4"/>
+  <ex:attribute rdf:resource="http://example.org/usage_attribute_1"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/type_attribute_4">
+  <rdf:type rdf:resource="http://example.org/Type_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">person</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/usage_attribute_1">
+  <rdf:type rdf:resource="http://example.org/Usage_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">usage</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">frequent</ex:attribute_value>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_4">
   <rdfs:member rdf:resource="http://example.org/Name_9"/>
@@ -314,8 +649,12 @@
 <rdf:Description rdf:about="http://example.org/Name_9">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Name_9">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hCard</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Use_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_4">
   <rdfs:member rdf:resource="http://example.org/Use_1"/>
@@ -323,11 +662,26 @@
 <rdf:Description rdf:about="http://example.org/Use_1">
   <rdf:type rdf:resource="http://example.org/Use_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Use_1">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represent people and organizations</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Microformats_1">
   <rdfs:member rdf:resource="http://example.org/Format_5"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_5">
   <rdf:type rdf:resource="http://example.org/Format_Tag"/>
+  <ex:attribute rdf:resource="http://example.org/type_attribute_5"/>
+  <ex:attribute rdf:resource="http://example.org/usage_attribute_2"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/type_attribute_5">
+  <rdf:type rdf:resource="http://example.org/Type_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">calendar</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/usage_attribute_2">
+  <rdf:type rdf:resource="http://example.org/Usage_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">usage</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">medium</ex:attribute_value>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_5">
   <rdfs:member rdf:resource="http://example.org/Name_10"/>
@@ -335,14 +689,27 @@
 <rdf:Description rdf:about="http://example.org/Name_10">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Name_10">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hCalendar</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Format_5">
   <rdfs:member rdf:resource="http://example.org/Use_2"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Use_2">
   <rdf:type rdf:resource="http://example.org/Use_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Use_2">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represent events and dates</ex:xmlString>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Format_5">
+  <rdfs:member rdf:resource="http://example.org/Deprecated_3"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Deprecated_3">
+  <rdf:type rdf:resource="http://example.org/Deprecated_Tag"/>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/RuntimeSemantics_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Technologies_1">
   <rdfs:member rdf:resource="http://example.org/RuntimeSemantics_1"/>
@@ -352,12 +719,29 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/StreamSystem_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Stable_Attribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlAttribute"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/RuntimeSemantics_1">
   <rdfs:member rdf:resource="http://example.org/StreamSystem_1"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/StreamSystem_1">
   <rdf:type rdf:resource="http://example.org/StreamSystem_Tag"/>
+  <ex:attribute rdf:resource="http://example.org/stable_attribute_1"/>
+  <ex:attribute rdf:resource="http://example.org/version_attribute_2"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/stable_attribute_1">
+  <rdf:type rdf:resource="http://example.org/Stable_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stable</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/version_attribute_2">
+  <rdf:type rdf:resource="http://example.org/Version_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">version</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.1</ex:attribute_value>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/StreamSystem_1">
   <rdfs:member rdf:resource="http://example.org/Name_11"/>
@@ -365,11 +749,17 @@
 <rdf:Description rdf:about="http://example.org/Name_11">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Name_11">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CQELS</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/StreamSystem_1">
   <rdfs:member rdf:resource="http://example.org/Spec_6"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_6">
   <rdf:type rdf:resource="http://example.org/Spec_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Spec_6">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://cqels.sourceforge.net/</ex:xmlString>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/StreamSystem_1">
   <rdfs:member rdf:resource="http://example.org/Purpose_9"/>
@@ -377,11 +767,30 @@
 <rdf:Description rdf:about="http://example.org/Purpose_9">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Purpose_9">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Continuous query over linked streams</ex:xmlString>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Experimental_Attribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlAttribute"/>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/RuntimeSemantics_1">
   <rdfs:member rdf:resource="http://example.org/StreamSystem_2"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/StreamSystem_2">
   <rdf:type rdf:resource="http://example.org/StreamSystem_Tag"/>
+  <ex:attribute rdf:resource="http://example.org/stable_attribute_2"/>
+  <ex:attribute rdf:resource="http://example.org/experimental_attribute_1"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/stable_attribute_2">
+  <rdf:type rdf:resource="http://example.org/Stable_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stable</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/experimental_attribute_1">
+  <rdf:type rdf:resource="http://example.org/Experimental_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">experimental</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</ex:attribute_value>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/StreamSystem_2">
   <rdfs:member rdf:resource="http://example.org/Name_12"/>
@@ -389,11 +798,17 @@
 <rdf:Description rdf:about="http://example.org/Name_12">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Name_12">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C-SPARQL</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/StreamSystem_2">
   <rdfs:member rdf:resource="http://example.org/Spec_7"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_7">
   <rdf:type rdf:resource="http://example.org/Spec_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Spec_7">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://streamreasoning.github.io/C-SPARQL-engine/</ex:xmlString>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/StreamSystem_2">
   <rdfs:member rdf:resource="http://example.org/Purpose_10"/>
@@ -401,11 +816,26 @@
 <rdf:Description rdf:about="http://example.org/Purpose_10">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Purpose_10">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SPARQL queries over time-annotated data</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/RuntimeSemantics_1">
   <rdfs:member rdf:resource="http://example.org/StreamSystem_3"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/StreamSystem_3">
   <rdf:type rdf:resource="http://example.org/StreamSystem_Tag"/>
+  <ex:attribute rdf:resource="http://example.org/stable_attribute_3"/>
+  <ex:attribute rdf:resource="http://example.org/preferred_attribute_2"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/stable_attribute_3">
+  <rdf:type rdf:resource="http://example.org/Stable_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stable</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/preferred_attribute_2">
+  <rdf:type rdf:resource="http://example.org/Preferred_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">preferred</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</ex:attribute_value>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/StreamSystem_3">
   <rdfs:member rdf:resource="http://example.org/Name_13"/>
@@ -413,11 +843,17 @@
 <rdf:Description rdf:about="http://example.org/Name_13">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Name_13">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LDES</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/StreamSystem_3">
   <rdfs:member rdf:resource="http://example.org/Spec_8"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Spec_8">
   <rdf:type rdf:resource="http://example.org/Spec_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Spec_8">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://w3id.org/ldes</ex:xmlString>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/StreamSystem_3">
   <rdfs:member rdf:resource="http://example.org/Purpose_11"/>
@@ -425,8 +861,21 @@
 <rdf:Description rdf:about="http://example.org/Purpose_11">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Purpose_11">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Linked Data Event Streams</ex:xmlString>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/StreamSystem_3">
+  <rdfs:member rdf:resource="http://example.org/Version_2"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Version_2">
+  <rdf:type rdf:resource="http://example.org/Version_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Version_2">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0.2</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Nanopublishing_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Technologies_1">
   <rdfs:member rdf:resource="http://example.org/Nanopublishing_1"/>
@@ -436,15 +885,27 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Nanopub_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Id_Attribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlAttribute"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Nanopublishing_1">
   <rdfs:member rdf:resource="http://example.org/Nanopub_1"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Nanopub_1">
   <rdf:type rdf:resource="http://example.org/Nanopub_Tag"/>
+  <ex:attribute rdf:resource="http://example.org/id_attribute_1"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/id_attribute_1">
+  <rdf:type rdf:resource="http://example.org/Id_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">id</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">np1</ex:attribute_value>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Assertion_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Nanopub_1">
   <rdfs:member rdf:resource="http://example.org/Assertion_1"/>
@@ -452,8 +913,12 @@
 <rdf:Description rdf:about="http://example.org/Assertion_1">
   <rdf:type rdf:resource="http://example.org/Assertion_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Assertion_1">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Terra est rotunda</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Provenance_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Nanopub_1">
   <rdfs:member rdf:resource="http://example.org/Provenance_1"/>
@@ -461,26 +926,51 @@
 <rdf:Description rdf:about="http://example.org/Provenance_1">
   <rdf:type rdf:resource="http://example.org/Provenance_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Provenance_1">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Galileo Galilei</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/PublicationInfo_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/PeerReviewed_Attribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlAttribute"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Nanopub_1">
   <rdfs:member rdf:resource="http://example.org/PublicationInfo_1"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/PublicationInfo_1">
   <rdf:type rdf:resource="http://example.org/PublicationInfo_Tag"/>
+  <ex:attribute rdf:resource="http://example.org/peerReviewed_attribute_1"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/peerReviewed_attribute_1">
+  <rdf:type rdf:resource="http://example.org/PeerReviewed_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peerReviewed</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</ex:attribute_value>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Date_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/PublicationInfo_1">
   <rdfs:member rdf:resource="http://example.org/Date_1"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Date_1">
   <rdf:type rdf:resource="http://example.org/Date_Tag"/>
+  <ex:attribute rdf:resource="http://example.org/datatype_attribute_2"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/datatype_attribute_2">
+  <rdf:type rdf:resource="http://example.org/Datatype_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">datatype</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:date</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Date_1">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1632-01-01</ex:xmlString>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Publisher_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/PublicationInfo_1">
   <rdfs:member rdf:resource="http://example.org/Publisher_1"/>
@@ -488,8 +978,12 @@
 <rdf:Description rdf:about="http://example.org/Publisher_1">
   <rdf:type rdf:resource="http://example.org/Publisher_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Publisher_1">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">np:Galileo</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Tools_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Technologies_1">
   <rdfs:member rdf:resource="http://example.org/Tools_1"/>
@@ -499,12 +993,29 @@
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Tool_Tag">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Language_Attribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlAttribute"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Tools_1">
   <rdfs:member rdf:resource="http://example.org/Tool_1"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Tool_1">
   <rdf:type rdf:resource="http://example.org/Tool_Tag"/>
+  <ex:attribute rdf:resource="http://example.org/language_attribute_1"/>
+  <ex:attribute rdf:resource="http://example.org/version_attribute_3"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/language_attribute_1">
+  <rdf:type rdf:resource="http://example.org/Language_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">language</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Java</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/version_attribute_3">
+  <rdf:type rdf:resource="http://example.org/Version_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">version</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.9.3</ex:attribute_value>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Tool_1">
   <rdfs:member rdf:resource="http://example.org/Name_14"/>
@@ -512,14 +1023,8 @@
 <rdf:Description rdf:about="http://example.org/Name_14">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
 </rdf:Description>
-<rdf:Description rdf:about="http://example.org/Language_Tag">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdf:Description>
-<rdf:Description rdf:about="http://example.org/Tool_1">
-  <rdfs:member rdf:resource="http://example.org/Language_1"/>
-</rdf:Description>
-<rdf:Description rdf:about="http://example.org/Language_1">
-  <rdf:type rdf:resource="http://example.org/Language_Tag"/>
+<rdf:Description rdf:about="http://example.org/Name_14">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SPARQL Anything</ex:xmlString>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Tool_1">
   <rdfs:member rdf:resource="http://example.org/Purpose_12"/>
@@ -527,11 +1032,39 @@
 <rdf:Description rdf:about="http://example.org/Purpose_12">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Purpose_12">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Query anything as RDF: XML, CSV, HTML, JSON</ex:xmlString>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/License_Tag">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Tool_1">
+  <rdfs:member rdf:resource="http://example.org/License_1"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/License_1">
+  <rdf:type rdf:resource="http://example.org/License_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/License_1">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache-2.0</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Tools_1">
   <rdfs:member rdf:resource="http://example.org/Tool_2"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Tool_2">
   <rdf:type rdf:resource="http://example.org/Tool_Tag"/>
+  <ex:attribute rdf:resource="http://example.org/language_attribute_2"/>
+  <ex:attribute rdf:resource="http://example.org/status_attribute_6"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/language_attribute_2">
+  <rdf:type rdf:resource="http://example.org/Language_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">language</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XQuery+SPARQL</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/status_attribute_6">
+  <rdf:type rdf:resource="http://example.org/Status_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">status</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">research</ex:attribute_value>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Tool_2">
   <rdfs:member rdf:resource="http://example.org/Name_15"/>
@@ -539,11 +1072,8 @@
 <rdf:Description rdf:about="http://example.org/Name_15">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
 </rdf:Description>
-<rdf:Description rdf:about="http://example.org/Tool_2">
-  <rdfs:member rdf:resource="http://example.org/Language_2"/>
-</rdf:Description>
-<rdf:Description rdf:about="http://example.org/Language_2">
-  <rdf:type rdf:resource="http://example.org/Language_Tag"/>
+<rdf:Description rdf:about="http://example.org/Name_15">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XSPARQL</ex:xmlString>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Tool_2">
   <rdfs:member rdf:resource="http://example.org/Purpose_13"/>
@@ -551,11 +1081,26 @@
 <rdf:Description rdf:about="http://example.org/Purpose_13">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
 </rdf:Description>
+<rdf:Description rdf:about="http://example.org/Purpose_13">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transformation language for XML ↔ RDF</ex:xmlString>
+</rdf:Description>
 <rdf:Description rdf:about="http://example.org/Tools_1">
   <rdfs:member rdf:resource="http://example.org/Tool_3"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Tool_3">
   <rdf:type rdf:resource="http://example.org/Tool_Tag"/>
+  <ex:attribute rdf:resource="http://example.org/language_attribute_3"/>
+  <ex:attribute rdf:resource="http://example.org/deprecated_attribute_2"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/language_attribute_3">
+  <rdf:type rdf:resource="http://example.org/Language_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">language</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Java</ex:attribute_value>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/deprecated_attribute_2">
+  <rdf:type rdf:resource="http://example.org/Deprecated_Attribute"/>
+  <ex:attribute_key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deprecated</ex:attribute_key>
+  <ex:attribute_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</ex:attribute_value>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Tool_3">
   <rdfs:member rdf:resource="http://example.org/Name_16"/>
@@ -563,16 +1108,29 @@
 <rdf:Description rdf:about="http://example.org/Name_16">
   <rdf:type rdf:resource="http://example.org/Name_Tag"/>
 </rdf:Description>
-<rdf:Description rdf:about="http://example.org/Tool_3">
-  <rdfs:member rdf:resource="http://example.org/Language_3"/>
-</rdf:Description>
-<rdf:Description rdf:about="http://example.org/Language_3">
-  <rdf:type rdf:resource="http://example.org/Language_Tag"/>
+<rdf:Description rdf:about="http://example.org/Name_16">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RMLMapper</ex:xmlString>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Tool_3">
   <rdfs:member rdf:resource="http://example.org/Purpose_14"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://example.org/Purpose_14">
   <rdf:type rdf:resource="http://example.org/Purpose_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Purpose_14">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Generate RDF from heterogeneous formats</ex:xmlString>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Description_Tag">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdfs:subClassOf rdf:resource="http://example.org/xmlTag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Tool_3">
+  <rdfs:member rdf:resource="http://example.org/Description_1"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Description_1">
+  <rdf:type rdf:resource="http://example.org/Description_Tag"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://example.org/Description_1">
+  <ex:xmlString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Générateur RDF utilisant des règles de mappage RML</ex:xmlString>
 </rdf:Description>
 </rdf:RDF>

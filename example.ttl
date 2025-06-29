@@ -4,689 +4,380 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX ex: <http://example.org/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-ex:Document  rdf:type     ex:Document;
+ex:Document  rdf:type     ex:XmlDocument;
         ex:filePath       "file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml";
         ex:fileBaseName   "example";
         ex:fileExtension  "xml";
         ex:fileName       "example.xml" .
 
-ex:Catalog_Tag  rdf:type  owl:Class .
+ex:SemanticTechOverview_Tag
+        rdf:type  owl:Class .
 
-ex:Catalog  rdf:type  owl:Class .
+ex:SemanticTechOverview_1
+        rdf:type       ex:SemanticTechOverview_Tag;
+        ex:hasXmlns    "http://example.org/semantic";
+        ex:hasSw       "http://www.w3.org/2001/sw/";
+        ex:hasLd       "http://www.w3.org/ns/ld/";
+        ex:hasProv     "http://www.w3.org/ns/prov#";
+        ex:hasMicro    "http://microformats.org/";
+        ex:hasNp       "http://purl.org/nanopub#";
+        ex:hasLs       "http://w3id.org/ldes#";
+        ex:hasVersion  1.0 .
 
-ex:catalog_1  rdf:type  ex:Catalog_Tag .
+ex:Technologies_Tag  rdf:type  owl:Class .
 
-ex:Book_Tag  rdf:type  owl:Class .
+ex:SemanticTechOverview_1
+        rdfs:member  ex:Technologies_1 .
 
-ex:Book  rdf:type  owl:Class .
+ex:Technologies_1  rdf:type  ex:Technologies_Tag .
 
-ex:catalog_1  rdfs:member  ex:book_1 .
+ex:CoreStandards_Tag  rdf:type  owl:Class .
 
-ex:book_1  rdf:type  ex:Book_Tag;
-        ex:hasId  "bk101" .
+ex:Technologies_1  rdfs:member  ex:CoreStandards_1 .
 
-ex:Author_Tag  rdf:type  owl:Class .
+ex:CoreStandards_1  rdf:type  ex:CoreStandards_Tag .
 
-ex:Author  rdf:type  owl:Class .
+ex:Standard_Tag  rdf:type  owl:Class .
 
-ex:book_1  rdfs:member  ex:author_1 .
+ex:CoreStandards_1  rdfs:member  ex:Standard_1 .
 
-ex:author_1  rdf:type  ex:Author_Tag .
+ex:Standard_1  rdf:type  ex:Standard_Tag .
 
-ex:book_1  ex:hasAuthor  ex:Gambardella_Matthew .
+ex:Name_Tag  rdf:type  owl:Class .
 
-ex:Gambardella_Matthew
-        rdf:type    <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@cf947fa>;
-        rdfs:label  "Gambardella, Matthew"@en .
+ex:Standard_1  rdfs:member  ex:Name_1 .
 
-ex:Title_Tag  rdf:type  owl:Class .
+ex:Name_1  rdf:type  ex:Name_Tag .
 
-ex:Title  rdf:type  owl:Class .
+ex:Spec_Tag  rdf:type  owl:Class .
 
-ex:book_1  rdfs:member  ex:title_1 .
+ex:Standard_1  rdfs:member  ex:Spec_1 .
 
-ex:title_1  rdf:type  ex:Title_Tag .
+ex:Spec_1  rdf:type  ex:Spec_Tag .
 
-ex:book_1  ex:hasTitle  ex:Xml_Developer_S_Guide .
+ex:Year_Tag  rdf:type  owl:Class .
 
-ex:Xml_Developer_S_Guide
-        rdf:type    <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@1bc99204>;
-        rdfs:label  "XML Developer's Guide"@en .
+ex:Standard_1  rdfs:member  ex:Year_1 .
 
-ex:Genre_Tag  rdf:type  owl:Class .
+ex:Year_1  rdf:type  ex:Year_Tag .
 
-ex:Genre  rdf:type  owl:Class .
+ex:Purpose_Tag  rdf:type  owl:Class .
 
-ex:book_1  rdfs:member  ex:genre_1 .
+ex:Standard_1  rdfs:member  ex:Purpose_1 .
 
-ex:genre_1  rdf:type  ex:Genre_Tag .
+ex:Purpose_1  rdf:type  ex:Purpose_Tag .
 
-ex:book_1  ex:hasGenre  ex:Computer .
+ex:CoreStandards_1  rdfs:member  ex:Standard_2 .
 
-ex:Computer  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@5c3b044f>;
-        rdfs:label  "Computer"@en .
+ex:Standard_2  rdf:type  ex:Standard_Tag;
+        rdfs:member  ex:Name_2 .
 
-ex:Price_Tag  rdf:type  owl:Class .
+ex:Name_2  rdf:type  ex:Name_Tag .
 
-ex:Price  rdf:type  owl:Class .
+ex:Standard_2  rdfs:member  ex:Spec_2 .
 
-ex:book_1  rdfs:member  ex:price_1 .
+ex:Spec_2  rdf:type  ex:Spec_Tag .
 
-ex:price_1  rdf:type  ex:Price_Tag .
+ex:Standard_2  rdfs:member  ex:Year_2 .
 
-ex:book_1  ex:hasPrice  ex:44_95 .
+ex:Year_2  rdf:type  ex:Year_Tag .
 
-ex:44_95  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@376f4e08>;
-        rdfs:label  "44.95"@en .
+ex:Standard_2  rdfs:member  ex:Purpose_2 .
 
-ex:PublishDate_Tag  rdf:type  owl:Class .
+ex:Purpose_2  rdf:type  ex:Purpose_Tag .
 
-ex:PublishDate  rdf:type  owl:Class .
+ex:CoreStandards_1  rdfs:member  ex:Standard_3 .
 
-ex:book_1  rdfs:member  ex:publish_date_1 .
+ex:Standard_3  rdf:type  ex:Standard_Tag;
+        rdfs:member  ex:Name_3 .
 
-ex:publish_date_1  rdf:type  ex:PublishDate_Tag .
+ex:Name_3  rdf:type  ex:Name_Tag .
 
-ex:book_1  ex:hasPublishDate  ex:2000_10_01 .
+ex:Standard_3  rdfs:member  ex:Spec_3 .
 
-ex:2000_10_01  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@6a61a19b>;
-        rdfs:label  "2000-10-01"@en .
+ex:Spec_3  rdf:type  ex:Spec_Tag .
 
-ex:Description_Tag  rdf:type  owl:Class .
+ex:Standard_3  rdfs:member  ex:Year_3 .
 
-ex:Description  rdf:type  owl:Class .
+ex:Year_3  rdf:type  ex:Year_Tag .
 
-ex:book_1  rdfs:member  ex:description_1 .
+ex:Standard_3  rdfs:member  ex:Purpose_3 .
 
-ex:description_1  rdf:type  ex:Description_Tag .
+ex:Purpose_3  rdf:type  ex:Purpose_Tag .
 
-ex:book_1  ex:hasDescription  ex:An_In_Depth_Look_At_Creating_Applications_With_Xml .
+ex:Serializations_Tag
+        rdf:type  owl:Class .
 
-ex:An_In_Depth_Look_At_Creating_Applications_With_Xml
-        rdf:type    <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@727f1e36>;
-        rdfs:label  "An in-depth look at creating applications\n      with XML."@en .
+ex:Technologies_1  rdfs:member  ex:Serializations_1 .
 
-ex:catalog_1  rdfs:member  ex:book_2 .
+ex:Serializations_1  rdf:type  ex:Serializations_Tag .
 
-ex:book_2  rdf:type  ex:Book_Tag;
-        ex:hasId     "bk102";
-        rdfs:member  ex:author_2 .
+ex:Format_Tag  rdf:type  owl:Class .
 
-ex:author_2  rdf:type  ex:Author_Tag .
+ex:Serializations_1  rdfs:member  ex:Format_1 .
 
-ex:book_2  ex:hasAuthor  ex:Ralls_Kim .
+ex:Format_1  rdf:type  ex:Format_Tag;
+        rdfs:member  ex:Name_4 .
 
-ex:Ralls_Kim  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@76e2654a>;
-        rdfs:label  "Ralls, Kim"@en .
+ex:Name_4  rdf:type  ex:Name_Tag .
 
-ex:book_2  rdfs:member  ex:title_2 .
+ex:MimeType_Tag  rdf:type  owl:Class .
 
-ex:title_2  rdf:type  ex:Title_Tag .
+ex:Format_1  rdfs:member  ex:MimeType_1 .
 
-ex:book_2  ex:hasTitle  ex:Midnight_Rain .
+ex:MimeType_1  rdf:type  ex:MimeType_Tag .
 
-ex:Midnight_Rain  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@3bb07a90>;
-        rdfs:label  "Midnight Rain"@en .
+ex:Format_1  rdfs:member  ex:Purpose_4 .
 
-ex:book_2  rdfs:member  ex:genre_2 .
+ex:Purpose_4  rdf:type  ex:Purpose_Tag .
 
-ex:genre_2  rdf:type  ex:Genre_Tag .
+ex:Serializations_1  rdfs:member  ex:Format_2 .
 
-ex:book_2  ex:hasGenre  ex:Fantasy .
+ex:Format_2  rdf:type  ex:Format_Tag;
+        rdfs:member  ex:Name_5 .
 
-ex:Fantasy  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@5c3a6904>;
-        rdfs:label  "Fantasy"@en .
+ex:Name_5  rdf:type  ex:Name_Tag .
 
-ex:book_2  rdfs:member  ex:price_2 .
+ex:Format_2  rdfs:member  ex:MimeType_2 .
 
-ex:price_2  rdf:type  ex:Price_Tag .
+ex:MimeType_2  rdf:type  ex:MimeType_Tag .
 
-ex:book_2  ex:hasPrice  ex:5_95 .
+ex:Format_2  rdfs:member  ex:Purpose_5 .
 
-ex:5_95  rdf:type   <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@56be521b>;
-        rdfs:label  "5.95"@en .
+ex:Purpose_5  rdf:type  ex:Purpose_Tag .
 
-ex:book_2  rdfs:member  ex:publish_date_2 .
+ex:Serializations_1  rdfs:member  ex:Format_3 .
 
-ex:publish_date_2  rdf:type  ex:PublishDate_Tag .
+ex:Format_3  rdf:type  ex:Format_Tag;
+        rdfs:member  ex:Name_6 .
 
-ex:book_2  ex:hasPublishDate  ex:2000_12_16 .
+ex:Name_6  rdf:type  ex:Name_Tag .
 
-ex:2000_12_16  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@3313b5b3>;
-        rdfs:label  "2000-12-16"@en .
+ex:Format_3  rdfs:member  ex:MimeType_3 .
 
-ex:book_2  rdfs:member  ex:description_2 .
+ex:MimeType_3  rdf:type  ex:MimeType_Tag .
 
-ex:description_2  rdf:type  ex:Description_Tag .
+ex:Format_3  rdfs:member  ex:Purpose_6 .
 
-ex:book_2  ex:hasDescription  ex:A_Former_Architect_Battles_Corporate_Zombies_An_Evil_Sorceress_And_Her_Own_Childhood_To_Become_Queen_Of_The_World .
+ex:Purpose_6  rdf:type  ex:Purpose_Tag .
 
-ex:A_Former_Architect_Battles_Corporate_Zombies_An_Evil_Sorceress_And_Her_Own_Childhood_To_Become_Queen_Of_The_World
-        rdf:type    <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@bcf3dbb>;
-        rdfs:label  "A former architect battles corporate zombies,\n      an evil sorceress, and her own childhood to become queen\n      of the world."@en .
+ex:Legacy_Tag  rdf:type  owl:Class .
 
-ex:catalog_1  rdfs:member  ex:book_3 .
+ex:Technologies_1  rdfs:member  ex:Legacy_1 .
 
-ex:book_3  rdf:type  ex:Book_Tag;
-        ex:hasId     "bk103";
-        rdfs:member  ex:author_3 .
+ex:Legacy_1  rdf:type  ex:Legacy_Tag;
+        rdfs:member  ex:Standard_4 .
 
-ex:author_3  rdf:type  ex:Author_Tag .
+ex:Standard_4  rdf:type  ex:Standard_Tag;
+        rdfs:member  ex:Name_7 .
 
-ex:book_3  ex:hasAuthor  ex:Corets_Eva .
+ex:Name_7  rdf:type  ex:Name_Tag .
 
-ex:Corets_Eva  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@4b2078f>;
-        rdfs:label  "Corets, Eva"@en .
+ex:Standard_4  rdfs:member  ex:Spec_4 .
 
-ex:book_3  rdfs:member  ex:title_3 .
+ex:Spec_4  rdf:type  ex:Spec_Tag .
 
-ex:title_3  rdf:type  ex:Title_Tag .
+ex:Standard_4  rdfs:member  ex:Purpose_7 .
 
-ex:book_3  ex:hasTitle  ex:Maeve_Ascendant .
+ex:Purpose_7  rdf:type  ex:Purpose_Tag .
 
-ex:Maeve_Ascendant  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@20b8a388>;
-        rdfs:label  "Maeve Ascendant"@en .
+ex:Legacy_1  rdfs:member  ex:Standard_5 .
 
-ex:book_3  rdfs:member  ex:genre_3 .
+ex:Standard_5  rdf:type  ex:Standard_Tag;
+        rdfs:member  ex:Name_8 .
 
-ex:genre_3  rdf:type  ex:Genre_Tag .
+ex:Name_8  rdf:type  ex:Name_Tag .
 
-ex:book_3  ex:hasGenre  ex:Fantasy;
-        rdfs:member  ex:price_3 .
+ex:Standard_5  rdfs:member  ex:Spec_5 .
 
-ex:price_3  rdf:type  ex:Price_Tag .
+ex:Spec_5  rdf:type  ex:Spec_Tag .
 
-ex:book_3  ex:hasPrice  ex:5_95;
-        rdfs:member  ex:publish_date_3 .
+ex:Standard_5  rdfs:member  ex:Purpose_8 .
 
-ex:publish_date_3  rdf:type  ex:PublishDate_Tag .
+ex:Purpose_8  rdf:type  ex:Purpose_Tag .
 
-ex:book_3  ex:hasPublishDate  ex:2000_11_17 .
+ex:Microformats_Tag  rdf:type  owl:Class .
 
-ex:2000_11_17  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@e283401>;
-        rdfs:label  "2000-11-17"@en .
+ex:Technologies_1  rdfs:member  ex:Microformats_1 .
 
-ex:book_3  rdfs:member  ex:description_3 .
+ex:Microformats_1  rdf:type  ex:Microformats_Tag;
+        rdfs:member  ex:Format_4 .
 
-ex:description_3  rdf:type  ex:Description_Tag .
+ex:Format_4  rdf:type  ex:Format_Tag;
+        rdfs:member  ex:Name_9 .
 
-ex:book_3  ex:hasDescription  ex:After_The_Collapse_Of_A_Nanotechnology_Society_In_England_The_Young_Survivors_Lay_The_Foundation_For_A_New_Society .
+ex:Name_9  rdf:type  ex:Name_Tag .
 
-ex:After_The_Collapse_Of_A_Nanotechnology_Society_In_England_The_Young_Survivors_Lay_The_Foundation_For_A_New_Society
-        rdf:type    <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@7c78f29a>;
-        rdfs:label  "After the collapse of a nanotechnology\n      society in England, the young survivors lay the\n      foundation for a new society."@en .
+ex:Use_Tag  rdf:type  owl:Class .
 
-ex:catalog_1  rdfs:member  ex:book_4 .
+ex:Format_4  rdfs:member  ex:Use_1 .
 
-ex:book_4  rdf:type  ex:Book_Tag;
-        ex:hasId     "bk104";
-        rdfs:member  ex:author_4 .
+ex:Use_1  rdf:type  ex:Use_Tag .
 
-ex:author_4  rdf:type  ex:Author_Tag .
+ex:Microformats_1  rdfs:member  ex:Format_5 .
 
-ex:book_4  ex:hasAuthor  ex:Corets_Eva;
-        rdfs:member   ex:title_4 .
+ex:Format_5  rdf:type  ex:Format_Tag;
+        rdfs:member  ex:Name_10 .
 
-ex:title_4  rdf:type  ex:Title_Tag .
+ex:Name_10  rdf:type  ex:Name_Tag .
 
-ex:book_4  ex:hasTitle  ex:Oberon_S_Legacy .
+ex:Format_5  rdfs:member  ex:Use_2 .
 
-ex:Oberon_S_Legacy  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@68620ce5>;
-        rdfs:label  "Oberon's Legacy"@en .
+ex:Use_2  rdf:type  ex:Use_Tag .
 
-ex:book_4  rdfs:member  ex:genre_4 .
+ex:RuntimeSemantics_Tag
+        rdf:type  owl:Class .
 
-ex:genre_4  rdf:type  ex:Genre_Tag .
+ex:Technologies_1  rdfs:member  ex:RuntimeSemantics_1 .
 
-ex:book_4  ex:hasGenre  ex:Fantasy;
-        rdfs:member  ex:price_4 .
+ex:RuntimeSemantics_1
+        rdf:type  ex:RuntimeSemantics_Tag .
 
-ex:price_4  rdf:type  ex:Price_Tag .
+ex:StreamSystem_Tag  rdf:type  owl:Class .
 
-ex:book_4  ex:hasPrice  ex:5_95;
-        rdfs:member  ex:publish_date_4 .
+ex:RuntimeSemantics_1
+        rdfs:member  ex:StreamSystem_1 .
 
-ex:publish_date_4  rdf:type  ex:PublishDate_Tag .
+ex:StreamSystem_1  rdf:type  ex:StreamSystem_Tag;
+        rdfs:member  ex:Name_11 .
 
-ex:book_4  ex:hasPublishDate  ex:2001_03_10 .
+ex:Name_11  rdf:type  ex:Name_Tag .
 
-ex:2001_03_10  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@d235682>;
-        rdfs:label  "2001-03-10"@en .
+ex:StreamSystem_1  rdfs:member  ex:Spec_6 .
 
-ex:book_4  rdfs:member  ex:description_4 .
+ex:Spec_6  rdf:type  ex:Spec_Tag .
 
-ex:description_4  rdf:type  ex:Description_Tag .
+ex:StreamSystem_1  rdfs:member  ex:Purpose_9 .
 
-ex:book_4  ex:hasDescription  ex:In_Post_Apocalypse_England_The_Mysterious_Agent_Known_Only_As_Oberon_Helps_To_Create_A_New_Life_For_The_Inhabitants_Of_London_Sequel_To_Maeve_Ascendant .
+ex:Purpose_9  rdf:type  ex:Purpose_Tag .
 
-ex:In_Post_Apocalypse_England_The_Mysterious_Agent_Known_Only_As_Oberon_Helps_To_Create_A_New_Life_For_The_Inhabitants_Of_London_Sequel_To_Maeve_Ascendant
-        rdf:type    <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@42e4e31b>;
-        rdfs:label  "In post-apocalypse England, the mysterious\n      agent known only as Oberon helps to create a new life\n      for the inhabitants of London. Sequel to Maeve\n      Ascendant."@en .
+ex:RuntimeSemantics_1
+        rdfs:member  ex:StreamSystem_2 .
 
-ex:catalog_1  rdfs:member  ex:book_5 .
+ex:StreamSystem_2  rdf:type  ex:StreamSystem_Tag;
+        rdfs:member  ex:Name_12 .
 
-ex:book_5  rdf:type  ex:Book_Tag;
-        ex:hasId     "bk105";
-        rdfs:member  ex:author_5 .
+ex:Name_12  rdf:type  ex:Name_Tag .
 
-ex:author_5  rdf:type  ex:Author_Tag .
+ex:StreamSystem_2  rdfs:member  ex:Spec_7 .
 
-ex:book_5  ex:hasAuthor  ex:Corets_Eva;
-        rdfs:member   ex:title_5 .
+ex:Spec_7  rdf:type  ex:Spec_Tag .
 
-ex:title_5  rdf:type  ex:Title_Tag .
+ex:StreamSystem_2  rdfs:member  ex:Purpose_10 .
 
-ex:book_5  ex:hasTitle  ex:The_Sundered_Grail .
+ex:Purpose_10  rdf:type  ex:Purpose_Tag .
 
-ex:The_Sundered_Grail
-        rdf:type    <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@79b325ff>;
-        rdfs:label  "The Sundered Grail"@en .
+ex:RuntimeSemantics_1
+        rdfs:member  ex:StreamSystem_3 .
 
-ex:book_5  rdfs:member  ex:genre_5 .
+ex:StreamSystem_3  rdf:type  ex:StreamSystem_Tag;
+        rdfs:member  ex:Name_13 .
 
-ex:genre_5  rdf:type  ex:Genre_Tag .
+ex:Name_13  rdf:type  ex:Name_Tag .
 
-ex:book_5  ex:hasGenre  ex:Fantasy;
-        rdfs:member  ex:price_5 .
+ex:StreamSystem_3  rdfs:member  ex:Spec_8 .
 
-ex:price_5  rdf:type  ex:Price_Tag .
+ex:Spec_8  rdf:type  ex:Spec_Tag .
 
-ex:book_5  ex:hasPrice  ex:5_95;
-        rdfs:member  ex:publish_date_5 .
+ex:StreamSystem_3  rdfs:member  ex:Purpose_11 .
 
-ex:publish_date_5  rdf:type  ex:PublishDate_Tag .
+ex:Purpose_11  rdf:type  ex:Purpose_Tag .
 
-ex:book_5  ex:hasPublishDate  ex:2001_09_10 .
+ex:Nanopublishing_Tag
+        rdf:type  owl:Class .
 
-ex:2001_09_10  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@14e1b08>;
-        rdfs:label  "2001-09-10"@en .
+ex:Technologies_1  rdfs:member  ex:Nanopublishing_1 .
 
-ex:book_5  rdfs:member  ex:description_5 .
+ex:Nanopublishing_1  rdf:type  ex:Nanopublishing_Tag .
 
-ex:description_5  rdf:type  ex:Description_Tag .
+ex:Nanopub_Tag  rdf:type  owl:Class .
 
-ex:book_5  ex:hasDescription  ex:The_Two_Daughters_Of_Maeve_Half_Sisters_Battle_One_Another_For_Control_Of_England_Sequel_To_Oberon_S_Legacy .
+ex:Nanopublishing_1  rdfs:member  ex:Nanopub_1 .
 
-ex:The_Two_Daughters_Of_Maeve_Half_Sisters_Battle_One_Another_For_Control_Of_England_Sequel_To_Oberon_S_Legacy
-        rdf:type    <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@16cecae5>;
-        rdfs:label  "The two daughters of Maeve, half-sisters,\n      battle one another for control of England. Sequel to\n      Oberon's Legacy."@en .
+ex:Nanopub_1  rdf:type  ex:Nanopub_Tag .
 
-ex:catalog_1  rdfs:member  ex:book_6 .
+ex:Assertion_Tag  rdf:type  owl:Class .
 
-ex:book_6  rdf:type  ex:Book_Tag;
-        ex:hasId     "bk106";
-        rdfs:member  ex:author_6 .
+ex:Nanopub_1  rdfs:member  ex:Assertion_1 .
 
-ex:author_6  rdf:type  ex:Author_Tag .
+ex:Assertion_1  rdf:type  ex:Assertion_Tag .
 
-ex:book_6  ex:hasAuthor  ex:Randall_Cynthia .
+ex:Provenance_Tag  rdf:type  owl:Class .
 
-ex:Randall_Cynthia  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@73570f1c>;
-        rdfs:label  "Randall, Cynthia"@en .
+ex:Nanopub_1  rdfs:member  ex:Provenance_1 .
 
-ex:book_6  rdfs:member  ex:title_6 .
+ex:Provenance_1  rdf:type  ex:Provenance_Tag .
 
-ex:title_6  rdf:type  ex:Title_Tag .
+ex:PublicationInfo_Tag
+        rdf:type  owl:Class .
 
-ex:book_6  ex:hasTitle  ex:Lover_Birds .
+ex:Nanopub_1  rdfs:member  ex:PublicationInfo_1 .
 
-ex:Lover_Birds  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@13ab4054>;
-        rdfs:label  "Lover Birds"@en .
+ex:PublicationInfo_1  rdf:type  ex:PublicationInfo_Tag .
 
-ex:book_6  rdfs:member  ex:genre_6 .
+ex:Date_Tag  rdf:type  owl:Class .
 
-ex:genre_6  rdf:type  ex:Genre_Tag .
+ex:PublicationInfo_1  rdfs:member  ex:Date_1 .
 
-ex:book_6  ex:hasGenre  ex:Romance .
+ex:Date_1  rdf:type  ex:Date_Tag .
 
-ex:Romance  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@624c8f72>;
-        rdfs:label  "Romance"@en .
+ex:Publisher_Tag  rdf:type  owl:Class .
 
-ex:book_6  rdfs:member  ex:price_6 .
+ex:PublicationInfo_1  rdfs:member  ex:Publisher_1 .
 
-ex:price_6  rdf:type  ex:Price_Tag .
+ex:Publisher_1  rdf:type  ex:Publisher_Tag .
 
-ex:book_6  ex:hasPrice  ex:4_95 .
+ex:Tools_Tag  rdf:type  owl:Class .
 
-ex:4_95  rdf:type   <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@2b5f83c>;
-        rdfs:label  "4.95"@en .
+ex:Technologies_1  rdfs:member  ex:Tools_1 .
 
-ex:book_6  rdfs:member  ex:publish_date_6 .
+ex:Tools_1  rdf:type  ex:Tools_Tag .
 
-ex:publish_date_6  rdf:type  ex:PublishDate_Tag .
+ex:Tool_Tag  rdf:type  owl:Class .
 
-ex:book_6  ex:hasPublishDate  ex:2000_09_02 .
+ex:Tools_1  rdfs:member  ex:Tool_1 .
 
-ex:2000_09_02  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@49513899>;
-        rdfs:label  "2000-09-02"@en .
+ex:Tool_1  rdf:type  ex:Tool_Tag;
+        rdfs:member  ex:Name_14 .
 
-ex:book_6  rdfs:member  ex:description_6 .
+ex:Name_14  rdf:type  ex:Name_Tag .
 
-ex:description_6  rdf:type  ex:Description_Tag .
+ex:Language_Tag  rdf:type  owl:Class .
 
-ex:book_6  ex:hasDescription  ex:When_Carla_Meets_Paul_At_An_Ornithology_Conference_Tempers_Fly_As_Feathers_Get_Ruffled .
+ex:Tool_1  rdfs:member  ex:Language_1 .
 
-ex:When_Carla_Meets_Paul_At_An_Ornithology_Conference_Tempers_Fly_As_Feathers_Get_Ruffled
-        rdf:type    <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@b16807>;
-        rdfs:label  "When Carla meets Paul at an ornithology\n      conference, tempers fly as feathers get ruffled."@en .
+ex:Language_1  rdf:type  ex:Language_Tag .
 
-ex:catalog_1  rdfs:member  ex:book_7 .
+ex:Tool_1  rdfs:member  ex:Purpose_12 .
 
-ex:book_7  rdf:type  ex:Book_Tag;
-        ex:hasId     "bk107";
-        rdfs:member  ex:author_7 .
+ex:Purpose_12  rdf:type  ex:Purpose_Tag .
 
-ex:author_7  rdf:type  ex:Author_Tag .
+ex:Tools_1  rdfs:member  ex:Tool_2 .
 
-ex:book_7  ex:hasAuthor  ex:Thurman_Paula .
+ex:Tool_2  rdf:type  ex:Tool_Tag;
+        rdfs:member  ex:Name_15 .
 
-ex:Thurman_Paula  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@680507c>;
-        rdfs:label  "Thurman, Paula"@en .
+ex:Name_15  rdf:type  ex:Name_Tag .
 
-ex:book_7  rdfs:member  ex:title_7 .
+ex:Tool_2  rdfs:member  ex:Language_2 .
 
-ex:title_7  rdf:type  ex:Title_Tag .
+ex:Language_2  rdf:type  ex:Language_Tag .
 
-ex:book_7  ex:hasTitle  ex:Splish_Splash .
+ex:Tool_2  rdfs:member  ex:Purpose_13 .
 
-ex:Splish_Splash  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@2b592c88>;
-        rdfs:label  "Splish Splash"@en .
+ex:Purpose_13  rdf:type  ex:Purpose_Tag .
 
-ex:book_7  rdfs:member  ex:genre_7 .
+ex:Tools_1  rdfs:member  ex:Tool_3 .
 
-ex:genre_7  rdf:type  ex:Genre_Tag .
+ex:Tool_3  rdf:type  ex:Tool_Tag;
+        rdfs:member  ex:Name_16 .
 
-ex:book_7  ex:hasGenre  ex:Romance;
-        rdfs:member  ex:price_7 .
+ex:Name_16  rdf:type  ex:Name_Tag .
 
-ex:price_7  rdf:type  ex:Price_Tag .
+ex:Tool_3  rdfs:member  ex:Language_3 .
 
-ex:book_7  ex:hasPrice  ex:4_95;
-        rdfs:member  ex:publish_date_7 .
+ex:Language_3  rdf:type  ex:Language_Tag .
 
-ex:publish_date_7  rdf:type  ex:PublishDate_Tag .
+ex:Tool_3  rdfs:member  ex:Purpose_14 .
 
-ex:book_7  ex:hasPublishDate  ex:2000_11_02 .
-
-ex:2000_11_02  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@6b8c4c8a>;
-        rdfs:label  "2000-11-02"@en .
-
-ex:book_7  rdfs:member  ex:description_7 .
-
-ex:description_7  rdf:type  ex:Description_Tag .
-
-ex:book_7  ex:hasDescription  ex:A_Deep_Sea_Diver_Finds_True_Love_Twenty_Thousand_Leagues_Beneath_The_Sea .
-
-ex:A_Deep_Sea_Diver_Finds_True_Love_Twenty_Thousand_Leagues_Beneath_The_Sea
-        rdf:type    <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@6076e0ac>;
-        rdfs:label  "A deep sea diver finds true love twenty\n      thousand leagues beneath the sea."@en .
-
-ex:catalog_1  rdfs:member  ex:book_8 .
-
-ex:book_8  rdf:type  ex:Book_Tag;
-        ex:hasId     "bk108";
-        rdfs:member  ex:author_8 .
-
-ex:author_8  rdf:type  ex:Author_Tag .
-
-ex:book_8  ex:hasAuthor  ex:Knorr_Stefan .
-
-ex:Knorr_Stefan  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@64f15f6e>;
-        rdfs:label  "Knorr, Stefan"@en .
-
-ex:book_8  rdfs:member  ex:title_8 .
-
-ex:title_8  rdf:type  ex:Title_Tag .
-
-ex:book_8  ex:hasTitle  ex:Creepy_Crawlies .
-
-ex:Creepy_Crawlies  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@62e1214>;
-        rdfs:label  "Creepy Crawlies"@en .
-
-ex:book_8  rdfs:member  ex:genre_8 .
-
-ex:genre_8  rdf:type  ex:Genre_Tag .
-
-ex:book_8  ex:hasGenre  ex:Horror .
-
-ex:Horror  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@fcfe647>;
-        rdfs:label  "Horror"@en .
-
-ex:book_8  rdfs:member  ex:price_8 .
-
-ex:price_8  rdf:type  ex:Price_Tag .
-
-ex:book_8  ex:hasPrice  ex:4_95;
-        rdfs:member  ex:publish_date_8 .
-
-ex:publish_date_8  rdf:type  ex:PublishDate_Tag .
-
-ex:book_8  ex:hasPublishDate  ex:2000_12_06 .
-
-ex:2000_12_06  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@586b1492>;
-        rdfs:label  "2000-12-06"@en .
-
-ex:book_8  rdfs:member  ex:description_8 .
-
-ex:description_8  rdf:type  ex:Description_Tag .
-
-ex:book_8  ex:hasDescription  ex:An_Anthology_Of_Horror_Stories_About_Roaches_Centipedes_Scorpions_And_Other_Insects .
-
-ex:An_Anthology_Of_Horror_Stories_About_Roaches_Centipedes_Scorpions_And_Other_Insects
-        rdf:type    <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@360f2ade>;
-        rdfs:label  "An anthology of horror stories about roaches,\n      centipedes, scorpions and other insects."@en .
-
-ex:catalog_1  rdfs:member  ex:book_9 .
-
-ex:book_9  rdf:type  ex:Book_Tag;
-        ex:hasId     "bk109";
-        rdfs:member  ex:author_9 .
-
-ex:author_9  rdf:type  ex:Author_Tag .
-
-ex:book_9  ex:hasAuthor  ex:Kress_Peter .
-
-ex:Kress_Peter  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@40c730b9>;
-        rdfs:label  "Kress, Peter"@en .
-
-ex:book_9  rdfs:member  ex:title_9 .
-
-ex:title_9  rdf:type  ex:Title_Tag .
-
-ex:book_9  ex:hasTitle  ex:Paradox_Lost .
-
-ex:Paradox_Lost  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@304a0b38>;
-        rdfs:label  "Paradox Lost"@en .
-
-ex:book_9  rdfs:member  ex:genre_9 .
-
-ex:genre_9  rdf:type  ex:Genre_Tag .
-
-ex:book_9  ex:hasGenre  ex:Science_Fiction .
-
-ex:Science_Fiction  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@30055627>;
-        rdfs:label  "Science Fiction"@en .
-
-ex:book_9  rdfs:member  ex:price_9 .
-
-ex:price_9  rdf:type  ex:Price_Tag .
-
-ex:book_9  ex:hasPrice  ex:6_95 .
-
-ex:6_95  rdf:type   <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@7f93d323>;
-        rdfs:label  "6.95"@en .
-
-ex:book_9  rdfs:member  ex:publish_date_9 .
-
-ex:publish_date_9  rdf:type  ex:PublishDate_Tag .
-
-ex:book_9  ex:hasPublishDate  ex:2000_11_02;
-        rdfs:member        ex:description_9 .
-
-ex:description_9  rdf:type  ex:Description_Tag .
-
-ex:book_9  ex:hasDescription  ex:After_An_Inadvertant_Trip_Through_A_Heisenberg_Uncertainty_Device_James_Salway_Discovers_The_Problems_Of_Being_Quantum .
-
-ex:After_An_Inadvertant_Trip_Through_A_Heisenberg_Uncertainty_Device_James_Salway_Discovers_The_Problems_Of_Being_Quantum
-        rdf:type    <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@6287690>;
-        rdfs:label  "After an inadvertant trip through a Heisenberg\n      Uncertainty Device, James Salway discovers the problems\n      of being quantum."@en .
-
-ex:catalog_1  rdfs:member  ex:book_10 .
-
-ex:book_10  rdf:type  ex:Book_Tag;
-        ex:hasId     "bk110";
-        rdfs:member  ex:author_10 .
-
-ex:author_10  rdf:type  ex:Author_Tag .
-
-ex:book_10  ex:hasAuthor  ex:O_Brien_Tim .
-
-ex:O_Brien_Tim  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@66dbaea6>;
-        rdfs:label  "O'Brien, Tim"@en .
-
-ex:book_10  rdfs:member  ex:title_10 .
-
-ex:title_10  rdf:type  ex:Title_Tag .
-
-ex:book_10  ex:hasTitle  ex:Microsoft_Net_The_Programming_Bible .
-
-ex:Microsoft_Net_The_Programming_Bible
-        rdf:type    <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@7c756834>;
-        rdfs:label  "Microsoft .NET: The Programming Bible"@en .
-
-ex:book_10  rdfs:member  ex:genre_10 .
-
-ex:genre_10  rdf:type  ex:Genre_Tag .
-
-ex:book_10  ex:hasGenre  ex:Computer;
-        rdfs:member  ex:price_10 .
-
-ex:price_10  rdf:type  ex:Price_Tag .
-
-ex:book_10  ex:hasPrice  ex:36_95 .
-
-ex:36_95  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@1d1eb652>;
-        rdfs:label  "36.95"@en .
-
-ex:book_10  rdfs:member  ex:publish_date_10 .
-
-ex:publish_date_10  rdf:type  ex:PublishDate_Tag .
-
-ex:book_10  ex:hasPublishDate  ex:2000_12_09 .
-
-ex:2000_12_09  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@58c7cf97>;
-        rdfs:label  "2000-12-09"@en .
-
-ex:book_10  rdfs:member  ex:description_10 .
-
-ex:description_10  rdf:type  ex:Description_Tag .
-
-ex:book_10  ex:hasDescription  ex:Microsoft_S_Net_Initiative_Is_Explored_In_Detail_In_This_Deep_Programmer_S_Reference .
-
-ex:Microsoft_S_Net_Initiative_Is_Explored_In_Detail_In_This_Deep_Programmer_S_Reference
-        rdf:type    <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@6352e4b7>;
-        rdfs:label  "Microsoft's .NET initiative is explored in\n      detail in this deep programmer's reference."@en .
-
-ex:catalog_1  rdfs:member  ex:book_11 .
-
-ex:book_11  rdf:type  ex:Book_Tag;
-        ex:hasId     "bk111";
-        rdfs:member  ex:author_11 .
-
-ex:author_11  rdf:type  ex:Author_Tag .
-
-ex:book_11  ex:hasAuthor  ex:O_Brien_Tim;
-        rdfs:member   ex:title_11 .
-
-ex:title_11  rdf:type  ex:Title_Tag .
-
-ex:book_11  ex:hasTitle  ex:Msxml3_A_Comprehensive_Guide .
-
-ex:Msxml3_A_Comprehensive_Guide
-        rdf:type    <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@34310421>;
-        rdfs:label  "MSXML3: A Comprehensive Guide"@en .
-
-ex:book_11  rdfs:member  ex:genre_11 .
-
-ex:genre_11  rdf:type  ex:Genre_Tag .
-
-ex:book_11  ex:hasGenre  ex:Computer;
-        rdfs:member  ex:price_11 .
-
-ex:price_11  rdf:type  ex:Price_Tag .
-
-ex:book_11  ex:hasPrice  ex:36_95;
-        rdfs:member  ex:publish_date_11 .
-
-ex:publish_date_11  rdf:type  ex:PublishDate_Tag .
-
-ex:book_11  ex:hasPublishDate  ex:2000_12_01 .
-
-ex:2000_12_01  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@5cf598d3>;
-        rdfs:label  "2000-12-01"@en .
-
-ex:book_11  rdfs:member  ex:description_11 .
-
-ex:description_11  rdf:type  ex:Description_Tag .
-
-ex:book_11  ex:hasDescription  ex:The_Microsoft_Msxml3_Parser_Is_Covered_In_Detail_With_Attention_To_Xml_Dom_Interfaces_Xslt_Processing_Sax_And_More .
-
-ex:The_Microsoft_Msxml3_Parser_Is_Covered_In_Detail_With_Attention_To_Xml_Dom_Interfaces_Xslt_Processing_Sax_And_More
-        rdf:type    <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@3aa84fad>;
-        rdfs:label  "The Microsoft MSXML3 parser is covered in\n      detail, with attention to XML DOM interfaces, XSLT processing,\n      SAX and more."@en .
-
-ex:catalog_1  rdfs:member  ex:book_12 .
-
-ex:book_12  rdf:type  ex:Book_Tag;
-        ex:hasId     "bk112";
-        rdfs:member  ex:author_12 .
-
-ex:author_12  rdf:type  ex:Author_Tag .
-
-ex:book_12  ex:hasAuthor  ex:Galos_Mike .
-
-ex:Galos_Mike  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@4eab6313>;
-        rdfs:label  "Galos, Mike"@en .
-
-ex:book_12  rdfs:member  ex:title_12 .
-
-ex:title_12  rdf:type  ex:Title_Tag .
-
-ex:book_12  ex:hasTitle  ex:Visual_Studio_7_A_Comprehensive_Guide .
-
-ex:Visual_Studio_7_A_Comprehensive_Guide
-        rdf:type    <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@728776eb>;
-        rdfs:label  "Visual Studio 7: A Comprehensive Guide"@en .
-
-ex:book_12  rdfs:member  ex:genre_12 .
-
-ex:genre_12  rdf:type  ex:Genre_Tag .
-
-ex:book_12  ex:hasGenre  ex:Computer;
-        rdfs:member  ex:price_12 .
-
-ex:price_12  rdf:type  ex:Price_Tag .
-
-ex:book_12  ex:hasPrice  ex:49_95 .
-
-ex:49_95  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@2c44b68>;
-        rdfs:label  "49.95"@en .
-
-ex:book_12  rdfs:member  ex:publish_date_12 .
-
-ex:publish_date_12  rdf:type  ex:PublishDate_Tag .
-
-ex:book_12  ex:hasPublishDate  ex:2001_04_16 .
-
-ex:2001_04_16  rdf:type  <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@6097d96>;
-        rdfs:label  "2001-04-16"@en .
-
-ex:book_12  rdfs:member  ex:description_12 .
-
-ex:description_12  rdf:type  ex:Description_Tag .
-
-ex:book_12  ex:hasDescription  ex:Microsoft_Visual_Studio_7_Is_Explored_In_Depth_Looking_At_How_Visual_Basic_Visual_C_C_And_Asp_Are_Integrated_Into_A_Comprehensive_Development_Environment .
-
-ex:Microsoft_Visual_Studio_7_Is_Explored_In_Depth_Looking_At_How_Visual_Basic_Visual_C_C_And_Asp_Are_Integrated_Into_A_Comprehensive_Development_Environment
-        rdf:type    <file:///C:/Users/eristocrates/Programs/scalixer/XmlToRdf$$$Lambda$8761/0x0000024702569938@319ab084>;
-        rdfs:label  "Microsoft Visual Studio 7 is explored in depth,\n      looking at how Visual Basic, Visual C++, C#, and ASP+ are\n      integrated into a comprehensive development\n      environment."@en .
+ex:Purpose_14  rdf:type  ex:Purpose_Tag .

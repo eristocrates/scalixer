@@ -1,0 +1,8 @@
+http://cqels.sourceforge.net/
+http://www.w3.org/TR/grddl/
+http://www.w3.org/TR/owl2-overview/
+http://www.w3.org/TR/rdf11-concepts/
+http://www.w3.org/TR/sawsdl/
+http://www.w3.org/TR/sparql11-query/
+https://streamreasoning.github.io/C-SPARQL-engine/
+https://w3id.org/ldes

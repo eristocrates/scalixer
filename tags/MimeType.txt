@@ -1,0 +1,3 @@
+application/ld+json
+application/rdf+xml
+text/turtle

@@ -1,92 +1,202 @@
 
 # Codex Agents
 
-## CoreProject Overview
+## Overview
 
-This project lifts XML into RDF/XML via a pure Scala 3 + FS2 pipeline, guided by semantic staging rules and strict streaming constraints. It is intentionally **idiomatic**, **Java-free**, and **compliant with the W3C RDF/XML syntax specification**.
+Codex transforms XML into **RDF/XML** using a **modular, agent-based architecture** built with **Scala 3** and **FS2**. All RDF emitted adheres to the **W3C RDF/XML syntax specification**, and RDF output is **streamed**, **staged**, and **semantically enriched** based on detected roles.
 
-All RDF emitted is grouped into:
+### RDF Emission Policy
 
-* **Syntactic Statements**: Always emitted. Represent XML structure via `rdfs:member`, tag names, and containment.
-* **Semantic Statements**: Emitted **only when staged** using role configuration files located under `roles/`.
+* **Syntactic RDF/XML** is *always* emitted.
+* **Semantic RDF/XML** is emitted *only when roles are staged* using the `roles/` directory.
+* Emitted RDF is grouped as:
 
-The system supports **idempotent RDF generation**, allowing repeatable builds even as role files are modified.
-
----
-
-## Agent System
-
-Each agent is a modular `.md` file and corresponds to a discrete responsibility.
-
-| Agent Name          | Responsibility                                                                                    |
-| ------------------- | ------------------------------------------------------------------------------------------------- |
-| `XmlToRdf`          | Streaming orchestrator in Scala 3/FS2. Emits syntactic RDF/XML always and semantic RDF/XML only when staged roles exist. |
-| `OntologyLifting`   | Defines logic for RDF/XML semantic enrichment, distinguishing syntactic vs. semantic individuals. |
-| `Fs2XmlDoc`         | Provides FS2 and `fs2-data-xml` streaming guidance and XML parsing idioms.                        |
-| `RdfXmlSpec`        | Validates that RDF/XML output matches W3C RDF/XML Syntax Specification.                           |
-| `Scala3CompilerDoc` | Ensures idiomatic use of Scala 3 features (e.g. givens, enums, extension methods).                |
-| `MetaAgent`         | Generates/maintains agent `.md` files and enforces doc consistency across Codex modules.          |
-| `TestAgent`         | Creates unit tests via MUnit to confirm RDF/XML output conformance and semantic lifting outcomes. |
+  * `rdfs:member` → nested XML tags
+  * `:attribute` → XML attributes
+  * `:xmlString` → element string content
+* Attributes are represented with dedicated individuals like `:lang_attribute_1`, typed with `:Lang_Attribute`, containing `:attribute_key` and `:attribute_value`.
 
 ---
 
-## Specialized Subagents
+## Core Agents
 
-| Subagent            | Responsibility                                                                                        |
-| ------------------- | ----------------------------------------------------------------------------------------------------- |
-| `LexiconAgent`      | Collects tag names and inferred XSD primitive types. Generates the `summary.csvw` output.             |
-| `RoleAgent`         | Detects staged role files under `roles/` and signals when semantic RDF/XML should be emitted.         |
-| `SyntacticRdfAgent` | Always emits structural RDF/XML using FS2 streams and inferred XSD datatypes.                         |
-| `SemanticRdfAgent`  | Emits additional RDF/XML semantics only when role files are present, using Scala 3 FS2 streams.       |
-| `CsvwAgent`         | Writes `summary.csvw` metadata file summarizing all tag types, datatypes, and their semantic staging. |
+### `XmlToRdf`
+
+* **Role**: Top-level orchestrator. Streams XML via FS2 and delegates RDF emission to specialized agents.
+* **Output**: Always emits syntactic RDF/XML. Emits semantic RDF/XML if roles are staged.
+* **Design Notes**: Stateless; uses `fs2-data-xml`; composable; handles role-driven enrichment dispatch.
 
 ---
 
-## Role System
+### `LexiconAgent`
 
-Roles are stored in simple `.txt` files:
+* **Role**: Extracts tag names, attributes, and string content from the XML stream.
+* **Output**:
 
-* `roles/TagRoles/EntityTag.txt` ← contains tag names like `author`, `workspace`, etc.
-* `roles/StringRoles/LabelString.txt` ← contains strings or tags whose values serve as labels
+  * Populates `tags/` directory with tag names.
+  * Emits `summary.tsv` and `summary.csv-metadata.json`.
+* **Functionality**:
 
-Roles are **optional** but **govern semantic RDF output**. Absence of roles defaults to syntactic structure only.
-
----
-
-## Semantic Principles
-
-* Each **XML start tag** becomes a syntactic individual typed as `TagName_Tag`
-* Each **element content** may become a semantic individual if appropriately staged via string role
-* **Attributes** are promoted to RDF properties and subject to datatype inference and semantic role staging
+  * Infers **XSD primitive types** per tag using lexical analysis.
+  * Flags ambiguous or null-tagged fields for human review.
+* **Design Notes**: Deterministic; runs early in pipeline to support both semantic lifting and lowering.
 
 ---
 
-## Design Commitments
+### `RoleAgent`
 
-* ✅ Streaming-only logic
-* ✅ W3C RDF/XML compliance
-* ✅ Modular code via agent specialization
-* ✅ Default-safe outputs (never fail on missing roles)
-* ✅ Roles are always read from disk — no cached state
+* **Role**: Loads role configurations from:
 
----
+  * `roles/TagRoles/` (e.g. `EntityTag.txt`, `PropertyTag.txt`)
+  * `roles/StringRoles/` (e.g. `LabelString.txt`)
+* **Functionality**:
 
-## Codex Rules
-
-1. **Never violate RDF/XML syntax spec**
-2. **Never break FS2 streaming pipeline**
-3. **Emit syntactic RDF/XML by default**
-4. **Emit semantic RDF/XML only when explicitly staged**
-5. **Honor syntactic/semantic disambiguation in both tags and string content**
+  * Determines whether tags or strings are eligible for semantic RDF.
+  * Supports **empty file = allow all** semantics.
+* **Design Notes**: Stateless; reliable signal layer for `SemanticRdfAgent`.
 
 ---
 
-## Example Output Policy
+### `SyntacticRdfAgent`
 
-| Element         | Inferred Role        | RDF/XML Emission Example                              |
-| --------------- | -------------------- | ----------------------------------------------------- |
-| `<author>`      | EntityTag            | `:author_123 a :Author_Tag .`                         |
-| `"Gambardella"` | LabelString          | `:Gambardella_Matthew a :Author ; rdfs:label "..." .` |
-| `<table name>`  | PropertyTag + IRIVal | `:StormMain ex:hasName "StormMain"^^xsd:string .`     |
-| `<workspace>`   | EntityTag            | `:Workspace_001 a :Workspace_Tag .`                   |
-| `xsi:type`      | TypenameTag          | Promotes `:StormMain a :Table` if `xsi:type="Table"`  |
+* **Role**: Emits RDF/XML that mirrors XML structure using:
+
+  * `rdfs:member` → tag nesting
+  * `:attribute` → XML attribute values
+  * `:xmlString` → element text content
+* **Naming Patterns**:
+
+  * `<tag>_tag_<N>` → tag-level subject
+  * `<tag>_string_<N>` → content string
+  * `<key>_attribute_<N>` → attribute value as node
+* **Output Example**:
+
+  ```
+  :author_tag_1 a :Author_Tag ;
+    :attribute :lang_attribute_1 ;
+    :xmlString "Gambardella" .
+
+  :lang_attribute_1 a :Lang_Attribute ;
+    :attribute_key "lang" ;
+    :attribute_value "en" .
+  ```
+* **Design Notes**: Always runs; emits only syntactic structure; infers no roles.
+
+---
+
+### `SemanticRdfAgent`
+
+* **Role**: Emits RDF/XML *only when roles apply*.
+* **Functionality**:
+
+  * Uses `RoleAgent` to check if tag or string is semantically staged.
+  * Attaches semantic types (e.g., `:Table`, `:Author`) and relationships (e.g., `:hasName`, `rdfs:label`).
+* **Design Notes**:
+
+  * Composable: merges with `SyntacticRdfAgent` output.
+  * Role-driven: safe to run without staging (no output).
+
+---
+
+### `CsvwAgent`
+
+* **Role**: Writes `summary.csvw` to describe the schema of inferred tags.
+* **Functionality**:
+
+  * Summarizes each tag’s:
+
+    * Inferred datatype
+    * Detected roles
+    * Tag frequency
+  * Supports downstream tools for validation, visualization, or pipeline transformation.
+* **Design Notes**: Terminal agent; runs after `LexiconAgent` and `RoleAgent`.
+
+---
+
+## Support & Meta Agents
+
+### `Fs2XmlDoc`
+
+* **Role**: Documents idioms and streaming behaviors from `fs2-data-xml`.
+* **Content**:
+
+  * Event-based node representation
+  * Stream combinator patterns
+  * Error handling idioms
+* **Design Notes**: Not executable—supports code clarity and idiomatic Scala practices.
+
+---
+
+### `RdfXmlSpec`
+
+* **Role**: Validates RDF/XML output against [W3C RDF/XML Syntax Specification](https://www.w3.org/TR/rdf-syntax-grammar/).
+* **Functionality**:
+
+  * Ensures:
+
+    * Valid namespaces and qnames
+    * Proper nesting of `rdf:Description`
+    * Legal use of `rdf:parseType`, `rdf:resource`, etc.
+* **Design Notes**: May operate as unit test or CI rule.
+
+---
+
+### `Scala3CompilerDoc`
+
+* **Role**: Advises best practices for Scala 3 including:
+
+  * Enums
+  * Givens
+  * Extension methods
+* **Purpose**: Ensures idiomatic, maintainable Scala is used throughout pipeline.
+
+---
+
+### `TestAgent`
+
+* **Role**: Auto-generates MUnit test suites.
+* **Functionality**:
+
+  * Validates RDF conformance
+  * Ensures semantic roles behave as expected
+  * Confirms CSV-W summaries match tag inferences
+* **Design Notes**: Deterministic tests can be regenerated as data/roles evolve.
+
+---
+
+### `MetaAgent`
+
+* **Role**: Maintains all agent `.md` files, validates structural consistency, and enforces naming conventions.
+* **Functionality**:
+
+  * Generates and synchronizes entries in `AGENTS.md`
+  * Audits role files, doc headings, and responsibility statements
+* **Design Notes**: Internal tool for agent system governance.
+
+---
+
+## Workflow Overview
+
+```text
+INPUT XML
+   ↓ (stream)
+LexiconAgent
+   ↓
+RoleAgent
+   ↓
+SyntacticRdfAgent
+   ↓
+SemanticRdfAgent
+   ↓
+CsvwAgent
+   ↓
+RdfXmlSpec + TestAgent
+```
+
+---
+
+## Future Planning
+
+* **Lowering Profiles**: Semantic metadata may carry an identifier for source XML tag model (e.g. ArcGIS, MusicXML).
+* **Lifting Profiles**: Attach "profile hints" during lifting that describe which downstream XML styles the data is compatible with.
+* **Transformation Matrix**: `ProfileAgent` may one day infer abstract models across heterogeneous XML types.

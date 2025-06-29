@@ -1,10 +1,35 @@
 tag	count	filename	inferredDatatype	tagRole	stringRole
-@id	12	tags/@id.txt	xsd:string		
-author	9	tags/author.txt	xsd:string		
-book	0	tags/book.txt	xsd:string		
-catalog	0	tags/catalog.txt	xsd:string		
-description	12	tags/description.txt	xsd:string		
-genre	5	tags/genre.txt	xsd:string		
-price	6	tags/price.txt	xsd:double		LiteralValueString
-publish_date	11	tags/publish_date.txt	xsd:date		LiteralValueString
-title	12	tags/title.txt	xsd:string		
+@ld	1	tags/@ld.txt	xsd:string		
+@ls	1	tags/@ls.txt	xsd:string		
+@micro	1	tags/@micro.txt	xsd:string		
+@np	1	tags/@np.txt	xsd:string		
+@prov	1	tags/@prov.txt	xsd:string		
+@sw	1	tags/@sw.txt	xsd:string		
+@version	1	tags/@version.txt	xsd:double		LiteralValueString
+@xmlns	1	tags/@xmlns.txt	xsd:string		
+Assertion	1	tags/Assertion.txt	xsd:string		
+CoreStandards	0	tags/CoreStandards.txt	xsd:string		
+Date	1	tags/Date.txt	xsd:date		LiteralValueString
+Format	0	tags/Format.txt	xsd:string		
+Language	2	tags/Language.txt	xsd:string		
+Legacy	0	tags/Legacy.txt	xsd:string		
+Microformats	0	tags/Microformats.txt	xsd:string		
+MimeType	3	tags/MimeType.txt	xsd:string		
+Name	16	tags/Name.txt	xsd:string		
+Nanopub	0	tags/Nanopub.txt	xsd:string		
+Nanopublishing	0	tags/Nanopublishing.txt	xsd:string		
+Provenance	1	tags/Provenance.txt	xsd:string		
+PublicationInfo	0	tags/PublicationInfo.txt	xsd:string		
+Publisher	1	tags/Publisher.txt	xsd:string		
+Purpose	14	tags/Purpose.txt	xsd:string		
+RuntimeSemantics	0	tags/RuntimeSemantics.txt	xsd:string		
+SemanticTechOverview	0	tags/SemanticTechOverview.txt	xsd:string		
+Serializations	0	tags/Serializations.txt	xsd:string		
+Spec	8	tags/Spec.txt	xsd:string		
+Standard	0	tags/Standard.txt	xsd:string		
+StreamSystem	0	tags/StreamSystem.txt	xsd:string		
+Technologies	0	tags/Technologies.txt	xsd:string		
+Tool	0	tags/Tool.txt	xsd:string		
+Tools	0	tags/Tools.txt	xsd:string		
+Use	2	tags/Use.txt	xsd:string		
+Year	3	tags/Year.txt	xsd:decimal		LiteralValueString

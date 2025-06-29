@@ -18,6 +18,7 @@ object XmlToRdf extends IOApp.Simple {
     "rdfs" -> "http://www.w3.org/2000/01/rdf-schema#",
     "owl"  -> "http://www.w3.org/2002/07/owl#",
     "ex"   -> "http://example.org/",
+    "prov" -> "http://www.w3.org/ns/prov#",
     "xsd" -> "http://www.w3.org/2001/XMLSchema#"
 
   )
@@ -147,13 +148,16 @@ object XmlToRdf extends IOApp.Simple {
       lang: Option[String],
       path: java.nio.file.Path
   ): XmlEvent => Stream[IO, String] = {
-    val tagSet = mutable.Set[String]() 
+    val tagSet = mutable.Set[String]()
     val tagToStrings = mutable.Map[String, mutable.Set[String]]().withDefault(_ => mutable.Set())
 
     var stack: List[(String, String)]    = Nil
     var emittedClasses: Set[String]      = Set.empty
     var emittedAttrClasses: Set[String]  = Set.empty
     var emittedSemantic: Set[String]     = Set.empty
+    // event counter used as approximate source line number
+    var lineCounter: Int                 = 0
+    val liftedBy: String                 = java.util.UUID.randomUUID().toString
     val tagCounter: scala.collection.mutable.Map[String, Int] =
       scala.collection.mutable.Map.empty.withDefaultValue(0)
     val attrCounter: scala.collection.mutable.Map[String, Int] =
@@ -268,12 +272,23 @@ object XmlToRdf extends IOApp.Simple {
         val attrBlocks = attrResults.map(_._2)
         val attrLines = attrResults.map(_._3)
 
+        lineCounter += 1
+        val xmlPath   = "/" + (stack.map(_._2).reverse :+ tag).mkString("/")
+        val provenanceLines = List(
+          s"  <prov:wasDerivedFrom rdf:resource=\"$fileUri\"/>",
+          s"  <ex:sourceLine rdf:datatype=\"${expandPrefix("xsd:integer")}\">$lineCounter</ex:sourceLine>",
+          s"  <ex:sourceXmlPath rdf:datatype=\"${expandPrefix("xsd:string")}\">${escapeXml(xmlPath)}</ex:sourceXmlPath>",
+          s"  <ex:liftedBy rdf:datatype=\"${expandPrefix("xsd:string")}\">$liftedBy</ex:liftedBy>"
+        )
+
         val subjectBlock =
+          // (List(s"<rdf:Description rdf:about=\"$subjectIRI\">", s"  <rdf:type rdf:resource=\"$synClassIRI\"/>") ++            
           (List(
             s"<rdf:Description rdf:about=\"$subjectIRI\">",
             s"  <rdf:type rdf:resource=\"$synClassIRI\"/>",
             // s"  <rdf:type rdf:resource=\"${expandPrefix("ex:xmlTag")}\"/>"
           ) ++
+            provenanceLines ++ 
             attrLines ++
             List("</rdf:Description>")).mkString("\n")
 
@@ -291,7 +306,7 @@ object XmlToRdf extends IOApp.Simple {
 
             if semanticEnabled then
               val valueIRI  = createSemanticIRI(text.trim)
-              val classIRI  = semanticClassIRI(_, tag)
+              val classIRI  = semanticClassIRI(None, tag)
               val hasProp   = createHasProperty(tag)
               val parentIRI = stack.drop(1).headOption.map(_._1)
 
@@ -302,8 +317,20 @@ object XmlToRdf extends IOApp.Simple {
               val valueBlock =
                 if !emittedSemantic.contains(valueIRI) then
                   emittedSemantic += valueIRI
+                  lineCounter += 1
+                  val xmlPathValue = "/" + stack.map(_._2).reverse.mkString("/") + "/text()"
+                  val valueProvenance = List(
+                    s"  <prov:wasDerivedFrom rdf:resource=\"$fileUri\"/>",
+                    s"  <ex:sourceLine rdf:datatype=\"${expandPrefix("xsd:integer")}\">$lineCounter</ex:sourceLine>",
+                    s"  <ex:sourceXmlPath rdf:datatype=\"${expandPrefix("xsd:string")}\">${escapeXml(xmlPathValue)}</ex:sourceXmlPath>",
+                    s"  <ex:liftedBy rdf:datatype=\"${expandPrefix("xsd:string")}\">$liftedBy</ex:liftedBy>"
+                  )
                   Some(
-                    s"<rdf:Description rdf:about=\"$valueIRI\">\n  <rdf:type rdf:resource=\"$classIRI\"/>\n  <rdfs:label xml:lang=\"${lang.getOrElse("en")}\">${escapeXml(text.trim)}</rdfs:label>\n</rdf:Description>"
+                    (
+                      List(s"<rdf:Description rdf:about=\"$valueIRI\">", s"  <rdf:type rdf:resource=\"$classIRI\"/>", s"  <rdfs:label xml:lang=\"${lang.getOrElse("en")}\">${escapeXml(text.trim)}</rdfs:label") ++
+                        valueProvenance ++
+                        List("</rdf:Description>")
+                    ).mkString("\n")
                   )
                 else None
 

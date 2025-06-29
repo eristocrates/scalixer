@@ -14,7 +14,11 @@ Codex transforms XML into **RDF/XML** using a **modular, agent-based architectur
   * `rdfs:member` → nested XML tags
   * `:attribute` → XML attributes
   * `:xmlString` → element string content
-* Attributes are represented with dedicated individuals like `:lang_attribute_1`, typed with `:Lang_Attribute`, containing `:attribute_key` and `:attribute_value`.
+* **Structural Classes**:
+
+  * `:xmlTag` ← superclass of any emitted `:_Tag` class (e.g., `:Author_Tag ⊑ :xmlTag`)
+  * `:xmlAttribute` ← class for attribute holder nodes (e.g., `:lang_attribute_1 ⊑ :xmlAttribute`)
+  * `:xmlString` ← class for string content nodes (optional subclassing if needed later)
 
 ---
 
@@ -72,15 +76,19 @@ Codex transforms XML into **RDF/XML** using a **modular, agent-based architectur
 * **Output Example**:
 
   ```
-  :author_tag_1 a :Author_Tag ;
+  :author_tag_1 a :Author_Tag, :xmlTag ;
     :attribute :lang_attribute_1 ;
     :xmlString "Gambardella" .
 
-  :lang_attribute_1 a :Lang_Attribute ;
+  :lang_attribute_1 a :Lang_Attribute, :xmlAttribute ;
     :attribute_key "lang" ;
     :attribute_value "en" .
   ```
-* **Design Notes**: Always runs; emits only syntactic structure; infers no roles.
+* **Design Notes**:
+
+  * `:_Tag` classes are declared `owl:subClassOf :xmlTag`
+  * Attributes are typed as `:xmlAttribute` individuals
+  * Strings may later be subclassed as `:xmlString` if needed
 
 ---
 
@@ -192,11 +200,3 @@ CsvwAgent
    ↓
 RdfXmlSpec + TestAgent
 ```
-
----
-
-## Future Planning
-
-* **Lowering Profiles**: Semantic metadata may carry an identifier for source XML tag model (e.g. ArcGIS, MusicXML).
-* **Lifting Profiles**: Attach "profile hints" during lifting that describe which downstream XML styles the data is compatible with.
-* **Transformation Matrix**: `ProfileAgent` may one day infer abstract models across heterogeneous XML types.

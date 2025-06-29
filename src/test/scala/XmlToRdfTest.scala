@@ -16,6 +16,12 @@ class XmlToRdfTest extends munit.FunSuite {
   test("syntactic nodes emitted") {
     XmlToRdf.run.unsafeRunSync()
     val rdf = scala.io.Source.fromFile("example.rdf").mkString
+      }
+
+  test("rdf can be lowered back to xml") {
+    XmlToRdf.run.unsafeRunSync()
+    RdfToXml.run(Nil).unsafeRunSync()
+    val xml = scala.io.Source.fromFile("lowered.xml").mkString
     assert(rdf.contains("rdf:type rdf:resource=\"http://example.org/xmlTag\""))
     assert(rdf.contains("rdf:type rdf:resource=\"http://example.org/xmlAttribute\""))
     assert(rdf.contains("ex:attribute rdf:resource"))

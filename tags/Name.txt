@@ -1,0 +1,16 @@
+C-SPARQL
+CQELS
+GRDDL
+JSON-LD
+LDES
+OWL
+RDF
+RDF/XML
+RMLMapper
+SAWSDL
+SPARQL
+SPARQL Anything
+Turtle
+XSPARQL
+hCalendar
+hCard

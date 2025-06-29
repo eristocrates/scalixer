@@ -122,19 +122,18 @@ object XmlToRdf extends IOApp.Simple {
   Files.createDirectories(tagRoleDir)
   Files.createDirectories(stringRoleDir)
 
-  // Enum values
-  val tagRoles = TagRole.values.map(_.toString)
-  val stringRoles = StringRole.values.map(_.toString)
+  // Role files are user supplied. Presence of any non-empty file enables
+  // semantic RDF/XML emission.
+  private def hasRoleFiles(dir: Path): Boolean =
+    Files.exists(dir) &&
+      {
+        val stream = Files.list(dir)
+        try stream.iterator().asScala.exists(p => Files.isRegularFile(p) && Files.size(p) > 0)
+        finally stream.close()
+      }
 
-  // Write .txt file for each role if it doesn’t exist
-  for (role <- tagRoles) {
-    val path = tagRoleDir.resolve(s"$role.txt")
-    if (!Files.exists(path)) Files.write(path, List.empty[String].asJava)
-  }
-  for (role <- stringRoles) {
-    val path = stringRoleDir.resolve(s"$role.txt")
-    if (!Files.exists(path)) Files.write(path, List.empty[String].asJava)
-  }
+  lazy val semanticEnabled: Boolean =
+    hasRoleFiles(tagRoleDir) || hasRoleFiles(stringRoleDir)
 
   def liftEvent(
       lang: Option[String],
@@ -198,12 +197,18 @@ object XmlToRdf extends IOApp.Simple {
         val semClassIRI   = semanticClassIRI(prefix, tag)
 
         val classBlocks =
-          if (!emittedClasses.contains(tag)) then
+          if !emittedClasses.contains(tag) then
             emittedClasses += tag
-            List(
-              s"<rdf:Description rdf:about=\"$synClassIRI\">\n  <rdf:type rdf:resource=\"${expandPrefix("owl:Class")}\"/>\n</rdf:Description>",
-              s"<rdf:Description rdf:about=\"$semClassIRI\">\n  <rdf:type rdf:resource=\"${expandPrefix("owl:Class")}\"/>\n</rdf:Description>"
+            val base = List(
+              s"<rdf:Description rdf:about=\"$synClassIRI\">\n  <rdf:type rdf:resource=\"${expandPrefix("owl:Class")}\"/>\n</rdf:Description>"
             )
+            val sem =
+              if semanticEnabled then
+                List(
+                  s"<rdf:Description rdf:about=\"$semClassIRI\">\n  <rdf:type rdf:resource=\"${expandPrefix("owl:Class")}\"/>\n</rdf:Description>"
+                )
+              else Nil
+            base ++ sem
           else Nil
 
         val subjectIRI = createSyntacticIRI(prefix, tag, stack, tagCounter(tag))
@@ -217,7 +222,8 @@ object XmlToRdf extends IOApp.Simple {
           case Attr(name, value) =>
             val attrVal = value.collect { case XmlString(s, _) => s }.mkString
             val prop    = createHasProperty(name.local)
-            Some(s"  <$prop>${escapeXml(attrVal)}</$prop>")
+            val dt      = expandPrefix(inferLiteralType(attrVal))
+            Some(s"  <$prop rdf:datatype=\"$dt\">${escapeXml(attrVal)}</$prop>")
         }.flatten
 
         val subjectBlock =
@@ -232,26 +238,27 @@ object XmlToRdf extends IOApp.Simple {
       case XmlString(text, _) if text.trim.nonEmpty =>
         stack.headOption match
           case Some((_, tag)) =>
-            val valueIRI  = createSemanticIRI(text.trim)
-            val classIRI  = semanticClassIRI(_, tag)
-            val hasProp   = createHasProperty(tag)
-            val parentIRI = stack.drop(1).headOption.map(_._1)
-            
             tagToStrings(tag) += text.trim
+            if semanticEnabled then
+              val valueIRI  = createSemanticIRI(text.trim)
+              val classIRI  = semanticClassIRI(_, tag)
+              val hasProp   = createHasProperty(tag)
+              val parentIRI = stack.drop(1).headOption.map(_._1)
 
-            val parentBlock = parentIRI.map { p =>
-              s"<rdf:Description rdf:about=\"$p\">\n  <$hasProp rdf:resource=\"$valueIRI\"/>\n</rdf:Description>"
-            }
+              val parentBlock = parentIRI.map { p =>
+                s"<rdf:Description rdf:about=\"$p\">\n  <$hasProp rdf:resource=\"$valueIRI\"/>\n</rdf:Description>"
+              }
 
-            val valueBlock =
-              if !emittedSemantic.contains(valueIRI) then
-                emittedSemantic += valueIRI
-                Some(
-                  s"<rdf:Description rdf:about=\"$valueIRI\">\n  <rdf:type rdf:resource=\"$classIRI\"/>\n  <rdfs:label xml:lang=\"${lang.getOrElse("en")}\">${escapeXml(text.trim)}</rdfs:label>\n</rdf:Description>"
-                )
-              else None
+              val valueBlock =
+                if !emittedSemantic.contains(valueIRI) then
+                  emittedSemantic += valueIRI
+                  Some(
+                    s"<rdf:Description rdf:about=\"$valueIRI\">\n  <rdf:type rdf:resource=\"$classIRI\"/>\n  <rdfs:label xml:lang=\"${lang.getOrElse("en")}\">${escapeXml(text.trim)}</rdfs:label>\n</rdf:Description>"
+                  )
+                else None
 
-            Stream.emits(parentBlock.toList ++ valueBlock.toList)
+              Stream.emits(parentBlock.toList ++ valueBlock.toList)
+            else Stream.empty
           case None => Stream.empty
 
       case EndTag(_) =>

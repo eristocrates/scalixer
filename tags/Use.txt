@@ -1,0 +1,2 @@
+Represent events and dates
+Represent people and organizations

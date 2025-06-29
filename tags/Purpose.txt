@@ -1,0 +1,14 @@
+Annotate WSDL with semantic metadata
+Continuous query over linked streams
+Foundation data model for semantic graphs
+Generate RDF from heterogeneous formats
+JSON-compatible Linked Data
+Linked Data Event Streams
+Ontology language for expressing logical structure
+Query anything as RDF: XML, CSV, HTML, JSON
+Query language for RDF
+Readable RDF syntax
+SPARQL queries over time-annotated data
+Transform XML/XHTML to RDF via XSLT
+Transformation language for XML ↔ RDF
+XML-native RDF encoding

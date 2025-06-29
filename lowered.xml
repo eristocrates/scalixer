@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SemanticTechOverview np="http://purl.org/nanopub#" prov="http://www.w3.org/ns/prov#"
+    xmlns="http://example.org/semantic" ls="http://w3id.org/ldes#" sw="http://www.w3.org/2001/sw/"
+    micro="http://microformats.org/" ld="http://www.w3.org/ns/ld/" version="1.0">
+    <Technologies preferred="true">
+        <CoreStandards>
+            <Standard status="stable" category="modeling">
+                <Name>RDF</Name>
+                <Spec datatype="xsd:anyURI">http://www.w3.org/TR/rdf11-concepts/</Spec>
+                <Year>2014</Year>
+                <Purpose>Foundation data model for semantic graphs</Purpose>
+            </Standard>
+            <Standard status="stable" category="reasoning">
+                <Name>OWL</Name>
+                <Version>2</Version>
+                <Spec>http://www.w3.org/TR/owl2-overview/</Spec>
+                <Year>2012</Year>
+                <Purpose>Ontology language for expressing logical structure</Purpose>
+                <Deprecated></Deprecated>
+            </Standard>
+            <Standard status="stable" category="query">
+                <Name>SPARQL</Name>
+                <Spec>http://www.w3.org/TR/sparql11-query/</Spec>
+                <Year>2013</Year>
+                <Purpose>Query language for RDF</Purpose>
+            </Standard>
+        </CoreStandards>
+        <Serializations>
+            <Format type="text">
+                <Name>Turtle</Name>
+                <MimeType>text/turtle</MimeType>
+                <Purpose>Readable RDF syntax</Purpose>
+            </Format>
+            <Format type="json">
+                <Name>JSON-LD</Name>
+                <MimeType>application/ld+json</MimeType>
+                <Purpose>JSON-compatible Linked Data</Purpose>
+            </Format>
+            <Format deprecated="false" type="xml">
+                <Name>RDF/XML</Name>
+                <MimeType>application/rdf+xml</MimeType>
+                <Purpose>XML-native RDF encoding</Purpose>
+            </Format>
+        </Serializations>
+        <Legacy>
+            <Standard status="legacy">
+                <Name>GRDDL</Name>
+                <Spec>http://www.w3.org/TR/grddl/</Spec>
+                <Purpose>Transform XML/XHTML to RDF via XSLT</Purpose>
+                <Deprecated></Deprecated>
+            </Standard>
+            <Standard status="legacy">
+                <Name>SAWSDL</Name>
+                <Spec>http://www.w3.org/TR/sawsdl/</Spec>
+                <Purpose>Annotate WSDL with semantic metadata</Purpose>
+                <Notes>Still relevant in some enterprise contexts</Notes>
+            </Standard>
+        </Legacy>
+        <Microformats>
+            <Format usage="frequent" type="person">
+                <Name>hCard</Name>
+                <Use>Represent people and organizations</Use>
+            </Format>
+            <Format usage="medium" type="calendar">
+                <Name>hCalendar</Name>
+                <Use>Represent events and dates</Use>
+                <Deprecated></Deprecated>
+            </Format>
+        </Microformats>
+        <RuntimeSemantics>
+            <StreamSystem version="1.1" stable="true">
+                <Name>CQELS</Name>
+                <Spec>http://cqels.sourceforge.net/</Spec>
+                <Purpose>Continuous query over linked streams</Purpose>
+            </StreamSystem>
+            <StreamSystem experimental="true" stable="false">
+                <Name>C-SPARQL</Name>
+                <Spec>https://streamreasoning.github.io/C-SPARQL-engine/</Spec>
+                <Purpose>SPARQL queries over time-annotated data</Purpose>
+            </StreamSystem>
+            <StreamSystem preferred="true" stable="true">
+                <Name>LDES</Name>
+                <Spec>https://w3id.org/ldes</Spec>
+                <Purpose>Linked Data Event Streams</Purpose>
+                <Version>1.0.2</Version>
+            </StreamSystem>
+        </RuntimeSemantics>
+        <Nanopublishing>
+            <Nanopub id="np1">
+                <Assertion>Terra est rotunda</Assertion>
+                <Provenance>Galileo Galilei</Provenance>
+                <PublicationInfo peerReviewed="false">
+                    <Date datatype="xsd:date">1632-01-01</Date>
+                    <Publisher>np:Galileo</Publisher>
+                </PublicationInfo>
+            </Nanopub>
+        </Nanopublishing>
+        <Tools>
+            <Tool version="0.9.3" language="Java">
+                <Name>SPARQL Anything</Name>
+                <Purpose>Query anything as RDF: XML, CSV, HTML, JSON</Purpose>
+                <License>Apache-2.0</License>
+            </Tool>
+            <Tool status="research" language="XQuery+SPARQL">
+                <Name>XSPARQL</Name>
+                <Purpose>Transformation language for XML ↔ RDF</Purpose>
+            </Tool>
+            <Tool deprecated="false" language="Java">
+                <Name>RMLMapper</Name>
+                <Purpose>Generate RDF from heterogeneous formats</Purpose>
+                <Description>Générateur RDF utilisant des règles de mappage RML</Description>
+            </Tool>
+        </Tools>
+    </Technologies>
+</SemanticTechOverview>

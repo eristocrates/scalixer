@@ -66,6 +66,14 @@ object XmlToRdf extends IOApp.Simple {
   private def createSemanticIRI(value: String): String =
     expandPrefix(s"ex:${pascalSnakeCase(value)}")
 
+  private def attributeClassIRI(prefix: Option[String], attr: String): String =
+    val pfx = prefix.getOrElse("ex")
+    expandPrefix(s"$pfx:${pascalCase(attr)}_Attribute")
+
+  private def createAttributeIRI(prefix: Option[String], attr: String, count: Int): String =
+    val pfx = prefix.getOrElse("ex")
+    expandPrefix(s"$pfx:${attr}_attribute_$count")
+
   private def syntacticClassIRI(prefix: Option[String], tag: String): String =
     val pfx = prefix.getOrElse("ex")
     expandPrefix(s"$pfx:${pascalCase(tag)}_Tag")
@@ -145,11 +153,14 @@ object XmlToRdf extends IOApp.Simple {
 
     var stack: List[(String, String)]    = Nil
     var emittedClasses: Set[String]      = Set.empty
+    var emittedAttrClasses: Set[String]  = Set.empty
     var emittedSemantic: Set[String]     = Set.empty
     // event counter used as approximate source line number
     var lineCounter: Int                 = 0
     val liftedBy: String                 = java.util.UUID.randomUUID().toString
     val tagCounter: scala.collection.mutable.Map[String, Int] =
+      scala.collection.mutable.Map.empty.withDefaultValue(0)
+    val attrCounter: scala.collection.mutable.Map[String, Int] =
       scala.collection.mutable.Map.empty.withDefaultValue(0)
     val fileName = path.getFileName.toString
     val fileExtension = {
@@ -165,7 +176,13 @@ object XmlToRdf extends IOApp.Simple {
     val filePathStr = path.toAbsolutePath.toString
     val fileUri = "file:///" + filePathStr.replace("\\", "/")
       
-    val documentProvenance = List(
+    val baseClasses = List(
+      // s"<rdf:Description rdf:about=\"${expandPrefix("ex:xmlTag")}\">\n  <rdf:type rdf:resource=\"${expandPrefix("owl:Class")}\"/>\n</rdf:Description>",
+      // s"<rdf:Description rdf:about=\"${expandPrefix("ex:xmlAttribute")}\">\n  <rdf:type rdf:resource=\"${expandPrefix("owl:Class")}\"/>\n</rdf:Description>",
+      s"<rdf:Description rdf:about=\"${expandPrefix("ex:xmlString")}\">\n  <rdf:type rdf:resource=\"${expandPrefix("owl:Class")}\"/>\n</rdf:Description>"
+    )
+
+    val documentProvenance = baseClasses ++ List(
       s"\n<rdf:Description rdf:about=\"${expandPrefix("ex:Document")}\">",
       s"  <rdf:type rdf:resource=\"${expandPrefix("ex:XmlDocument")}\"/>",
       s"  <ex:filePath rdf:datatype=\"${expandPrefix("xsd:string")}\" >${escapeXml(fileUri)}</ex:filePath>",
@@ -204,7 +221,7 @@ object XmlToRdf extends IOApp.Simple {
           if !emittedClasses.contains(tag) then
             emittedClasses += tag
             val base = List(
-              s"<rdf:Description rdf:about=\"$synClassIRI\">\n  <rdf:type rdf:resource=\"${expandPrefix("owl:Class")}\"/>\n</rdf:Description>"
+              s"<rdf:Description rdf:about=\"$synClassIRI\">\n  <rdf:type rdf:resource=\"${expandPrefix("owl:Class")}\"/>\n  <rdfs:subClassOf rdf:resource=\"${expandPrefix("ex:xmlTag")}\"/>\n</rdf:Description>"
             )
             val sem =
               if semanticEnabled then
@@ -221,14 +238,39 @@ object XmlToRdf extends IOApp.Simple {
           s"<rdf:Description rdf:about=\"$parentIRI\">\n  <rdfs:member rdf:resource=\"$subjectIRI\"/>\n</rdf:Description>"
         }
 
-        val attrLines = attrs.collect {
+        val attrResults = attrs.collect {
           case Attr(QName(_, "lang"), _) => None
           case Attr(name, value) =>
             val attrVal = value.collect { case XmlString(s, _) => s }.mkString
-            val prop    = createHasProperty(name.local)
-            val dt      = expandPrefix(inferLiteralType(attrVal))
-            Some(s"  <$prop rdf:datatype=\"$dt\">${escapeXml(attrVal)}</$prop>")
-        }.flatten
+            attrCounter(name.local) += 1
+            val attrIRI    = createAttributeIRI(name.prefix, name.local, attrCounter(name.local))
+            val attrClass  = attributeClassIRI(name.prefix, name.local)
+            val dt         = expandPrefix(inferLiteralType(attrVal))
+
+            val classBlock =
+              if !emittedAttrClasses.contains(name.local) then
+                emittedAttrClasses += name.local
+                Some(
+                  s"<rdf:Description rdf:about=\"$attrClass\">\n  <rdf:type rdf:resource=\"${expandPrefix("owl:Class")}\"/>\n  <rdfs:subClassOf rdf:resource=\"${expandPrefix("ex:xmlAttribute")}\"/>\n</rdf:Description>"
+                )
+              else None
+
+            val attrBlock =
+              List(
+                s"<rdf:Description rdf:about=\"$attrIRI\">",
+                s"  <rdf:type rdf:resource=\"$attrClass\"/>",
+                // s"  <rdf:type rdf:resource=\"${expandPrefix("ex:xmlAttribute")}\"/>",
+                s"  <ex:attribute_key rdf:datatype=\"${expandPrefix("xsd:string")}\">${escapeXml(name.local)}</ex:attribute_key>",
+                s"  <ex:attribute_value rdf:datatype=\"$dt\">${escapeXml(attrVal)}</ex:attribute_value>",
+                s"</rdf:Description>"
+              ).mkString("\n")
+
+            Some((classBlock.toList, attrBlock, s"  <ex:attribute rdf:resource=\"$attrIRI\"/>"))
+        }.flatten.toList
+
+        val attrClassBlocks = attrResults.flatMap(_._1)
+        val attrBlocks = attrResults.map(_._2)
+        val attrLines = attrResults.map(_._3)
 
         lineCounter += 1
         val xmlPath   = "/" + (stack.map(_._2).reverse :+ tag).mkString("/")
@@ -240,19 +282,28 @@ object XmlToRdf extends IOApp.Simple {
         )
 
         val subjectBlock =
-          (List(s"<rdf:Description rdf:about=\"$subjectIRI\">", s"  <rdf:type rdf:resource=\"$synClassIRI\"/>") ++
-            provenanceLines ++
+          // (List(s"<rdf:Description rdf:about=\"$subjectIRI\">", s"  <rdf:type rdf:resource=\"$synClassIRI\"/>") ++            
+          (List(
+            s"<rdf:Description rdf:about=\"$subjectIRI\">",
+            s"  <rdf:type rdf:resource=\"$synClassIRI\"/>",
+            // s"  <rdf:type rdf:resource=\"${expandPrefix("ex:xmlTag")}\"/>"
+          ) ++
+            provenanceLines ++ 
             attrLines ++
             List("</rdf:Description>")).mkString("\n")
 
         stack = (subjectIRI, tag) :: stack
 
-        Stream.emits(classBlocks ++ parentBlock.toList :+ subjectBlock)
+        Stream.emits(classBlocks ++ attrClassBlocks ++ parentBlock.toList ++ (subjectBlock :: attrBlocks))
 
       case XmlString(text, _) if text.trim.nonEmpty =>
         stack.headOption match
-          case Some((_, tag)) =>
+          case Some((subjectIri, tag)) =>
             tagToStrings(tag) += text.trim
+            val dt        = expandPrefix(inferLiteralType(text.trim))
+            val synBlock  =
+              s"<rdf:Description rdf:about=\"$subjectIri\">\n  <ex:xmlString rdf:datatype=\"$dt\">${escapeXml(text.trim)}</ex:xmlString>\n</rdf:Description>"
+
             if semanticEnabled then
               val valueIRI  = createSemanticIRI(text.trim)
               val classIRI  = semanticClassIRI(None, tag)
@@ -283,8 +334,9 @@ object XmlToRdf extends IOApp.Simple {
                   )
                 else None
 
-              Stream.emits(parentBlock.toList ++ valueBlock.toList)
-            else Stream.empty
+              Stream.emits(synBlock :: (parentBlock.toList ++ valueBlock.toList))
+            else
+              Stream.emit(synBlock)
           case None => Stream.empty
 
       case EndTag(_) =>

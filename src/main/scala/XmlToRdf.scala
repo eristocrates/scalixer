@@ -6,28 +6,19 @@ import java.io.InputStream
 import java.nio.charset.StandardCharsets
 import java.nio.file.{Paths, Files, Path}
 import scala.util.hashing.MurmurHash3
-import scala.collection.immutable.ListMap
 import scala.collection.mutable
+
+import PrefixAgent.prefixMap
 import scala.jdk.CollectionConverters._
 
 object XmlToRdf extends IOApp.Simple {
 
-  // TODO add namespaces and their iris discovered during streaming
-  private val prefixMap: Map[String, String] = ListMap(
-    "rdf"  -> "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs" -> "http://www.w3.org/2000/01/rdf-schema#",
-    "owl"  -> "http://www.w3.org/2002/07/owl#",
-    "ex"   -> "http://example.org/",
-    "prov" -> "http://www.w3.org/ns/prov#",
-    "xsd" -> "http://www.w3.org/2001/XMLSchema#"
+  // Namespaces discovered during streaming are stored in PrefixAgent.prefixMap
 
-  )
-
-  val rdfHeader = {
+  private def rdfHeader: String =
     val prefixes = prefixMap.map { case (p, iri) => s"  xmlns:$p=\"$iri\"" }.mkString("\n")
     s"""<?xml version="1.0"?>
 <rdf:RDF\n$prefixes>"""
-  }
 
   val rdfFooter = "\n</rdf:RDF>"
 
@@ -239,6 +230,14 @@ object XmlToRdf extends IOApp.Simple {
 
         val attrResults = attrs.collect {
           case Attr(QName(_, "lang"), _) => None
+          case Attr(name, value) if name.local == "xmlns" =>
+            val attrVal = value.collect { case XmlString(s, _) => s }.mkString
+            prefixMap.put("", attrVal)
+            None
+          case Attr(name, value) if name.prefix.contains("xmlns") =>
+            val attrVal = value.collect { case XmlString(s, _) => s }.mkString
+            prefixMap.put(name.local, attrVal)
+            None
           case Attr(name, value) =>
             val attrVal = value.collect { case XmlString(s, _) => s }.mkString
             attrCounter(name.local) += 1

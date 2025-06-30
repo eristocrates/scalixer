@@ -1,7 +1,9 @@
 import cats.effect.{IO}
-import scala.xml.{XML, Elem, Node => XmlNode, Text, UnprefixedAttribute, MetaData, Null => XmlNull}
+import scala.xml.{XML, Elem, Node => XmlNode, Text, UnprefixedAttribute, PrefixedAttribute, MetaData, Null => XmlNull}
 import java.nio.file.{Paths, Path}
 import scala.collection.mutable
+
+import PrefixAgent.prefixMap
 
 object RdfToXml:
 
@@ -96,6 +98,13 @@ object RdfToXml:
       val childNodes = nd.children.map(build) ++ nd.text.map(Text(_))
       Elem(null, nd.tagName.getOrElse(""), metadata, scala.xml.TopScope, minimizeEmpty = false, childNodes* )
 
-    val xmlRoot = build(rootId)
+    val xmlRootBase = build(rootId)
+    val nsMeta = prefixMap.foldLeft(xmlRootBase.attributes) {
+      case (acc, ("", uri)) => new UnprefixedAttribute("xmlns", uri, acc)
+      case (acc, (p, uri))   => new PrefixedAttribute("xmlns", p, uri, acc)
+    }
+    val xmlRoot = xmlRootBase match
+      case e: Elem => e.copy(attributes = nsMeta)
+      case n       => n
     XML.save("lowered.xml", xmlRoot, "UTF-8", xmlDecl = true)
   }

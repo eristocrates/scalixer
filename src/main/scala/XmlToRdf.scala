@@ -10,6 +10,7 @@ import scala.collection.mutable
 
 import PrefixAgent.prefixMap
 import scala.jdk.CollectionConverters._
+import LexiconAgent.*
 
 object XmlToRdf extends IOApp.Simple {
 
@@ -108,12 +109,8 @@ object XmlToRdf extends IOApp.Simple {
   def stringRole(tag: String): Option[String] =
     stringRoleMap.collectFirst { case (role, tags) if tags.contains(tag) => role }
 
-  def inferLiteralType(text: String): String = text.trim match { 
-    case s if s.matches("""^-?\d+\.\d+$""") => "xsd:decimal"
-    case s if s.matches("""^-?\d+$""")      => "xsd:integer"
-    case s if s.matches("""\d{4}-\d{2}-\d{2}""") => "xsd:date"
-    case _                                  => "xsd:string"
-  }
+  def inferLiteralType(text: String): String =
+    LexiconAgent.inferLiteralType(text)
 
   val rolesDir = Paths.get("roles")
   val tagRoleDir = rolesDir.resolve("TagRoles")

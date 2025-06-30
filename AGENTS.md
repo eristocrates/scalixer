@@ -1,202 +1,155 @@
+# AGENTS.md
 
-# Codex Agents
-
-## Overview
-
-Codex transforms XML into **RDF/XML** using a **modular, agent-based architecture** built with **Scala 3** and **FS2**. All RDF emitted adheres to the **W3C RDF/XML syntax specification**, and RDF output is **streamed**, **staged**, and **semantically enriched** based on detected roles.
-
-### RDF Emission Policy
-
-* **Syntactic RDF/XML** is *always* emitted.
-* **Semantic RDF/XML** is emitted *only when roles are staged* using the `roles/` directory.
-* Emitted RDF is grouped as:
-
-  * `rdfs:member` → nested XML tags
-  * `:attribute` → XML attributes
-  * `:xmlString` → element string content
-* **Structural Classes**:
-
-  * `:xmlTag` ← superclass of any emitted `:_Tag` class (e.g., `:Author_Tag ⊑ :xmlTag`)
-  * `:xmlAttribute` ← class for attribute holder nodes (e.g., `:lang_attribute_1 ⊑ :xmlAttribute`)
-  * `:xmlString` ← class for string content nodes (optional subclassing if needed later)
+> Snapshot as of 2025-06-30  
+> Focus: Semantic Class Staging, Unary Roles, and Promotion Strategy  
+> Purpose: Document logic and guidance for semantic configuration
 
 ---
 
-## Core Agents
+## 🧠 AGENT: SemanticClassPromotionAgent
 
-### `XmlToRdf`
+### Summary
+Promotes syntactic XML tags and strings into semantic OWL classes and named individuals, based on a default-first configuration model. All promotions can be suppressed or redirected via role configuration files.
 
-* **Role**: Top-level orchestrator. Streams XML via FS2 and delegates RDF emission to specialized agents.
-* **Output**: Always emits syntactic RDF/XML. Emits semantic RDF/XML if roles are staged.
-* **Design Notes**: Stateless; uses `fs2-data-xml`; composable; handles role-driven enrichment dispatch.
+### Default Behavior
+- **Tags** become OWL Classes (semantic promotion)
+- **Strings** inside tags become Named Individuals of that class
+- **Datatypes** override promotion if inferred type is not `xsd:string`
+- **Suppression** is achieved via empty substitution in config
 
----
+### Core Heuristics
+- Tag `Name` → OWL Class `:Name`
+- String `"Microformats"` inside `Name` → Named Individual `:Name_Microformats`
+- Literal `2014` → `xsd:gYear`, not promoted
+- URI pattern match (e.g. `http://`, `mailto:`) → `xsd:anyURI`
 
-### `LexiconAgent`
-
-* **Role**: Extracts tag names, attributes, and string content from the XML stream.
-* **Output**:
-
-  * Populates `tags/` directory with tag names.
-  * Emits `summary.tsv` and `summary.csv-metadata.json`.
-* **Functionality**:
-
-  * Infers **XSD primitive types** per tag using lexical analysis.
-  * Flags ambiguous or null-tagged fields for human review.
-* **Design Notes**: Deterministic; runs early in pipeline to support both semantic lifting and lowering.
+### Configuration Paths
+- `roles/TagRoles.txt` → Tag-level class mapping (or suppression)
+- `roles/StringRoles/<tag>.txt` → Per-tag datatype overrides
 
 ---
 
-### `RoleAgent`
+## 🧱 AGENT: SyntacticSemanticBoundaryAgent
 
-* **Role**: Loads role configurations from:
+### Purpose
+Maintains boundary between syntactic representations (`:Name_Tag`) and semantic constructs (`:Author`, `:Microformats`, etc.)
 
-  * `roles/TagRoles/` (e.g. `EntityTag.txt`, `PropertyTag.txt`)
-  * `roles/StringRoles/` (e.g. `LabelString.txt`)
-* **Functionality**:
-
-  * Determines whether tags or strings are eligible for semantic RDF.
-  * Supports **empty file = allow all** semantics.
-* **Design Notes**: Stateless; reliable signal layer for `SemanticRdfAgent`.
-
----
-
-### `SyntacticRdfAgent`
-
-* **Role**: Emits RDF/XML that mirrors XML structure using:
-
-  * `rdfs:member` → tag nesting
-  * `:attribute` → XML attribute values
-  * `:xmlString` → element text content
-* **Naming Patterns**:
-
-  * `<tag>_tag_<N>` → tag-level subject
-  * `<tag>_string_<N>` → content string
-  * `<key>_attribute_<N>` → attribute value as node
-* **Output Example**:
-
-  ```
-  :author_tag_1 a :Author_Tag, :xmlTag ;
-    :attribute :lang_attribute_1 ;
-    :xmlString "Gambardella" .
-
-  :lang_attribute_1 a :Lang_Attribute, :xmlAttribute ;
-    :attribute_key "lang" ;
-    :attribute_value "en" .
-  ```
-* **Design Notes**:
-
-  * `:_Tag` classes are declared `owl:subClassOf :xmlTag`
-  * Attributes are typed as `:xmlAttribute` individuals
-  * Strings may later be subclassed as `:xmlString` if needed
+### Policy
+- Do **not** use `owl:equivalentClass` between syntactic and semantic
+- Instead, trace using:
+  - `prov:wasDerivedFrom`
+  - `rdfs:label`
+- Separate syntactic RDF/XML always emitted
+- Semantic RDF/XML optionally emitted (based on config)
 
 ---
 
-### `SemanticRdfAgent`
+## 🔄 AGENT: UnaryRoleStagingAgent
 
-* **Role**: Emits RDF/XML *only when roles apply*.
-* **Functionality**:
+### Summary
+Applies unary roles to tags and strings. Used to:
+- Promote/suppress tags to OWL classes
+- Promote/suppress strings to OWL individuals
+- Override datatypes
 
-  * Uses `RoleAgent` to check if tag or string is semantically staged.
-  * Attaches semantic types (e.g., `:Table`, `:Author`) and relationships (e.g., `:hasName`, `rdfs:label`).
-* **Design Notes**:
-
-  * Composable: merges with `SyntacticRdfAgent` output.
-  * Role-driven: safe to run without staging (no output).
-
----
-
-### `CsvwAgent`
-
-* **Role**: Writes `summary.csvw` to describe the schema of inferred tags.
-* **Functionality**:
-
-  * Summarizes each tag’s:
-
-    * Inferred datatype
-    * Detected roles
-    * Tag frequency
-  * Supports downstream tools for validation, visualization, or pipeline transformation.
-* **Design Notes**: Terminal agent; runs after `LexiconAgent` and `RoleAgent`.
+### Unary Role Matrix
+| Axis X     | Axis Y     | Default Role         | Overridable? |
+|------------|------------|----------------------|--------------|
+| Tag        | Unary      | Promote to Class     | ✅            |
+| String     | Unary      | Promote to Individual| ✅            |
+| String     | Unary      | Infer xsd datatype   | ✅            |
 
 ---
 
-## Support & Meta Agents
+## 🧱 AGENT: StringlessTagHandler
 
-### `Fs2XmlDoc`
+### Summary
+Handles tags that have no literal content, only nested tags or attributes.
 
-* **Role**: Documents idioms and streaming behaviors from `fs2-data-xml`.
-* **Content**:
-
-  * Event-based node representation
-  * Stream combinator patterns
-  * Error handling idioms
-* **Design Notes**: Not executable—supports code clarity and idiomatic Scala practices.
-
----
-
-### `RdfXmlSpec`
-
-* **Role**: Validates RDF/XML output against [W3C RDF/XML Syntax Specification](https://www.w3.org/TR/rdf-syntax-grammar/).
-* **Functionality**:
-
-  * Ensures:
-
-    * Valid namespaces and qnames
-    * Proper nesting of `rdf:Description`
-    * Legal use of `rdf:parseType`, `rdf:resource`, etc.
-* **Design Notes**: May operate as unit test or CI rule.
+### Behavior
+- Included in `summary.tsv` with no string content
+- Eligible for class promotion, especially at the root
+- Treated as structural containers
+- May later be linked to:
+  - `skos:Concept`
+  - `owl:Class`
+  - `prov:Entity` (if metadata-bearing)
 
 ---
 
-### `Scala3CompilerDoc`
+## 👪 AGENT: ParentChildBinaryRoleAgent
 
-* **Role**: Advises best practices for Scala 3 including:
+### Summary
+Defines binary roles between child tag/string and their **syntactic parent**.
 
-  * Enums
-  * Givens
-  * Extension methods
-* **Purpose**: Ensures idiomatic, maintainable Scala is used throughout pipeline.
-
----
-
-### `TestAgent`
-
-* **Role**: Auto-generates MUnit test suites.
-* **Functionality**:
-
-  * Validates RDF conformance
-  * Ensures semantic roles behave as expected
-  * Confirms CSV-W summaries match tag inferences
-* **Design Notes**: Deterministic tests can be regenerated as data/roles evolve.
+### Policy
+- Only relationships to **parent** are considered (not arbitrary siblings)
+- Attributes are children of their tag
+- Configurable in future for:
+  - `hasX` property assignment
+  - inverse property toggle
+  - suppression (blank value)
 
 ---
 
-### `MetaAgent`
+## 📚 AGENT: DefaultHeuristicAgent
 
-* **Role**: Maintains all agent `.md` files, validates structural consistency, and enforces naming conventions.
-* **Functionality**:
+### Purpose
+Hard-codes common intuitive mappings to aid user experience without explicit staging.
 
-  * Generates and synchronizes entries in `AGENTS.md`
-  * Audits role files, doc headings, and responsibility statements
-* **Design Notes**: Internal tool for agent system governance.
+### Examples
+- Tag `Year` → literal interpreted as `xsd:gYear`
+- Tag `Version` → `xsd:string` but could promote if configured
+- URI-like strings → `xsd:anyURI`
+- Empty tags → `owl:Nothing` or class-only placeholder
 
 ---
 
-## Workflow Overview
+## 🔧 AGENT: RoleConfigSystemAgent
 
-```text
-INPUT XML
-   ↓ (stream)
-LexiconAgent
-   ↓
-RoleAgent
-   ↓
-SyntacticRdfAgent
-   ↓
-SemanticRdfAgent
-   ↓
-CsvwAgent
-   ↓
-RdfXmlSpec + TestAgent
-```
+### Summary
+Declares the structure and intent of the `roles/` folder.
+
+### Files
+- `roles/TagRoles.txt` — tag name → semantic class
+- `roles/StringRoles/<tag>.txt` — string literal → datatype
+- *(planned)* `roles/BinaryTagToParent.txt` — tag name → semantic property
+- *(planned)* `roles/BinaryStringToParent.txt` — string literal → semantic property
+
+### Behavior
+- A blank value suppresses promotion
+- A non-blank value renames or retypes
+
+---
+
+## 🧩 AGENT: IdentityProfileAgent
+
+### Purpose
+Lays groundwork for identity vs profile modeling:
+- `:Author_Microformats` as identity
+- Enrich with SKOS-XL or FOAF later
+- Profiles handled via separate extension layer
+
+---
+
+## 🔍 AGENT: DiagnosticSummaryAgent
+
+### Summary
+Emits summary TSV files for staging review:
+- `summary.tsv` — all tags and their strings
+- `summary-stringless.tsv` — tags with no string value
+- `summary.csvw` — inferred datatypes
+
+---
+
+## 🧠 Future Tasks
+
+- Implement binary role config system
+- Add `skos:prefLabel` and fallback `rdfs:label` everywhere
+- Structure inverse relation toggles
+- Enrich identity with SKOS, FOAF, and PROV
+- Support nested parent-child relation chains for deeper semantics
+
+---
+
+> This `AGENTS.md` is a living document. Regenerate or update it as the system grows.

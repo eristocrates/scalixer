@@ -164,6 +164,8 @@ object XmlToRdf extends IOApp.Simple {
     val filePathStr = path.toAbsolutePath.toString
     val fileUri = "file:///" + filePathStr.replace("\\", "/")
       
+    var rootMemberEmitted: Boolean = false
+   
     val baseClasses = List(
       // s"<rdf:Description rdf:about=\"${expandPrefix("ex:xmlTag")}\">\n  <rdf:type rdf:resource=\"${expandPrefix("owl:Class")}\"/>\n</rdf:Description>",
       // s"<rdf:Description rdf:about=\"${expandPrefix("ex:xmlAttribute")}\">\n  <rdf:type rdf:resource=\"${expandPrefix("owl:Class")}\"/>\n</rdf:Description>",
@@ -221,9 +223,21 @@ object XmlToRdf extends IOApp.Simple {
 
         val subjectIRI = createSyntacticIRI(prefix, tag, stack, tagCounter(tag))
 
-        val parentBlock = stack.headOption.map { case (parentIRI, _) =>
-          s"<rdf:Description rdf:about=\"$parentIRI\">\n  <rdfs:member rdf:resource=\"$subjectIRI\"/>\n</rdf:Description>"
-        }
+        // val parentBlock = stack.headOption.map { case (parentIRI, _) =>
+        //   s"<rdf:Description rdf:about=\"$parentIRI\">\n  <rdfs:member rdf:resource=\"$subjectIRI\"/>\n</rdf:Description>"
+        // }
+          val parentBlock =
+            if stack.isEmpty then
+              if !rootMemberEmitted then
+                rootMemberEmitted = true
+                Some(
+                  s"<rdf:Description rdf:about=\"$fileUri\">\n  <rdfs:member rdf:resource=\"$subjectIRI\"/>\n</rdf:Description>"
+                )
+              else None
+            else
+              stack.headOption.map { case (parentIRI, _) =>
+                s"<rdf:Description rdf:about=\"$parentIRI\">\n  <rdfs:member rdf:resource=\"$subjectIRI\"/>\n</rdf:Description>"
+              }
 
         val attrResults = attrs.collect {
           case Attr(QName(_, "lang"), _) => None

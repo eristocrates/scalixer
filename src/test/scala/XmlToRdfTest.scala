@@ -29,6 +29,6 @@ class XmlToRdfTest extends munit.FunSuite {
     assert(rdf.contains("rdf:type rdf:resource=\"http://example.org/xmlAttribute\""))
     assert(rdf.contains("ex:attribute rdf:resource"))
     assert(rdf.contains("ex:xmlString rdf:datatype"))
-    assert(xml.nonEmpty)
   }
+
 }

@@ -28,7 +28,7 @@ ex:SemanticTechOverview_1
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        1;
         ex:sourceXmlPath     "/SemanticTechOverview";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:version_attribute_1 .
 
 ex:version_attribute_1
@@ -50,13 +50,13 @@ ex:Technologies_1  rdf:type  ex:Technologies_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        2;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:preferred_attribute_1 .
 
 ex:preferred_attribute_1
         rdf:type            ex:Preferred_Attribute;
         ex:attribute_key    "preferred";
-        ex:attribute_value  true .
+        ex:attribute_value  "true" .
 
 ex:CoreStandards_Tag  rdf:type  owl:Class;
         rdfs:subClassOf  ex:xmlTag .
@@ -67,7 +67,7 @@ ex:CoreStandards_1  rdf:type  ex:CoreStandards_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        3;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/CoreStandards";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d" .
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b" .
 
 ex:Standard_Tag  rdf:type  owl:Class;
         rdfs:subClassOf  ex:xmlTag .
@@ -85,7 +85,7 @@ ex:Standard_1  rdf:type      ex:Standard_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        4;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/CoreStandards/Standard";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:status_attribute_1;
         ex:attribute         ex:category_attribute_1 .
 
@@ -108,7 +108,7 @@ ex:Name_1  rdf:type          ex:Name_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        5;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/CoreStandards/Standard/Name";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "RDF" .
 
 ex:Spec_Tag  rdf:type    owl:Class;
@@ -124,7 +124,7 @@ ex:Spec_1  rdf:type          ex:Spec_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        6;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/CoreStandards/Standard/Spec";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         rdf:datatype_attribute_1 .
 
 rdf:datatype_attribute_1
@@ -132,7 +132,7 @@ rdf:datatype_attribute_1
         ex:attribute_key    "datatype";
         ex:attribute_value  "xsd:anyURI" .
 
-ex:Spec_1  ex:xmlString  "http://www.w3.org/TR/rdf11-concepts/" .
+ex:Spec_1  ex:xmlString  "http://www.w3.org/TR/rdf11-concepts/"^^xsd:anyURI .
 
 ex:Year_Tag  rdf:type    owl:Class;
         rdfs:subClassOf  ex:xmlTag .
@@ -143,7 +143,7 @@ ex:Year_1  rdf:type          ex:Year_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        7;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/CoreStandards/Standard/Year";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         2014 .
 
 ex:Purpose_Tag  rdf:type  owl:Class;
@@ -155,7 +155,7 @@ ex:Purpose_1  rdf:type       ex:Purpose_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        8;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/CoreStandards/Standard/Purpose";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "Foundation data model for semantic graphs" .
 
 ex:CoreStandards_1  rdfs:member  ex:Standard_2 .
@@ -164,7 +164,7 @@ ex:Standard_2  rdf:type      ex:Standard_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        9;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/CoreStandards/Standard";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:status_attribute_2;
         ex:attribute         ex:category_attribute_2 .
 
@@ -184,7 +184,7 @@ ex:Name_2  rdf:type          ex:Name_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        10;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/CoreStandards/Standard/Name";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "OWL" .
 
 ex:Version_Tag  rdf:type  owl:Class;
@@ -196,7 +196,7 @@ ex:Version_1  rdf:type       ex:Version_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        11;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/CoreStandards/Standard/Version";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         2 .
 
 ex:Standard_2  rdfs:member  ex:Spec_2 .
@@ -205,8 +205,8 @@ ex:Spec_2  rdf:type          ex:Spec_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        12;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/CoreStandards/Standard/Spec";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
-        ex:xmlString         "http://www.w3.org/TR/owl2-overview/" .
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
+        ex:xmlString         "http://www.w3.org/TR/owl2-overview/"^^xsd:anyURI .
 
 ex:Standard_2  rdfs:member  ex:Year_2 .
 
@@ -214,7 +214,7 @@ ex:Year_2  rdf:type          ex:Year_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        13;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/CoreStandards/Standard/Year";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         2012 .
 
 ex:Standard_2  rdfs:member  ex:Purpose_2 .
@@ -223,7 +223,7 @@ ex:Purpose_2  rdf:type       ex:Purpose_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        14;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/CoreStandards/Standard/Purpose";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "Ontology language for expressing logical structure" .
 
 ex:Deprecated_Tag  rdf:type  owl:Class;
@@ -235,7 +235,7 @@ ex:Deprecated_1  rdf:type    ex:Deprecated_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        15;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/CoreStandards/Standard/Deprecated";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d" .
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b" .
 
 ex:CoreStandards_1  rdfs:member  ex:Standard_3 .
 
@@ -243,7 +243,7 @@ ex:Standard_3  rdf:type      ex:Standard_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        16;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/CoreStandards/Standard";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:status_attribute_3;
         ex:attribute         ex:category_attribute_3 .
 
@@ -263,7 +263,7 @@ ex:Name_3  rdf:type          ex:Name_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        17;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/CoreStandards/Standard/Name";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "SPARQL" .
 
 ex:Standard_3  rdfs:member  ex:Spec_3 .
@@ -272,8 +272,8 @@ ex:Spec_3  rdf:type          ex:Spec_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        18;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/CoreStandards/Standard/Spec";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
-        ex:xmlString         "http://www.w3.org/TR/sparql11-query/" .
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
+        ex:xmlString         "http://www.w3.org/TR/sparql11-query/"^^xsd:anyURI .
 
 ex:Standard_3  rdfs:member  ex:Year_3 .
 
@@ -281,7 +281,7 @@ ex:Year_3  rdf:type          ex:Year_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        19;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/CoreStandards/Standard/Year";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         2013 .
 
 ex:Standard_3  rdfs:member  ex:Purpose_3 .
@@ -290,7 +290,7 @@ ex:Purpose_3  rdf:type       ex:Purpose_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        20;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/CoreStandards/Standard/Purpose";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "Query language for RDF" .
 
 ex:Serializations_Tag
@@ -303,7 +303,7 @@ ex:Serializations_1  rdf:type  ex:Serializations_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        21;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Serializations";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d" .
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b" .
 
 ex:Format_Tag  rdf:type  owl:Class;
         rdfs:subClassOf  ex:xmlTag .
@@ -317,7 +317,7 @@ ex:Format_1  rdf:type        ex:Format_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        22;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Serializations/Format";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:type_attribute_1 .
 
 ex:type_attribute_1  rdf:type  ex:Type_Attribute;
@@ -330,7 +330,7 @@ ex:Name_4  rdf:type          ex:Name_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        23;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Serializations/Format/Name";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "Turtle" .
 
 ex:MimeType_Tag  rdf:type  owl:Class;
@@ -342,7 +342,7 @@ ex:MimeType_1  rdf:type      ex:MimeType_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        24;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Serializations/Format/MimeType";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "text/turtle" .
 
 ex:Format_1  rdfs:member  ex:Purpose_4 .
@@ -351,7 +351,7 @@ ex:Purpose_4  rdf:type       ex:Purpose_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        25;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Serializations/Format/Purpose";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "Readable RDF syntax" .
 
 ex:Serializations_1  rdfs:member  ex:Format_2 .
@@ -360,7 +360,7 @@ ex:Format_2  rdf:type        ex:Format_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        26;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Serializations/Format";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:type_attribute_2 .
 
 ex:type_attribute_2  rdf:type  ex:Type_Attribute;
@@ -373,7 +373,7 @@ ex:Name_5  rdf:type          ex:Name_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        27;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Serializations/Format/Name";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "JSON-LD" .
 
 ex:Format_2  rdfs:member  ex:MimeType_2 .
@@ -382,7 +382,7 @@ ex:MimeType_2  rdf:type      ex:MimeType_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        28;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Serializations/Format/MimeType";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "application/ld+json" .
 
 ex:Format_2  rdfs:member  ex:Purpose_5 .
@@ -391,7 +391,7 @@ ex:Purpose_5  rdf:type       ex:Purpose_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        29;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Serializations/Format/Purpose";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "JSON-compatible Linked Data" .
 
 ex:Deprecated_Attribute
@@ -404,7 +404,7 @@ ex:Format_3  rdf:type        ex:Format_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        30;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Serializations/Format";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:type_attribute_3;
         ex:attribute         ex:deprecated_attribute_1 .
 
@@ -415,7 +415,7 @@ ex:type_attribute_3  rdf:type  ex:Type_Attribute;
 ex:deprecated_attribute_1
         rdf:type            ex:Deprecated_Attribute;
         ex:attribute_key    "deprecated";
-        ex:attribute_value  false .
+        ex:attribute_value  "false" .
 
 ex:Format_3  rdfs:member  ex:Name_6 .
 
@@ -423,7 +423,7 @@ ex:Name_6  rdf:type          ex:Name_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        31;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Serializations/Format/Name";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "RDF/XML" .
 
 ex:Format_3  rdfs:member  ex:MimeType_3 .
@@ -432,7 +432,7 @@ ex:MimeType_3  rdf:type      ex:MimeType_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        32;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Serializations/Format/MimeType";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "application/rdf+xml" .
 
 ex:Format_3  rdfs:member  ex:Purpose_6 .
@@ -441,7 +441,7 @@ ex:Purpose_6  rdf:type       ex:Purpose_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        33;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Serializations/Format/Purpose";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "XML-native RDF encoding" .
 
 ex:Legacy_Tag  rdf:type  owl:Class;
@@ -453,14 +453,14 @@ ex:Legacy_1  rdf:type        ex:Legacy_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        34;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Legacy";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         rdfs:member          ex:Standard_4 .
 
 ex:Standard_4  rdf:type      ex:Standard_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        35;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Legacy/Standard";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:status_attribute_4 .
 
 ex:status_attribute_4
@@ -474,7 +474,7 @@ ex:Name_7  rdf:type          ex:Name_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        36;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Legacy/Standard/Name";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "GRDDL" .
 
 ex:Standard_4  rdfs:member  ex:Spec_4 .
@@ -483,8 +483,8 @@ ex:Spec_4  rdf:type          ex:Spec_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        37;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Legacy/Standard/Spec";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
-        ex:xmlString         "http://www.w3.org/TR/grddl/" .
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
+        ex:xmlString         "http://www.w3.org/TR/grddl/"^^xsd:anyURI .
 
 ex:Standard_4  rdfs:member  ex:Purpose_7 .
 
@@ -492,7 +492,7 @@ ex:Purpose_7  rdf:type       ex:Purpose_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        38;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Legacy/Standard/Purpose";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "Transform XML/XHTML to RDF via XSLT" .
 
 ex:Standard_4  rdfs:member  ex:Deprecated_2 .
@@ -501,7 +501,7 @@ ex:Deprecated_2  rdf:type    ex:Deprecated_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        39;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Legacy/Standard/Deprecated";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d" .
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b" .
 
 ex:Legacy_1  rdfs:member  ex:Standard_5 .
 
@@ -509,7 +509,7 @@ ex:Standard_5  rdf:type      ex:Standard_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        40;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Legacy/Standard";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:status_attribute_5 .
 
 ex:status_attribute_5
@@ -523,7 +523,7 @@ ex:Name_8  rdf:type          ex:Name_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        41;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Legacy/Standard/Name";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "SAWSDL" .
 
 ex:Standard_5  rdfs:member  ex:Spec_5 .
@@ -532,8 +532,8 @@ ex:Spec_5  rdf:type          ex:Spec_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        42;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Legacy/Standard/Spec";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
-        ex:xmlString         "http://www.w3.org/TR/sawsdl/" .
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
+        ex:xmlString         "http://www.w3.org/TR/sawsdl/"^^xsd:anyURI .
 
 ex:Standard_5  rdfs:member  ex:Purpose_8 .
 
@@ -541,7 +541,7 @@ ex:Purpose_8  rdf:type       ex:Purpose_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        43;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Legacy/Standard/Purpose";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "Annotate WSDL with semantic metadata" .
 
 ex:Notes_Tag  rdf:type   owl:Class;
@@ -553,7 +553,7 @@ ex:Notes_1  rdf:type         ex:Notes_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        44;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Legacy/Standard/Notes";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "Still relevant in some enterprise contexts" .
 
 ex:Microformats_Tag  rdf:type  owl:Class;
@@ -565,7 +565,7 @@ ex:Microformats_1  rdf:type  ex:Microformats_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        45;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Microformats";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d" .
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b" .
 
 ex:Usage_Attribute  rdf:type  owl:Class;
         rdfs:subClassOf  ex:xmlAttribute .
@@ -576,7 +576,7 @@ ex:Format_4  rdf:type        ex:Format_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        46;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Microformats/Format";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:type_attribute_4;
         ex:attribute         ex:usage_attribute_1 .
 
@@ -594,7 +594,7 @@ ex:Name_9  rdf:type          ex:Name_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        47;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Microformats/Format/Name";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "hCard" .
 
 ex:Use_Tag  rdf:type     owl:Class;
@@ -606,7 +606,7 @@ ex:Use_1  rdf:type           ex:Use_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        48;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Microformats/Format/Use";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "Represent people and organizations" .
 
 ex:Microformats_1  rdfs:member  ex:Format_5 .
@@ -615,7 +615,7 @@ ex:Format_5  rdf:type        ex:Format_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        49;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Microformats/Format";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:type_attribute_5;
         ex:attribute         ex:usage_attribute_2 .
 
@@ -633,7 +633,7 @@ ex:Name_10  rdf:type         ex:Name_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        50;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Microformats/Format/Name";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "hCalendar" .
 
 ex:Format_5  rdfs:member  ex:Use_2 .
@@ -642,7 +642,7 @@ ex:Use_2  rdf:type           ex:Use_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        51;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Microformats/Format/Use";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "Represent events and dates" .
 
 ex:Format_5  rdfs:member  ex:Deprecated_3 .
@@ -651,7 +651,7 @@ ex:Deprecated_3  rdf:type    ex:Deprecated_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        52;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Microformats/Format/Deprecated";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d" .
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b" .
 
 ex:RuntimeSemantics_Tag
         rdf:type         owl:Class;
@@ -664,7 +664,7 @@ ex:RuntimeSemantics_1
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        53;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/RuntimeSemantics";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d" .
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b" .
 
 ex:StreamSystem_Tag  rdf:type  owl:Class;
         rdfs:subClassOf  ex:xmlTag .
@@ -679,14 +679,14 @@ ex:StreamSystem_1  rdf:type  ex:StreamSystem_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        54;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:stable_attribute_1;
         ex:attribute         ex:version_attribute_2 .
 
 ex:stable_attribute_1
         rdf:type            ex:Stable_Attribute;
         ex:attribute_key    "stable";
-        ex:attribute_value  true .
+        ex:attribute_value  "true" .
 
 ex:version_attribute_2
         rdf:type            ex:Version_Attribute;
@@ -699,7 +699,7 @@ ex:Name_11  rdf:type         ex:Name_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        55;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem/Name";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "CQELS" .
 
 ex:StreamSystem_1  rdfs:member  ex:Spec_6 .
@@ -708,8 +708,8 @@ ex:Spec_6  rdf:type          ex:Spec_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        56;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem/Spec";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
-        ex:xmlString         "http://cqels.sourceforge.net/" .
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
+        ex:xmlString         "http://cqels.sourceforge.net/"^^xsd:anyURI .
 
 ex:StreamSystem_1  rdfs:member  ex:Purpose_9 .
 
@@ -717,7 +717,7 @@ ex:Purpose_9  rdf:type       ex:Purpose_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        57;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem/Purpose";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "Continuous query over linked streams" .
 
 ex:Experimental_Attribute
@@ -731,19 +731,19 @@ ex:StreamSystem_2  rdf:type  ex:StreamSystem_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        58;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:stable_attribute_2;
         ex:attribute         ex:experimental_attribute_1 .
 
 ex:stable_attribute_2
         rdf:type            ex:Stable_Attribute;
         ex:attribute_key    "stable";
-        ex:attribute_value  false .
+        ex:attribute_value  "false" .
 
 ex:experimental_attribute_1
         rdf:type            ex:Experimental_Attribute;
         ex:attribute_key    "experimental";
-        ex:attribute_value  true .
+        ex:attribute_value  "true" .
 
 ex:StreamSystem_2  rdfs:member  ex:Name_12 .
 
@@ -751,7 +751,7 @@ ex:Name_12  rdf:type         ex:Name_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        59;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem/Name";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "C-SPARQL" .
 
 ex:StreamSystem_2  rdfs:member  ex:Spec_7 .
@@ -760,8 +760,8 @@ ex:Spec_7  rdf:type          ex:Spec_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        60;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem/Spec";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
-        ex:xmlString         "https://streamreasoning.github.io/C-SPARQL-engine/" .
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
+        ex:xmlString         "https://streamreasoning.github.io/C-SPARQL-engine/"^^xsd:anyURI .
 
 ex:StreamSystem_2  rdfs:member  ex:Purpose_10 .
 
@@ -769,7 +769,7 @@ ex:Purpose_10  rdf:type      ex:Purpose_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        61;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem/Purpose";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "SPARQL queries over time-annotated data" .
 
 ex:RuntimeSemantics_1
@@ -779,19 +779,19 @@ ex:StreamSystem_3  rdf:type  ex:StreamSystem_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        62;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:stable_attribute_3;
         ex:attribute         ex:preferred_attribute_2 .
 
 ex:stable_attribute_3
         rdf:type            ex:Stable_Attribute;
         ex:attribute_key    "stable";
-        ex:attribute_value  true .
+        ex:attribute_value  "true" .
 
 ex:preferred_attribute_2
         rdf:type            ex:Preferred_Attribute;
         ex:attribute_key    "preferred";
-        ex:attribute_value  true .
+        ex:attribute_value  "true" .
 
 ex:StreamSystem_3  rdfs:member  ex:Name_13 .
 
@@ -799,7 +799,7 @@ ex:Name_13  rdf:type         ex:Name_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        63;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem/Name";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "LDES" .
 
 ex:StreamSystem_3  rdfs:member  ex:Spec_8 .
@@ -808,8 +808,8 @@ ex:Spec_8  rdf:type          ex:Spec_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        64;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem/Spec";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
-        ex:xmlString         "https://w3id.org/ldes" .
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
+        ex:xmlString         "https://w3id.org/ldes"^^xsd:anyURI .
 
 ex:StreamSystem_3  rdfs:member  ex:Purpose_11 .
 
@@ -817,7 +817,7 @@ ex:Purpose_11  rdf:type      ex:Purpose_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        65;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem/Purpose";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "Linked Data Event Streams" .
 
 ex:StreamSystem_3  rdfs:member  ex:Version_2 .
@@ -826,7 +826,7 @@ ex:Version_2  rdf:type       ex:Version_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        66;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/RuntimeSemantics/StreamSystem/Version";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "1.0.2" .
 
 ex:Nanopublishing_Tag
@@ -839,7 +839,7 @@ ex:Nanopublishing_1  rdf:type  ex:Nanopublishing_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        67;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Nanopublishing";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d" .
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b" .
 
 ex:Nanopub_Tag  rdf:type  owl:Class;
         rdfs:subClassOf  ex:xmlTag .
@@ -853,7 +853,7 @@ ex:Nanopub_1  rdf:type       ex:Nanopub_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        68;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Nanopublishing/Nanopub";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:id_attribute_1 .
 
 ex:id_attribute_1  rdf:type  ex:Id_Attribute;
@@ -869,7 +869,7 @@ ex:Assertion_1  rdf:type     ex:Assertion_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        69;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Nanopublishing/Nanopub/Assertion";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "Terra est rotunda" .
 
 ex:Provenance_Tag  rdf:type  owl:Class;
@@ -881,7 +881,7 @@ ex:Provenance_1  rdf:type    ex:Provenance_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        70;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Nanopublishing/Nanopub/Provenance";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "Galileo Galilei" .
 
 ex:PublicationInfo_Tag
@@ -898,13 +898,13 @@ ex:PublicationInfo_1  rdf:type  ex:PublicationInfo_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        71;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Nanopublishing/Nanopub/PublicationInfo";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:peerReviewed_attribute_1 .
 
 ex:peerReviewed_attribute_1
         rdf:type            ex:PeerReviewed_Attribute;
         ex:attribute_key    "peerReviewed";
-        ex:attribute_value  false .
+        ex:attribute_value  "false" .
 
 ex:Date_Tag  rdf:type    owl:Class;
         rdfs:subClassOf  ex:xmlTag .
@@ -915,7 +915,7 @@ ex:Date_1  rdf:type          ex:Date_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        72;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Nanopublishing/Nanopub/PublicationInfo/Date";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:datatype_attribute_2 .
 
 ex:datatype_attribute_2
@@ -934,7 +934,7 @@ ex:Publisher_1  rdf:type     ex:Publisher_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        73;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Nanopublishing/Nanopub/PublicationInfo/Publisher";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "np:Galileo" .
 
 ex:Tools_Tag  rdf:type   owl:Class;
@@ -946,7 +946,7 @@ ex:Tools_1  rdf:type         ex:Tools_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        74;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Tools";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d" .
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b" .
 
 ex:Tool_Tag  rdf:type    owl:Class;
         rdfs:subClassOf  ex:xmlTag .
@@ -961,7 +961,7 @@ ex:Tool_1  rdf:type          ex:Tool_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        75;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Tools/Tool";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:language_attribute_1;
         ex:attribute         ex:version_attribute_3 .
 
@@ -981,7 +981,7 @@ ex:Name_14  rdf:type         ex:Name_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        76;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Tools/Tool/Name";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "SPARQL Anything" .
 
 ex:Tool_1  rdfs:member  ex:Purpose_12 .
@@ -990,7 +990,7 @@ ex:Purpose_12  rdf:type      ex:Purpose_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        77;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Tools/Tool/Purpose";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "Query anything as RDF: XML, CSV, HTML, JSON" .
 
 ex:License_Tag  rdf:type  owl:Class;
@@ -1002,7 +1002,7 @@ ex:License_1  rdf:type       ex:License_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        78;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Tools/Tool/License";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "Apache-2.0" .
 
 ex:Tools_1  rdfs:member  ex:Tool_2 .
@@ -1011,7 +1011,7 @@ ex:Tool_2  rdf:type          ex:Tool_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        79;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Tools/Tool";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:language_attribute_2;
         ex:attribute         ex:status_attribute_6 .
 
@@ -1031,7 +1031,7 @@ ex:Name_15  rdf:type         ex:Name_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        80;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Tools/Tool/Name";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "XSPARQL" .
 
 ex:Tool_2  rdfs:member  ex:Purpose_13 .
@@ -1040,7 +1040,7 @@ ex:Purpose_13  rdf:type      ex:Purpose_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        81;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Tools/Tool/Purpose";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "Transformation language for XML ↔ RDF" .
 
 ex:Tools_1  rdfs:member  ex:Tool_3 .
@@ -1049,7 +1049,7 @@ ex:Tool_3  rdf:type          ex:Tool_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        82;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Tools/Tool";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:attribute         ex:language_attribute_3;
         ex:attribute         ex:deprecated_attribute_2 .
 
@@ -1061,7 +1061,7 @@ ex:language_attribute_3
 ex:deprecated_attribute_2
         rdf:type            ex:Deprecated_Attribute;
         ex:attribute_key    "deprecated";
-        ex:attribute_value  false .
+        ex:attribute_value  "false" .
 
 ex:Tool_3  rdfs:member  ex:Name_16 .
 
@@ -1069,7 +1069,7 @@ ex:Name_16  rdf:type         ex:Name_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        83;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Tools/Tool/Name";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "RMLMapper" .
 
 ex:Tool_3  rdfs:member  ex:Purpose_14 .
@@ -1078,7 +1078,7 @@ ex:Purpose_14  rdf:type      ex:Purpose_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        84;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Tools/Tool/Purpose";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "Generate RDF from heterogeneous formats" .
 
 ex:Description_Tag  rdf:type  owl:Class;
@@ -1090,5 +1090,5 @@ ex:Description_1  rdf:type   ex:Description_Tag;
         prov:wasDerivedFrom  <file:///C:/Users/eristocrates/Programs/scalixer/src/main/resources/example.xml>;
         ex:sourceLine        85;
         ex:sourceXmlPath     "/SemanticTechOverview/Technologies/Tools/Tool/Description";
-        ex:liftedBy          "b5bc00a9-9d00-414f-b426-e9015aacff5d";
+        ex:liftedBy          "fdb9fce5-2d4f-4ba9-9559-b741efb6921b";
         ex:xmlString         "Générateur RDF utilisant des règles de mappage RML" .

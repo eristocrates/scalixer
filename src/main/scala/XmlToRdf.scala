@@ -458,8 +458,9 @@ object XmlToRdf extends IOApp.Simple {
             def allMatch(regex: String): Boolean =
               values.nonEmpty && values.forall(_.matches(regex))
 
-            if (allMatch("""true|false""")) "xsd:boolean"
-            else if (allMatch("""[+-]?\d+""")) "xsd:decimal"
+         if (allMatch("""^(mailto|file|urn|gemini|at):\S+$""")) "xsd:anyURI"
+            else if (allMatch("""^[a-zA-Z][a-zA-Z0-9+.-]*://\S+$""")) "xsd:anyURI"
+            else if (allMatch("""true|false""")) "xsd:boolean"            else if (allMatch("""[+-]?\d+""")) "xsd:decimal"
             else if (allMatch("""[+-]?(\d*\.\d+|\d+\.\d*)([eE][+-]?\d+)?""")) "xsd:double"
             else if (allMatch("""\d{4}-\d{2}-\d{2}""")) "xsd:date"
             else if (allMatch("""\d{4}-\d{2}""")) "xsd:gYearMonth"
